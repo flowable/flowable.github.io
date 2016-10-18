@@ -17,7 +17,6 @@
 
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/flowable.css">
-  <link rel="stylesheet" href="/css/perfect-scrollbar.min.css">
   <link rel="stylesheet" href="/fonts/icons/flaticon.css">
 	  
   <!--[if lte IE 8]>
@@ -30,7 +29,6 @@
 <body>
 
   <div class="container">
-
     <div class="nav-main">
       <div class="wrap">
         <a class="nav-home" href="/index.html">
@@ -50,26 +48,28 @@
         </ul>
       </div>
     </div>
+		
+		<div id="scroll-section">
 
-    
-    <div class="hero">
-      <div class="wrap">
-        <div>
-					<img class="logo" src="/img/logo_hero.png" srcset="/img/logo_hero.png 1x, /img/logo_hero@2x.png 2x" width="674" height="108" />
-				</div>
-        <div class="minitext">
-          The Java BPM Engine
-        </div>
+	    
+	    <div class="hero">
+	      <div class="wrap">
+	        <div>
+						<img class="logo" src="/img/logo_hero.png" srcset="/img/logo_hero.png 1x, /img/logo_hero@2x.png 2x" width="674" height="108" />
+					</div>
+	        <div class="minitext">
+	          The Java BPM Engine
+	        </div>
 
-        <div class="buttons-unit">
-          <a href="/docs/userguide/index.html#_getting_started" class="button" target="_blank">Get Started</a>
-          <a href="https://github.com/flowable/flowable-engine/releases/download/flowable-5.22.0/flowable-5.22.0.zip" class="button">Download Flowable v5.22.0</a>
-        </div>
-      </div>
-    </div>
-    
+	        <div class="buttons-unit">
+	          <a href="/docs/userguide/index.html#_getting_started" class="button" target="_blank">Get Started</a>
+	          <a href="https://github.com/flowable/flowable-engine/releases/download/flowable-5.22.0/flowable-5.22.0.zip" class="button">Download Flowable v5.22.0</a>
+	        </div>
+	      </div>
+	    </div>
+	    
 
-    <section class="content wrap">
+	    <section class="content wrap">
   <section class="light home-section">
     <div class="definition-row">
         <div class="definition-full-col">
@@ -140,21 +140,16 @@
 </section>
 
 
-    <footer class="wrap">
-      <div class="center">
-        2016 Flowable - Designs by <a href="http://kaleycreate.co.uk/" target="_blank">kaley.create</a>
-      </div>
-    </footer>
+	    <footer class="wrap">
+	      <div class="center">
+	        2016 Flowable - Designs by <a href="http://kaleycreate.co.uk/" target="_blank">kaley.create</a>
+	      </div>
+	    </footer>
+		
+		</div>
   </div>
 <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script> 
-<script type="text/javascript" src="/js/perfect-scrollbar.jquery.min.js"></script>
 <script>
-	$(function() {
-		var container = $('container');
-	    $('.container').perfectScrollbar();
-		}
-	);
-	
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
