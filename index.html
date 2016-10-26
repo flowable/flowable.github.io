@@ -49,8 +49,6 @@
       </div>
     </div>
 		
-		<div id="scroll-section">
-
 	    
 	    <div class="hero">
 	      <div class="wrap">
@@ -126,7 +124,9 @@
     <div class="social-row">
         <div class="social-col"> 
             <h4>Latest Team Blog Posts</h4>
-            <ul class="feedEkList"><li><div class="itemTitle"><a href="http://blog.mark-it-zero.com/transaction-dependent-listeners/" target="_blank">Transaction dependent listeners in Activiti</a></div></li><li><div class="itemTitle"><a href="http://www.jorambarrez.be/blog/2016/09/01/how-to-use-transient-variables-in-activiti/" target="_blank">How to use transient variables in Activiti</a></div></li><li><div class="itemTitle"><a href="http://bpmn20inaction.blogspot.com/2016/08/activiti-600beta3-released.html" target="_blank">Activiti 6.0.0.Beta3 released</a></div></li><li><div class="itemTitle"><a href="http://bpmn20inaction.blogspot.com/2016/08/using-activiti-6-angular-app.html" target="_blank">Using the Activiti 6 Angular app</a></div></li><li><div class="itemTitle"><a href="http://www.jorambarrez.be/blog/2016/07/20/message-queue-async-executor-benchmark/" target="_blank">Benchmarking the message queue based Activiti Async Executor</a></div></li></ul>
+            <div id="rssBlogFeed"></div>
+            <h4>Latest Forum Posts</h4>
+            <div id="rssForumFeed"></div><br>
         </div>
         <div class="social-col"> 
             <h4>Latest Tweets</h4>
@@ -146,7 +146,6 @@
 	      </div>
 	    </footer>
 		
-		</div>
   </div>
 <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script> 
 <script>
@@ -166,23 +165,19 @@
 <script type="text/javascript">
     $('#rssBlogFeed').FeedEk({
         FeedUrl:'http://feed.informer.com/digests/901EVIZWKI/feeder.rss',
-        MaxCount : 6,
+        MaxCount : 5,
         ShowDesc : false,
         ShowPubDate: false,
         DescCharacterLimit:100,
-        TitleLinkTarget:'_blank',
-        DateFormat: 'MM/DD/YYYY',
-        DateFormatLang:'en'
+        TitleLinkTarget:'_blank'
     });
     $('#rssForumFeed').FeedEk({
-        FeedUrl:'https://meta.discourse.org/latest.rss',
-        MaxCount : 6,
+        FeedUrl:'http://forum.flowable.org/latest.rss',
+        MaxCount : 5,
         ShowDesc : false,
         ShowPubDate: false,
         DescCharacterLimit:100,
-        TitleLinkTarget:'_blank',
-        DateFormat: 'MM/DD/YYYY',
-        DateFormatLang:'en'
+        TitleLinkTarget:'_blank'
     });
 </script>
 <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
