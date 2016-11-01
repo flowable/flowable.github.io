@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.2">
-<title>Flowable DOCS (v 6.0.0.rc1-snapshot)</title>
+<title>Documentation (v 5.22.0)</title>
 <style>
 
 /* normalize.css */
@@ -227,6 +227,7 @@ a:hover {
 .toc-list-item {
   padding: 4px 0 4px 0;
 }
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 <style>
@@ -324,7 +325,6 @@ a:hover {
 <script type="text/javascript">
 
   var generateToc = function() {
-    console.log(new Date() + 'Generate toc ' + document.readyState);
     var readyState = document.readyState;
     if (readyState === 'interactive' || readyState == 'complete') {
 
@@ -359,7 +359,6 @@ a:hover {
       });
 
     } else {
-      console.log('Timeout');
       window.setTimeout(function(){
         generateToc();
       }, 50);
@@ -372,7 +371,7 @@ a:hover {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable DOCS (v 6.0.0.rc1-snapshot)</h1>
+<h1>Documentation (v 5.22.0)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -394,7 +393,7 @@ a:hover {
 <h3 id="sources">1.3. Sources</h3>
 <div class="paragraph">
 <p>The distribution contains most of the sources as jar files. The source code of Flowable can be found on
-  <a href="https://github.com/Flowable/Flowable"><a href="https://github.com/Flowable/Flowable" class="bare">https://github.com/Flowable/Flowable</a></a></p>
+  <a href="https://github.com/flowable/flowable-engine"><a href="https://github.com/flowable/flowable-engine" class="bare">https://github.com/flowable/flowable-engine</a></a></p>
 </div>
 </div>
 <div class="sect2">
@@ -420,7 +419,7 @@ Further in this user guide, there is a section on <a href="#eclipseDesignerInsta
 <p>Every self-respecting developer should have read <a href="http://www.catb.org/~esr/faqs/smart-questions.html">How to ask questions the smart way</a>.</p>
 </div>
 <div class="paragraph">
-<p>After you&#8217;ve done that you can post questions and comments on <a href="http://forums.flowable.org">the Users forum</a> and create issues in <a href="https://github.com/Flowable/Flowable/issues">our Github issue tracker</a>.</p>
+<p>After you&#8217;ve done that you can post questions and comments on <a href="http://forum.flowable.org">the Users forum</a> and create issues in <a href="https://github.com/flowable/flowable-engine/issues">our Github issue tracker</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2517,18 +2516,15 @@ The old job executor of Flowable 5 is removed. More information can be found in 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiEntityEvent</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMER_SCHEDULED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A timer job has been created and is scheduled for being executed at a future point in time.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiEntityEvent</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TIMER_FIRED</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A timer has been fired. The event contains the job that was executed?</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiEntityEvent</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JOB_CANCELED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A job has been canceled. The event contains the job that was canceled. Job can be canceled by API call, task was completed and associated boundary timer was canceled, on the new process definition deployment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A job has been canceled. The event contains the job that was canceled. Job can be canceled by
+                  API call, task was completed and associated boundary timer was canceled, on the new process definition
+                  deployment.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiEntityEvent</code></p></td>
 </tr>
 <tr>
@@ -2553,22 +2549,16 @@ The old job executor of Flowable 5 is removed. More information can be found in 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ACTIVITY_MESSAGE_RECEIVED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An activity received a message. Dispatched before the activity receives the message. When received, a <code>ACTIVITY_SIGNAL</code> or <code>ACTIVITY_STARTED</code> will be dispatched for this activity, depending on the type (boundary-event or event-subprocess start-event)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiMessageEvent</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ACTIVITY_MESSAGE_WAITING</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An activity has created a message event subscription and is waiting for its receival.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiMessageEvent</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ACTIVITY_MESSAGE_CANCELLED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An activity for which a message event subscription has been created is cancelled and thus receiving the message will not trigger this particular message anymore.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An activity received a message. Dispatched before the activity receives the message. When received, a <code>ACTIVITY_SIGNAL</code> or <code>ACTIVITY_STARTED</code> will
+                be dispatched for this activity, depending on the type (boundary-event or event-subprocess start-event)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiMessageEvent</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ACTIVITY_ERROR_RECEIVED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An activity has received an error event. Dispatched before the actual error has been handled by the activity. The event&#8217;s <code>activityId</code> contains a reference to the error-handling activity. This event will be either followed by a <code>ACTIVITY_SIGNALLED</code> event or <code>ACTIVITY_COMPLETE</code> for the involved activity, if the error was delivered successfully.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An activity has received an error event. Dispatched before the actual error has been handled by
+                 the activity. The event&#8217;s <code>activityId</code> contains a reference to the error-handling activity.
+                 This event will be either followed by a <code>ACTIVITY_SIGNALLED</code> event or <code>ACTIVITY_COMPLETE</code>
+                  for the involved activity, if the error was delivered successfully.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiErrorEvent</code></p></td>
 </tr>
 <tr>
@@ -2603,27 +2593,20 @@ The old job executor of Flowable 5 is removed. More information can be found in 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TASK_CREATED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A task has been created. This is dispatched after the <code>ENTITY_CREATE</code> event. In case the task is part of a process, this event will be fired before the task listeners are executed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A task has been created. This is dispatched after the <code>ENTITY_CREATE</code> event. In case the task is part of a process, this event will be
+                  fired before the task listeners are executed.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiEntityEvent</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TASK_COMPLETED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A task has been completed. This is dispatched before the <code>ENTITY_DELETE</code> event. In case the task is part of a process, this event will be fired before the process has moved on and will be followed by a <code>ACTIVITY_COMPLETE</code> event, targeting the activity that represents the completed task.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiEntityEvent</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PROCESS_CREATED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A process instance has been created. All basic properties have been set, but variables not yet.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiEntityEvent</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PROCESS_STARTED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A process instance has been started. Dispatched when starting a process instance previously created. The event PROCESS_STARTED is dispatched after the associated event ENTITY_INITIALIZED and after the variables have been set.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A task has been completed. This is dispatched before the <code>ENTITY_DELETE</code> event. In case the task is part of a process, this event will be
+                fired before the process has moved on and will be followed by a <code>ACTIVITY_COMPLETE</code> event, targeting the activity that represents the completed task.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiEntityEvent</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PROCESS_COMPLETED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A process has been completed. Dispatched after the last activity <code>ACTIVITY_COMPLETED </code> event. Process is completed when it reaches state in which process instance does not have any transition to take.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A process has been completed. Dispatched after the last activity <code>ACTIVITY_COMPLETED </code> event. Process is completed when it reaches state in which process instance does not have
+                  any transition to take.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiEntityEvent</code></p></td>
 </tr>
 <tr>
@@ -2643,7 +2626,8 @@ The old job executor of Flowable 5 is removed. More information can be found in 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MEMBERSHIPS_DELETED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All members will be removed from a group. The event is thrown before the members are removed, so they are still accessible. No individual <code>MEMBERSHIP_DELETED</code> events will be thrown if all members are deleted at once, for performance reasons.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All members will be removed from a group. The event is thrown before the members are removed, so they are still accessible. No individual
+                <code>MEMBERSHIP_DELETED</code> events will be thrown if all members are deleted at once, for performance reasons.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.activiti&#8230;&#8203;ActivitiMembershipEvent</code></p></td>
 </tr>
 </tbody>
@@ -3141,7 +3125,7 @@ The old job executor of Flowable 5 is removed. More information can be found in 
 <div class="sect2">
 <h3 id="apiExpressions">4.6. Expressions</h3>
 <div class="paragraph">
-<p>Flowable uses UEL for expression-resolving. UEL stands for <em>Unified Expression Language</em> and is part of the EE6 specification (see <a href="http://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html"> the EE6 specification</a> for detailed information).<span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span></p>
+<p>Flowable uses UEL for expression-resolving. UEL stands for <em>Unified Expression Language</em> and is part of the EE6 specification (see <a href="http://docs.oracle.com/javaee/6/tutorial/doc/gjddd.html"> the EE6 specification</a> for detailed information). To support all features of latest UEL spec on ALL environments, we use a modified version of JUEL.</p>
 </div>
 <div class="paragraph">
 <p>Expressions can be used in for example <a href="#bpmnJavaServiceTaskXML">Java Service tasks</a>, <a href="#executionListeners">Execution Listeners</a>, <a href="#taskListeners">Task Listeners</a> and <a href="#conditionalSequenceFlowXml">Conditional sequence flows</a>. Although there are 2 types of expressions, value-expression and method-expression, Flowable abstracts  this so they can both be used where an <code>expression</code> is needed.</p>
@@ -6487,7 +6471,7 @@ particular <em>execution</em>. Such message event subscriptions can be queried u
 <p>The name of the message start event must be unique across all deployed process definitions. Flowable throws an exception upon deployment of a process definition such that one or more message start events reference a message with the same name as a message start event already deployed by a different process definition.</p>
 </li>
 <li>
-<p>Process versioning: Upon deployment of a new version of a process definition, the start message subscriptions of the previous version are removed.</p>
+<p>Process versioning: Upon deployment of a new version of a process definition, the message subscriptions of the previous version are cancelled. This is also true for message events that are not present in the new version.</p>
 </li>
 </ul>
 </div>
@@ -32038,8 +32022,8 @@ You have to figure out which member of the base class must be overridden. For ex
 </div>
 <div class="paragraph">
 <p>The code for the <a href="#chapter_ldap">LDAP integration</a> contains full examples of how to implement this. Check out the code on Github, specifically the following classes
-          <a href="https://github.com/Flowable/Flowable/blob/master/modules/flowable-ldap/src/main/java/org/activiti/ldap/LDAPGroupManager.java">LDAPGroupManager</a> and
-   <a href="https://github.com/Flowable/Flowable/blob/master/modules/flowable-ldap/src/main/java/org/activiti/ldap/LDAPUserManager.java">LDAPUserManager</a>.</p>
+          <a href="https://github.com/flowable/flowable-engine/blob/master/modules/flowable-ldap/src/main/java/org/activiti/ldap/LDAPGroupManager.java">LDAPGroupManager</a> and
+   <a href="https://github.com/flowable/flowable-engine/blob/master/modules/flowable-ldap/src/main/java/org/activiti/ldap/LDAPUserManager.java">LDAPUserManager</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -32230,7 +32214,7 @@ it is not optimized for querying nor for easy retrieval. The real use case is au
 </div>
 </div>
 <div class="paragraph">
-<p>For examples that demonstrate unsecure scripts and how they are made secure by the <em>secure scripting</em> feature, please check the  <a href="https://github.com/Flowable/Flowable/tree/master/modules/flowable-secure-javascript/src/test/resources">unit tests on Github</a></p>
+<p>For examples that demonstrate unsecure scripts and how they are made secure by the <em>secure scripting</em> feature, please check the  <a href="https://github.com/flowable/flowable-engine/tree/master/modules/flowable-secure-javascript/src/test/resources">unit tests on Github</a></p>
 </div>
 </div>
 </div>
@@ -32588,12 +32572,6 @@ Please make sure to clean the project by typing <strong>mvn clean</strong> befor
 </div>
 </div>
 </div>
-</div>
-</div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a>. To support all features of latest UEL spec on ALL environments, we use a modified version of JUEL for the Version 5 compatibility engine.
 </div>
 </div>
 </body>
