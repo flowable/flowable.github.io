@@ -91,23 +91,22 @@
 <hr>
 
 <div class="post">
-  <p>Today we released the first Flowable engine version (5.22.0). This release is a drop-in replacement for Activiti 5.21.0. There have been no package renaming or config file name changes, to make it as easy as possible to move to the Flowable project.
-Basically you only need to change the Maven dependency to:</p>
+  <p>Today we released the first Flowable engine version (5.22.0). This release is a fork of  Activiti 5.21.0. There have been no package renaming or config file name changes.
+The easiest way to start using it is through the Maven:</p>
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
   <span class="nt">&lt;groupId&gt;</span>org.flowable<span class="nt">&lt;/groupId&gt;</span>
   <span class="nt">&lt;artifactId&gt;</span>flowable-engine<span class="nt">&lt;/artifactId&gt;</span>
   <span class="nt">&lt;version&gt;</span>5.22.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div>
-<p>We moved the version 5 code to the flowable5 branch on Github <a href="https://github.com/flowable/flowable-engine/tree/flowable5">https://github.com/flowable/flowable-engine/tree/flowable5</a>.
-The version 6 code is now on master <a href="https://github.com/flowable/flowable-engine">https://github.com/flowable/flowable-engine</a>.</p>
+<p>The version 5 code is on the flowable5 branch on Github <a href="https://github.com/flowable/flowable-engine/tree/flowable5">https://github.com/flowable/flowable-engine/tree/flowable5</a>. <br>
+The version 6 code is on master <a href="https://github.com/flowable/flowable-engine">https://github.com/flowable/flowable-engine</a>.</p>
 
 <p>The 5.22.0 release has the following highlights:</p>
 
 <ul>
-<li>First Flowable release. Except from the different Maven group (org.flowable) and artefact id (flowable-engine etc), there are no differences when compared to a new Activiti version. 
-No changes have been made to package names or config file names.</li>
-<li>Introduction of transient variables. Transient variables won&#39;t be persisted in the Activiti variable tables, but are still available on the execution for the duration of a single transaction. 
+<li>First Flowable release. With a new Maven group (org.flowable) and artefact id (flowable-engine etc), there are no changes to package names or config file names in the fork of Activiti.</li>
+<li>Introduction of transient variables. Transient variables won&#39;t be persisted in the process variable tables, but are still available on the execution for the duration of a single transaction. 
 Transient variables can for example be used to store a REST response that is only needed to create a request to another REST service, or to use a Java service task result in the next 
 Java service task without it getting persisted. You can read more about it <a href="http://www.jorambarrez.be/blog/2016/09/01/how-to-use-transient-variables-in-activiti/">here</a></li>
 <li>Several bug fixes and smaller enhancements</li>
@@ -116,10 +115,9 @@ Java service task without it getting persisted. You can read more about it <a hr
 <p>A lot of people will also be wondering what will happen with the version 6 engine. It&#39;s our main focus to get a new beta release out as soon as possible and 
 we want to get the final 6.0 release out shortly after.</p>
 
-<p>We understand that there will be a bit of confusion around starting the Flowable project. But we do our best to keep the changes you need to do to a minimum.
-We don&#39;t plan any package renaming or config filename changes for example. For now, please get in contact with us through the forum <a href="http://forum.flowable.org">http://forum.flowable.org</a>,
-and by creating issues on the Github issues page <a href="https://github.com/flowable/flowable-engine/issues">https://github.com/flowable/flowable-engine/issues</a>.
-The developers of the Flowable project are keen to help you answering your questions and helping out with possible issues.
+<p>We understand that there will be a bit of confusion around starting the Flowable project. We don&#39;t plan any package renaming or config filename changes for example. For now, please get in contact with us through the forum <a href="http://forum.flowable.org">http://forum.flowable.org</a>,
+and by creating issues on the Github issues page <a href="https://github.com/flowable/flowable-engine/issues">https://github.com/flowable/flowable-engine/issues</a>.<br>
+The developers of the Flowable project are keen to help you answering your questions and helping out with possible issues.<br>
 The 5.22.0 release is the starting point for the Flowable project, a lot more releases will follow.</p>
 
 </div>
