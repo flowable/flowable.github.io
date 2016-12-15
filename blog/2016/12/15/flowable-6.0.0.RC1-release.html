@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Flowable 5.22.0 release | Flowable</title>
+  <title>Flowable 6.0.0.RC1 release | Flowable</title>
   <meta name="viewport" content="width=device-width">
-  <meta property="og:title" content="Flowable 5.22.0 release | Flowable">
+  <meta property="og:title" content="Flowable 6.0.0.RC1 release | Flowable">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://flowable.github.io/blog/2016/10/13/flowable-5.22.0-release.html">
+  <meta property="og:url" content="https://flowable.github.io/blog/2016/12/15/flowable-6.0.0.RC1-release.html">
   <!-- <meta property="og:image" content="https://facebook.github.io/flowable/img/logo_og.png"> -->
   <meta property="og:description" content="Flowable - The Java BPM Engine">
 
@@ -57,11 +57,11 @@
     <h3>Recent posts</h3>
     <ul>
       
-        <li><a href="/blog/2016/12/15/flowable-6.0.0.RC1-release.html">Flowable 6.0.0.RC1 release</a></li>
+        <li><a href="/blog/2016/12/15/flowable-6.0.0.RC1-release.html" class="active">Flowable 6.0.0.RC1 release</a></li>
       
         <li><a href="/blog/2016/11/01/flowable-designer-5.22.0-release.html">Flowable Eclipse Designer 5.22.0 release</a></li>
       
-        <li><a href="/blog/2016/10/13/flowable-5.22.0-release.html" class="active">Flowable 5.22.0 release</a></li>
+        <li><a href="/blog/2016/10/13/flowable-5.22.0-release.html">Flowable 5.22.0 release</a></li>
       
         <li><a href="/blog/2016/10/12/flowable-and-activiti.html">Flowable and Activiti: What the Fork?!</a></li>
       
@@ -75,12 +75,12 @@
 
 <h1>
 
-  Flowable 5.22.0 release
+  Flowable 6.0.0.RC1 release
 
 </h1>
 
 <p class="meta">
-  October 13, 2016
+  December 15, 2016
   by
   
     
@@ -93,34 +93,37 @@
 <hr>
 
 <div class="post">
-  <p>Today we released the first Flowable engine version (5.22.0). This release is a fork of  Activiti 5.21.0. There have been no package renaming or config file name changes.
-The easiest way to start using it is through the Maven:</p>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>org.flowable<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>flowable-engine<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>5.22.0<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div>
-<p>The version 5 code is on the flowable5 branch on Github <a href="https://github.com/flowable/flowable-engine/tree/flowable5">https://github.com/flowable/flowable-engine/tree/flowable5</a>. <br>
-The version 6 code is on master <a href="https://github.com/flowable/flowable-engine">https://github.com/flowable/flowable-engine</a>.</p>
+  <p>Today we released the first Flowable 6 engine version (6.0.0.RC1). This release is a major milestone before the final 6.0.0 release and we consider the version feature complete.
+The focus now is to get as much feedback from the community as possible before we can release the final 6.0.0 version. Any help in this is really appreciated.</p>
 
-<p>The 5.22.0 release has the following highlights:</p>
+<p>The 6.0.0.RC1 release has the following highlights:</p>
+
+<p>Highlights</p>
 
 <ul>
-<li>First Flowable release. With a new Maven group (org.flowable) and artefact id (flowable-engine etc), there are no changes to package names or config file names in the fork of Activiti.</li>
-<li>Introduction of transient variables. Transient variables won&#39;t be persisted in the process variable tables, but are still available on the execution for the duration of a single transaction. 
-Transient variables can for example be used to store a REST response that is only needed to create a request to another REST service, or to use a Java service task result in the next 
-Java service task without it getting persisted. You can read more about it <a href="http://www.jorambarrez.be/blog/2016/09/01/how-to-use-transient-variables-in-activiti/">here</a></li>
-<li>Several bug fixes and smaller enhancements</li>
+<li>Package renaming to org.flowable, and renaming of config files to flowable.cfg.xml and flowable-context.xml. It was not an easy decision to go this route, but for the clear distinction and separation of the Flowable project this is the best way forward. The discussion for this choice can be found in this forum post <a href="http://forum.flowable.org/t/opinions-on-package-renaming-for-flowable-6-to-org-flowable/118/13">http://forum.flowable.org/t/opinions-on-package-renaming-for-flowable-6-to-org-flowable/118/13</a></li>
+<li>Class name renaming to use Flowable instead of Activiti where needed.</li>
+<li>The identity functionality is separated in the IDM engine, and the identity database tables are managed by this engine. By default the IDM engine is enabled when starting the Flowable engine, but it can be disabled with the disableIdmEngine property.</li>
+<li>Introduction of a content engine, which provides a simple file store for attaching files/documents to a task or process instance.</li>
+<li>Support for non interrupting event sub processes. Until this version only interrupting event sub processes were supported, but now it&#39;s possible to handle events and let the main process execution continue as well.</li>
+<li>The task app has been refactored into 3 separate web applications. There&#39;s a Flowable Modeler app that contains the modeling repository functionality + the BPMN, form and DMN editor. The second app is the Flowable IDM app that manages the users and groups and handles authentication for each app. For example the Flowable Modeler will redirect to the Flowable IDM app when no valid cookie is found. After logging in to the Flowable IDM app, a redirect to the Flowable Modeler is executed and you can access the Modeler repository. This is done to allow for single sign-on between the different apps. The third app is the Flowable task app, that allows you to start process instances and work with tasks and fill-in forms.</li>
+<li>Introduction of the Flowable Admin application that allows for querying the BPM, DMN, Form and Content engines.</li>
+<li>Introduction of Docker images to make it easy to start all apps in a convenient way. In the docker folder several docker start scripts can be found that use a Docker compose file. In an upcoming blog post we will share more information on how this can be used.</li>
+<li>Persistency logic that was written in Hibernate has all been rewritten to MyBatis to have a common framework for all persistency logic.</li>
+<li>Various and many small bugfixes all around.</li>
 </ul>
 
-<p>A lot of people will also be wondering what will happen with the version 6 engine. It&#39;s our main focus to get a new beta release out as soon as possible and 
-we want to get the final 6.0 release out shortly after.</p>
+<p>Release remarks</p>
 
-<p>We understand that there will be a bit of confusion around starting the Flowable project. We don&#39;t plan any package renaming or config filename changes for example. For now, please get in contact with us through the forum <a href="http://forum.flowable.org">http://forum.flowable.org</a>,
-and by creating issues on the Github issues page <a href="https://github.com/flowable/flowable-engine/issues">https://github.com/flowable/flowable-engine/issues</a>.<br>
-The developers of the Flowable project are keen to help you answering your questions and helping out with possible issues.<br>
-The 5.22.0 release is the starting point for the Flowable project, a lot more releases will follow.</p>
+<ul>
+<li>This a major milestone to get to the final Flowable 6.0.0 release. All parts of the release are now considered feature complete, so the remaining work will be bug fixing and smaller features.</li>
+<li>We will continue to improve the docs for the 6.0.0 release.</li>
+<li>At this point all community testing is extremely important for the quality of the 6.0.0 release. So every contribution is this area is very welcome.</li>
+</ul>
+
+<p>A big thank you to the whole Flowable <a href="http://www.flowable.org/team.html">team</a> for making this release possible.
+We&#39;ll do a number of blog posts in the coming days and weeks to explain the different components in the Flowable 6.0.0 RC1 package.
+In the meantime you can use the <a href="http://forum.flowable.org">forum</a> to ask specific questions and again to make the 6.0.0 release stable and well tested, please help us by testing your process definitions with this release.</p>
 
 </div>
 

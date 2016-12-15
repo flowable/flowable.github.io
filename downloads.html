@@ -75,15 +75,34 @@
   <span class="nt">&lt;version&gt;</span>5.22.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div>
-<h2>Flowable 6 Beta</h2>
+<h2>Flowable 6 RC1</h2>
 
 <p><img class="logo" src="/img/v6_character.png" srcset="/img/v6_character.png 1x, /img/v6_character@2x.png 2x" width="97" height="114"></p>
 
-<p>Version 6 is the next generation of the process engine, whose code was first made available as a beta release over a year ago.  It is still in beta, so should not be used in production.  This is going to be the focus of new features, scalability and performance.  It is a fork from the Activiti project and keeps all the same package names and interfaces.</p>
+<p>Version 6 is the next generation of the process engine, whose code was first made available as a beta release over a year ago.  It is still in beta, so should not be used in production.  This is going to be the focus of new features, scalability and performance.  It is a fork from the Activiti project.</p>
 
 <!-- <div class="buttons-unit">
   <a href="/downloads/flowable-.zip" class="button">Download Flowable 6 BETA-4</a>
 </div> -->
+
+<h3>Maven</h3>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.flowable<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>flowable-engine<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>6.0.0.RC1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<h3>Docker</h3>
+
+<p>All Flowable UI apps are available on <a href="https://hub.docker.com/u/flowable">Docker Hub</a> .</p>
+
+<p>To start the Flowable REST app (with a in memory h2 database):</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -p8080:8080 flowable/flowable-rest
+</code></pre></div>
+<p>The API documentation will be available on <a href="http://localhost:8080/flowable-rest/docs/">http://localhost:8080/flowable-rest/docs/ </a> .
+(login/password: kermit/kermit)</p>
+
+<p>Take a look at our <a href="https://github.com/flowable/flowable-engine/tree/master/docker">GitHub repo</a> for other and more advanced configurations.</p>
 
 <h2>What&#39;s the difference between V5 and V6?</h2>
 
