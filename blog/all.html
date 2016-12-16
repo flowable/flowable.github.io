@@ -110,7 +110,15 @@
 <script type="text/javascript" src="/js/FeedEk.js"></script>
 <script type="text/javascript" src="/js/widgets.js"></script>
 <script type="text/javascript">
-    $('#rssBlogFeed').FeedEk({
+    $('#rssFlowableBlogFeed').FeedEk({
+        FeedUrl:'http://flowable.org/feed.xml',
+        MaxCount : 5,
+        ShowDesc : false,
+        ShowPubDate: false,
+        DescCharacterLimit:100,
+        TitleLinkTarget:'_blank'
+    });
+    $('#rssTeamBlogFeed').FeedEk({
         FeedUrl:'http://feed.informer.com/digests/901EVIZWKI/feeder.rss',
         MaxCount : 5,
         ShowDesc : false,

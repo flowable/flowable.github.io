@@ -89,7 +89,7 @@
             <img class="logo" src="/img/characters_2.png" srcset="/img/characters_2.png 1x, /img/characters_2@2x.png 2x" width="175" height="175">
             <p>Lightning Fast and Reliable</p>
         </div>
-        <div class="characters-col"> 
+        <div class="characters-col">
             <img class="logo" src="/img/characters_3.png" srcset="/img/characters_3.png 1x, /img/characters_3@2x.png 2x" width="175" height="175">
             <p>Runs Embedded or as a Service</p>
         </div>
@@ -123,13 +123,19 @@
 <p><hr class="home-divider" />
 <section class="light home-section">
     <div class="social-row">
-        <div class="social-col"> 
+        <div class="social-col">
+            <h4>Latest Flowable Blog Posts</h4>
+            <div id="rssFlowableBlogFeed"></div>
             <h4>Latest Team Blog Posts</h4>
-            <div id="rssBlogFeed"></div>
-        </div>
-        <div class="social-col"> 
+            <div id="rssTeamBlogFeed"></div>
             <h4>Latest Forum Posts</h4>
             <div id="rssForumFeed"></div>
+        </div>
+        <div class="social-col">
+            <h4>Latest Tweets</h4>
+            <div class="twitter-feed-container">
+                <a class="twitter-timeline" href="https://twitter.com/flowablebpm" data-chrome="noheader nofooter transparent" data-link-color="#007387">Tweets by @flowablebpm</a>
+            </div>
         </div>
     </div>
 </section></p>
@@ -160,7 +166,15 @@
 <script type="text/javascript" src="/js/FeedEk.js"></script>
 <script type="text/javascript" src="/js/widgets.js"></script>
 <script type="text/javascript">
-    $('#rssBlogFeed').FeedEk({
+    $('#rssFlowableBlogFeed').FeedEk({
+        FeedUrl:'http://flowable.org/feed.xml',
+        MaxCount : 5,
+        ShowDesc : false,
+        ShowPubDate: false,
+        DescCharacterLimit:100,
+        TitleLinkTarget:'_blank'
+    });
+    $('#rssTeamBlogFeed').FeedEk({
         FeedUrl:'http://feed.informer.com/digests/901EVIZWKI/feeder.rss',
         MaxCount : 5,
         ShowDesc : false,
