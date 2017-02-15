@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://www.flowable.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.flowable.org/" rel="alternate" type="text/html" /><updated>2016-12-16T11:09:47+01:00</updated><id>http://www.flowable.org/</id><title>Flowable</title><subtitle>The BPMN engine</subtitle><entry><title>Flowable 6.0.0.RC1 release</title><link href="http://www.flowable.org/blog/2016/12/15/flowable-6.0.0.RC1-release.html" rel="alternate" type="text/html" title="Flowable 6.0.0.RC1 release" /><published>2016-12-15T00:00:00+01:00</published><updated>2016-12-15T00:00:00+01:00</updated><id>http://www.flowable.org/blog/2016/12/15/flowable-6.0.0.RC1-release</id><content type="html" xml:base="http://www.flowable.org/blog/2016/12/15/flowable-6.0.0.RC1-release.html">&lt;p&gt;Today we released the first Flowable 6 engine version (6.0.0.RC1). This release is a major milestone before the final 6.0.0 release and we consider the version feature complete.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://www.flowable.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.flowable.org/" rel="alternate" type="text/html" /><updated>2017-02-15T15:06:58+01:00</updated><id>http://www.flowable.org/</id><title>Flowable</title><subtitle>The BPMN engine</subtitle><entry><title>Flowable 6.0.0 release</title><link href="http://www.flowable.org/blog/2017/02/15/flowable-6.0.0-release.html" rel="alternate" type="text/html" title="Flowable 6.0.0 release" /><published>2017-02-15T00:00:00+01:00</published><updated>2017-02-15T00:00:00+01:00</updated><id>http://www.flowable.org/blog/2017/02/15/flowable-6.0.0-release</id><content type="html" xml:base="http://www.flowable.org/blog/2017/02/15/flowable-6.0.0-release.html">&lt;p&gt;Today we released the first official Flowable 6 engine version (6.0.0). After a long period of Flowable 6 development, getting community feedback, implementing new features and bug fixes and writing documentation the version 6 is now officially out of beta.&lt;/p&gt;
+
+&lt;p&gt;The 6.0.0 release has the following highlights:&lt;/p&gt;
+
+&lt;p&gt;Highlights&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;First official release of Flowable 6!&lt;/li&gt;
+&lt;li&gt;Documentation has been updated to Flowable 6 and a DMN and Form Engine user guide have been added.&lt;/li&gt;
+&lt;li&gt;Various small bugfixes all around.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Release remarks&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We consider the Flowable 6 Engine stable and ready for use&lt;/li&gt;
+&lt;li&gt;We plan to release a 6.0.1 within a few weeks, so we hope to get a lot of feedback on the 6.0.0 release that we can include in a 6.0.1 release&lt;/li&gt;
+&lt;li&gt;The documentation has been extended with a DMN and Form Engine focused user guide, however the main user guide is still the BPMN user guide. We expect to do more documentation updates in the next few weeks.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A big thank you to the whole Flowable &lt;a href=&quot;http://www.flowable.org/team.html&quot;&gt;team&lt;/a&gt; for making this release possible.
+You can use the &lt;a href=&quot;http://forum.flowable.org&quot;&gt;forum&lt;/a&gt; to ask specific questions about the 6.0.0 release, any feedback is welcome.&lt;/p&gt;</content><author><name>flowable</name></author><summary>Today we released the first official Flowable 6 engine version (6.0.0). After a long period of Flowable 6 development, getting community feedback, implementing new features and bug fixes and writing documentation the version 6 is now officially out of beta.</summary></entry><entry><title>Flowable 6.0.0.RC1 release</title><link href="http://www.flowable.org/blog/2016/12/15/flowable-6.0.0.RC1-release.html" rel="alternate" type="text/html" title="Flowable 6.0.0.RC1 release" /><published>2016-12-15T00:00:00+01:00</published><updated>2016-12-15T00:00:00+01:00</updated><id>http://www.flowable.org/blog/2016/12/15/flowable-6.0.0.RC1-release</id><content type="html" xml:base="http://www.flowable.org/blog/2016/12/15/flowable-6.0.0.RC1-release.html">&lt;p&gt;Today we released the first Flowable 6 engine version (6.0.0.RC1). This release is a major milestone before the final 6.0.0 release and we consider the version feature complete.
 The focus now is to get as much feedback from the community as possible before we can release the final 6.0.0 version. Any help in this is really appreciated.&lt;/p&gt;
 
 &lt;p&gt;The 6.0.0.RC1 release has the following highlights:&lt;/p&gt;
@@ -80,7 +101,7 @@ The easiest way to start using it is through the Maven:</summary></entry><entry>
 
 &lt;h2&gt;Forking Can Confuse&lt;/h2&gt;
 
-&lt;p&gt;Obviously, our biggest worry is the confusion to developers that a fork can introduce.  Only time will tell if that can be overcome.  We will make sure that Flowable is a drop-in replacement for Activiti, with no package renaming or API changes needed.  If you’re unsure of jumping in, take a look at the authors in the code and the people working on the Flowable project.  We are the people that know it best, and who have been driving the community, contributions and evolution over the years.  &lt;/p&gt;
+&lt;p&gt;Obviously, our biggest worry is the confusion to developers that a fork can introduce.  Only time will tell if that can be overcome. If you’re unsure of jumping in, take a look at the authors in the code and the people working on the Flowable project.  We are the people that know it best, and who have been driving the community, contributions and evolution over the years.  &lt;/p&gt;
 
 &lt;h2&gt;Thank You For Your Support&lt;/h2&gt;
 
