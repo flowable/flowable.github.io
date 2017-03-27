@@ -3,6 +3,7 @@ org.activiti.engine.cfg
 org.activiti.engine.delegate
 org.activiti.engine.delegate.event
 org.activiti.engine.delegate.event.impl
+org.activiti.engine.dynamic
 org.activiti.engine.event
 org.activiti.engine.form
 org.activiti.engine.history

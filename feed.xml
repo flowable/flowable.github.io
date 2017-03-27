@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://www.flowable.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.flowable.org/" rel="alternate" type="text/html" /><updated>2017-02-15T15:06:58+01:00</updated><id>http://www.flowable.org/</id><title>Flowable</title><subtitle>The BPMN engine</subtitle><entry><title>Flowable 6.0.0 release</title><link href="http://www.flowable.org/blog/2017/02/15/flowable-6.0.0-release.html" rel="alternate" type="text/html" title="Flowable 6.0.0 release" /><published>2017-02-15T00:00:00+01:00</published><updated>2017-02-15T00:00:00+01:00</updated><id>http://www.flowable.org/blog/2017/02/15/flowable-6.0.0-release</id><content type="html" xml:base="http://www.flowable.org/blog/2017/02/15/flowable-6.0.0-release.html">&lt;p&gt;Today we released the first official Flowable 6 engine version (6.0.0). After a long period of Flowable 6 development, getting community feedback, implementing new features and bug fixes and writing documentation the version 6 is now officially out of beta.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://www.flowable.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.flowable.org/" rel="alternate" type="text/html" /><updated>2017-03-27T11:54:27+02:00</updated><id>http://www.flowable.org/</id><title>Flowable</title><subtitle>The BPMN engine</subtitle><entry><title>Flowable 5.23.0 release</title><link href="http://www.flowable.org/blog/2017/03/27/flowable-5.23.0-release.html" rel="alternate" type="text/html" title="Flowable 5.23.0 release" /><published>2017-03-27T00:00:00+02:00</published><updated>2017-03-27T00:00:00+02:00</updated><id>http://www.flowable.org/blog/2017/03/27/flowable-5.23.0-release</id><content type="html" xml:base="http://www.flowable.org/blog/2017/03/27/flowable-5.23.0-release.html">&lt;p&gt;Today we released a new Flowable 5.x engine version (5.23.0).
+The easiest way to start using it is through the Maven:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.flowable&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;flowable-engine&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;5.23.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The version 5 code is on the flowable5 branch on Github &lt;a href=&quot;https://github.com/flowable/flowable-engine/tree/flowable5&quot;&gt;https://github.com/flowable/flowable-engine/tree/flowable5&lt;/a&gt;. &lt;br&gt;
+The version 6 code is on master &lt;a href=&quot;https://github.com/flowable/flowable-engine&quot;&gt;https://github.com/flowable/flowable-engine&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The 5.23.0 release has the following highlights:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Great community contribution for collapsed sub processes by David Pardo. You now can model processes in a hierarchical way without needing to use call activities, which result in different process definitions in the Flowable Engine.
+When using collapsed sub processes, the modeling part is hierarchical and using different model diagrams for the main process and the sub process models. But when deploying on the Flowable Engine, there&amp;#39;s still one process definition using embedded sub processes.
+So this feature it targeted at the modeling level.&lt;/li&gt;
+&lt;li&gt;Bug fix for service tasks with class attributes using skip expressions.&lt;/li&gt;
+&lt;li&gt;Added support for using the Flowable namespace in addition to the Activiti namespace in BPMN XML.&lt;/li&gt;
+&lt;li&gt;Several bug fixes and smaller enhancements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A big thank you to the whole Flowable &lt;a href=&quot;http://www.flowable.org/team.html&quot;&gt;team&lt;/a&gt; for making this release possible, and a special thank you to David Pardo for the Modeler contribution.
+You can use the &lt;a href=&quot;http://forum.flowable.org&quot;&gt;forum&lt;/a&gt; to ask specific questions about the 5.23.0 release, any feedback is welcome.&lt;/p&gt;</content><author><name>flowable</name></author><summary>Today we released a new Flowable 5.x engine version (5.23.0).
+The easiest way to start using it is through the Maven:</summary></entry><entry><title>Flowable 6.0.0 release</title><link href="http://www.flowable.org/blog/2017/02/15/flowable-6.0.0-release.html" rel="alternate" type="text/html" title="Flowable 6.0.0 release" /><published>2017-02-15T00:00:00+01:00</published><updated>2017-02-15T00:00:00+01:00</updated><id>http://www.flowable.org/blog/2017/02/15/flowable-6.0.0-release</id><content type="html" xml:base="http://www.flowable.org/blog/2017/02/15/flowable-6.0.0-release.html">&lt;p&gt;Today we released the first official Flowable 6 engine version (6.0.0). After a long period of Flowable 6 development, getting community feedback, implementing new features and bug fixes and writing documentation the version 6 is now officially out of beta.&lt;/p&gt;
 
 &lt;p&gt;The 6.0.0 release has the following highlights:&lt;/p&gt;
 
