@@ -42,6 +42,9 @@
           	<li><a href="/blog/" class="active">Blog</a></li>
         </ul>
         <ul class="nav-site nav-site-external">
+          <li><a href="http://flowable.com" target="_blank">Enterprise</a></li>
+        </ul>
+        <ul class="nav-site nav-site-external">
           <li><a href="https://github.com/flowable/flowable-engine" target="_blank">GitHub&nbsp; <i class="fa fa-github-alt"></i></a></li>
         </ul>
         <ul class="nav-site nav-site-external">
@@ -57,6 +60,8 @@
   <div class="nav-docs-section">
     <h3>Recent posts</h3>
     <ul>
+      
+        <li><a href="/blog/2017/04/04/enterprise-support.html">Flowable Enterprise Support Now Available</a></li>
       
         <li><a href="/blog/2017/03/27/flowable-5.23.0-release.html">Flowable 5.23.0 release</a></li>
       
@@ -76,6 +81,44 @@
 </div>
 
   <div class="inner-content">
+    
+      <div class="post-list-item">
+        
+
+<h1>
+
+  <a href="/blog/2017/04/04/enterprise-support.html">Flowable Enterprise Support Now Available</a>
+
+</h1>
+
+<p class="meta">
+  April  4, 2017
+  by
+  
+    
+      <a href="https://github.com/flowable">Flowable</a>
+    
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p>You may have already seen that core developers from the Flowable Project have joined forces with edorasware. 
+This doesn’t change our commitment to open source, if anything, it gives us an opportunity to do more.</p>
+
+<p>What it does mean is that there is now Enterprise Support available for the open source Flowable engines, backed by the people that architected and wrote them. 
+You can get a support subscription for the open source engines – you don’t need to switch to an Enterprise version, no APIs to change, no package renames or anything. 
+Just keep doing what you’re doing, but get the support and hot fixes you need for whatever size and shape production system you have.</p>
+
+<p>Go to <a href="http://flowable.com">http://flowable.com</a> to find out more.</p>
+
+</div>
+
+
+
+      </div>
     
       <div class="post-list-item">
         
@@ -278,64 +321,6 @@ The zip file of the update site can also be downloaded from <a href="http://www.
 <p>Please let us know if you encounter bugs or if you are looking for specific features on the forum <a href="http://forum.flowable.org">http://forum.flowable.org</a>,
 and by creating issues on the Github issues page <a href="https://github.com/flowable/flowable-designer/issues">https://github.com/flowable/flowable-designer/issues</a>.
 The developers of the Flowable project are keen to help you answering your questions and helping out with possible issues.</p>
-
-</div>
-
-
-
-      </div>
-    
-      <div class="post-list-item">
-        
-
-<h1>
-
-  <a href="/blog/2016/10/13/flowable-5.22.0-release.html">Flowable 5.22.0 release</a>
-
-</h1>
-
-<p class="meta">
-  October 13, 2016
-  by
-  
-    
-      <a href="https://github.com/flowable">Flowable</a>
-    
-    
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>Today we released the first Flowable engine version (5.22.0). This release is a fork of  Activiti 5.21.0. There have been no package renaming or config file name changes.
-The easiest way to start using it is through the Maven:</p>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>org.flowable<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>flowable-engine<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>5.22.0<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div>
-<p>The version 5 code is on the flowable5 branch on Github <a href="https://github.com/flowable/flowable-engine/tree/flowable5">https://github.com/flowable/flowable-engine/tree/flowable5</a>. <br>
-The version 6 code is on master <a href="https://github.com/flowable/flowable-engine">https://github.com/flowable/flowable-engine</a>.</p>
-
-<p>The 5.22.0 release has the following highlights:</p>
-
-<ul>
-<li>First Flowable release. With a new Maven group (org.flowable) and artefact id (flowable-engine etc), there are no changes to package names or config file names in the fork of Activiti.</li>
-<li>Introduction of transient variables. Transient variables won&#39;t be persisted in the process variable tables, but are still available on the execution for the duration of a single transaction. 
-Transient variables can for example be used to store a REST response that is only needed to create a request to another REST service, or to use a Java service task result in the next 
-Java service task without it getting persisted. You can read more about it <a href="http://www.jorambarrez.be/blog/2016/09/01/how-to-use-transient-variables-in-activiti/">here</a></li>
-<li>Several bug fixes and smaller enhancements</li>
-</ul>
-
-<p>A lot of people will also be wondering what will happen with the version 6 engine. It&#39;s our main focus to get a new beta release out as soon as possible and 
-we want to get the final 6.0 release out shortly after.</p>
-
-<p>We understand that there will be a bit of confusion around starting the Flowable project. We don&#39;t plan any package renaming or config filename changes for example. For now, please get in contact with us through the forum <a href="http://forum.flowable.org">http://forum.flowable.org</a>,
-and by creating issues on the Github issues page <a href="https://github.com/flowable/flowable-engine/issues">https://github.com/flowable/flowable-engine/issues</a>.<br>
-The developers of the Flowable project are keen to help you answering your questions and helping out with possible issues.<br>
-The 5.22.0 release is the starting point for the Flowable project, a lot more releases will follow.</p>
 
 </div>
 
