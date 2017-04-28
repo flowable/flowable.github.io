@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.2">
+<meta name="generator" content="Asciidoctor 1.5.5">
 <title>Flowable Migration Guide : Flowable v5 to Flowable V6</title>
 <style>
 
@@ -229,16 +229,18 @@ a:hover {
 }
 
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
 .listingblock .pygments .hll { background-color: #ffffcc }
-.listingblock .pygments  { background: #f8f8f8; }
+.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
 .listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
 .listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
 .listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
 .listingblock .pygments .tok-o { color: #666666 } /* Operator */
+.listingblock .pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+.listingblock .pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
 .listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
 .listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
@@ -278,8 +280,10 @@ a:hover {
 .listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
 .listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
 .listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+.listingblock .pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
 .listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
 .listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+.listingblock .pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
 .listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
 .listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -290,9 +294,11 @@ a:hover {
 .listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
 .listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
 .listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+.listingblock .pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
 .listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
 .listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
 .listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+.listingblock .pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
 .listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 <script type="text/javascript">
@@ -595,7 +601,7 @@ This also simplifies the default job executor queries and makes it obvious which
 4
 5
 6
-7</div></td><td class="code"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">SimpleCamelCallRoute</span> <span class="tok-kd">extends</span> <span class="tok-n">RouteBuilder</span> <span class="tok-o">{</span>
+7</div></td><td class="code"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">SimpleCamelCallRoute</span> <span class="tok-kd">extends</span> <span class="tok-n">RouteBuilder</span> <span class="tok-o">{</span>
 
   <span class="tok-nd">@Override</span>
   <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">configure</span><span class="tok-o">()</span> <span class="tok-kd">throws</span> <span class="tok-n">Exception</span> <span class="tok-o">{</span>

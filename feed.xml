@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://www.flowable.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.flowable.org/" rel="alternate" type="text/html" /><updated>2017-04-05T10:08:14+02:00</updated><id>http://www.flowable.org/</id><title>Flowable</title><subtitle>The BPMN engine</subtitle><entry><title>Flowable Enterprise Support Now Available</title><link href="http://www.flowable.org/blog/2017/04/04/enterprise-support.html" rel="alternate" type="text/html" title="Flowable Enterprise Support Now Available" /><published>2017-04-04T00:00:00+02:00</published><updated>2017-04-04T00:00:00+02:00</updated><id>http://www.flowable.org/blog/2017/04/04/enterprise-support</id><content type="html" xml:base="http://www.flowable.org/blog/2017/04/04/enterprise-support.html">&lt;p&gt;You may have already seen that core developers from the Flowable Project have joined forces with edorasware. 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://www.flowable.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.flowable.org/" rel="alternate" type="text/html" /><updated>2017-04-28T16:49:25+02:00</updated><id>http://www.flowable.org/</id><title>Flowable</title><subtitle>The BPMN engine</subtitle><entry><title>Flowable 6.0.1 release</title><link href="http://www.flowable.org/blog/2017/04/28/flowable-6.0.1-release.html" rel="alternate" type="text/html" title="Flowable 6.0.1 release" /><published>2017-04-28T00:00:00+02:00</published><updated>2017-04-28T00:00:00+02:00</updated><id>http://www.flowable.org/blog/2017/04/28/flowable-6.0.1-release</id><content type="html" xml:base="http://www.flowable.org/blog/2017/04/28/flowable-6.0.1-release.html">&lt;p&gt;Today we released the first bug fix version of the Flowable 6 engine (6.0.1).&lt;/p&gt;
+
+&lt;p&gt;The 6.0.1 release has the following highlights:&lt;/p&gt;
+
+&lt;p&gt;Highlights&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;First bug fix release for Flowable 6!&lt;/li&gt;
+&lt;li&gt;Improved LDAP support for the UI apps&lt;/li&gt;
+&lt;li&gt;The i18n in the UI apps is now pluggable and there are some first additional languages included&lt;/li&gt;
+&lt;li&gt;Improved event sub process support with nested event sub process support for non interrupting ones&lt;/li&gt;
+&lt;li&gt;More hit policy support in the DMN Engine. The Decision Table editor will be updated in the Flowable 6.1.0 release. The DMN Engine API has been refactored to take into account single and multiple output result objects.&lt;/li&gt;
+&lt;li&gt;Various small bugfixes all around.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A big thank you to the whole Flowable &lt;a href=&quot;http://www.flowable.org/team.html&quot;&gt;team&lt;/a&gt; for making this release possible.
+You can use the &lt;a href=&quot;http://forum.flowable.org&quot;&gt;forum&lt;/a&gt; to ask specific questions about the 6.0.1 release, any feedback is welcome.&lt;/p&gt;</content><author><name>flowable</name></author><summary>Today we released the first bug fix version of the Flowable 6 engine (6.0.1).</summary></entry><entry><title>Flowable Enterprise Support Now Available</title><link href="http://www.flowable.org/blog/2017/04/04/enterprise-support.html" rel="alternate" type="text/html" title="Flowable Enterprise Support Now Available" /><published>2017-04-04T00:00:00+02:00</published><updated>2017-04-04T00:00:00+02:00</updated><id>http://www.flowable.org/blog/2017/04/04/enterprise-support</id><content type="html" xml:base="http://www.flowable.org/blog/2017/04/04/enterprise-support.html">&lt;p&gt;You may have already seen that core developers from the Flowable Project have joined forces with edorasware. 
 This doesn’t change our commitment to open source, if anything, it gives us an opportunity to do more.&lt;/p&gt;
 
 &lt;p&gt;What it does mean is that there is now Enterprise Support available for the open source Flowable engines, backed by the people that architected and wrote them. 
