@@ -45,6 +45,9 @@
           <li><a href="http://flowable.com" target="_blank">Enterprise</a></li>
         </ul>
         <ul class="nav-site nav-site-external">
+          <li><a href="https://github.com/flowable/flowable-engine/wiki/Flowable-roadmap" target="_blank">Roadmap</a></li>
+        </ul>
+        <ul class="nav-site nav-site-external">
           <li><a href="https://github.com/flowable/flowable-engine" target="_blank">GitHub&nbsp; <i class="fa fa-github-alt"></i></a></li>
         </ul>
         <ul class="nav-site nav-site-external">
@@ -60,6 +63,8 @@
   <div class="nav-docs-section">
     <h3>Recent posts</h3>
     <ul>
+      
+        <li><a href="/blog/2017/05/29/welcome-back-joram.html">Welcome back Joram Barrez</a></li>
       
         <li><a href="/blog/2017/04/28/flowable-6.0.1-release.html">Flowable 6.0.1 release</a></li>
       
@@ -83,6 +88,43 @@
 </div>
 
   <div class="inner-content">
+    
+      <div class="post-list-item">
+        
+
+<h1>
+
+  <a href="/blog/2017/05/29/welcome-back-joram.html">Welcome back Joram Barrez</a>
+
+</h1>
+
+<p class="meta">
+  May 29, 2017
+  by
+  
+    
+      <a href="https://github.com/flowable">Flowable</a>
+    
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p>Joram Barrez has been one of the driving forces for open source BPM for almost 10 years. 
+So it wasn&#39;t easy when he needed to step away for some time from the Flowable project.
+But now he&#39;s back and fully committed to help driving the Flowable project with lots of new energy and ideas.
+From the whole Flowable team and community, we just wanted to say: &quot;Welcome back Joram!&quot;.</p>
+
+<p>Also taking this opportunity to add a link to our new Flowable <a href="https://github.com/flowable/flowable-engine/wiki/Flowable-roadmap">roadmap page</a>.
+If you want to see other features being added to the roadmap, get in contact with us on the <a href="http://forum.flowable.org">Flowable forum</a>.</p>
+
+</div>
+
+
+
+      </div>
     
       <div class="post-list-item">
         
@@ -268,67 +310,6 @@ You can use the <a href="http://forum.flowable.org">forum</a> to ask specific qu
 
 <p>A big thank you to the whole Flowable <a href="http://www.flowable.org/team.html">team</a> for making this release possible.
 You can use the <a href="http://forum.flowable.org">forum</a> to ask specific questions about the 6.0.0 release, any feedback is welcome.</p>
-
-</div>
-
-
-
-      </div>
-    
-      <div class="post-list-item">
-        
-
-<h1>
-
-  <a href="/blog/2016/12/15/flowable-6.0.0.RC1-release.html">Flowable 6.0.0.RC1 release</a>
-
-</h1>
-
-<p class="meta">
-  December 15, 2016
-  by
-  
-    
-      <a href="https://github.com/flowable">Flowable</a>
-    
-    
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>Today we released the first Flowable 6 engine version (6.0.0.RC1). This release is a major milestone before the final 6.0.0 release and we consider the version feature complete.
-The focus now is to get as much feedback from the community as possible before we can release the final 6.0.0 version. Any help in this is really appreciated.</p>
-
-<p>The 6.0.0.RC1 release has the following highlights:</p>
-
-<p>Highlights</p>
-
-<ul>
-<li>Package renaming to org.flowable, and renaming of config files to flowable.cfg.xml and flowable-context.xml. It was not an easy decision to go this route, but for the clear distinction and separation of the Flowable project this is the best way forward. The discussion for this choice can be found in this forum post <a href="http://forum.flowable.org/t/opinions-on-package-renaming-for-flowable-6-to-org-flowable/118/13">http://forum.flowable.org/t/opinions-on-package-renaming-for-flowable-6-to-org-flowable/118/13</a></li>
-<li>Class name renaming to use Flowable instead of Activiti where needed.</li>
-<li>The identity functionality is separated in the IDM engine, and the identity database tables are managed by this engine. By default the IDM engine is enabled when starting the Flowable engine, but it can be disabled with the disableIdmEngine property.</li>
-<li>Introduction of a content engine, which provides a simple file store for attaching files/documents to a task or process instance.</li>
-<li>Support for non interrupting event sub processes. Until this version only interrupting event sub processes were supported, but now it&#39;s possible to handle events and let the main process execution continue as well.</li>
-<li>The task app has been refactored into 3 separate web applications. There&#39;s a Flowable Modeler app that contains the modeling repository functionality + the BPMN, form and DMN editor. The second app is the Flowable IDM app that manages the users and groups and handles authentication for each app. For example the Flowable Modeler will redirect to the Flowable IDM app when no valid cookie is found. After logging in to the Flowable IDM app, a redirect to the Flowable Modeler is executed and you can access the Modeler repository. This is done to allow for single sign-on between the different apps. The third app is the Flowable task app, that allows you to start process instances and work with tasks and fill-in forms.</li>
-<li>Introduction of the Flowable Admin application that allows for querying the BPM, DMN, Form and Content engines.</li>
-<li>Introduction of Docker images to make it easy to start all apps in a convenient way. In the docker folder several docker start scripts can be found that use a Docker compose file. In an upcoming blog post we will share more information on how this can be used.</li>
-<li>Persistency logic that was written in Hibernate has all been rewritten to MyBatis to have a common framework for all persistency logic.</li>
-<li>Various and many small bugfixes all around.</li>
-</ul>
-
-<p>Release remarks</p>
-
-<ul>
-<li>This a major milestone to get to the final Flowable 6.0.0 release. All parts of the release are now considered feature complete, so the remaining work will be bug fixing and smaller features.</li>
-<li>We will continue to improve the docs for the 6.0.0 release.</li>
-<li>At this point all community testing is extremely important for the quality of the 6.0.0 release. So every contribution is this area is very welcome.</li>
-</ul>
-
-<p>A big thank you to the whole Flowable <a href="http://www.flowable.org/team.html">team</a> for making this release possible.
-We&#39;ll do a number of blog posts in the coming days and weeks to explain the different components in the Flowable 6.0.0 RC1 package.
-In the meantime you can use the <a href="http://forum.flowable.org">forum</a> to ask specific questions and again to make the 6.0.0 release stable and well tested, please help us by testing your process definitions with this release.</p>
 
 </div>
 

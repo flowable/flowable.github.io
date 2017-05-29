@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://www.flowable.org/blog/2017/05/29/welcome-back-joram.html</loc>
+<lastmod>2017-05-29T00:00:00+02:00</lastmod>
+</url>
+<url>
 <loc>http://www.flowable.org/blog/2017/04/28/flowable-6.0.1-release.html</loc>
 <lastmod>2017-04-28T00:00:00+02:00</lastmod>
 </url>
