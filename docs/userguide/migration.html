@@ -470,16 +470,23 @@ The same is true for the default Spring configuration file activiti-context.xml,
 <p>Most of the usage of these classes in v5 came down to getting information that was contained in the process definition. In V6, all the process definition information can be found through the <em>BpmnModel</em>, which is a Java representation of the BPMN 2.0 XML of the process definition (enhanced to make certain operations and searches easier).</p>
 </div>
 <div class="paragraph">
-<p>The quickest way to get the <em>BpmnModel</em> for a process definition is to use the org.flowable.engine.impl.util.ProcessDefinitionUtil class:</p>
+<p>The quickest way to get the <em>BpmnModel</em> for a process definition is to use the org.flowable.engine.RepositoryService service:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>// The whole model
-ProcessDefinitionUtil.getBpmnModel(String processDefinitionId);
-
-// Only the specific process definition
-ProcessDefinitionUtil.getProcess(String processDefinitionId);</pre>
+<pre>BpmnModel bpmnModel = repositoryService.getBpmnModel(myProcessDefinitionId);</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>To get the <em>RepositoryService</em> a JavaDelegate or ActivityBehavior implementation class, use the org.flowable.engine.impl.context.Context class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>RepositoryService repositoryService = Context.getProcessEngineConfiguration().getRepositoryService();</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(Note that this only works when a context is active, like in a JavaDelegate or ActivityBehavior)</p>
 </div>
 </div>
 <div class="sect2">

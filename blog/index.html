@@ -64,6 +64,8 @@
     <h3>Recent posts</h3>
     <ul>
       
+        <li><a href="/blog/2017/06/27/flowable-6.1.0-release.html">Flowable 6.1.0 release</a></li>
+      
         <li><a href="/blog/2017/05/29/welcome-back-joram.html">Welcome back Joram Barrez</a></li>
       
         <li><a href="/blog/2017/04/28/flowable-6.0.1-release.html">Flowable 6.0.1 release</a></li>
@@ -88,6 +90,55 @@
 </div>
 
   <div class="inner-content">
+    
+      <div class="post-list-item">
+        
+
+<h1>
+
+  <a href="/blog/2017/06/27/flowable-6.1.0-release.html">Flowable 6.1.0 release</a>
+
+</h1>
+
+<p class="meta">
+  June 27, 2017
+  by
+  
+    
+      <a href="https://github.com/flowable">Flowable</a>
+    
+    
+  
+</p>
+
+<hr>
+
+<div class="post">
+  <p>Today we released a new version of Flowable with the 6.1.0 release.</p>
+
+<p>The 6.1.0 release has the following highlights:</p>
+
+<p>Highlights</p>
+
+<ul>
+<li>Introduction of async history. By enabling the asyncHistoryEnabled property on the process engine configuration (default is false), the history tables are not filled in the same transaction as the runtime tables. Instead an async history job is created and the history information will be written to the history tables in a separate, asynchronous transaction. This also opens up the option to not use the relational history tables at all, and move the historic information to a NoSQL database directly. Pluggability points are available to implement the persistence logic to a NoSQL database.</li>
+<li>New REST task feature thanks to Harsha. With the new REST task it becomes trivial to do REST calls from a Flowable process instance. There&#39;s also support in the Flowable Modeler for REST tasks.</li>
+<li>Introduction of a new DMN decision table editor. To improve the usability of the DMN decision table editor we are now using the <a href="https://github.com/handsontable/handsontable">Handsontable</a> framework.</li>
+<li>The Odysseus JUEL code is now included directly in the flowable-engine-common module to prevent classloading issues due to conflicting JUEL libraries or even different versions of JUEL libraries.</li>
+<li>Added option to use a password encoder for the Flowable IDM engine (instead of the default plain text password persistence), thanks to Faizal!</li>
+<li>Support for static Groovy scripts compilation with the new flowable-groovy-script-static-engine module by using the groovy-static scriptFormat value, thanks to Filip (fgroch)!</li>
+<li>Several additions to the Form builder and renderer (min/max length, improved expression field and more).</li>
+<li>Various small bugfixes all around.</li>
+</ul>
+
+<p>A big thank you to the whole Flowable <a href="http://www.flowable.org/team.html">team</a> for making this release possible.
+You can use the <a href="http://forum.flowable.org">forum</a> to ask specific questions about the 6.1.0 release, any feedback is welcome.</p>
+
+</div>
+
+
+
+      </div>
     
       <div class="post-list-item">
         
@@ -258,58 +309,6 @@ So this feature it targeted at the modeling level.</li>
 
 <p>A big thank you to the whole Flowable <a href="http://www.flowable.org/team.html">team</a> for making this release possible, and a special thank you to David Pardo for the Modeler contribution.
 You can use the <a href="http://forum.flowable.org">forum</a> to ask specific questions about the 5.23.0 release, any feedback is welcome.</p>
-
-</div>
-
-
-
-      </div>
-    
-      <div class="post-list-item">
-        
-
-<h1>
-
-  <a href="/blog/2017/02/15/flowable-6.0.0-release.html">Flowable 6.0.0 release</a>
-
-</h1>
-
-<p class="meta">
-  February 15, 2017
-  by
-  
-    
-      <a href="https://github.com/flowable">Flowable</a>
-    
-    
-  
-</p>
-
-<hr>
-
-<div class="post">
-  <p>Today we released the first official Flowable 6 engine version (6.0.0). After a long period of Flowable 6 development, getting community feedback, implementing new features and bug fixes and writing documentation the version 6 is now officially out of beta.</p>
-
-<p>The 6.0.0 release has the following highlights:</p>
-
-<p>Highlights</p>
-
-<ul>
-<li>First official release of Flowable 6!</li>
-<li>Documentation has been updated to Flowable 6 and a DMN and Form Engine user guide have been added.</li>
-<li>Various small bugfixes all around.</li>
-</ul>
-
-<p>Release remarks</p>
-
-<ul>
-<li>We consider the Flowable 6 Engine stable and ready for use</li>
-<li>We plan to release a 6.0.1 within a few weeks, so we hope to get a lot of feedback on the 6.0.0 release that we can include in a 6.0.1 release</li>
-<li>The documentation has been extended with a DMN and Form Engine focused user guide, however the main user guide is still the BPMN user guide. We expect to do more documentation updates in the next few weeks.</li>
-</ul>
-
-<p>A big thank you to the whole Flowable <a href="http://www.flowable.org/team.html">team</a> for making this release possible.
-You can use the <a href="http://forum.flowable.org">forum</a> to ask specific questions about the 6.0.0 release, any feedback is welcome.</p>
 
 </div>
 

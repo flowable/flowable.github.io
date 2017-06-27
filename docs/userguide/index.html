@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable DOCS (v 6.0.1)</title>
+<title>Flowable DOCS (v 6.1.0)</title>
 <style>
 
 /* normalize.css */
@@ -377,7 +377,7 @@ a:hover {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable DOCS (v 6.0.1)</h1>
+<h1>Flowable DOCS (v 6.1.0)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -567,7 +567,7 @@ Note that the H2 dependency includes both the database <em>and</em> the driver. 
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>org.flowable<span class="tok-nt">&lt;/groupId&gt;</span>
     <span class="tok-nt">&lt;artifactId&gt;</span>flowable-engine<span class="tok-nt">&lt;/artifactId&gt;</span>
-    <span class="tok-nt">&lt;version&gt;</span>6.0.1<span class="tok-nt">&lt;/version&gt;</span>
+    <span class="tok-nt">&lt;version&gt;</span>6.1.0<span class="tok-nt">&lt;/version&gt;</span>
   <span class="tok-nt">&lt;/dependency&gt;</span>
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>com.h2database<span class="tok-nt">&lt;/groupId&gt;</span>
@@ -1910,7 +1910,7 @@ requires users to either modify the db.properties in the Flowable source and rec
 </div>
 </div>
 <div class="sect2">
-<h3 id="jobExecutorConfiguration">3.9. Job Executor (from version 6.0.1 onwards)</h3>
+<h3 id="jobExecutorConfiguration">3.9. Job Executor (from version 6.0.0 onwards)</h3>
 <div class="paragraph">
 <p>The async executor of Flowable v5 is the only available job executor in Flowable V6, as it is a more performant and more database friendly way of executing asynchronous jobs in the Flowable engine.
 The old job executor of Flowable 5 is no longer available in V6. More information can be found in the advanced section of the user guide.</p>
@@ -1981,13 +1981,26 @@ The old job executor of Flowable 5 is no longer available in V6. More informatio
 </div>
 </div>
 <div class="sect2">
-<h3 id="exposingConfigurationBeans">3.13. Exposing configuration beans in expressions and scripts</h3>
+<h3 id="asyncHistoryConfiguration">3.13. Async history configuration</h3>
+<div class="paragraph">
+<p>[Experimental] Since Flowable 6.1.0 the async history feature has been added. When async history is enabled, the historic data will be persisted by a history job executor, instead of synchronous persistence as part of the runtime execution persistence.
+See <a href="#asyncHistoryConfig">async history configuration</a> for more details.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;asyncHistoryEnabled&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exposingConfigurationBeans">3.14. Exposing configuration beans in expressions and scripts</h3>
 <div class="paragraph">
 <p>By default, all beans that you specify in the <code>flowable.cfg.xml</code> configuration or in your own Spring configuration file are available to expressions and scripts. If you want to limit the visibility of beans in your configuration file, you can configure a property called <code>beans</code> in your process engine configuration. The beans property in <code>ProcessEngineConfiguration</code> is a map. When you specify that property, only beans specified in that map will be visible to expressions and scripts.  The exposed beans will be exposed with the names as you specify in the map.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="processDefinitionCacheConfiguration">3.14. Deployment cache configuration</h3>
+<h3 id="processDefinitionCacheConfiguration">3.15. Deployment cache configuration</h3>
 <div class="paragraph">
 <p>All process definitions are cached (after they&#8217;re parsed) to avoid hitting the database every time a process definition is needed and because process definition data doesn&#8217;t change. By default, there is no limit on this cache. To limit the process definition cache, add following property:</p>
 </div>
@@ -2018,7 +2031,7 @@ The old job executor of Flowable 5 is no longer available in V6. More informatio
 </div>
 </div>
 <div class="sect2">
-<h3 id="loggingConfiguration">3.15. Logging</h3>
+<h3 id="loggingConfiguration">3.16. Logging</h3>
 <div class="paragraph">
 <p>All logging (flowable, spring, mybatis, &#8230;&#8203;) is routed through SLF4J and allows for selecting the logging-implementation of your choice.</p>
 </div>
@@ -2063,7 +2076,7 @@ The old job executor of Flowable 5 is no longer available in V6. More informatio
 </div>
 </div>
 <div class="sect2">
-<h3 id="MDC">3.16. Mapped Diagnostic Contexts</h3>
+<h3 id="MDC">3.17. Mapped Diagnostic Contexts</h3>
 <div class="paragraph">
 <p>Flowable supports the Mapped Diagnostic Contexts feature of SLF4j. This basic information is passed to the underlying logger along with what is going to be logged:</p>
 </div>
@@ -2097,7 +2110,7 @@ Log4j the following sample layout definition causes the logger to show the above
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventDispatcher">3.17. Event handlers</h3>
+<h3 id="eventDispatcher">3.18. Event handlers</h3>
 <div class="paragraph">
 <p>The event mechanism in the Flowable engine allows you to get notified when various events occur within the engine. Take a look at <a href="#eventDispatcherEventTypes">all supported event types</a> for an overview of the events available.</p>
 </div>
@@ -2108,7 +2121,7 @@ Log4j the following sample layout definition causes the logger to show the above
 <p>All events dispatched are a subtype of <code>org.flowable.engine.common.api.delegate.event.FlowableEvent</code>. The event exposes (if available) the <code>type</code>, <code>executionId</code>, <code>processInstanceId</code> and <code>processDefinitionId</code>. Certain events contain additional context related to the event that occurred, more information about additional payloads can be found in the list of <a href="#eventDispatcherEventTypes">all supported event types</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="eventDispatcherListener">3.17.1. Event listener implementation</h4>
+<h4 id="eventDispatcherListener">3.18.1. Event listener implementation</h4>
 <div class="paragraph">
 <p>The only requirement for an event-listener is to implement <code>org.flowable.engine.delegate.event.FlowableEventListener</code>. Below is an example implementation of a listener, which outputs all events received to the standard-out, with exception of events related to job-execution:</p>
 </div>
@@ -2183,7 +2196,7 @@ Log4j the following sample layout definition causes the logger to show the above
 </div>
 </div>
 <div class="sect3">
-<h4 id="eventDispatcherConfiguration">3.17.2. Configuration and setup</h4>
+<h4 id="eventDispatcherConfiguration">3.18.2. Configuration and setup</h4>
 <div class="paragraph">
 <p>If an event-listener is configured in the process engine configuration, it will be active when the process engine starts and will remain active after subsequent reboots of the engine.</p>
 </div>
@@ -2250,7 +2263,7 @@ Log4j the following sample layout definition causes the logger to show the above
 </div>
 </div>
 <div class="sect3">
-<h4 id="eventDispatcherConfigurationRuntime">3.17.3. Adding listeners at runtime</h4>
+<h4 id="eventDispatcherConfigurationRuntime">3.18.3. Adding listeners at runtime</h4>
 <div class="paragraph">
 <p>It&#8217;s possible to add and remove additional event-listeners to the engine by using the API (<code>RuntimeService</code>):</p>
 </div>
@@ -2303,7 +2316,7 @@ Log4j the following sample layout definition causes the logger to show the above
 </div>
 </div>
 <div class="sect3">
-<h4 id="eventDispatcherConfigurationProcessDefinition">3.17.4. Adding listeners to process definitions</h4>
+<h4 id="eventDispatcherConfigurationProcessDefinition">3.18.4. Adding listeners to process definitions</h4>
 <div class="paragraph">
 <p>It&#8217;s possible to add listeners to a specific process-definition. The listeners will only be called for events related to the process definition and to all events related to process instances that are started with that specific process definition. The listener implementations can be defined using a fully qualified classname, an expression that resolves to a bean that implements the listener interface or can be configured to throw a message/signal/error BPMN event.</p>
 </div>
@@ -2449,7 +2462,7 @@ Log4j the following sample layout definition causes the logger to show the above
 </div>
 </div>
 <div class="sect3">
-<h4 id="eventDispatcherCustomEvents">3.17.5. Dispatching events through API</h4>
+<h4 id="eventDispatcherCustomEvents">3.18.5. Dispatching events through API</h4>
 <div class="paragraph">
 <p>We opened up the event-dispatching mechanism through the API, to allow you to dispatch custom events to any listeners that are registered in the engine. It&#8217;s recommended (although not enforced) to only dispatch <code>FlowableEvents</code> with type <code>CUSTOM</code>. Dispatching the event can be done using the <code>RuntimeService</code>:</p>
 </div>
@@ -2477,7 +2490,7 @@ Log4j the following sample layout definition causes the logger to show the above
 </div>
 </div>
 <div class="sect3">
-<h4 id="eventDispatcherEventTypes">3.17.6. Supported event types</h4>
+<h4 id="eventDispatcherEventTypes">3.18.6. Supported event types</h4>
 <div class="paragraph">
 <p>Listed below are all event types that can occur in the engine. Each type corresponds to an enum value in the <code>org.flowable.engine.common.api.delegate.event.FlowableEventType</code>.</p>
 </div>
@@ -2701,7 +2714,7 @@ Log4j the following sample layout definition causes the logger to show the above
 </div>
 </div>
 <div class="sect3">
-<h4 id="eventDispatcherRemarks">3.17.7. Additional remarks</h4>
+<h4 id="eventDispatcherRemarks">3.18.7. Additional remarks</h4>
 <div class="paragraph">
 <p><strong>Listeners are only notified for events dispatched from the engine they are registered with.</strong> So if you have different engines - running against the same database - only events that originated in the engine the listener is registered to are dispatched to that listener. The events that occur in other engines are not dispatched to the listeners, regardless of whether they are running in the same JVM or not.</p>
 </div>
@@ -10577,7 +10590,466 @@ Only the first map with no class will be considered as a default map. <code>incl
 </div>
 </div>
 <div class="sect3">
-<h4 id="bpmnMuleTask">8.5.7. Mule Task</h4>
+<h4 id="bpmnHttpTask">8.5.7. Http Task</h4>
+<div class="paragraph">
+<p>Http task allows you to make HTTP requests, enhancing the integration features of Flowable. Note that Http task is <strong>not</strong> an <em>official</em> task of the BPMN 2.0 spec (and doesn&#8217;t have a dedicated icon as a consequence). Hence, in Flowable, Http task is implemented as a dedicated service task.</p>
+</div>
+<div class="sect4">
+<h5 id="bpmnHttpTaskClientConfiguration">Http Client configuration</h5>
+<div class="paragraph">
+<p>The Flowable engine makes Http requests through a configurable Http Client. The following properties can be set in the <em>flowable.cfg.xml</em> configuration file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</div></td><td class="code"><span></span>  <span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;processEngineConfiguration&quot;</span>
+        <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-c">&lt;!-- http client configurations --&gt;</span>
+    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;httpClientConfig&quot;</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;httpClientConfig&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/bean&gt;</span>
+
+  <span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;httpClientConfig&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.engine.cfg.HttpClientConfig&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;connectTimeout&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;5000&quot;</span><span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;socketTimeout&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;5000&quot;</span><span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;connectionRequestTimeout&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;5000&quot;</span><span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestRetryLimit&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;5&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/bean&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Required?</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">connectTimeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connection timeout in milliseconds. By default set to 5000.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">socketTimeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Socket timeout in milliseconds. By default set to 5000.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">connectionRequestTimeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connection request timeout in milliseconds. By default set to 5000.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requestRetryLimit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request retry limit (<em>0</em> means do not retry). By default set to 3.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">disableCertVerify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to disable SSL certificate verification. By default set to false.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="bpmnHttpTaskUsage">Defining Http Task</h5>
+<div class="paragraph">
+<p>Http task is implemented as a dedicated <a href="#bpmnJavaServiceTask">Service Task</a> and is defined by setting <em>'http'</em> for the <em>type</em> of the service task.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-nt">&lt;serviceTask</span> <span class="tok-na">id=</span><span class="tok-s">&quot;httpGet&quot;</span> <span class="tok-na">flowable:type=</span><span class="tok-s">&quot;http&quot;</span><span class="tok-nt">&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also its possible to override default Http Task behavior by providing custom implementation.
+Custom implemention should extend org.flowable.http.HttpActivityBehavior and override perform() method.
+Field <em>httpActivityBehaviorClass</em> should be set in the task definition.
+Default value for this field is <em>org.flowable.http.impl.HttpActivityBehaviorImpl</em>.
+Currently <em>HttpActivityBehaviorImpl</em> is based on Apache Http Client. As Apache Http Client can be customized in many ways, all possible options are not used in Http Client config.
+To create a custom client refer to <a href="http://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/impl/client/HttpClientBuilder.html">Http Client builder</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;serviceTask id="httpGet" flowable:type="http"&gt;
+  &lt;extensionElements&gt;
+    &lt;flowable:field name="httpActivityBehaviorClass"&gt;
+        &lt;flowable:string&gt;
+          &lt;![CDATA[org.example.flowable.HttpActivityBehaviorCustomImpl]]&gt;
+        &lt;/flowable:string&gt;
+    &lt;/flowable:field&gt;
+  &lt;/extensionElements&gt;
+&lt;/sericeTask&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bpmnHttpTaskConfiguration">Http Task configuration</h5>
+<div class="paragraph">
+<p>Http task is configured by <a href="#serviceTaskFieldInjection">field injection</a>. All the values for these properties can contain EL expression, which are resolved at runtime during process execution. The following properties can be set:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Required?</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requestMethod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request method<br>
+                  (GET,POST,PUT,DELETE).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requestUrl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request URL<br>
+               (Example - <a href="http://flowable.org" class="bare">http://flowable.org</a>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requestHeaders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Line separated Http request headers.<br>
+                  Example -<br>
+                  Content-Type: application/json<br>
+                  Authorization: Basic aGFRlc3Q=</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requestBody</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request body<br>
+               Example - ${sampleBody}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requestTimeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Timeout in milliseconds for the request<br>
+                  (Example - 5000). Default is <em>0</em>, meaning no timeout.
+                  Please refer <a href="#bpmnHttpTaskClientConfiguration">Http Client configuration</a> for connection related timeouts.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">disallowRedirects</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to disallow Http redirects. Default is false. (Example - true).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">failStatusCodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list of Http response status codes to fail the request and error thrown as FlowableException.<br>
+                   Example: 400, 404, 500, 503<br>
+                   Example: 400, 5XX</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">handleStatusCodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list of status codes for which the task will throw BpmnError.
+                   The error code of the BpmnError is <em>HTTP&lt;statuscode&gt;</em>.
+                   For example, 404 status code is set with error code <em>HTTP404</em>.<br>
+                   3XX status codes are thrown only if <em>disallowRedirects</em> field is also set.<br>
+                   Status codes in <em>handleStatusCodes</em> override those in <em>failStatusCodes</em> when they are set in both.<br>
+                   Example: 400, 404, 500, 503<br>
+                   Example: 3XX, 4XX, 5XX<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignoreException</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag for ignoring the exceptions, catch and save the exception message as <em>&lt;taskId&gt;.errorMessage</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">saveRequestVariables</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to save request variables. By default, only response related variables are saved in execution.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">saveResponseParameters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to save all response variables including HTTP status, headers etc. By default, only response body is saved in execution.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">resultVariablePrefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix for the execution variable names. If prefix is not set, variables will be saved with name
+                       in following format. <em>&lt;taskId&gt;</em>.<em>fieldName</em>. For example, requestUrl is saved as <em>task7.requestUrl</em> for task with id <em>task7</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">httpActivityBehaviorClass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Full class name of custom extension of org.flowable.http.HttpActivityBehavior.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In addition to the provided fields, following will be set as variables on successful execution, based on <em>saveResponseParameters</em> flag.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variable</th>
+<th class="tableblock halign-left valign-top">Optional?</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">responseProtocol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Http version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">responseReason</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Http response reason phrase.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">responseStatusCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Http response status code (Example - 200).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">responseHeaders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Line separated Http response headers.<br>
+                  Example -<br>
+                  Content-Type: application/json<br>
+                  Content-Length: 777</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">responseBody</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Response body as string, if any.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">errorMessage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ignored error message, if any.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_result_variables">Result variables</h5>
+<div class="paragraph">
+<p>Remember all the above execution variable names are prefixed by evaluated value of <em>resultVariablePrefix</em>.
+For example response status code can be accessed in another activity as <em>task7.responseStatusCode</em>.
+Here <em>task7</em> is the <em>id</em> of the service task. To override this behavior, set <em>resultVariablePrefix</em> as required.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bpmnHttpTaskExampleUsage">Example usage</h5>
+<div class="paragraph">
+<p>The following XML snippet shows an example of using the Http Task.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</div></td><td class="code"><span></span><span class="tok-nt">&lt;serviceTask</span> <span class="tok-na">id=</span><span class="tok-s">&quot;httpGet&quot;</span> <span class="tok-na">flowable:type=</span><span class="tok-s">&quot;http&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;extensionElements&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestMethod&quot;</span> <span class="tok-na">stringValue=</span><span class="tok-s">&quot;GET&quot;</span> <span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestUrl&quot;</span> <span class="tok-na">stringValue=</span><span class="tok-s">&quot;http://flowable.org&quot;</span> <span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestHeaders&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:expression&gt;</span>
+        <span class="tok-cp">&lt;![CDATA[</span>
+<span class="tok-cp">          Accept: text/html</span>
+<span class="tok-cp">          Cache-Control: no-cache</span>
+<span class="tok-cp">        ]]&gt;</span>
+      <span class="tok-nt">&lt;/flowable:expression&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestTimeout&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:expression&gt;</span>
+        <span class="tok-cp">&lt;![CDATA[</span>
+<span class="tok-cp">          ${requestTimeout}</span>
+<span class="tok-cp">        ]]&gt;</span>
+      <span class="tok-nt">&lt;/flowable:expression&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;resultVariablePrefix&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span>task7<span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+  <span class="tok-nt">&lt;/extensionElements&gt;</span>
+<span class="tok-nt">&lt;/serviceTask&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bpmnHttpTaskErrorHandling">Error handling</h5>
+<div class="paragraph">
+<p>By default Http Task throws FlowableException when Connection, IO or any unhandled exceptions occur.
+But by default it does not handle any redirect/client/server error http status codes.
+We can configure the task to handle the exceptions and http status by setting <em>failStatusCodes</em> and/or <em>handleStatusCodes</em> fields. Refer <a href="#bpmnHttpTaskConfiguration">Http Task configuration</a>.
+BpmnError thrown by <em>handleStatusCodes</em> should be handled exactly like a normal BPMN exception, by having a corresponding boundary error handler.
+Below are few examples for exception handling and retry for http task.</p>
+</div>
+<div class="sect5">
+<h6 id="_fail_on_em_400_em_and_5xx_async_http_task_and_retry_with_failedjobretrytimecycle">Fail on <em>400</em> and 5XX, async http task and retry with failedJobRetryTimeCycle</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</div></td><td class="code"><span></span><span class="tok-nt">&lt;serviceTask</span> <span class="tok-na">id=</span><span class="tok-s">&quot;failGet&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Fail test&quot;</span> <span class="tok-na">flowable:async=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-na">flowable:type=</span><span class="tok-s">&quot;http&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;extensionElements&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestMethod&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span><span class="tok-cp">&lt;![CDATA[GET]]&gt;</span><span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestUrl&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span><span class="tok-cp">&lt;![CDATA[http://localhost:9798/api/fail]]&gt;</span><span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;failStatusCodes&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span><span class="tok-cp">&lt;![CDATA[400, 5XX]]&gt;</span><span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;flowable:failedJobRetryTimeCycle&gt;</span>R3/PT5S<span class="tok-nt">&lt;/flowable:failedJobRetryTimeCycle&gt;</span>
+  <span class="tok-nt">&lt;/extensionElements&gt;</span>
+<span class="tok-nt">&lt;/serviceTask&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_handle_em_400_em_as_bmpnerror">Handle <em>400</em> as BmpnError</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</div></td><td class="code"><span></span><span class="tok-nt">&lt;serviceTask</span> <span class="tok-na">id=</span><span class="tok-s">&quot;handleGet&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;HTTP Task&quot;</span> <span class="tok-na">flowable:type=</span><span class="tok-s">&quot;http&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;extensionElements&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestMethod&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span><span class="tok-cp">&lt;![CDATA[GET]]&gt;</span><span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestUrl&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span><span class="tok-cp">&lt;![CDATA[http://localhost:9798/api/fail]]&gt;</span><span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;handleStatusCodes&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span><span class="tok-cp">&lt;![CDATA[4XX]]&gt;</span><span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+  <span class="tok-nt">&lt;/extensionElements&gt;</span>
+<span class="tok-nt">&lt;/serviceTask&gt;</span>
+<span class="tok-nt">&lt;boundaryEvent</span> <span class="tok-na">id=</span><span class="tok-s">&quot;catch400&quot;</span> <span class="tok-na">attachedToRef=</span><span class="tok-s">&quot;handleGet&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;errorEventDefinition</span> <span class="tok-na">errorRef=</span><span class="tok-s">&quot;HTTP400&quot;</span><span class="tok-nt">&gt;&lt;/errorEventDefinition&gt;</span>
+<span class="tok-nt">&lt;/boundaryEvent&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_ignore_exceptions">Ignore exceptions.</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</div></td><td class="code"><span></span><span class="tok-nt">&lt;serviceTask</span> <span class="tok-na">id=</span><span class="tok-s">&quot;ignoreTask&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Fail test&quot;</span> <span class="tok-na">flowable:type=</span><span class="tok-s">&quot;http&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;extensionElements&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestMethod&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span><span class="tok-cp">&lt;![CDATA[GET]]&gt;</span><span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;requestUrl&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span><span class="tok-cp">&lt;![CDATA[http://nohost:9798/api]]&gt;</span><span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;ignoreException&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;flowable:string&gt;</span><span class="tok-cp">&lt;![CDATA[true]]&gt;</span><span class="tok-nt">&lt;/flowable:string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+  <span class="tok-nt">&lt;/extensionElements&gt;</span>
+<span class="tok-nt">&lt;/serviceTask&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_exception_mapping">Exception mapping</h6>
+<div class="paragraph">
+<p>Refer <a href="#exceptionMapping">Exception mapping</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="bpmnMuleTask">8.5.8. Mule Task</h4>
 <div class="paragraph">
 <p>The mule task allows you to send messages to Mule, enhancing the integration features of Flowable. Note that the Mule task is <strong>not</strong> an <em>official</em> task of the BPMN 2.0 spec (and doesn&#8217;t have a dedicated icon as a consequence). Hence, in Flowable the mule task is implemented as a dedicated service task.</p>
 </div>
@@ -10672,7 +11144,7 @@ Only the first map with no class will be considered as a default map. <code>incl
 </div>
 </div>
 <div class="sect3">
-<h4 id="bpmnCamelTask">8.5.8. Camel Task</h4>
+<h4 id="bpmnCamelTask">8.5.9. Camel Task</h4>
 <div class="paragraph">
 <p>The Camel task allows you to send messages to and receive messages from Camel, and thereby enhances the integration features of Flowable. Note that the Camel task is <strong>not</strong> an <em>official</em> task of the BPMN 2.0 spec (and doesn&#8217;t have a dedicated icon as a consequence). Hence, in Flowable the Camel task is implemented as a dedicated service task. Also note that you must include the Flowable Camel module in your project to use the Camel task functionality.</p>
 </div>
@@ -11089,7 +11561,7 @@ For example in a route like:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="bpmnManualTask">8.5.9. Manual Task</h4>
+<h4 id="bpmnManualTask">8.5.10. Manual Task</h4>
 <div class="sect4">
 <h5 id="bpmnManualTaskDescription">Description</h5>
 <div class="paragraph">
@@ -11118,7 +11590,7 @@ For example in a route like:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="bpmnReceiveTask">8.5.10. Java Receive Task</h4>
+<h4 id="bpmnReceiveTask">8.5.11. Java Receive Task</h4>
 <div class="sect4">
 <h5 id="bpmnReceiveTaskDescription">Description</h5>
 <div class="paragraph">
@@ -11145,7 +11617,7 @@ For example in a route like:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>To continue a process instance that is currently waiting at such a Receive Task, the <em>runtimeService.signal(executionId)</em> must be called using the ID of the execution that arrived in the Receive Task. The following code snippet shows how this works in practice:</p>
+<p>To continue a process instance that is currently waiting at such a Receive Task, the <em>runtimeService.trigger(executionId)</em> must be called using the ID of the execution that arrived in the Receive Task. The following code snippet shows how this works in practice:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -11163,14 +11635,14 @@ For example in a route like:</p>
   <span class="tok-o">.</span><span class="tok-na">singleResult</span><span class="tok-o">();</span>
 <span class="tok-n">assertNotNull</span><span class="tok-o">(</span><span class="tok-n">execution</span><span class="tok-o">);</span>
 
-<span class="tok-n">runtimeService</span><span class="tok-o">.</span><span class="tok-na">signal</span><span class="tok-o">(</span><span class="tok-n">execution</span><span class="tok-o">.</span><span class="tok-na">getId</span><span class="tok-o">());</span>
+<span class="tok-n">runtimeService</span><span class="tok-o">.</span><span class="tok-na">trigger</span><span class="tok-o">(</span><span class="tok-n">execution</span><span class="tok-o">.</span><span class="tok-na">getId</span><span class="tok-o">());</span>
 </td></tr></table></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="bpmnShellTask">8.5.11. Shell Task</h4>
+<h4 id="bpmnShellTask">8.5.12. Shell Task</h4>
 <div class="sect4">
 <h5 id="bpmnShellTaskDescription">Description</h5>
 <div class="paragraph">
@@ -11300,7 +11772,7 @@ For example in a route like:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="executionListeners">8.5.12. Execution listener</h4>
+<h4 id="executionListeners">8.5.13. Execution listener</h4>
 <div class="paragraph">
 <p>Execution listeners allow you to execute external Java code or evaluate an expression when certain events occur during process execution. The events that can be captured are:</p>
 </div>
@@ -11609,7 +12081,7 @@ For example in a route like:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="taskListeners">8.5.13. Task listener</h4>
+<h4 id="taskListeners">8.5.14. Task listener</h4>
 <div class="paragraph">
 <p>A <em>task listener</em> is used to execute custom Java logic or an expression on the occurrence of a certain task-related event.</p>
 </div>
@@ -11741,7 +12213,7 @@ For example in a route like:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="bpmnMultiInstance">8.5.14. Multi-instance (for each)</h4>
+<h4 id="bpmnMultiInstance">8.5.15. Multi-instance (for each)</h4>
 <div class="sect4">
 <h5 id="bpmnMultiInstanceDescription">Description</h5>
 <div class="paragraph">
@@ -12049,7 +12521,7 @@ For example in a route like:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_compensation_handlers">8.5.15. Compensation Handlers</h4>
+<h4 id="_compensation_handlers">8.5.16. Compensation Handlers</h4>
 <div class="sect4">
 <h5 id="bpmnCompensationHandlerDescription">Description</h5>
 <div class="paragraph">
@@ -13955,7 +14427,39 @@ All form values need to be passed in the variables map and an optional form outc
 </div>
 </div>
 <div class="sect2">
-<h3 id="historyFormAuditPurposes">11.3. History for audit purposes</h3>
+<h3 id="asyncHistoryConfig">11.3. Async history configuration</h3>
+<div class="paragraph">
+<p>[Experimental] Async history has been introduced with Flowable 6.1.0 and allows historic data to be persisted asynchronously using a history job executor.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6</div></td><td class="code"><span></span><span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;processEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;asyncHistoryEnabled&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;asyncHistoryExecutorNumberOfRetries&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;10&quot;</span> <span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;asyncHistoryExecutorActivate&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
+  ...
+<span class="tok-nt">&lt;/bean&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With the <code>asyncHistoryExecutorActivate</code> property the history job executor can be started automatically when booting the process engine. Only in test cases this would be set to false (or if async history is not enabled of course).
+The <code>asyncHistoryExecutorNumberOfRetries</code> property configures the amount of retries for an async history job. This property is a bit different then for a normal async job, because a history job may need some cycles before it can be handled succesfully. For example, a historic task first has to be created in the ACT_HI_TASK_ table before the assignee can be updated by another history job. The default value for this property is set to 10 in the process engine configuration. When the amount of retries has been reached the history job will be ignored (and not written to a deadletter job table).</p>
+</div>
+<div class="paragraph">
+<p>In addition to these properties, the <code>asyncHistoryExecutor</code> property can be used to configure an AsyncExecutor in a similar way that you can do for the normal async job executor.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also possible to overwrite the async history job handlers to persist the historic data in other database tables than the default Flowable history tables or to persist it in a NoSQL database like Elasticsearch. Using the <code>historyJobHandlers</code> property a map with all the custom history job handlers can be configured and with the <code>customHistoryJobHandlers</code> array, you can overwrite specific default history job handlers.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="historyFormAuditPurposes">11.4. History for audit purposes</h3>
 <div class="paragraph">
 <p>When <a href="#historyConfig">configuring</a> at least <code>audit</code> level for configuration. Then all properties submitted through methods  <code>FormService.submitStartFormData(String processDefinitionId, Map&lt;String, String&gt; properties)</code> and <code>FormService.submitTaskFormData(String taskId, Map&lt;String, String&gt; properties)</code> are recorded.</p>
 </div>
@@ -14044,6 +14548,38 @@ All form values need to be passed in the variables map and an optional form outc
 </div>
 <div class="paragraph">
 <p>This means that no user and group queries can be used, and candidate groups in a task query can not be retrieved for a user.</p>
+</div>
+<div class="paragraph">
+<p>By default, the user passwords will be saved in plain text in the IDM database tables. To make sure that the passwords are encoded you can define a password encoder in the process engine configuration.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</div></td><td class="code"><span></span><span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;shaEncoder&quot;</span>
+      <span class="tok-na">class=</span><span class="tok-s">&quot;org.springframework.security.authentication.encoding.ShaPasswordEncoder&quot;</span><span class="tok-nt">/&gt;</span>
+
+<span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;passwordEncoder&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.idm.spring.authentication.SpringEncoder&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;constructor-arg</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;shaEncoder&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/bean&gt;</span>
+
+<span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;processEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;passwordEncoder&quot;</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;passwordEncoder&quot;</span> <span class="tok-nt">/&gt;</span>
+  ...
+<span class="tok-nt">&lt;/bean&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example the ShaPasswordEncoder is used, but you can also use the org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder for example. When not using Spring you can also use the org.flowable.idm.engine.impl.authentication.ApacheDigester to encode the passwords.</p>
 </div>
 <div class="paragraph">
 <p>The default IDM engine configurator can also be overridden to initialize the IDM Engine in a custom way. A good example is the LDAPConfigurator
@@ -15500,6 +16036,10 @@ datasource.password=flowable</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">security.rememberme.key</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The hash key that is used by Spring Security to hash the password values in the applications. Make sure that you change the value of this property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">security.passwordencoder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define a password encoder for the IDM users. Use a value of spring_bcrypt to use the Spring password encoder. By default, the passwords will be saved in plain text.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">datasource.jndi.name</p></td>
@@ -32903,7 +33443,7 @@ You have to figure out which methods you want to implement in the custom identit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-n">processEngineConfiguration</span><span class="tok-o">.</span><span class="tok-na">setEnableDatabaseEventLogging</span><span class="tok-o">(</span><span class="tok-kc">true</span><span class="tok-o">);</span>
+<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-n">processEngineConfigurationImpl</span><span class="tok-o">.</span><span class="tok-na">setEnableDatabaseEventLogging</span><span class="tok-o">(</span><span class="tok-kc">true</span><span class="tok-o">);</span>
 </td></tr></table></code></pre>
 </div>
 </div>
@@ -32912,9 +33452,11 @@ You have to figure out which methods you want to implement in the custom identit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2</div></td><td class="code"><span></span>databaseEventLogger = new EventLogger(processEngineConfiguration.getClock());
-runtimeService.addEventListener(databaseEventLogger);
+<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3</div></td><td class="code"><span></span><span class="tok-n">databaseEventLogger</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">EventLogger</span><span class="tok-o">(</span><span class="tok-n">processEngineConfiguration</span><span class="tok-o">.</span><span class="tok-na">getClock</span><span class="tok-o">(),</span>
+                                      <span class="tok-n">processEngineConfiguration</span><span class="tok-o">.</span><span class="tok-na">getObjectMapper</span><span class="tok-o">());</span>
+<span class="tok-n">runtimeService</span><span class="tok-o">.</span><span class="tok-na">addEventListener</span><span class="tok-o">(</span><span class="tok-n">databaseEventLogger</span><span class="tok-o">);</span>
 </td></tr></table></code></pre>
 </div>
 </div>
