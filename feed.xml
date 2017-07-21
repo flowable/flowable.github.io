@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://www.flowable.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.flowable.org/" rel="alternate" type="text/html" /><updated>2017-06-27T22:41:21+02:00</updated><id>http://www.flowable.org/</id><title>Flowable</title><subtitle>The BPMN engine</subtitle><entry><title>Flowable 6.1.0 release</title><link href="http://www.flowable.org/blog/2017/06/27/flowable-6.1.0-release.html" rel="alternate" type="text/html" title="Flowable 6.1.0 release" /><published>2017-06-27T00:00:00+02:00</published><updated>2017-06-27T00:00:00+02:00</updated><id>http://www.flowable.org/blog/2017/06/27/flowable-6.1.0-release</id><content type="html" xml:base="http://www.flowable.org/blog/2017/06/27/flowable-6.1.0-release.html">&lt;p&gt;Today we released a new version of Flowable with the 6.1.0 release.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://www.flowable.org/feed.xml" rel="self" type="application/atom+xml" /><link href="http://www.flowable.org/" rel="alternate" type="text/html" /><updated>2017-07-21T16:01:11+02:00</updated><id>http://www.flowable.org/</id><title>Flowable</title><subtitle>The BPMN engine</subtitle><entry><title>Flowable 6.1.1 release</title><link href="http://www.flowable.org/blog/2017/07/21/flowable-6.1.1-release.html" rel="alternate" type="text/html" title="Flowable 6.1.1 release" /><published>2017-07-21T00:00:00+02:00</published><updated>2017-07-21T00:00:00+02:00</updated><id>http://www.flowable.org/blog/2017/07/21/flowable-6.1.1-release</id><content type="html" xml:base="http://www.flowable.org/blog/2017/07/21/flowable-6.1.1-release.html">&lt;p&gt;Today we released a new version of Flowable with the 6.1.1 release.&lt;/p&gt;
+
+&lt;p&gt;The 6.1.1 release has the following highlights:&lt;/p&gt;
+
+&lt;p&gt;Highlights&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Introduction of audit history in the DMN Engine. When history is enabled in the DMN Engine, an audit log of each decision execution is stored in the DMN database. By default the history is disabled.&lt;/li&gt;
+&lt;li&gt;Replaced the MVEL expression language in the DMN Engine with the same JUEL expression language as used in the BPMN and Form Engine.&lt;/li&gt;
+&lt;li&gt;Refactored DmnRuleService with new ExecuteDecisionBuilder and deprecated old execute decision methods.&lt;/li&gt;
+&lt;li&gt;Call activity: allow to set output parameters a local variables for multi instance executions.&lt;/li&gt;
+&lt;li&gt;Easier usage of async history in combination with a message queue (see &lt;a href=&quot;https://github.com/flowable/flowable-examples/tree/master/async-history&quot;&gt;https://github.com/flowable/flowable-examples/tree/master/async-history&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Performance improvement: introduce grouping and compression for async history data.&lt;/li&gt;
+&lt;li&gt;Various small bugfixes all around.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Community contributors&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Faizal Abdul Manan (faizal-manan)&lt;/li&gt;
+&lt;li&gt;David Malkovsky (dbmalkovsky)&lt;/li&gt;
+&lt;li&gt;Harsha Teja Kanna (h7kanna)&lt;/li&gt;
+&lt;li&gt;Lori Small (lsmall)&lt;/li&gt;
+&lt;li&gt;bsydow&lt;/li&gt;
+&lt;li&gt;stephraleigh&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Upgrade notes&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;CommandContext and related classes package changes:&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;As a result of a refactoring that involved consolidating various classes and moving them to the &lt;i&gt;flowable-engine-common&lt;/i&gt; module, following &lt;i&gt;internal&lt;/i&gt; classes have changed packages.&lt;/p&gt;
+
+&lt;p&gt;The following applies to all engines (process, dmn, form, content and idm):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;i&gt;CommandContext&lt;/i&gt; class is now in the &lt;i&gt;org.flowable.engine.common.impl.interceptor&lt;/i&gt; package.&lt;/li&gt;
+&lt;li&gt;The various getter methods on the &lt;i&gt;CommandContext&lt;/i&gt; that gave quick-access to various internal components are removed 
+(because the CommandContext is now shared between all engines). All engines now have a &lt;i&gt;CommandContextUtil&lt;/i&gt; class that 
+should be used instead and which has said getter methods. The &lt;i&gt;org.flowable.engine.impl.context.Context&lt;/i&gt; utlity class 
+in the process engine is still there for backwards compatibility and can be used as before, but simply delegates to the &lt;i&gt;CommandContextUtil&lt;/i&gt; methods.&lt;/li&gt;
+&lt;li&gt;The classes related to the command stack interceptors (&lt;i&gt;Command&lt;/i&gt;, &lt;i&gt;CommandContextInterceptor&lt;/i&gt;, &lt;i&gt;CommandExecutor&lt;/i&gt;, &lt;i&gt;Log/Jta/RetryInterceptor&lt;/i&gt;) are now in the &lt;i&gt;org.flowable.engine.common.impl.interceptor&lt;/i&gt; package.&lt;/li&gt;
+&lt;li&gt;The &lt;i&gt;DbSqlSession&lt;/i&gt; and &lt;i&gt;DbSqlSessionFactory&lt;/i&gt; classes are now found in the &lt;i&gt;org.flowable.engine.common.impl.db&lt;/i&gt; package.&lt;/li&gt;
+&lt;li&gt;Database schema management logic has moved from the &lt;i&gt;DbSqlSession&lt;/i&gt; class to implementations of the &lt;i&gt;org.flowable.engine.common.impl.db.DbSchemaManager&lt;/i&gt; interface.&lt;/li&gt;
+&lt;li&gt;The &lt;i&gt;GenericManagerFactory&lt;/i&gt; class is now in the &lt;i&gt;org.flowable.engine.common.impl.persistence&lt;/i&gt; package.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The process engine now has the &lt;i&gt;org.flowable.engine.impl.util.EngineServiceUtil&lt;/i&gt; utility class that can be used to get easily access to the configuration and services of the other engines.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;FlowableCancelledEvent.getCause() return value change&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;The value that&amp;#39;s passed in the &lt;i&gt;cause&lt;/i&gt; of a &lt;i&gt;org.flowable.engine.delegate.event.FlowableCancelledEvent&lt;/i&gt; has changed in the following cases:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The event that is thrown for activities cancelled by a &lt;i&gt;message boundary event&lt;/i&gt;.&lt;/li&gt;
+&lt;li&gt;The event that is thrown for activities cancelled by a &lt;i&gt;signal boundary event&lt;/i&gt;.&lt;/li&gt;
+&lt;li&gt;The event that is thrown for activities cancelled by a &lt;i&gt;timer boundary event&lt;/i&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Instead of passing an entity instance (MessageEventSubscriptionEntity, SignalEventSubscriptionEntity or JobEntity respectively) the BpmnModel
+counterpart, as an instance of a subclass of &lt;i&gt;org.flowable.bpmn.model.FlowElement&lt;/i&gt;, is passed instead which is consistent with the general value of the &lt;i&gt;cause&lt;/i&gt; property.
+Do note that due to the fact the return type of &lt;i&gt;getCause()&lt;/i&gt; is &lt;i&gt;Object&lt;/i&gt;, the compiler will not notice this, so best to look at the usage of the &lt;i&gt;FlowableCancelledEvent&lt;/i&gt; in your code.&lt;/p&gt;
+
+&lt;p&gt;A big thank you to the whole Flowable &lt;a href=&quot;http://www.flowable.org/team.html&quot;&gt;team&lt;/a&gt; for making this release possible.
+You can use the &lt;a href=&quot;http://forum.flowable.org&quot;&gt;forum&lt;/a&gt; to ask specific questions about the 6.1.1 release, any feedback is welcome.&lt;/p&gt;</content><author><name>flowable</name></author><summary>Today we released a new version of Flowable with the 6.1.1 release.</summary></entry><entry><title>Flowable 6.1.0 release</title><link href="http://www.flowable.org/blog/2017/06/27/flowable-6.1.0-release.html" rel="alternate" type="text/html" title="Flowable 6.1.0 release" /><published>2017-06-27T00:00:00+02:00</published><updated>2017-06-27T00:00:00+02:00</updated><id>http://www.flowable.org/blog/2017/06/27/flowable-6.1.0-release</id><content type="html" xml:base="http://www.flowable.org/blog/2017/06/27/flowable-6.1.0-release.html">&lt;p&gt;Today we released a new version of Flowable with the 6.1.0 release.&lt;/p&gt;
 
 &lt;p&gt;The 6.1.0 release has the following highlights:&lt;/p&gt;
 
@@ -164,20 +228,4 @@ we want to get the final 6.0 release out shortly after.&lt;/p&gt;
 and by creating issues on the Github issues page &lt;a href=&quot;https://github.com/flowable/flowable-engine/issues&quot;&gt;https://github.com/flowable/flowable-engine/issues&lt;/a&gt;.&lt;br&gt;
 The developers of the Flowable project are keen to help you answering your questions and helping out with possible issues.&lt;br&gt;
 The 5.22.0 release is the starting point for the Flowable project, a lot more releases will follow.&lt;/p&gt;</content><author><name>flowable</name></author><summary>Today we released the first Flowable engine version (5.22.0). This release is a fork of  Activiti 5.21.0. There have been no package renaming or config file name changes.
-The easiest way to start using it is through the Maven:</summary></entry><entry><title>Flowable and Activiti: What the Fork?!</title><link href="http://www.flowable.org/blog/2016/10/12/flowable-and-activiti.html" rel="alternate" type="text/html" title="Flowable and Activiti: What the Fork?!" /><published>2016-10-12T00:00:00+02:00</published><updated>2016-10-12T00:00:00+02:00</updated><id>http://www.flowable.org/blog/2016/10/12/flowable-and-activiti</id><content type="html" xml:base="http://www.flowable.org/blog/2016/10/12/flowable-and-activiti.html">&lt;p&gt;Ironically, the first thing we want to say is that we’re not fans of forking projects.  We have been the core developers of the Activiti Java Business Process Management (BPM) project right from its beginnings to its current state, so this has not been an easy or quick decision.  We acknowledge Alfresco’s stewardship of the Activiti.org project, and as employees we enjoyed considerable freedom to develop the project over several years.  However, things didn&amp;#39;t work out as we expected or hoped.  We came to the conclusion the only way to continue evolving our ideas was to fork.&lt;/p&gt;
-
-&lt;h2&gt;Forking Happens&lt;/h2&gt;
-
-&lt;p&gt;There are many examples of forks in open source, as &lt;a href=&quot;http://thenewstack.io/may-fork-short-history-open-source-forks/&quot;&gt;Swapnil Bhartiya&lt;/a&gt; has recently described in &lt;a href=&quot;http://thenewstack.io/may-fork-short-history-open-source-forks/&quot;&gt;May the Fork Be with You&lt;/a&gt;, including mention of one of the live topics of discussion currently within the Docker community. With Docker, the main concern appears to be the mixing of competitive and commercial elements into a core used by different commercial organizations, with people voicing pros (e.g. &lt;a href=&quot;https://robhirschfeld.com/2016/08/31/why-fork-docker-complexity-wack-a-mole-and-commercial-open-source/&quot;&gt;Rob Hirschfeld&lt;/a&gt; and cons (e.g. &lt;a href=&quot;https://developer.ibm.com/opentech/2016/09/07/what-the-fork-docker/&quot;&gt;Doug Davis&lt;/a&gt;).  Let’s be clear about our intentions – the Flowable fork will remain liberal and open, and will be the focus of our future efforts in BPM, hosted on &lt;a href=&quot;https://github.com/Flowable&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Forking Can Be Healthy&lt;/h2&gt;
-
-&lt;p&gt;In the past, &lt;a href=&quot;http://www.techrepublic.com/article/why-you-should-fork-your-next-open-source-project/&quot;&gt;Matt Assay&lt;/a&gt; pointed out that forking is often good for innovation, which very much underpins our hopes.  By keeping to our business process-oriented roots, we can innovate in the core of the BPM engine far more readily.  Not all forks are successful, as Matthew Hughes highlights in &lt;a href=&quot;http://www.makeuseof.com/tag/forking-good-great-ugly/&quot;&gt;Forking Good Great Ugly&lt;/a&gt;, but another recent fork, ownCloud / Nextcloud, where the development team became unhappy with the commercial management, seems to be succeeding &lt;a href=&quot;http://www.zdnet.com/article/nextcloud-releases-owncloud-fork-ahead-of-schedule/&quot;&gt;NextCloud release OwnCloud fork ahead of schedule&lt;/a&gt;. In a similar vein, we have just pushed our first release of the fork for the &lt;a href=&quot;http://flowable.org/downloads&quot;&gt;V5 engine&lt;/a&gt;, including a powerful new feature, &lt;em&gt;transient variables&lt;/em&gt;.  We will be releasing an update to V6 soon as well.&lt;/p&gt;
-
-&lt;h2&gt;Forking Can Confuse&lt;/h2&gt;
-
-&lt;p&gt;Obviously, our biggest worry is the confusion to developers that a fork can introduce.  Only time will tell if that can be overcome. If you’re unsure of jumping in, take a look at the authors in the code and the people working on the Flowable project.  We are the people that know it best, and who have been driving the community, contributions and evolution over the years.  &lt;/p&gt;
-
-&lt;h2&gt;Thank You For Your Support&lt;/h2&gt;
-
-&lt;p&gt;We&amp;#39;ve had a whole bunch of people contact us about their concerns with how things had been going (or more accurately, not going) and to show support in what we&amp;#39;re doing with this fork. Please take a look and get involved.  Now’s the time to make your business processes Flowable.&lt;/p&gt;</content><author><name>flowable</name></author><summary>Ironically, the first thing we want to say is that we’re not fans of forking projects.  We have been the core developers of the Activiti Java Business Process Management (BPM) project right from its beginnings to its current state, so this has not been an easy or quick decision.  We acknowledge Alfresco’s stewardship of the Activiti.org project, and as employees we enjoyed considerable freedom to develop the project over several years.  However, things didn&amp;#39;t work out as we expected or hoped.  We came to the conclusion the only way to continue evolving our ideas was to fork.</summary></entry></feed>
+The easiest way to start using it is through the Maven:</summary></entry></feed>

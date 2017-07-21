@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable DOCS (v 6.1.0)</title>
+<title>Flowable DOCS (v 6.1.1)</title>
 <style>
 
 /* normalize.css */
@@ -377,7 +377,7 @@ a:hover {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable DOCS (v 6.1.0)</h1>
+<h1>Flowable DOCS (v 6.1.1)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -567,7 +567,7 @@ Note that the H2 dependency includes both the database <em>and</em> the driver. 
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>org.flowable<span class="tok-nt">&lt;/groupId&gt;</span>
     <span class="tok-nt">&lt;artifactId&gt;</span>flowable-engine<span class="tok-nt">&lt;/artifactId&gt;</span>
-    <span class="tok-nt">&lt;version&gt;</span>6.1.0<span class="tok-nt">&lt;/version&gt;</span>
+    <span class="tok-nt">&lt;version&gt;</span>6.1.1<span class="tok-nt">&lt;/version&gt;</span>
   <span class="tok-nt">&lt;/dependency&gt;</span>
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>com.h2database<span class="tok-nt">&lt;/groupId&gt;</span>
@@ -10644,27 +10644,32 @@ Only the first map with no class will be considered as a default map. <code>incl
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">connectTimeout</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Connection timeout in milliseconds. By default set to 5000.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connection timeout in milliseconds.<br>
+By default set to 5000.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">socketTimeout</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Socket timeout in milliseconds. By default set to 5000.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Socket timeout in milliseconds.<br>
+By default set to 5000.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">connectionRequestTimeout</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Connection request timeout in milliseconds. By default set to 5000.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connection request timeout in milliseconds.<br>
+By default set to 5000.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">requestRetryLimit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Request retry limit (<em>0</em> means do not retry). By default set to 3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request retry limit (<em>0</em> means do not retry).<br>
+By default set to 3.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">disableCertVerify</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to disable SSL certificate verification. By default set to false.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to disable SSL certificate verification.<br>
+By default set to false.</p></td>
 </tr>
 </tbody>
 </table>
@@ -10725,57 +10730,60 @@ To create a custom client refer to <a href="http://hc.apache.org/httpcomponents-
 <td class="tableblock halign-left valign-top"><p class="tableblock">requestMethod</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Request method<br>
-                  (GET,POST,PUT,DELETE).</p></td>
+(GET,POST,PUT,DELETE).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">requestUrl</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Request URL<br>
-               (Example - <a href="http://flowable.org" class="bare">http://flowable.org</a>).</p></td>
+(Example - <a href="http://flowable.org" class="bare">http://flowable.org</a>).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">requestHeaders</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Line separated Http request headers.<br>
-                  Example -<br>
-                  Content-Type: application/json<br>
-                  Authorization: Basic aGFRlc3Q=</p></td>
+Example -<br>
+Content-Type: application/json<br>
+Authorization: Basic aGFRlc3Q=</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">requestBody</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Request body<br>
-               Example - ${sampleBody}</p></td>
+Example - ${sampleBody}</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">requestTimeout</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Timeout in milliseconds for the request<br>
-                  (Example - 5000). Default is <em>0</em>, meaning no timeout.
-                  Please refer <a href="#bpmnHttpTaskClientConfiguration">Http Client configuration</a> for connection related timeouts.</p></td>
+(Example - 5000).<br>
+Default is <em>0</em>, meaning no timeout.<br>
+Please refer <a href="#bpmnHttpTaskClientConfiguration">Http Client configuration</a> for connection related timeouts.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">disallowRedirects</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to disallow Http redirects. Default is false. (Example - true).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to disallow Http redirects.<br>
+Default is false.<br>
+(Example - true).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">failStatusCodes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list of Http response status codes to fail the request and error thrown as FlowableException.<br>
-                   Example: 400, 404, 500, 503<br>
-                   Example: 400, 5XX</p></td>
+Example: 400, 404, 500, 503<br>
+Example: 400, 5XX</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">handleStatusCodes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list of status codes for which the task will throw BpmnError.
-                   The error code of the BpmnError is <em>HTTP&lt;statuscode&gt;</em>.
-                   For example, 404 status code is set with error code <em>HTTP404</em>.<br>
-                   3XX status codes are thrown only if <em>disallowRedirects</em> field is also set.<br>
-                   Status codes in <em>handleStatusCodes</em> override those in <em>failStatusCodes</em> when they are set in both.<br>
-                   Example: 400, 404, 500, 503<br>
-                   Example: 3XX, 4XX, 5XX<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list of status codes for which the task will throw BpmnError.<br>
+The error code of the BpmnError is <em>HTTP&lt;statuscode&gt;</em>.<br>
+For example, 404 status code is set with error code <em>HTTP404</em>.<br>
+3XX status codes are thrown only if <em>disallowRedirects</em> field is also set.<br>
+Status codes in <em>handleStatusCodes</em> override those in <em>failStatusCodes</em> when they are set in both.<br>
+Example: 400, 404, 500, 503<br>
+Example: 3XX, 4XX, 5XX<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ignoreException</p></td>
@@ -10785,18 +10793,21 @@ To create a custom client refer to <a href="http://hc.apache.org/httpcomponents-
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">saveRequestVariables</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to save request variables. By default, only response related variables are saved in execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to save request variables.<br>
+By default, only response related variables are saved in execution.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">saveResponseParameters</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to save all response variables including HTTP status, headers etc. By default, only response body is saved in execution.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to save all response variables including HTTP status, headers etc.<br>
+By default, only response body is saved in execution.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">resultVariablePrefix</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix for the execution variable names. If prefix is not set, variables will be saved with name
-                       in following format. <em>&lt;taskId&gt;</em>.<em>fieldName</em>. For example, requestUrl is saved as <em>task7.requestUrl</em> for task with id <em>task7</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix for the execution variable names.<br>
+If prefix is not set, variables will be saved with name as <em>&lt;taskId&gt;</em>.<em>fieldName</em>.<br>
+For example, requestUrl is saved as <em>task7.requestUrl</em> for task with id <em>task7</em>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">httpActivityBehaviorClass</p></td>
@@ -10841,9 +10852,9 @@ To create a custom client refer to <a href="http://hc.apache.org/httpcomponents-
 <td class="tableblock halign-left valign-top"><p class="tableblock">responseHeaders</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Line separated Http response headers.<br>
-                  Example -<br>
-                  Content-Type: application/json<br>
-                  Content-Length: 777</p></td>
+Example -<br>
+Content-Type: application/json<br>
+Content-Length: 777</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">responseBody</p></td>
@@ -14427,9 +14438,9 @@ All form values need to be passed in the variables map and an optional form outc
 </div>
 </div>
 <div class="sect2">
-<h3 id="asyncHistoryConfig">11.3. Async history configuration</h3>
+<h3 id="asyncHistoryConfig">11.3. Async History configuration</h3>
 <div class="paragraph">
-<p>[Experimental] Async history has been introduced with Flowable 6.1.0 and allows historic data to be persisted asynchronously using a history job executor.</p>
+<p>[Experimental] Async History has been introduced with Flowable 6.1.0 and allows historic data to be persisted asynchronously using a history job executor.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -14448,14 +14459,30 @@ All form values need to be passed in the variables map and an optional form outc
 </div>
 </div>
 <div class="paragraph">
-<p>With the <code>asyncHistoryExecutorActivate</code> property the history job executor can be started automatically when booting the process engine. Only in test cases this would be set to false (or if async history is not enabled of course).
-The <code>asyncHistoryExecutorNumberOfRetries</code> property configures the amount of retries for an async history job. This property is a bit different then for a normal async job, because a history job may need some cycles before it can be handled succesfully. For example, a historic task first has to be created in the ACT_HI_TASK_ table before the assignee can be updated by another history job. The default value for this property is set to 10 in the process engine configuration. When the amount of retries has been reached the history job will be ignored (and not written to a deadletter job table).</p>
+<p>With the <code>asyncHistoryExecutorActivate</code> property, the history job executor can be started automatically when booting the Process Engine. This would be only set to false for test cases (or if Async History is not enabled of course).
+The <code>asyncHistoryExecutorNumberOfRetries</code> property configures the number of retries for an Async History job. This property is a bit different than that for a normal async job, because a history job may need more cycles before it can be handled succesfully. For example, a historic task first has to be created in the ACT_HI_TASK_ table before the assignee can be updated by another history job. The default value for this property is set to 10 in the Process Engine configuration. When the number of retries has been reached, the history job will be ignored (and not written to a deadletter job table).</p>
 </div>
 <div class="paragraph">
 <p>In addition to these properties, the <code>asyncHistoryExecutor</code> property can be used to configure an AsyncExecutor in a similar way that you can do for the normal async job executor.</p>
 </div>
 <div class="paragraph">
-<p>It&#8217;s also possible to overwrite the async history job handlers to persist the historic data in other database tables than the default Flowable history tables or to persist it in a NoSQL database like Elasticsearch. Using the <code>historyJobHandlers</code> property a map with all the custom history job handlers can be configured and with the <code>customHistoryJobHandlers</code> array, you can overwrite specific default history job handlers.</p>
+<p>When the history data is not to be persisted in the default history tables, but for example, is required in a NoSQL database (such as Elasticsearch, MongoDb, Cassandra and so on), or something completely different is to be done with it, the handler that is responsible for handling the job can be overridden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Using the <code>historyJobHandlers</code> property, which is a map of all the custom history job handlers</p>
+</li>
+<li>
+<p>Or, configure the <code>customHistoryJobHandlers</code> list with all instances will be added to the <code>historyJobHandlers</code> map at boot time.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternatively, it is also possible to use a Message Queue and configure the engine in such a way that a message will be sent when a new history job is available. This way, the historical data can be processed on different servers to where the engines are run. It&#8217;s also possible to configure the engine and Message Queue using JTA (when using JMS) and not store the historical data in a job, but send it all data to a Message Queue that participates in a global transaction.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://github.com/flowable/flowable-examples/tree/master/async-history">the Flowable Async History Examples</a> for various examples on how to configure the Async History, including the default way, using a JMS queue, using JTA or using a Message Queue and a Spring Boot application that acts as a message listener.</p>
 </div>
 </div>
 <div class="sect2">
@@ -22850,18 +22877,6 @@ The request should be of type <code>multipart/form-data</code>. There should be 
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISO Date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Only return tasks which are due after the given date.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">withoutDueDate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only return tasks which don&#8217;t have a due date. The property is ignored if the value is <code>false</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">withoutDueDate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only return tasks which don&#8217;t have a due date. The property is ignored if the value is <code>false</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">withoutDueDate</p></td>
