@@ -1,0 +1,25 @@
+$primary: #009ab5;
+$linkColor: darken($primary, 9%);
+$linkInteract: darken($linkColor, 9%);
+//$pageBg: #e9e9e9;
+$pageBg: #f9f9f9;
+
+$lightColor: #e9f3db;
+$mediumestColor: #666;
+$mediumColor: #0c4359;
+$darkColor: #a0cc47;
+$darkestColor: #187ca3;
+$blueColor: #61dafb;
+$orangeColor: complement($blueColor);
+
+$lightTextColor: #fafafa;
+$mediumTextColor: #aaa;
+$darkTextColor: $mediumColor;
+
+$buttonBlueTop: #77a3d2;
+$buttonBlueBottom: #4783c2;
+$buttonGreyTop: #9a9a9a;
+$buttonGreyBottom: #646464;
+
+$buttonColor: #187ca3;
+

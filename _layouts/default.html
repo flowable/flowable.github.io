@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page.title }} | Flowable</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:title" content="{{ page.title }} | Flowable">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowable.github.io{{ page.url }}">
+  <!-- <meta property="og:image" content="https://facebook.github.io/flowable/img/logo_og.png"> -->
+  <meta property="og:description" content="Flowable - The Java BPM Engine">
+
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}{{ site.baseurl }}/feed.xml">
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/flowable.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/jquery.modal.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/fonts/icons/flaticon.css">
+
+  <!--[if lte IE 8]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/es5-shim.min.js"></script>
+  <script src="js/es5-sham.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="{{ site.baseurl }}/index.html">
+          <img class="nav-logo" src="{{ site.baseurl }}/img/logo.png" srcset="{{ site.baseurl }}/img/logo.png 1x, {{ site.baseurl }}/img/logo@2x.png 2x" width="36" height="36">
+        </a>
+        <ul class="nav-site nav-site-internal">
+            <li><a href="{{ site.baseurl }}/downloads.html"{% if page.id == 'downloads' %} class="active"{% endif %}>Download</a></li>
+            <li><a href="{{ site.baseurl }}/documentation.html"{% if page.id == 'documentation' %} class="active"{% endif %}>Docs</a></li>
+            <li><a href="{{ site.baseurl }}/team.html"{% if page.id == 'team' %} class="active"{% endif %}>Team</a></li>
+          	<li><a href="{{ site.baseurl }}/blog/"{% if page.sectionid == 'blog' %} class="active"{% endif %}>Blog</a></li>
+        </ul>
+        <ul class="nav-site nav-site-external">
+          <li><a href="http://flowable.com" target="_blank">Enterprise</a></li>
+        </ul>
+        <ul class="nav-site nav-site-external">
+          <li><a href="https://github.com/flowable/flowable-engine/wiki/Flowable-roadmap" target="_blank">Roadmap</a></li>
+        </ul>
+        <ul class="nav-site nav-site-external">
+          <li><a href="https://github.com/flowable/flowable-engine" target="_blank">GitHub&nbsp; <i class="fa fa-github-alt"></i></a></li>
+        </ul>
+        <ul class="nav-site nav-site-external">
+          <li><a href="https://forum.flowable.org" target="_blank">Forum</a></li>
+        </ul>
+      </div>
+    </div>
+
+	    {% if page.id == 'home' %}
+	    <div class="hero">
+	      <div class="wrap">
+	        <div>
+						<img class="logo" src="{{ site.baseurl }}/img/logo_hero.png" srcset="{{ site.baseurl }}/img/logo_hero.png 1x, {{ site.baseurl }}/img/logo_hero@2x.png 2x" width="674" height="108" />
+					</div>
+	        <div class="minitext">
+	          The Java BPM Engine
+	        </div>
+
+	        <div class="buttons-unit">
+	          <a href="{{ site.baseurl }}/docs/userguide/index.html#_getting_started" class="button" target="_blank">Get Started</a>
+            <a href="https://github.com/flowable/flowable-engine/releases/download/flowable-{{site.flowable_version}}/flowable-{{site.flowable_version}}.zip" class="button">Download Flowable v{{site.flowable_version}}</a>
+          </div>
+	      </div>
+	    </div>
+	    {% endif %}
+
+	    {{ content }}
+
+	    <footer class="wrap">
+	      <div class="center">
+	        {{ site.time | date: '%Y' }} Flowable - Designs by <a href="http://kaleycreate.co.uk/" target="_blank">kaley.create</a>
+	      </div>
+	    </footer>
+
+  </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85658632-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- JS -->
+<script type="text/javascript" src="{{ site.baseurl }}/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/jquery.tweetscroll.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/jquery.modal.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/FeedEk.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/widgets.js"></script>
+<script type="text/javascript">
+    $('#rssFlowableBlogFeed').FeedEk({
+        FeedUrl:'http://flowable.org/feed.xml',
+        MaxCount : 5,
+        ShowDesc : false,
+        ShowPubDate: false,
+        DescCharacterLimit:100,
+        TitleLinkTarget:'_blank'
+    });
+    $('#rssTeamBlogFeed').FeedEk({
+        FeedUrl:'http://feed.informer.com/digests/901EVIZWKI/feeder.rss',
+        MaxCount : 5,
+        ShowDesc : false,
+        ShowPubDate: false,
+        DescCharacterLimit:100,
+        TitleLinkTarget:'_blank'
+    });
+    $('#rssForumFeed').FeedEk({
+        FeedUrl:'http://forum.flowable.org/latest.rss',
+        MaxCount : 5,
+        ShowDesc : false,
+        ShowPubDate: false,
+        DescCharacterLimit:100,
+        TitleLinkTarget:'_blank'
+    });
+</script>
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+</body>
+</html>
