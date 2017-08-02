@@ -443,6 +443,20 @@ Further on in this guide, there is a section on <a href="#eclipseDesignerInstall
 <div class="paragraph">
 <p>In the JAR files, all classes in packages that have <code>.impl.</code> (e.g. <code>org.flowable.engine.impl.db</code>) in their name are implementation classes and should be considered internal use only. No stability guarantees are given on classes or interfaces that are in implementation classes.</p>
 </div>
+
+<div class="sect2">
+<h3 id="internal">1.8 Versioning Strategy</h3>
+<div class="paragraph">
+    <p>Versions are denoted using a standard triplet of integers: <strong>MAJOR.MINOR.MICRO</strong>. The basic intent is that <strong>MAJOR</strong> versions are for core engine evolution.
+        <strong>MINOR</strong> versions are for new features and new APIs. <strong>MICRO</strong> versions are for bug fixes and improvements.
+    </p>
+
+    <p>In general, Flowable attempts to remain "source compatible" in <strong>MINOR</strong> and <strong>MICRO</strong> releases for all non internal implementation classes. We define "source compatible" to mean
+       an application will continue to build without error and the semantics have remained unchanged. Flowable also attempts to remain "binary compatible" in <strong>MINOR</strong> and <strong>MICRO</strong> releases.
+        We define "binary compatible" to mean that a compiled application can be linked against Flowable and continue to function properly.
+    </p>
+</div>
+
 </div>
 </div>
 </div>
