@@ -60,7 +60,7 @@ kramdown:
 sass:
   style: :compressed
   sass_dir: _css
-plugins:
+gems:
 - jekyll-redirect-from
 - jekyll-paginate
 - jekyll-sitemap
