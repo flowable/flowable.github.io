@@ -185,10 +185,10 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
-	            <a href="https://twitter.com/filip" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	            <a href="https://twitter.com/filiphr" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 	        <div class="contact-info linkedin">
-	            <a href="https://www.linkedin.com/in/filip" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	            <a href="https://www.linkedin.com/in/filip-hrisafov/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 	    </div>
 	</div>  
