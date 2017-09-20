@@ -170,6 +170,31 @@ The Flowable Team comprises people who are committed to creating the best Java B
 
 
 
+	<a class="team-member" href="#filipModal" rel="modal:open">
+	    <div class="bio-pic"><img src="img/filip.jpg"></div>
+	</a>
+
+	<div id="filipModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/filip.jpg"></div>
+	        <h3>Filip Hrisafov</h3>
+	        <p>Flowable developer</p>
+	     </div>
+	    <p>Filip got interested in BPMN while working on his Master Thesis: Automatic Migration of Running Process Instances. Currently, he works at edorasware, where he focuses on solution integration with the edoras platform and Flowable. 
+Being an open source enthusiast, he is a contributor to multiple Open Source projects and a member of the MapStruct team.</p>
+
+	    <div class="bio-contact-info">
+	        <div class="contact-info twitter">
+	            <a href="https://twitter.com/filip" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	        <div class="contact-info linkedin">
+	            <a href="https://www.linkedin.com/in/filip" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	    </div>
+	</div>  
+
+
+
 	<a class="team-member" href="#wouterModal" rel="modal:open">
 	    <div class="bio-pic"><img src="img/wouter.jpg"></div>
 	</a>
