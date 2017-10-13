@@ -15,11 +15,12 @@ This is the best place to start if you're new to Flowable.  It shows you how to 
 
 ## User Guides
 
-The User Guides contain a detailed explanation of the different Flowable engine features.
+The User Guides contain a detailed explanation of the different Flowable engine features.  BPMN for process management, CMMN for case management and DMN for decision rules.
 <div class="buttons-unit">
-    <a href="{{ site.baseurl }}/docs/userguide/index.html" class="button" target="_blank">Flowable BPMN</a>
-    <a href="{{ site.baseurl }}/docs/userguide-dmn/index.html" class="button" target="_blank">Flowable DMN</a>
-    <a href="{{ site.baseurl }}/docs/userguide-form/index.html" class="button" target="_blank">Flowable Form</a>
+    <a href="{{ site.baseurl }}/docs/userguide/index.html" class="button" target="_blank">BPMN</a>
+    <a href="{{ site.baseurl }}/docs/userguide-cmmn/index.html" class="button" target="_blank">CMMN</a>
+    <a href="{{ site.baseurl }}/docs/userguide-dmn/index.html" class="button" target="_blank">DMN</a>
+    <a href="{{ site.baseurl }}/docs/userguide-form/index.html" class="button" target="_blank">Form</a>
 </div>
 
 ## REST APIs

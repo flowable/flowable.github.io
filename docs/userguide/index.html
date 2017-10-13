@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable DOCS (v 6.1.2)</title>
+<title>Flowable DOCS (v 6.2.0)</title>
 <style>
 
 /* normalize.css */
@@ -377,7 +377,7 @@ a:hover {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable DOCS (v 6.1.2)</h1>
+<h1>Flowable DOCS (v 6.2.0)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -425,7 +425,7 @@ Further on in this guide, there is a section on <a href="#eclipseDesignerInstall
 <p>We expect developers to have read <a href="http://www.catb.org/~esr/faqs/smart-questions.html">How to ask questions the smart way</a> before reporting or asking anything.</p>
 </div>
 <div class="paragraph">
-<p>After you&#8217;ve done that you can post questions, comments or suggestions for enhancements on <a href="http://forums.flowable.org">the User forum</a> and create issues for bugs in <a href="https://github.com/flowable/flowable-engine/issues">our Github issue tracker</a>.</p>
+<p>After you&#8217;ve done that you can post questions, comments or suggestions for enhancements on <a href="https://forum.flowable.org">the User forum</a> and create issues for bugs in <a href="https://github.com/flowable/flowable-engine/issues">our Github issue tracker</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -442,6 +442,18 @@ Further on in this guide, there is a section on <a href="#eclipseDesignerInstall
 <h3 id="internal">1.7. Internal implementation classes</h3>
 <div class="paragraph">
 <p>In the JAR files, all classes in packages that have <code>.impl.</code> (e.g. <code>org.flowable.engine.impl.db</code>) in their name are implementation classes and should be considered internal use only. No stability guarantees are given on classes or interfaces that are in implementation classes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_versioning_strategy">1.8. Versioning Strategy</h3>
+<div class="paragraph">
+<p>Versions are denoted using a standard triplet of integers: <strong>MAJOR.MINOR.MICRO</strong>. The intention is that <strong>MAJOR</strong> versions are for evolutions of the core engines. <strong>MINOR</strong> versions are for new features and new APIs. <strong>MICRO</strong> versions are for bug fixes and improvements.</p>
+</div>
+<div class="paragraph">
+<p>In general, Flowable attempts to remain "source compatible" in <strong>MINOR</strong> and <strong>MICRO</strong> releases for all non internal implementation classes. We define "source compatible" to mean an application will continue to build without error and the semantics have remained unchanged. Flowable also attempts to remain "binary compatible" in <strong>MINOR</strong> and <strong>MICRO</strong> releases. We define "binary compatible" to mean that this new version of Flowable can be dropped as a jar replacement into a compiled application and continue to function properly.</p>
+</div>
+<div class="paragraph">
+<p>In case an API change is introduced in a <strong>MINOR</strong> release, the strategy is that a backwards compatible version is kept in it, annotated with <em>@Deprecated</em>. Such deprecated APIs will then be removed two <strong>MINOR</strong> versions later.</p>
 </div>
 </div>
 </div>
@@ -567,7 +579,7 @@ Note that the H2 dependency includes both the database <em>and</em> the driver. 
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>org.flowable<span class="tok-nt">&lt;/groupId&gt;</span>
     <span class="tok-nt">&lt;artifactId&gt;</span>flowable-engine<span class="tok-nt">&lt;/artifactId&gt;</span>
-    <span class="tok-nt">&lt;version&gt;</span>6.1.2<span class="tok-nt">&lt;/version&gt;</span>
+    <span class="tok-nt">&lt;version&gt;</span>6.2.0<span class="tok-nt">&lt;/version&gt;</span>
   <span class="tok-nt">&lt;/dependency&gt;</span>
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>com.h2database<span class="tok-nt">&lt;/groupId&gt;</span>
@@ -2671,12 +2683,17 @@ Log4j the following sample layout definition causes the logger to show the above
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PROCESS_COMPLETED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A process has been completed. Dispatched after the last activity <code>ACTIVITY_COMPLETED </code> event. Process is completed when it reaches state in which process instance does not have any transition to take.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A process has been completed, meaning all executions have stopped for the process instance. Dispatched after the last activity <code>ACTIVITY_COMPLETED </code> event. Process is completed when it reaches state in which process instance does not have any transition to take.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.flowable&#8230;&#8203;FlowableEntityEvent</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PROCESS_COMPLETED_WITH_TERMINATE_END_EVENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A process has been completed by arriving at a terminate end event.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.flowable&#8230;&#8203;FlowableProcessTerminatedEvent</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PROCESS_CANCELLED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A process has been canceled. Dispatched before the process instance is deleted from runtime. Process instance is canceled by API call <code>RuntimeService.deleteProcessInstance</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A process has been canceled. Dispatched before the process instance is deleted from runtime. A process instance can for example be canceled by the API call <code>RuntimeService.deleteProcessInstance</code>, by an interrupting boundary event on a call activity, &#8230;&#8203;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.flowable&#8230;&#8203;FlowableCancelledEvent</code></p></td>
 </tr>
 <tr>
@@ -4854,6 +4871,33 @@ public class MyRestController {
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_advanced_configuration">5.7.7. Advanced Configuration</h4>
+<div class="paragraph">
+<p>It&#8217;s possible to get a hold of the process engine configuration by implementing the <em>org.flowable.spring.boot.ProcessEngineConfigurationConfigurer</em> interface. This can be useful for advanced configuration settings or simply because a property has not been exposed (yet). For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7</div></td><td class="code"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyConfigurer</span> <span class="tok-kd">implements</span> <span class="tok-n">ProcessEngineConfigurationConfigurer</span> <span class="tok-o">{</span>
+
+    <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">configure</span><span class="tok-o">(</span><span class="tok-n">SpringProcessEngineConfiguration</span> <span class="tok-n">processEngineConfiguration</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+        <span class="tok-c1">// advanced configuration</span>
+    <span class="tok-o">}</span>
+
+<span class="tok-o">}</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By exposing an instance of this class as an <em>@Bean</em> in the Spring Boot configuration, the instance will be called before the process engine is fully created.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -5995,7 +6039,7 @@ It accepts as a value either static values <a href="http://en.wikipedia.org/wiki
 </div>
 </div>
 <div class="paragraph">
-<p>Please see <a href="http://www.quartz-scheduler.org/docs/tutorials/crontrigger.html">this tutorial</a> for using cron expressions.</p>
+<p>Please see <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger.html">this tutorial</a> for using cron expressions.</p>
 </div>
 <div class="paragraph">
 <p><strong>Note:</strong> The first symbol denotes seconds, not minutes as in normal Unix cron.</p>
@@ -10686,8 +10730,8 @@ By default set to false.</p></td>
 </div>
 </div>
 <div class="paragraph">
-<p>Also its possible to override default Http Task behavior by providing custom implementation.
-Custom implemention should extend org.flowable.http.HttpActivityBehavior and override perform() method.
+<p>Also its possible to override default Http Task behavior by providing a custom implementation.
+Custom implementations should extend org.flowable.http.HttpActivityBehavior and override the perform() method.
 Field <em>httpActivityBehaviorClass</em> should be set in the task definition.
 Default value for this field is <em>org.flowable.http.impl.HttpActivityBehaviorImpl</em>.
 Currently <em>HttpActivityBehaviorImpl</em> is based on Apache Http Client. As Apache Http Client can be customized in many ways, all possible options are not used in Http Client config.
@@ -12389,6 +12433,43 @@ For example in a route like:</p>
 5</div></td><td class="code"><span></span><span class="tok-nt">&lt;userTask</span> <span class="tok-na">id=</span><span class="tok-s">&quot;miTasks&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;My Task&quot;</span> <span class="tok-na">flowable:assignee=</span><span class="tok-s">&quot;${assignee}&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;multiInstanceLoopCharacteristics</span> <span class="tok-na">isSequential=</span><span class="tok-s">&quot;true&quot;</span>
      <span class="tok-na">flowable:collection=</span><span class="tok-s">&quot;${myService.resolveUsersForTask()}&quot;</span> <span class="tok-na">flowable:elementVariable=</span><span class="tok-s">&quot;assignee&quot;</span> <span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;/multiInstanceLoopCharacteristics&gt;</span>
+<span class="tok-nt">&lt;/userTask&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the <code>collection</code> attribute will be resolved as an expression. When the expression resolves to a String instead of a collection, either because it is a static string value or the expression itself resolves to a String, the resulting value will be used as the variable name for fetching the collection process variable.</p>
+</div>
+<div class="paragraph">
+<p>For example, in the following snippet the collection is assumed to be stored in the <code>assigneeList</code> process variable:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5</div></td><td class="code"><span></span><span class="tok-nt">&lt;userTask</span> <span class="tok-na">id=</span><span class="tok-s">&quot;miTasks&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;My Task&quot;</span> <span class="tok-na">flowable:assignee=</span><span class="tok-s">&quot;${assignee}&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;multiInstanceLoopCharacteristics</span> <span class="tok-na">isSequential=</span><span class="tok-s">&quot;true&quot;</span>
+     <span class="tok-na">flowable:collection=</span><span class="tok-s">&quot;assigneeList&quot;</span> <span class="tok-na">flowable:elementVariable=</span><span class="tok-s">&quot;assignee&quot;</span> <span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;/multiInstanceLoopCharacteristics&gt;</span>
+<span class="tok-nt">&lt;/userTask&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, assuming the <code>myService.getCollectionVariableName()</code> returns a String value, that value will be used as variable name to fetch the collection stored as a process variable.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5</div></td><td class="code"><span></span><span class="tok-nt">&lt;userTask</span> <span class="tok-na">id=</span><span class="tok-s">&quot;miTasks&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;My Task&quot;</span> <span class="tok-na">flowable:assignee=</span><span class="tok-s">&quot;${assignee}&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;multiInstanceLoopCharacteristics</span> <span class="tok-na">isSequential=</span><span class="tok-s">&quot;true&quot;</span>
+     <span class="tok-na">flowable:collection=</span><span class="tok-s">&quot;${myService.getCollectionVariableName()}&quot;</span> <span class="tok-na">flowable:elementVariable=</span><span class="tok-s">&quot;assignee&quot;</span> <span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;/multiInstanceLoopCharacteristics&gt;</span>
 <span class="tok-nt">&lt;/userTask&gt;</span>
 </td></tr></table></code></pre>
@@ -14460,7 +14541,7 @@ All form values need to be passed in the variables map and an optional form outc
 </div>
 <div class="paragraph">
 <p>With the <code>asyncHistoryExecutorActivate</code> property, the history job executor can be started automatically when booting the Process Engine. This would be only set to false for test cases (or if Async History is not enabled of course).
-The <code>asyncHistoryExecutorNumberOfRetries</code> property configures the number of retries for an Async History job. This property is a bit different than that for a normal async job, because a history job may need more cycles before it can be handled succesfully. For example, a historic task first has to be created in the ACT_HI_TASK_ table before the assignee can be updated by another history job. The default value for this property is set to 10 in the Process Engine configuration. When the number of retries has been reached, the history job will be ignored (and not written to a deadletter job table).</p>
+The <code>asyncHistoryExecutorNumberOfRetries</code> property configures the number of retries for an Async History job. This property is a bit different than that for a normal async job, because a history job may need more cycles before it can be handled successfully. For example, a historic task first has to be created in the ACT_HI_TASK_ table before the assignee can be updated by another history job. The default value for this property is set to 10 in the Process Engine configuration. When the number of retries has been reached, the history job will be ignored (and not written to a deadletter job table).</p>
 </div>
 <div class="paragraph">
 <p>In addition to these properties, the <code>asyncHistoryExecutor</code> property can be used to configure an AsyncExecutor in a similar way that you can do for the normal async job executor.</p>
@@ -15954,7 +16035,7 @@ implementation which overrides the default IDM engine to use a LDAP server inste
 <div class="ulist">
 <ul>
 <li>
-<p>Flowable IDM: an IDentity Management application that provides single sign-on authentication functionality for all the Flowable UI applications, and, for users with the IDM administrative privilege, it also provides functionality to manage users, groups and privileges.</p>
+<p>Flowable IDM: an Identity Management application that provides single sign-on authentication functionality for all the Flowable UI applications, and, for users with the IDM administrative privilege, it also provides functionality to manage users, groups and privileges.</p>
 </li>
 <li>
 <p>Flowable Modeler: an application that allows users with modeler privileges to model processes, forms, decision tables and application definitions.</p>
@@ -16376,7 +16457,7 @@ ldap.cache.groupexpiration=180000</code></pre>
 <p>You can preview every form definition by opening the details view of a form definition. In the details view, the form name, key and description can be edited and the history of form models is available. You can also duplicate the form definition to create a new form definition with the same form fields.</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s open the vacation request process model in the BPMN editor again and add a Script task to the process model, that will calculate the number of days between the vacation start and end dates. Click on the <em>Script form</em> property and fill in a value of <em>groovy</em> to instruct the Flowable engine to use the Groovy scripting engine. Now click on the <em>Script</em> property and fill in the script that calculates the number of days.</p>
+<p>Now let&#8217;s open the vacation request process model in the BPMN editor again and add a Script task to the process model, that will calculate the number of days between the vacation start and end dates. Click on the <em>Script format</em> property and fill in a value of <em>groovy</em> to instruct the Flowable engine to use the Groovy scripting engine. Now click on the <em>Script</em> property and fill in the script that calculates the number of days.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -29828,7 +29909,7 @@ GET runtime/tasks/{taskId}/identitylinks/groups</pre>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">firstNameLike</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only return userswith a firstname like the given value. Use <code>%</code> as wildcard-character.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only return users with a firstname like the given value. Use <code>%</code> as wildcard-character.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 </tr>
 <tr>
@@ -33504,7 +33585,7 @@ it is not optimized for querying nor for easy retrieval. The real use case is au
 <div class="sect2">
 <h3 id="advancedSecureScripting">18.12. Secure Scripting</h3>
 <div class="paragraph">
-<p>By default, when using a <a href="#bpmnScriptTask">script task</a>, the script that is executed has similar capabilities as a Java delegate. It has full access to the JVM, can run forever (due to infinite loops) or use up a lot of memory. However, Java delegates need to be written and put on the classpath in a jar and they have a different lifecyle from a process definitions. End-users generally will not write Java delegates, as this is a typical the job of a developer.</p>
+<p>By default, when using a <a href="#bpmnScriptTask">script task</a>, the script that is executed has similar capabilities as a Java delegate. It has full access to the JVM, can run forever (due to infinite loops) or use up a lot of memory. However, Java delegates need to be written and put on the classpath in a jar and they have a different life cycle from a process definitions. End-users generally will not write Java delegates, as this is a typical the job of a developer.</p>
 </div>
 <div class="paragraph">
 <p>Scripts on the other hand are part of the process definition and its lifecycle is the same. Script tasks don&#8217;t need the extra step of a jar deployment, but can be executed from the moment the process definition is deployed. Sometimes, scripts for script tasks are not written by developers. Yet, this poses a problem as stated above: a script has full access to the JVM and it is possible to block many system resources when executing the script. Allowing scripts from just about anyone is thus not a good idea.</p>

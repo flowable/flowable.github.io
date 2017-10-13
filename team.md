@@ -5,7 +5,7 @@ layout: team
 permalink: team.html
 ---
 
-The Flowable Team comprises people who are committed to creating the best Java BPM technology and making it available to everyone through Open Source.
+The Flowable Project comprises people who are committed to creating the best Java BPM technology and making it available to everyone through Open Source.
 <br/>
 <br/>
 

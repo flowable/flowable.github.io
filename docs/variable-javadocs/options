@@ -1,0 +1,24 @@
+-classpath
+'/Users/tijsrademakers/.m2/repository/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-engine-common-api/6.2.0/flowable-engine-common-api-6.2.0.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-variable-service-api/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2017 <a href="http://www.flowable.org">Flowable</a>. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-variable-service-api/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Flowable - Variable Service API 6.2.0 API'
+-linkoffline
+'http://docs.oracle.com/javase/7/docs/api' '/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-variable-service-api/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Flowable - Variable Service API 6.2.0 API'
