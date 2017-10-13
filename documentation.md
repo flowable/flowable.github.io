@@ -40,7 +40,11 @@ In addition we've added Swagger in Flowable v6. Boot up the Flowable REST app to
 
 For the tightest integration to your applications, you can use the Java API.  From high-level to the deepest customization, this is the definitive reference document.
 <div class="buttons-unit">
-  <a href="{{ site.baseurl }}/docs/javadocs/index.html" class="button" target="_blank">Javadoc</a>
+  <a href="{{ site.baseurl }}/docs/javadocs/index.html" class="button" target="_blank">BPMN Javadoc</a>
+  <a href="{{ site.baseurl }}/docs/cmmn-javadocs/index.html" class="button" target="_blank">CMMN Javadoc</a>
+  <a href="{{ site.baseurl }}/docs/task-javadocs/index.html" class="button" target="_blank">Task Javadoc</a>
+  <a href="{{ site.baseurl }}/docs/variable-javadocs/index.html" class="button" target="_blank">Variable Javadoc</a>
+  <a href="{{ site.baseurl }}/docs/job-javadocs/index.html" class="button" target="_blank">Job Javadoc</a>
 </div>
 
 ## Migration Guide
