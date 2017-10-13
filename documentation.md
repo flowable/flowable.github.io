@@ -42,6 +42,9 @@ For the tightest integration to your applications, you can use the Java API.  Fr
 <div class="buttons-unit">
   <a href="{{ site.baseurl }}/docs/javadocs/index.html" class="button" target="_blank">BPMN Javadoc</a>
   <a href="{{ site.baseurl }}/docs/cmmn-javadocs/index.html" class="button" target="_blank">CMMN Javadoc</a>
+</div>
+
+<div class="buttons-unit">
   <a href="{{ site.baseurl }}/docs/task-javadocs/index.html" class="button" target="_blank">Task Javadoc</a>
   <a href="{{ site.baseurl }}/docs/variable-javadocs/index.html" class="button" target="_blank">Variable Javadoc</a>
   <a href="{{ site.baseurl }}/docs/job-javadocs/index.html" class="button" target="_blank">Job Javadoc</a>
