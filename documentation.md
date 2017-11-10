@@ -6,6 +6,17 @@ permalink: documentation.html
 ---
 Welcome to the Flowable Documentation.  Here you can find guides and reference documents to help you develop applications and services that use Flowable BPM.  This documentation is under constant update, so be sure to visit here regularly.
 
+## Tutorials and Talks
+If you just want to download Flowable and have a quick play, this is a good article to follow:
+
++ [Instant Gratification with Flowable 6](https://paulhh.wordpress.com/2017/01/31/flowable-6-instant-gratification/)
+
+Here's some talks we've given:
+
++ Devoxx 2017: [Introducing AI to the Flowable Process Engines](https://www.youtube.com/watch?v=i8dYR0LdpHg)
++ BPMNext 2017: [Making Business Processes Dance to the User's Tune](https://www.youtube.com/watch?v=5qIw3JTw-mI)
+
+
 ## Getting started
 
 This is the best place to start if you're new to Flowable.  It shows you how to get up and running in minutes, as well as introducing you to the basics of the Engine API.

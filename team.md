@@ -360,31 +360,24 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	</div>
 	
 	<a class="team-member" href="#guyModal" rel="modal:open">
-	 <div class="bio-pic"><img src="img/guy.png"></div>
+	 <div class="bio-pic"><img src="img/jmp.jpg"></div>
 	</a>
 
 	<div id="guyModal" class="documentationContent team-member-bio">
 	     <div class="bio-title">
-	        <div class="bio-pic-modal"><img src="img/guy.png"></div>
-	        <h3>Guy Brand</h3>
+	        <div class="bio-pic-modal"><img src="img/jmp.jpg"></div>
+	        <h3>Jean Marie Pascal</h3>
 	        <p>Flowable developer</p>
 	     </div>
 
-	    <p>After the computer science degree, Guy started to work at Canoo where he was part of the RIA development team and acted as a consultant working for different customers all over the world. 
-	    Currently he is working at edorasware, which develops an all in one platform with the focus on enterprise work management, where Flowable is used as the core process engine.
-	    Besides being passionate about development in general, his interests are his car (1992 Lancia Delta) and producing electronic music.</p>
-
-		<p>If you are interested in my blog, please visit <a href="https://guylabs.com">https://guylabs.com</a></p>
+	    <p>Just another (French) Software engineer at edorasware focused on Mobility and API design. Previously he worked as Mobile Technical Leader in Alfresco and created mobile BPMN clients.</p>
 
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
-	            <a href="https://twitter.com/guy_labs" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	            <a href="https://twitter.com/jeanmariepascal" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 	        <div class="contact-info linkedin">
-	            <a href="https://www.linkedin.com/in/guy-brand-b2a9068b" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
-	        </div>
-			<div class="contact-info linkedin">
-	            <a href="https://guylabs.com" target="_blank"><i class="fa fa-rss-square fa-lg" aria-hidden="true"></i></a>
+	            <a href="https://www.linkedin.com/in/jeanmariepascal/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 	    </div>
 	</div>
