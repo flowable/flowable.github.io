@@ -19,9 +19,10 @@ Here's some talks we've given:
 
 ## Getting started
 
-This is the best place to start if you're new to Flowable.  It shows you how to get up and running in minutes, as well as introducing you to the basics of the Engine API.
+This is the best place to start if you're new to Flowable.  It shows you how to get up and running in minutes, either with the UI Apps or introducing you to the basics of the Engine API.
 <div class="buttons-unit">
-  <a href="{{ site.baseurl }}/docs/userguide/index.html#_getting_started" class="button" target="_blank">Getting Started</a>
+  <a href="{{ site.baseurl }}/docs/userguide/index.html#flowableUIApps" class="button" target="_blank">Getting Started with Apps</a>
+  <a href="{{ site.baseurl }}/docs/userguide/index.html#_getting_started" class="button" target="_blank">Getting Started with Code</a>
 </div>
 
 ## User Guides
