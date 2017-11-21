@@ -42,9 +42,9 @@ Flowable has rich REST APIs that provides almost full coverage of the Flowable J
 In addition we've added Swagger in Flowable v6. Boot up the Flowable REST app to try it out.
 
 <div class="buttons-unit">
-  <a href="{{ site.baseurl }}/docs/userguide/index.html#restApiChapter" class="button" target="_blank">BPMN API</a>
-    <a href="{{ site.baseurl }}/docs/userguide-dmn/index.html#restApiChapter" class="button" target="_blank">DMN API</a>
-    <a href="{{ site.baseurl }}/docs/userguide-form/index.html#restApiChapter" class="button" target="_blank">Form API</a>
+  <a href="{{ site.baseurl }}/docs/public-api/process/index.html" class="button" target="_blank">BPMN API</a>
+    <a href="{{ site.baseurl }}/docs/public-api/decision/index.html" class="button" target="_blank">DMN API</a>
+    <a href="{{ site.baseurl }}/docs/public-api/form/index.html" class="button" target="_blank">Form API</a>
 </div>
 
 
