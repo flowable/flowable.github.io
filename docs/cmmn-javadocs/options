@@ -1,0 +1,24 @@
+-classpath
+'/Users/tijsrademakers/.m2/repository/org/mybatis/mybatis/3.4.1/mybatis-3.4.1.jar:/Users/tijsrademakers/.m2/repository/org/springframework/spring-beans/4.3.9.RELEASE/spring-beans-4.3.9.RELEASE.jar:/Users/tijsrademakers/.m2/repository/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-task-service/6.2.1/flowable-task-service-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-job-service-api/6.2.1/flowable-job-service-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-identitylink-service/6.2.1/flowable-identitylink-service-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/liquibase/liquibase-core/3.5.3/liquibase-core-3.5.3.jar:/Users/tijsrademakers/.m2/repository/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-engine-common/6.2.1/flowable-engine-common-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-engine-common-api/6.2.1/flowable-engine-common-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-cmmn-image-generator/6.2.1/flowable-cmmn-image-generator-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-identitylink-service-api/6.2.1/flowable-identitylink-service-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.7.5/jackson-annotations-2.7.5.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-task-service-api/6.2.1/flowable-task-service-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/com/fasterxml/uuid/java-uuid-generator/3.1.3/java-uuid-generator-3.1.3.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-dmn-api/6.2.1/flowable-dmn-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-content-api/6.2.1/flowable-content-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/tijsrademakers/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5.jar:/Users/tijsrademakers/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-cmmn-model/6.2.1/flowable-cmmn-model-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-variable-service-api/6.2.1/flowable-variable-service-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-form-model/6.2.1/flowable-form-model-6.2.1.jar:/Users/tijsrademakers/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-cmmn-converter/6.2.1/flowable-cmmn-converter-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar:/Users/tijsrademakers/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.7.5/jackson-databind-2.7.5.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-idm-api/6.2.1/flowable-idm-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-variable-service/6.2.1/flowable-variable-service-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-idm-engine/6.2.1/flowable-idm-engine-6.2.1.jar:/Users/tijsrademakers/.m2/repository/log4j/log4j/1.2.13/log4j-1.2.13.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-dmn-model/6.2.1/flowable-dmn-model-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-job-service/6.2.1/flowable-job-service-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-form-api/6.2.1/flowable-form-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-cmmn-api/6.2.1/flowable-cmmn-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.jar:/Users/tijsrademakers/.m2/repository/junit/junit/4.12/junit-4.12.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-cmmn-engine/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2017 <a href="http://www.flowable.org">Flowable</a>. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-cmmn-engine/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Flowable - CMMN Engine 6.2.1 API'
+-linkoffline
+'http://docs.oracle.com/javase/7/docs/api' '/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-cmmn-engine/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Flowable - CMMN Engine 6.2.1 API'

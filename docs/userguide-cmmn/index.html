@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable CMMN DOCS (v 6.2.0)</title>
+<title>Flowable CMMN DOCS (v 6.2.1)</title>
 <style>
 
 /* normalize.css */
@@ -15,6 +15,9 @@ button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-bloc
 /* tocbot 2.1.4 */
 
 .toc{overflow-y:auto}.toc>ul{overflow:hidden;position:relative}.toc-list{margin:0;padding-left:10px}a.toc-link{color:currentColor;height:100%}.is-collapsible{max-height:1000px;overflow:hidden;transition:all 300ms ease-in-out}.is-collapsed{max-height:0}.is-position-fixed{position:fixed !important;top:0}.is-active-link{font-weight:700}.toc-link::before{background-color:#f9f9fb;content:' ';display:inline-block;height:inherit;left:8px;margin-top:-1px;position:absolute;width:2px}.is-active-link::before{background-color:#54BC4B}
+
+
+/* Activiti Specific */
 
 body {
   color: #494d55;
@@ -85,7 +88,7 @@ html, body {
   overflow-x: auto;
 }
 
-h2, h3, h4 {
+h2, h3, h4, h5, h6 {
   color: #00345a;
 }
 
@@ -107,6 +110,23 @@ h3 {
   /*border-bottom: 1px solid #d7d7d7;*/
 }
 
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+h6, h7 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .sect1, .sect2 {
   margin-bottom: 20px;
 }
@@ -116,7 +136,7 @@ h3 {
   clear: both;
 }
 
-.note, .listingblock{
+.note, .listingblock, .literalblock{
   padding-left: 8px;
   padding-right: 8px;
   margin-bottom: 14px;
@@ -225,6 +245,15 @@ a:hover {
   padding: 4px 0 4px 0;
 }
 
+
+div.sect5  p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.sect5  code {
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
@@ -350,7 +379,7 @@ a:hover {
       tocbot.init({
         tocSelector: '#generated-toc',
         contentSelector: '#content',
-        headingSelector: 'h2, h3, h4',
+        headingSelector: 'h2, h3, h4, h5',
         headingsOffset: headerSize,
         smoothScrollOptions: {
           easing: 'easeInOutCubic',
@@ -374,7 +403,7 @@ a:hover {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable CMMN DOCS (v 6.2.0)</h1>
+<h1>Flowable CMMN DOCS (v 6.2.1)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -1179,7 +1208,7 @@ requires users to either modify the db.properties in the Flowable source and rec
 <p>A case instance can have variables (called <em>case variables</em>), but also <em>plan items</em> (which are enabled plan items) and human tasks can have variables. A case instance can have any number of variables. Each variable is stored in a row in the <em>ACT_RU_VARIABLE</em> database table.</p>
 </div>
 <div class="paragraph">
-<p>The <em>createCaseInstanceBuilder</em> method has optional methopds to provide the variables when the case instance is created and started. For example, from the <em>CmmnRuntimeService</em>:</p>
+<p>The <em>createCaseInstanceBuilder</em> method has optional methods to provide the variables when the case instance is created and started. For example, from the <em>CmmnRuntimeService</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1379,7 +1408,7 @@ ${myBean.doSomething(myVar, execution)}</pre>
 <div class="sect2">
 <h3 id="_cmmnenginefactorybean">4.1. CmmnEngineFactoryBean</h3>
 <div class="paragraph">
-<p>The <code>CmmnEngine</code> can be configured as a regular Spring bean. The starting point of the integration is the class <code>org.flowable.cmmn.spring.CmmnEngineFactoryBeann</code>. That bean takes a CMMN engine configuration and creates the CMMN engine.  This means that the creation and configuration of properties for Spring is the same as documented in the <a href="#configuration">configuration section</a>. For Spring integration, the configuration and engine beans will look like this:</p>
+<p>The <code>CmmnEngine</code> can be configured as a regular Spring bean. The starting point of the integration is the class <code>org.flowable.cmmn.spring.CmmnEngineFactoryBean</code>. That bean takes a CMMN engine configuration and creates the CMMN engine.  This means that the creation and configuration of properties for Spring is the same as documented in the <a href="#configuration">configuration section</a>. For Spring integration, the configuration and engine beans will look like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1966,7 +1995,7 @@ ${myBean.doSomething(myVar, execution)}</pre>
 <div class="sect2">
 <h3 id="_what_is_cmmn">6.1. What is CMMN?</h3>
 <div class="paragraph">
-<p>The Case Management Model and Notation (CMMN) is a standard notation and formal specification by the <a href="http://www.omg.org/spec/CMMN/">Object Management Group</a> for repesenting case models.</p>
+<p>The Case Management Model and Notation (CMMN) is a standard notation and formal specification by the <a href="http://www.omg.org/spec/CMMN/">Object Management Group</a> for representing case models.</p>
 </div>
 <div class="paragraph">
 <p>Flowable contains:</p>
@@ -2144,7 +2173,7 @@ ${myBean.doSomething(myVar, execution)}</pre>
 <p>In this section we&#8217;re going to build a simple case model and execute it programmatically through the Java API&#8217;s of the Flowable CMMN engine in a simple command line example.</p>
 </div>
 <div class="paragraph">
-<p>The case model we&#8217;ll build is a (simplified) <em>employee onboarding</em> case with two stages: a phase before and phase after the potential employee has started. In the first stage, someone from the HR departement will complete the tasks, while in the second stage it is the employee completing them. Also, at any point in time, the potential employee can reject the job and stop the whole case instance.</p>
+<p>The case model we&#8217;ll build is a (simplified) <em>employee onboarding</em> case with two stages: a phase before and phase after the potential employee has started. In the first stage, someone from the HR department will complete the tasks, while in the second stage it is the employee completing them. Also, at any point in time, the potential employee can reject the job and stop the whole case instance.</p>
 </div>
 <div class="paragraph">
 <p>Note that only stages and human tasks are used. In a real case model, there will most likely other plan item types too, like milestones, nested stages, automated tasks, etc.</p>
@@ -2609,7 +2638,7 @@ Task for employee: Reject job</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>When the three tasks of HR are completed, the <em>Send joining letter to candidate</em> taks should be available:</p>
+<p>When the three tasks of HR are completed, the <em>Send joining letter to candidate</em> task should be available:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2742,7 +2771,7 @@ Task completed: Fill in paperwork</pre>
 <div class="sect3">
 <h4 id="_stage">6.4.1. Stage</h4>
 <div class="paragraph">
-<p>A stage is used to group plan items together. It is typicaly used to define "phases" in a case instance.</p>
+<p>A stage is used to group plan items together. It is typically used to define "phases" in a case instance.</p>
 </div>
 <div class="paragraph">
 <p>A stage is a plan item itself, and thus can have entry and exit criteria. Plan items contained within a stage are only available when the parent stage moves to the <em>active</em> state. Stages can be nested in other stages.</p>
@@ -2798,7 +2827,7 @@ Task completed: Fill in paperwork</pre>
 <p>A human task is a plan item, which means that beyond a human task entry aso a <em>PlanItemInstance</em> is created and it can be queried via the <em>PlanItemInstanceQuery</em>.</p>
 </div>
 <div class="paragraph">
-<p>Human tasks can be queried throught the <em>org.flowable.task.api.TaskQuery</em> API. Historic task data can be queries through the <em>org.flowable.task.api.history.HistoricTaskInstanceQuery</em>.</p>
+<p>Human tasks can be queried through the <em>org.flowable.task.api.TaskQuery</em> API. Historic task data can be queries through the <em>org.flowable.task.api.history.HistoricTaskInstanceQuery</em>.</p>
 </div>
 <div class="paragraph">
 <p>Properties:</p>
@@ -2821,10 +2850,10 @@ Task completed: Fill in paperwork</pre>
 <p><strong>owner</strong> : an expression (can be a static text value) that is used to determine to who is the owner of the human task.</p>
 </li>
 <li>
-<p><strong>candidateUsers</strong> : an expression (can be a static text value) that resolves to a comma-seperated list of Strings that is used to determine which users are candidate for this human task.</p>
+<p><strong>candidateUsers</strong> : an expression (can be a static text value) that resolves to a comma-separated list of Strings that is used to determine which users are candidate for this human task.</p>
 </li>
 <li>
-<p><strong>candidateGroups</strong> : an expression (can be a static text value) that resolves to a comma-seperated list of Strings that is used to determine to which groups the task is assigned.</p>
+<p><strong>candidateGroups</strong> : an expression (can be a static text value) that resolves to a comma-separated list of Strings that is used to determine to which groups the task is assigned.</p>
 </li>
 <li>
 <p><strong>form key</strong>: an expression that determines a key when using forms. Can be retrieved via the API afterwards.</p>
@@ -2906,7 +2935,51 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_milestone">6.4.5. Milestone</h4>
+<h4 id="_decision_task">6.4.5. Decision task</h4>
+<div class="paragraph">
+<p>A <em>Decision task</em> allows to call out to a DMN decision table and store the resulting variable in the case instance.</p>
+</div>
+<div class="paragraph">
+<p>Properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Decision table reference</strong>: the referenced DMN decision table that needs to be invoked.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is also possible to throw an error when no rule is hit during the evaluation of the DMN decision table, by setting the <em><em>Throw error if no rules were hit</em></em> property.</p>
+</div>
+<div class="paragraph">
+<p>A decision task is visualized as a <em>task</em> with a table icon in the top left corner:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.decisiontask.png" alt="cmmn.decisiontask">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_http_task">6.4.6. Http Task</h4>
+<div class="paragraph">
+<p>The Http task is an out-of-the-box implementation of a <em>service task</em>. It is used when a REST service needs to be called over HTTP.</p>
+</div>
+<div class="paragraph">
+<p>The Http task has various options to customize the request and response. See the BPMN http task documentation for details on all the configuration options.</p>
+</div>
+<div class="paragraph">
+<p>A http task is visualized as a <em>task</em> with a rocket icon in the top left corner:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.httptask.png" alt="cmmn.httptask">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_milestone">6.4.7. Milestone</h4>
 <div class="paragraph">
 <p>A milestone is used to mark arriving at a certain point in the case instance. At runtime, they are represented as <strong>MilestoneInstances</strong> and they can be queried through the <strong>MilestoneInstanceQuery</strong> via the <em>CmmnRuntimeService</em>. There is also a historical counterpart via the <em>CmmnHistoryService</em>.</p>
 </div>
@@ -2933,7 +3006,7 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_case_task">6.4.6. Case task</h4>
+<h4 id="_case_task">6.4.8. Case task</h4>
 <div class="paragraph">
 <p>A case task is used to start a child case within the context of another case. The <em>CaseInstanceQuery</em> has <em>parent</em> options to find these cases.</p>
 </div>
@@ -2969,7 +3042,7 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_process_task">6.4.7. Process task</h4>
+<h4 id="_process_task">6.4.9. Process task</h4>
 <div class="paragraph">
 <p>A process task is used to start a process instance within the context of a case.</p>
 </div>
@@ -3005,7 +3078,9 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_entry_criterion">6.4.8. Entry criterion</h4>
+<h4 id="_criteria">6.4.10. Criteria</h4>
+<div class="sect4">
+<h5 id="_entry_criterion">Entry criterion</h5>
 <div class="paragraph">
 <p>Entry criteria form a sentry for a given plan item instance. They consist of two parts:</p>
 </div>
@@ -3034,8 +3109,8 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_exit_criterion">6.4.9. Exit criterion</h4>
+<div class="sect4">
+<h5 id="_exit_criterion">Exit criterion</h5>
 <div class="paragraph">
 <p>Exit criteria form a sentry for a given plan item instance. They consist of two parts:</p>
 </div>
@@ -3061,6 +3136,91 @@ Task completed: Fill in paperwork</pre>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/cmmn.exitcriteria.png" alt="cmmn.exitcriteria">
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_event_listeners">6.4.11. Event Listeners</h4>
+<div class="sect4">
+<h5 id="_timer_event_listener">Timer Event Listener</h5>
+<div class="paragraph">
+<p>A timer event listener is used when the passing of time needs to be captured in a case model.</p>
+</div>
+<div class="paragraph">
+<p>A timer event listener is not a task and has a simpler plan item lifecycle compared to a <em>task</em>: the timer will simply move from <em>available</em> to <em>completed</em> when the event (in this case, the time passing) occurs.</p>
+</div>
+<div class="paragraph">
+<p>Properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Timer expression</strong>: an expression that defines when the timer should occur. Following options are possible:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>An expression resolving to a java.util.Date or org.joda.time.DateTime instance (for example _${someBean.calculateNextDate(someCaseInstanceVariable)})</p>
+</li>
+<li>
+<p>An ISO8601 date</p>
+</li>
+<li>
+<p>An ISO8601 duration String (for example <em>PT5H</em>, indicating the timer should fire in 5 hours from instantiation)</p>
+</li>
+<li>
+<p>AN ISO8601 repetition String (for example R5/PT2H, indicating the timer should fire 5 times, each time waiting 2 hours)</p>
+</li>
+<li>
+<p>A String containing a cron expression</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Start trigger plan item/event</strong>: allows to reference a plan item in the case model that triggers the start of the timer event listener.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that setting a <em>start trigger</em> for the timer event listener does not have a visual indication in the case model, as entry/exit criteria on sentries do have.</p>
+</div>
+<div class="paragraph">
+<p>A timer event listener is visualized as circle with a clock icon inside:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.timereventlistener.png" alt="cmmn.timereventlistener">
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_item_controls">6.4.12. Item controls</h4>
+<div class="sect4">
+<h5 id="_repetition_rule">Repetition Rule</h5>
+<div class="paragraph">
+<p>Plan items on the case model can have a <em>repetition rule</em>, an expression that can be used to indicate a certain plan item needs to be repeated.</p>
+</div>
+<div class="paragraph">
+<p>An optional <em>repetition counter variable</em> can be set, that holds the index (one-based) of the instance. If not set, the default variable name is <em>repeitionCounter</em>.</p>
+</div>
+<div class="paragraph">
+<p>If the plan item does not have any entry criteria, the repetition rule expression is evaluated when the plan item is completed or terminated. If the expression resolved to <em>true</em>, a new instance is created. For example, a human task with a repetition rule expression <em>${repetitionCounter &lt; 3}</em>, will create three sequential human tasks.</p>
+</div>
+<div class="paragraph">
+<p>If the plan item does have entry criteria, the behavior is different. The repetition rule is not evaluated on completion or termination, but when a sentry of the plan item is satisfied. If both the sentry is satisfied and the repetition rule evaluates to true, a new instance is created.</p>
+</div>
+<div class="paragraph">
+<p>Take for example the following timer event listener followed by a human task. The sentry has one entry criteria for the <em>occur</em> event of the timer event listener. Note that enabling and setting the repetition rule on the task has a visual indication at the bottom of the rectangle.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.repeatingtimereventlistener.png" alt="cmmn.repeatingtimereventlistener">
+</div>
+</div>
+<div class="paragraph">
+<p>If the timer event listener is repeating (for example <em>R/PT1H</em>), the <em>occur</em> event will be fired every hour. When the repetition rule expression of the human task evaluates to true, a new human task instance will be created each hour.</p>
 </div>
 </div>
 </div>

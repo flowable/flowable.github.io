@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable DOCS (v 6.2.0)</title>
+<title>Flowable DOCS (v 6.2.1)</title>
 <style>
 
 /* normalize.css */
@@ -17,7 +17,7 @@ button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-bloc
 .toc{overflow-y:auto}.toc>ul{overflow:hidden;position:relative}.toc-list{margin:0;padding-left:10px}a.toc-link{color:currentColor;height:100%}.is-collapsible{max-height:1000px;overflow:hidden;transition:all 300ms ease-in-out}.is-collapsed{max-height:0}.is-position-fixed{position:fixed !important;top:0}.is-active-link{font-weight:700}.toc-link::before{background-color:#f9f9fb;content:' ';display:inline-block;height:inherit;left:8px;margin-top:-1px;position:absolute;width:2px}.is-active-link::before{background-color:#54BC4B}
 
 
-/* Flowable Specific */
+/* Activiti Specific */
 
 body {
   color: #494d55;
@@ -88,7 +88,7 @@ html, body {
   overflow-x: auto;
 }
 
-h2, h3, h4 {
+h2, h3, h4, h5, h6 {
   color: #00345a;
 }
 
@@ -110,6 +110,23 @@ h3 {
   /*border-bottom: 1px solid #d7d7d7;*/
 }
 
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+h6, h7 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .sect1, .sect2 {
   margin-bottom: 20px;
 }
@@ -119,7 +136,7 @@ h3 {
   clear: both;
 }
 
-.note, .listingblock{
+.note, .listingblock, .literalblock{
   padding-left: 8px;
   padding-right: 8px;
   margin-bottom: 14px;
@@ -228,6 +245,15 @@ a:hover {
   padding: 4px 0 4px 0;
 }
 
+
+div.sect5  p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.sect5  code {
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
@@ -353,7 +379,7 @@ a:hover {
       tocbot.init({
         tocSelector: '#generated-toc',
         contentSelector: '#content',
-        headingSelector: 'h2, h3, h4',
+        headingSelector: 'h2, h3, h4, h5',
         headingsOffset: headerSize,
         smoothScrollOptions: {
           easing: 'easeInOutCubic',
@@ -377,7 +403,7 @@ a:hover {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable DOCS (v 6.2.0)</h1>
+<h1>Flowable DOCS (v 6.2.1)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -431,8 +457,7 @@ Further on in this guide, there is a section on <a href="#eclipseDesignerInstall
 <div class="sect2">
 <h3 id="experimental">1.6. Experimental features</h3>
 <div class="paragraph">
-<p>Sections marked with <strong>[EXPERIMENTAL]</strong> should
-  not be considered stable.</p>
+<p>Sections marked with <strong>[EXPERIMENTAL]</strong> should not be considered stable.</p>
 </div>
 <div class="paragraph">
 <p>All classes that have <code>.impl.</code> in the package name are internal implementation classes and cannot be considered stable or guaranteed in any way.  However, if the User Guide mentions any classes as configuration values, they are supported and can be considered stable.</p>
@@ -579,7 +604,7 @@ Note that the H2 dependency includes both the database <em>and</em> the driver. 
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>org.flowable<span class="tok-nt">&lt;/groupId&gt;</span>
     <span class="tok-nt">&lt;artifactId&gt;</span>flowable-engine<span class="tok-nt">&lt;/artifactId&gt;</span>
-    <span class="tok-nt">&lt;version&gt;</span>6.2.0<span class="tok-nt">&lt;/version&gt;</span>
+    <span class="tok-nt">&lt;version&gt;</span>6.2.1<span class="tok-nt">&lt;/version&gt;</span>
   <span class="tok-nt">&lt;/dependency&gt;</span>
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>com.h2database<span class="tok-nt">&lt;/groupId&gt;</span>
@@ -2640,6 +2665,21 @@ Log4j the following sample layout definition causes the logger to show the above
 <td class="tableblock halign-left valign-top"><p class="tableblock">ACTIVITY_COMPENSATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An activity is about to be compensated. The event contains the id of the activity that is will be executed for compensation.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.flowable&#8230;&#8203;FlowableActivityEvent</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MULTI_INSTANCE_ACTIVITY_STARTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A multi-instance activity is starting to execute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.flowable&#8230;&#8203;FlowableMultiInstanceActivityEvent</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MULTI_INSTANCE_ACTIVITY_COMPLETED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A multi-instance activity completed successfully</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.flowable&#8230;&#8203;FlowableMultiInstanceActivityEvent</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MULTI_INSTANCE_ACTIVITY_CANCELLED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A multi-instance activity is going to be canceled. There can be three reasons for activity cancellation (MessageEventSubscriptionEntity, SignalEventSubscriptionEntity, TimerEntity).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.flowable&#8230;&#8203;FlowableMultiInstanceActivityCancelledEvent</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_CREATED</p></td>
@@ -6066,7 +6106,7 @@ based on process variables. The process variables must contain the ISO 8601 (or 
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Note:</strong> timers are only fired when the job or async executor is enabled (<em>jobExecutorActivate</em> or <em>asyncExecutorActivate</em> must be set to <code>true</code> in the <code>flowable.cfg.xml</code>, because the job and async executor are disabled by default).</p>
+<p><strong>Note:</strong> timers are only fired when the async executor is enabled (<em>asyncExecutorActivate</em> must be set to <code>true</code> in the <code>flowable.cfg.xml</code>, because the async executor is disabled by default).</p>
 </div>
 </div>
 <div class="sect3">
@@ -7087,7 +7127,7 @@ Note that a boundary event is defined on the same level as the activities to whi
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Note:</strong> boundary timer events are only fired when the job or async executor is enabled (<em>jobExecutorActivate</em> or <em>asyncExecutorActivate</em> needs to be set to <code>true</code> in the <code>flowable.cfg.xml</code>, since the job and async executor are disabled by default).</p>
+<p><strong>Note:</strong> boundary timer events are only fired when the async executor is enabled (<em>asyncExecutorActivate</em> needs to be set to <code>true</code> in the <code>flowable.cfg.xml</code>, since the async executor is disabled by default).</p>
 </div>
 </div>
 <div class="sect4">
@@ -13905,7 +13945,7 @@ All form values need to be passed in the variables map and an optional form outc
 <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jpaCloseEntityManager&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
 
 <span class="tok-c">&lt;!-- job executor configurations --&gt;</span>
-<span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jobExecutorActivate&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;asyncExecutorActivate&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span>
 
 <span class="tok-c">&lt;!-- mail server configurations --&gt;</span>
 <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;mailServerPort&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;5025&quot;</span> <span class="tok-nt">/&gt;</span>
@@ -13951,7 +13991,7 @@ All form values need to be passed in the variables map and an optional form outc
   <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jpaEntityManagerFactory&quot;</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;entityManagerFactory&quot;</span> <span class="tok-nt">/&gt;</span>
   <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jpaHandleTransaction&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
   <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jpaCloseEntityManager&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jobExecutorActivate&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;asyncExecutorActivate&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span>
 <span class="tok-nt">&lt;/bean&gt;</span>
 </td></tr></table></code></pre>
 </div>
@@ -16709,23 +16749,23 @@ $translateProvider.useStaticFilesLoader({
 <div class="sect3">
 <h4 id="_installation_and_authentication">15.1.1. Installation and Authentication</h4>
 <div class="paragraph">
-<p>Flowable includes a REST API to the Flowable Engine that can be installed by deploying the flowable-rest.war file to a servlet container like Apache Tomcat. However, it can also be used in another web-application by including the servlet and it&#8217;s mapping in your application and add all flowable-rest dependencies to the classpath.</p>
+<p>Flowable includes a REST API to the Flowable engine that can be installed by deploying the flowable-rest.war file to a servlet container like Apache Tomcat. However, it can also be used in another web-application by including the servlet and its mapping in your application and add all flowable-rest dependencies to the classpath.</p>
 </div>
 <div class="paragraph">
-<p>By default the Flowable Engine will connect to an in-memory H2 database. You can change the database settings in the db.properties file in the WEB-INF/classes folder. The REST API uses JSON format (<a href="http://www.json.org" class="bare">http://www.json.org</a>) and is built upon the Spring MVC (<a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html" class="bare">http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html</a>).</p>
+<p>By default the Flowable engine will connect to an in-memory H2 database. You can change the database settings in the db.properties file in the WEB-INF/classes folder. The REST API uses JSON format (<a href="http://www.json.org" class="bare">http://www.json.org</a>) and is built upon the Spring MVC (<a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html" class="bare">http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html</a>).</p>
 </div>
 <div class="paragraph">
-<p>All REST-resources require a valid Flowable-user to be authenticated by default. Basic HTTP access authentication is used, so you should always include a <em>Authorization: Basic &#8230;&#8203;==</em> HTTP-header when performing requests or include the username and password in the request-url (e.g. <em><a href="http://username:password@localhost:8080/xyz" class="bare">http://username:password@localhost:8080/xyz</a></em>).</p>
+<p>All REST-resources require a valid Flowable-user to be authenticated by default. Basic HTTP access authentication is used, so you should always include a <em>Authorization: Basic &#8230;&#8203;==</em> HTTP-header when performing requests or include the username and password in the request-url (for example, <em><a href="http://username:password@localhost:8080/xyz" class="bare">http://username:password@localhost:8080/xyz</a></em>).</p>
 </div>
 <div class="paragraph">
-<p><strong>It&#8217;s recommended to use Basic Authentication in combination with HTTPS.</strong></p>
+<p><strong>We recommend that you use Basic Authentication in combination with HTTPS.</strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_configuration_2">15.1.2. Configuration</h4>
 <div class="paragraph">
-<p>The Flowable REST web application is using Spring Java Configuration for starting the Flowable Engine, defining the basic authentication security using Spring security and to define the variable converters for specific variable handling.
-A small amount of properties can be defined by changing the engine.properties file you can find in the WEB-INF/classes folder.
+<p>The Flowable REST web application uses Spring Java Configuration for starting the Flowable Form engine, defining the basic authentication security using Spring security, and to define the variable converters for specific variable handling.
+A small number of properties can be defined by changing the engine.properties file you can find in the WEB-INF/classes folder.
 If you need more advanced configuration options there&#8217;s the possibility to override the default Spring beans in XML in the flowable-custom-context.xml file you can also find in the WEB-INF/classes folder.
 An example configuration is already in comments in this file. This is also the place to override the default RestResponseFactory by defining a new Spring bean with the name restResponsefactory and use your custom implementation class for it.</p>
 </div>
@@ -16742,7 +16782,7 @@ An example configuration is already in comments in this file. This is also the p
 <p><em>-Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true</em></p>
 </div>
 <div class="paragraph">
-<p>It&#8217;s a best practice to always set the <strong>Accept</strong> and <strong>Content-Type</strong> (in case of posting/putting JSON) headers to <strong>application/json</strong> on the HTTP requests described below.</p>
+<p>It&#8217;s best practice to always set the <strong>Accept</strong> and <strong>Content-Type</strong> (in case of posting/putting JSON) headers to <strong>application/json</strong> on the HTTP requests described below.</p>
 </div>
 </div>
 <div class="sect3">
@@ -16809,15 +16849,15 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>403 - Forbidden</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The operation is forbidden and should not be re-attempted. This does not imply an issue with authentication not authorization, it&#8217;s an operation that is not allowed. Example: deleting a task that is part of a running process is not allowed and will never be allowed, regardless of the user or process/task state.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The operation is forbidden and should not be re-attempted. This implies an issue with authorization not authentication, it&#8217;s an operation that is not allowed. Example: deleting a task that is part of a running process is not allowed and will never be allowed, regardless of the user or process/task state.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>404 - Not found</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The operation failed.The requested resource was not found.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The operation failed. The requested resource was not found.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>405 - Method not allowed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The operation failed. The used method is not allowed for this resource. E.g. trying to update (PUT) a deployment-resource will result in a <code>405</code> status.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The operation failed. The method is not allowed for this resource. For example, trying to update (PUT) a deployment-resource will result in a <code>405</code> status.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>409 - Conflict</code></p></td>
@@ -16834,7 +16874,7 @@ An example configuration is already in comments in this file. This is also the p
 </tbody>
 </table>
 <div class="paragraph">
-<p>The media-type of the HTTP-responses is always <code>application/json</code> unless binary content is requested (e.g. deployment resource data), the media-type of the content is used.</p>
+<p>The media-type of the HTTP-responses is always <code>application/json</code> unless binary content is requested (for example, deployment resource data), the media-type of the content is used.</p>
 </div>
 </div>
 <div class="sect3">
@@ -16860,14 +16900,14 @@ An example configuration is already in comments in this file. This is also the p
 <div class="sect4">
 <h5 id="_url_fragments">URL fragments</h5>
 <div class="paragraph">
-<p>Parameters that are part of the url (e.g. the deploymentId parameter in <code><a href="http://host/flowable-rest/service/repository/deployments/{deploymentId}" class="bare">http://host/flowable-rest/service/repository/deployments/{deploymentId}</a></code>)
- need to be properly escaped (see <a href="https://en.wikipedia.org/wiki/Percent-encoding">URL-encoding or Percent-encoding</a>) in case the segment contains special characters. Most frameworks have this functionality built in, but it should be taken into account. Especially for segments that can contains forward-slashes (e.g. deployment resource), this is required.</p>
+<p>Parameters that are part of the URL (for example, the deploymentId parameter in <code><a href="http://host/flowable-rest/form-api/form-repository/deployments/{deploymentId}" class="bare">http://host/flowable-rest/form-api/form-repository/deployments/{deploymentId}</a></code>)
+ need to be properly escaped (see <a href="https://en.wikipedia.org/wiki/Percent-encoding">URL-encoding or Percent-encoding</a>) in case the segment contains special characters. Most frameworks have this functionality built in, but it should be taken into account. Especially for segments that can contain forward-slashes (for example, deployment resource), this is required.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_rest_url_query_parameters">Rest URL query parameters</h5>
 <div class="paragraph">
-<p>Parameters added as query-string in the URL (e.g. the name parameter used in <code><a href="http://host/flowable-rest/service/deployments?name=Deployment" class="bare">http://host/flowable-rest/service/deployments?name=Deployment</a></code>) can have the following types and are mentioned in the corresponding REST-API documentation:</p>
+<p>Parameters added as query-string in the URL (for example, the name parameter used in <code><a href="http://host/flowable-rest/form-api/form-repository/deployments?name=Deployment" class="bare">http://host/flowable-rest/form-api/form-repository/deployments?name=Deployment</a></code>) can have the following types and are mentioned in the corresponding REST-API documentation:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 4. URL query parameter types</caption>
@@ -16884,7 +16924,7 @@ An example configuration is already in comments in this file. This is also the p
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plain text parameters. Can contain any valid characters that are allowed in URL&#8217;s. In case of a <code>XXXLike</code> parameter, the string should contain the wildcard character <code>%</code> (properly url-encoded). This allows to specify the intent of the like-search. E.g. <em><code>Tas%</code></em> matches all values, starting with <em>Tas</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plain text parameters. Can contain any valid characters that are allowed in URLs. In the case of a <code>XXXLike</code> parameter, the string should contain the wildcard character <code>%</code> (properly URL-encoded). This allows you to specify the intent of the like-search. For example, <em><code>Tas%</code></em> matches all values, starting with <em>Tas</em>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
@@ -16896,7 +16936,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter representing a boolean value. Can be either <code>true</code> or <code>false</code>. All other values other than these two, will cause a <em><code>405 - Bad request</code></em> response.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter representing a boolean value. Can be either <code>true</code> or <code>false</code>. All other values other than these will cause a <em><code>405 - Bad request</code></em> response.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
@@ -16922,7 +16962,7 @@ An example configuration is already in comments in this file. This is also the p
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plain text parameters. In case of a <code>XXXLike</code> parameter, the string should contain the wildcard character <code>%</code>. This allows to specify the intent of the like-search. E.g. <em><code>Tas%</code></em> matches all values, starting with <em>Tas</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plain text parameters. In the case of a <code>XXXLike</code> parameter, the string should contain the wildcard character <code>%</code>. This allows you to specify the intent of the like-search. For example, <em><code>Tas%</code></em> matches all values, starting with <em>Tas</em>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
@@ -16934,7 +16974,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter representing a date value, using a JSON text. Use the ISO-8601 date-format (see <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO-8601 on wikipedia</a>) using both time and date-components (e.g. <code>2013-04-03T23:45Z</code>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter representing a date value, using a JSON text. Use the ISO-8601 date-format (see <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO-8601 on wikipedia</a>) using both time and date-components (for example, <code>2013-04-03T23:45Z</code>).</p></td>
 </tr>
 </tbody>
 </table>
@@ -16942,7 +16982,7 @@ An example configuration is already in comments in this file. This is also the p
 <div class="sect4">
 <h5 id="restPagingAndSort">Paging and sorting</h5>
 <div class="paragraph">
-<p>Paging and order parameters can be added as query-string in the URL (e.g. the name parameter used in <code><a href="http://host/flowable-rest/service/deployments?sort=name" class="bare">http://host/flowable-rest/service/deployments?sort=name</a></code>).</p>
+<p>Paging and order parameters can be added as query-string in the URL (for example, the name parameter used in <code><a href="http://host/flowable-rest/form-api/form-repository/deployments?sort=name" class="bare">http://host/flowable-rest/form-api/form-repository/deployments?sort=name</a></code>).</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 6. Variable query JSON parameters</caption>
@@ -17018,7 +17058,7 @@ An example configuration is already in comments in this file. This is also the p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the variable to include in a query. Can be empty in case <em><code>equals</code></em> is used in some queries to query for resources that have <strong>any variable name</strong> with the given value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the variable to include in a query. Can be empty in the case where <em><code>equals</code></em> is used in some queries to query for resources that have <strong>any variable name</strong> with the given value.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
@@ -17033,7 +17073,7 @@ An example configuration is already in comments in this file. This is also the p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type of variable to use. When omitted, the type will be deducted from the <code>value</code> parameter. Any JSON text-values will be considered of type <code>string</code>, JSON booleans of type <code>boolean</code>, JSON numbers of type <code>long</code> or <code>integer</code> depending on the size of the number. It&#8217;s recommended to include an explicit type when in doubt. Types supported out of the box are listed below.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of variable to use. When omitted, the type will be deduced from the <code>value</code> parameter. Any JSON text-values will be considered of type <code>string</code>, JSON booleans of type <code>boolean</code>, JSON numbers of type <code>long</code> or <code>integer</code> depending on the size of the number. We recommended you include an explicit type when in doubt. Types supported out of the box are listed below.</p></td>
 </tr>
 </tbody>
 </table>
@@ -17052,27 +17092,27 @@ An example configuration is already in comments in this file. This is also the p
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as and converted to a <code>java.lang.String</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as and converted to a <code>java.lang.String</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">short</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as and converted to a <code>java.lang.Integer</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as and converted to a <code>java.lang.Integer</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as and converted to a <code>java.lang.Integer</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as and converted to a <code>java.lang.Integer</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as and converted to a <code>java.lang.Long</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as and converted to a <code>java.lang.Long</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as and converted to a <code>java.lang.Double</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as and converted to a <code>java.lang.Double</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as and converted to a <code>java.lang.Boolean</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as and converted to a <code>java.lang.Boolean</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
@@ -17084,7 +17124,7 @@ An example configuration is already in comments in this file. This is also the p
 <div class="sect4">
 <h5 id="restVariables">Variable representation</h5>
 <div class="paragraph">
-<p>When working with variables (execution/process and task), the REST-api uses some common principles and JSON-format for both reading and writing. The JSON representation of a variable looks like this:</p>
+<p>When working with variables (execute decision), the REST API uses some common principles and JSON-format for both reading and writing. The JSON representation of a variable looks like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -17093,12 +17133,10 @@ An example configuration is already in comments in this file. This is also the p
 3
 4
 5
-6
-7</div></td><td class="code"><span></span><span class="tok-p">{</span>
+6</div></td><td class="code"><span></span><span class="tok-p">{</span>
   <span class="tok-nt">&quot;name&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;variableName&quot;</span><span class="tok-p">,</span>
   <span class="tok-nt">&quot;value&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;variableValue&quot;</span><span class="tok-p">,</span>
   <span class="tok-nt">&quot;valueUrl&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;http://...&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;scope&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;local&quot;</span><span class="tok-p">,</span>
   <span class="tok-nt">&quot;type&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;string&quot;</span>
 <span class="tok-p">}</span>
 </td></tr></table></code></pre>
@@ -17132,17 +17170,12 @@ An example configuration is already in comments in this file. This is also the p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">valueUrl</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">When reading a variable of type <code>binary</code> or <code>serializable</code>, this attribute will point to the URL where the raw binary data can be fetched from.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">scope</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope of the variable. If <em><code>local</code></em>, the variable is explicitly defined on the resource it&#8217;s requested from. When <em><code>global</code></em>, the variable is defined on the parent (or any parent in the parent-tree) of the resource it&#8217;s requested from. When writing a variable and the scope is omitted, <code>global</code> is assumed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When reading a variable of type <code>binary</code> or <code>serializable</code>, this attribute will point to the URL from where the raw binary data can be fetched.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type of the variable. See table below for additional information on types. When writing a variable and this value is omitted, the type will be deducted from the raw JSON-attribute request type and is limited to either <code>string</code>, <code>double</code>, <code>integer</code> and <code>boolean</code>. It&#8217;s advised to always include a type to make sure no wrong assumption about the type can be done.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of the variable. See table below for additional information on types. When writing a variable and this value is omitted, the type will be deduced from the raw JSON-attribute request type and is limited to either <code>string</code>, <code>double</code>, <code>integer</code> and <code>boolean</code>. We advise you to always include a type to make sure no wrong assumption about the type are made.</p></td>
 </tr>
 </tbody>
 </table>
@@ -17161,44 +17194,36 @@ An example configuration is already in comments in this file. This is also the p
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as a <code>java.lang.String</code>. Raw JSON-text value is used when writing a variable.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as a <code>java.lang.String</code>. Raw JSON-text value is used when writing a variable.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as a <code>java.lang.Integer</code>. When writing, JSON number value is used as base for conversion, falls back to JSON text.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as a <code>java.lang.Integer</code>. When writing, JSON number value is used as base for conversion, falls back to JSON text.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">short</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as a <code>java.lang.Short</code>. When writing, JSON number value is used as base for conversion, falls back to JSON text.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as a <code>java.lang.Short</code>. When writing, JSON number value is used as base for conversion, falls back to JSON text.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as a <code>java.lang.Long</code>. When writing, JSON number value is used as base for conversion, falls back to JSON text.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as a <code>java.lang.Long</code>. When writing, JSON number value is used as base for conversion, falls back to JSON text.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as a <code>java.lang.Double</code>. When writing, JSON number value is used as base for conversion, falls back to JSON text.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as a <code>java.lang.Double</code>. When writing, JSON number value is used as base for conversion, falls back to JSON text.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value is threaded as a <code>java.lang.Boolean</code>. When writing, JSON boolean value is used for conversion.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as a <code>java.lang.Boolean</code>. When writing, JSON boolean value is used for conversion.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Value is treated as a <code>java.util.Date</code>. When writing, the JSON text will be converted using ISO-8601 date format.</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">binary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Binary variable, treated as an array of bytes. The <code>value</code> attribute is null, the <code>valueUrl</code> contains an URL pointing to the raw binary stream.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">serializable</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Serialized representation of a Serializable Java-object. As with the <code>binary</code> type, the <code>value</code> attribute is null, the <code>valueUrl</code> contains an URL pointing to the raw binary stream. All serializable variables (which are not of any of the above types) will be exposed as a variable of this type.</p></td>
-</tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>It&#8217;s possible to support additional variable-types with a custom JSON representation (either simple value or complex/nested JSON object). By extending the <code>initializeVariableConverters()</code> method on <code>org.flowable.rest.service.api.RestResponseFactory</code>, you can add additional <code>org.flowable.rest.service.api.engine.variable.RestVariableConverter</code> classes to support converting your POJO&#8217;s to a format suitable for transferring through REST and converting the REST-value back to your POJO. The actual transformation to JSON is done by Jackson.</p>
+<p>It&#8217;s possible to support additional variable-types with a custom JSON representation (either simple value or complex/nested JSON object). By extending the <code>initializeVariableConverters()</code> method on <code>org.flowable.rest.dmn.service.api.DmnRestResponseFactory</code>, you can add additional <code>org.flowable.rest.variable.RestVariableConverter</code> classes to support converting your POJOs to a format suitable for transferring through REST and converting the REST-value back to your POJO. The actual transformation to JSON is done by Jackson.</p>
 </div>
 </div>
 </div>
@@ -33824,13 +33849,13 @@ it is not optimized for querying nor for easy retrieval. The real use case is au
 <td class="tableblock halign-left valign-top"><p class="tableblock">JobExecutorMBean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">attribute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">isJobExecutorActivated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if job executor is activated, false otherwise</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if the async job executor is activated, false otherwise</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">setJobExecutorActivate(Boolean active)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Activates and Deactivates Job executor based on the given boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activates and Deactivates the async job executor based on the given boolean</p></td>
 </tr>
 </tbody>
 </table>

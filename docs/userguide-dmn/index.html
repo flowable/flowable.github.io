@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable DMN DOCS (v 6.2.0)</title>
+<title>Flowable DMN DOCS (v 6.2.1)</title>
 <style>
 
 /* normalize.css */
@@ -88,7 +88,7 @@ html, body {
   overflow-x: auto;
 }
 
-h2, h3, h4 {
+h2, h3, h4, h5, h6 {
   color: #00345a;
 }
 
@@ -110,6 +110,23 @@ h3 {
   /*border-bottom: 1px solid #d7d7d7;*/
 }
 
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+h6, h7 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .sect1, .sect2 {
   margin-bottom: 20px;
 }
@@ -119,7 +136,7 @@ h3 {
   clear: both;
 }
 
-.note, .listingblock{
+.note, .listingblock, .literalblock{
   padding-left: 8px;
   padding-right: 8px;
   margin-bottom: 14px;
@@ -228,6 +245,15 @@ a:hover {
   padding: 4px 0 4px 0;
 }
 
+
+div.sect5  p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.sect5  code {
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
@@ -353,7 +379,7 @@ a:hover {
       tocbot.init({
         tocSelector: '#generated-toc',
         contentSelector: '#content',
-        headingSelector: 'h2, h3, h4',
+        headingSelector: 'h2, h3, h4, h5',
         headingsOffset: headerSize,
         smoothScrollOptions: {
           easing: 'easeInOutCubic',
@@ -377,7 +403,7 @@ a:hover {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable DMN DOCS (v 6.2.0)</h1>
+<h1>Flowable DMN DOCS (v 6.2.1)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -398,7 +424,7 @@ a:hover {
 <div class="sect2">
 <h3 id="sources">1.3. Sources</h3>
 <div class="paragraph">
-<p>The distribution contains most of the sources as JAR files. The source code of Flowable can be found on
+<p>The distribution contains most of the sources as JAR files. The source code for Flowable can be found on
   <a href="https://github.com/flowable/flowable-engine"><a href="https://github.com/flowable/flowable-engine" class="bare">https://github.com/flowable/flowable-engine</a></a></p>
 </div>
 </div>
@@ -414,35 +440,45 @@ a:hover {
 <h4 id="_ide">1.4.2. IDE</h4>
 <div class="paragraph">
 <p>Flowable development can be done with the IDE of your choice. If you would like to use the Flowable Designer then you need Eclipse Mars or Neon.
-Download the Eclipse distribution of your choice from <a href="http://www.eclipse.org/downloads/">the Eclipse download page</a>. Unzip the downloaded file and
-then you should be able to start it with the eclipse file in the directory <code>eclipse</code>.
-Further in this user guide, there is a section on <a href="#eclipseDesignerInstallation">installing our eclipse designer plugin</a>.</p>
+Download the Eclipse distribution of your choice from <a href="http://www.eclipse.org/downloads/">the Eclipse download page</a>. Unzip the downloaded file and then you should be able to start it with the Eclipse file in the directory <code>eclipse</code>.
+Further on in this guide, there is a section on <a href="#eclipseDesignerInstallation">installing our eclipse designer plugin</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="reporting.problems">1.5. Reporting problems</h3>
 <div class="paragraph">
-<p>We expect developers to have have read <a href="http://www.catb.org/~esr/faqs/smart-questions.html">How to ask questions the smart way</a>.</p>
+<p>We expect developers to have read <a href="http://www.catb.org/~esr/faqs/smart-questions.html">How to ask questions the smart way</a> before reporting or asking anything.</p>
 </div>
 <div class="paragraph">
-<p>After you&#8217;ve done that you can post questions and comments on <a href="https://forum.flowable.org">the Users forum</a> and create issues in <a href="https://github.com/flowable/flowable-engine/issues">our Github issue tracker</a>.</p>
+<p>After you&#8217;ve done that you can post questions, comments or suggestions for enhancements on <a href="https://forum.flowable.org">the User forum</a> and create issues for bugs in <a href="https://github.com/flowable/flowable-engine/issues">our Github issue tracker</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="experimental">1.6. Experimental features</h3>
 <div class="paragraph">
-<p>Sections marked with <strong>[EXPERIMENTAL]</strong> should
-  not be considered stable.</p>
+<p>Sections marked with <strong>[EXPERIMENTAL]</strong> should not be considered stable.</p>
 </div>
 <div class="paragraph">
-<p>All classes that have <code>.impl.</code> in the package name are internal implementation classes and cannot be considered stable.  However, if the user guide mentions those classes as configuration values, they are supported and can be considered stable.</p>
+<p>All classes that have <code>.impl.</code> in the package name are internal implementation classes and cannot be considered stable or guaranteed in any way.  However, if the User Guide mentions any classes as configuration values, they are supported and can be considered stable.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="internal">1.7. Internal implementation classes</h3>
 <div class="paragraph">
-<p>In the JAR file, all classes in packages that have <code>.impl.</code> (e.g. <code>org.flowable.dmn.engine.impl.db</code>) in them are implementation classes and should be considered internal. No stability guarantees are given on classes or interfaces that are in implementation classes.</p>
+<p>In the JAR files, all classes in packages that have <code>.impl.</code> (e.g. <code>org.flowable.engine.impl.db</code>) in their name are implementation classes and should be considered internal use only. No stability guarantees are given on classes or interfaces that are in implementation classes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_versioning_strategy">1.8. Versioning Strategy</h3>
+<div class="paragraph">
+<p>Versions are denoted using a standard triplet of integers: <strong>MAJOR.MINOR.MICRO</strong>. The intention is that <strong>MAJOR</strong> versions are for evolutions of the core engines. <strong>MINOR</strong> versions are for new features and new APIs. <strong>MICRO</strong> versions are for bug fixes and improvements.</p>
+</div>
+<div class="paragraph">
+<p>In general, Flowable attempts to remain "source compatible" in <strong>MINOR</strong> and <strong>MICRO</strong> releases for all non internal implementation classes. We define "source compatible" to mean an application will continue to build without error and the semantics have remained unchanged. Flowable also attempts to remain "binary compatible" in <strong>MINOR</strong> and <strong>MICRO</strong> releases. We define "binary compatible" to mean that this new version of Flowable can be dropped as a jar replacement into a compiled application and continue to function properly.</p>
+</div>
+<div class="paragraph">
+<p>In case an API change is introduced in a <strong>MINOR</strong> release, the strategy is that a backwards compatible version is kept in it, annotated with <em>@Deprecated</em>. Such deprecated APIs will then be removed two <strong>MINOR</strong> versions later.</p>
 </div>
 </div>
 </div>
@@ -2053,35 +2089,35 @@ The <strong>Display Discount</strong> user task displays the result of the decis
 <h2 id="restApiChapter">7. DMN REST API</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_general_flowable_dmn_rest_principles">7.1. General Flowable DMN REST principles</h3>
+<h3 id="_general_flowable_rest_principles">7.1. General Flowable REST principles</h3>
 <div class="sect3">
 <h4 id="_installation_and_authentication">7.1.1. Installation and Authentication</h4>
 <div class="paragraph">
-<p>Flowable DMN includes a REST API to the Flowable DMN engine that can be installed by deploying the flowable-app-rest.war (which includes all Flowable REST APIs) file to a servlet container like Apache Tomcat. However, it can also be used in another web-application by including the servlet and its mapping in your application, and adding all flowable-dmn-rest module dependencies to the classpath.</p>
+<p>Flowable includes a REST API to the Flowable engine that can be installed by deploying the flowable-rest.war file to a servlet container like Apache Tomcat. However, it can also be used in another web-application by including the servlet and its mapping in your application and add all flowable-rest dependencies to the classpath.</p>
 </div>
 <div class="paragraph">
-<p>By default, the Flowable DMN Engine will connect to an in-memory H2 database. You can change the database settings in the db.properties file in the WEB-INF/classes folder. The DMN REST API uses JSON format (<a href="http://www.json.org" class="bare">http://www.json.org</a>) and is built upon the Spring MVC (<a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html" class="bare">http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html</a>).</p>
+<p>By default the Flowable engine will connect to an in-memory H2 database. You can change the database settings in the db.properties file in the WEB-INF/classes folder. The REST API uses JSON format (<a href="http://www.json.org" class="bare">http://www.json.org</a>) and is built upon the Spring MVC (<a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html" class="bare">http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html</a>).</p>
 </div>
 <div class="paragraph">
 <p>All REST-resources require a valid Flowable-user to be authenticated by default. Basic HTTP access authentication is used, so you should always include a <em>Authorization: Basic &#8230;&#8203;==</em> HTTP-header when performing requests or include the username and password in the request-url (for example, <em><a href="http://username:password@localhost:8080/xyz" class="bare">http://username:password@localhost:8080/xyz</a></em>).</p>
 </div>
 <div class="paragraph">
-<p><strong>We recommended using Basic Authentication in combination with HTTPS.</strong></p>
+<p><strong>We recommend that you use Basic Authentication in combination with HTTPS.</strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_configuration_2">7.1.2. Configuration</h4>
 <div class="paragraph">
-<p>The Flowable REST web application (flowable-app-rest) uses Spring Java Configuration for starting the Flowable engines, defining the basic authentication security using Spring security and to define the variable converters for specific variable handling.
+<p>The Flowable REST web application uses Spring Java Configuration for starting the Flowable Form engine, defining the basic authentication security using Spring security, and to define the variable converters for specific variable handling.
 A small number of properties can be defined by changing the engine.properties file you can find in the WEB-INF/classes folder.
-If you need more advanced configuration options, there&#8217;s the possibility to override the default Spring beans in XML in the flowable-custom-context.xml file you can also find in the WEB-INF/classes folder.
-An example configuration is already commented in this file. This is also the place to override the default RestResponseFactories. For the DMN engine this can be done by defining a new Spring bean with the name dmnResponsefactory and use your custom implementation class for it.</p>
+If you need more advanced configuration options there&#8217;s the possibility to override the default Spring beans in XML in the flowable-custom-context.xml file you can also find in the WEB-INF/classes folder.
+An example configuration is already in comments in this file. This is also the place to override the default RestResponseFactory by defining a new Spring bean with the name restResponsefactory and use your custom implementation class for it.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="restUsageInTomcat">7.1.3. Usage in Tomcat</h4>
 <div class="paragraph">
-<p>Due to <a href="http://tomcat.apache.org/tomcat-7.0-doc/security-howto.html"> default security properties on Tomcat</a>, <strong>escaped forward slashes (<code>%2F</code> and <code>%5C</code>) are not allowed by default (400-result is returned).</strong> This may have an impact on the deployment resources and their data-URL, as the URL can potentially contain escaped forward slashes.</p>
+<p>Due to <a href="http://tomcat.apache.org/tomcat-8.0-doc/security-howto.html"> default security properties on Tomcat</a>, <strong>escaped forward slashes (<code>%2F</code> and <code>%5C</code>) are not allowed by default (400-result is returned).</strong> This may have an impact on the deployment resources and their data-URL, as the URL can potentially contain escaped forward slashes.</p>
 </div>
 <div class="paragraph">
 <p>When issues are experienced with unexpected 400-results, set the following system-property:</p>
@@ -2090,7 +2126,7 @@ An example configuration is already commented in this file. This is also the pla
 <p><em>-Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true</em></p>
 </div>
 <div class="paragraph">
-<p>It&#8217;s best practice to always set the <strong>Accept</strong> and <strong>Content-Type</strong> headers (when posting/putting JSON) to <strong>application/json</strong> on the HTTP requests described below.</p>
+<p>It&#8217;s best practice to always set the <strong>Accept</strong> and <strong>Content-Type</strong> (in case of posting/putting JSON) headers to <strong>application/json</strong> on the HTTP requests described below.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2114,7 +2150,7 @@ An example configuration is already commented in this file. This is also the pla
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create a new resource. Also used for executing resource-queries that have a too complex request-structure to fit in the query-URL of a GET-request.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a new resource. Also used for executing resource-queries which have a too complex request-structure to fit in the query-URL of a GET-request.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>PUT</code></p></td>
@@ -2149,7 +2185,7 @@ An example configuration is already commented in this file. This is also the pla
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>204 - No content</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The operation was successful and the entity has been deleted and therefore there is no response-body returned (<code>DELETE</code> request).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The operation was successful and entity has been deleted and therefore there is no response-body returned (<code>DELETE</code> request).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>401 - Unauthorized</code></p></td>
@@ -2157,7 +2193,7 @@ An example configuration is already commented in this file. This is also the pla
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>403 - Forbidden</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The operation is forbidden and should not be re-attempted. This implies an issue with authorization not authentication, it&#8217;s an operation that is not allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The operation is forbidden and should not be re-attempted. This implies an issue with authorization not authentication, it&#8217;s an operation that is not allowed. Example: deleting a task that is part of a running process is not allowed and will never be allowed, regardless of the user or process/task state.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>404 - Not found</code></p></td>
@@ -2165,7 +2201,7 @@ An example configuration is already commented in this file. This is also the pla
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>405 - Method not allowed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The operation failed. The used method is not allowed for this resource. For example, trying to update (PUT) a deployment-resource will result in a <code>405</code> status.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The operation failed. The method is not allowed for this resource. For example, trying to update (PUT) a deployment-resource will result in a <code>405</code> status.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>409 - Conflict</code></p></td>
@@ -2182,13 +2218,13 @@ An example configuration is already commented in this file. This is also the pla
 </tbody>
 </table>
 <div class="paragraph">
-<p>The media-type of the HTTP-responses is always <code>application/json</code> unless binary content is requested (such as deployment resource data), the media-type of the content is used.</p>
+<p>The media-type of the HTTP-responses is always <code>application/json</code> unless binary content is requested (for example, deployment resource data), the media-type of the content is used.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_error_response_body">7.1.5. Error response body</h4>
 <div class="paragraph">
-<p>When an error occurs (both client and server, 4XX and 5XX status-codes), the response body contains an object describing the error that occurred. An example for a 404-status when a task is not found:</p>
+<p>When an error occurs (both client and server, 4XX and 5XX status-codes) the response body contains an object describing the error that occurred. An example for a 404-status when a task is not found:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2197,7 +2233,7 @@ An example configuration is already commented in this file. This is also the pla
 3
 4</div></td><td class="code"><span></span><span class="tok-p">{</span>
   <span class="tok-nt">&quot;statusCode&quot;</span> <span class="tok-p">:</span> <span class="tok-mi">404</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;errorMessage&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;Could not find a decision table with key &#39;decision1&#39;.&quot;</span>
+  <span class="tok-nt">&quot;errorMessage&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;Could not find a task with id &#39;444&#39;.&quot;</span>
 <span class="tok-p">}</span>
 </td></tr></table></code></pre>
 </div>
@@ -2208,14 +2244,14 @@ An example configuration is already commented in this file. This is also the pla
 <div class="sect4">
 <h5 id="_url_fragments">URL fragments</h5>
 <div class="paragraph">
-<p>Parameters that are part of the URL (for example, the deploymentId parameter in <code><a href="http://host/flowable-rest/dmn-api/dmn-repository/deployments/{deploymentId}" class="bare">http://host/flowable-rest/dmn-api/dmn-repository/deployments/{deploymentId}</a></code>)
- need to be properly escaped (see <a href="https://en.wikipedia.org/wiki/Percent-encoding">URL-encoding or Percent-encoding</a>) in case the segment contains special characters. Most frameworks have this functionality built in, but it should be taken into account, especially for segments that can contain forward-slashes (for example, deployment resource), this is required.</p>
+<p>Parameters that are part of the URL (for example, the deploymentId parameter in <code><a href="http://host/flowable-rest/form-api/form-repository/deployments/{deploymentId}" class="bare">http://host/flowable-rest/form-api/form-repository/deployments/{deploymentId}</a></code>)
+ need to be properly escaped (see <a href="https://en.wikipedia.org/wiki/Percent-encoding">URL-encoding or Percent-encoding</a>) in case the segment contains special characters. Most frameworks have this functionality built in, but it should be taken into account. Especially for segments that can contain forward-slashes (for example, deployment resource), this is required.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_rest_url_query_parameters">Rest URL query parameters</h5>
 <div class="paragraph">
-<p>Parameters added as query-string in the URL (such as the name parameter used in <code><a href="http://host/flowable-rest/dmn-api/dmn-repository/deployments/?name=Deployment" class="bare">http://host/flowable-rest/dmn-api/dmn-repository/deployments/?name=Deployment</a></code>) can have the following types and are mentioned in the corresponding REST-API documentation:</p>
+<p>Parameters added as query-string in the URL (for example, the name parameter used in <code><a href="http://host/flowable-rest/form-api/form-repository/deployments?name=Deployment" class="bare">http://host/flowable-rest/form-api/form-repository/deployments?name=Deployment</a></code>) can have the following types and are mentioned in the corresponding REST-API documentation:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 3. URL query parameter types</caption>
@@ -2232,7 +2268,7 @@ An example configuration is already commented in this file. This is also the pla
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plain text parameters. Can contain any valid characters that are allowed in URLs. In case of a <code>XXXLike</code> parameter, the string should contain the wildcard character <code>%</code> (properly url-encoded). This allows you to specify the intent of the like-search. For example, <em><code>Tas%</code></em> matches all values, starting with <em>Tas</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plain text parameters. Can contain any valid characters that are allowed in URLs. In the case of a <code>XXXLike</code> parameter, the string should contain the wildcard character <code>%</code> (properly URL-encoded). This allows you to specify the intent of the like-search. For example, <em><code>Tas%</code></em> matches all values, starting with <em>Tas</em>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
@@ -2248,7 +2284,7 @@ An example configuration is already commented in this file. This is also the pla
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter representing a date value. Use the ISO-8601 date-format (see <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO-8601 on wikipedia</a>) using both time and date-components (for example, <code>2013-04-03T23:45Z</code>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter representing a date value. Use the ISO-8601 date-format (see <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO-8601 on wikipedia</a>) using both time and date-components (e.g. <code>2013-04-03T23:45Z</code>).</p></td>
 </tr>
 </tbody>
 </table>
@@ -2290,7 +2326,7 @@ An example configuration is already commented in this file. This is also the pla
 <div class="sect4">
 <h5 id="restPagingAndSort">Paging and sorting</h5>
 <div class="paragraph">
-<p>Paging and order parameters can be added as query-string in the URL (for example, the name parameter used in <code><a href="http://host/flowable-rest/dmn-api/dmn-repository/deployments?sort=name" class="bare">http://host/flowable-rest/dmn-api/dmn-repository/deployments?sort=name</a></code>).</p>
+<p>Paging and order parameters can be added as query-string in the URL (for example, the name parameter used in <code><a href="http://host/flowable-rest/form-api/form-repository/deployments?sort=name" class="bare">http://host/flowable-rest/form-api/form-repository/deployments?sort=name</a></code>).</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 5. Variable query JSON parameters</caption>
@@ -3419,7 +3455,7 @@ The response body is a JSON representation of the <code>org.flowable.dmn.model.D
 5
 6</div></td><td class="code"><span></span><span class="tok-p">{</span>
    <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;default&quot;</span><span class="tok-p">,</span>
-   <span class="tok-nt">&quot;version&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;6.2.0&quot;</span><span class="tok-p">,</span>
+   <span class="tok-nt">&quot;version&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;6.2.1&quot;</span><span class="tok-p">,</span>
    <span class="tok-nt">&quot;resourceUrl&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;file://flowable-dmn/flowable.dmn.cfg.xml&quot;</span><span class="tok-p">,</span>
    <span class="tok-nt">&quot;exception&quot;</span><span class="tok-p">:</span><span class="tok-kc">null</span>
 <span class="tok-p">}</span>
