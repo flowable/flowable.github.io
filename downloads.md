@@ -69,3 +69,6 @@ Version 5 is the previous release that has been under development by the core Fl
 From the perspective of a developer and process designer, at one level there is very little difference between the versions.  If you have built something using V5, then in many cases you just need to change to use the V6 JAR.
 
 On another level, V6 is the future: it's faster, more scalable and more flexible.  The V6 engine is where you want to be going, so start looking at it now to be ready to exploit its new capabilities.
+
+---
+Many thanks to EJ Technologies for providing open source licenses for the <a href="https://www.ej-technologies.com/products/jprofiler/overview.html">Java Profiler product JProfiler</a>
