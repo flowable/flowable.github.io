@@ -70,5 +70,8 @@ From the perspective of a developer and process designer, at one level there is 
 
 On another level, V6 is the future: it's faster, more scalable and more flexible.  The V6 engine is where you want to be going, so start looking at it now to be ready to exploit its new capabilities.
 
+<br><br>
+
 ---
+
 Many thanks to EJ Technologies for providing open source licenses for the <a href="https://www.ej-technologies.com/products/jprofiler/overview.html">Java Profiler product JProfiler</a>
