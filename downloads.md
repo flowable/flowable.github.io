@@ -75,3 +75,10 @@ On another level, V6 is the future: it's faster, more scalable and more flexible
 ---
 
 Many thanks to EJ Technologies for providing open source licenses for the <a href="https://www.ej-technologies.com/products/jprofiler/overview.html">Java Profiler product JProfiler</a>
+
+<br>
+
+---
+
+<a href="https://www.browserstack.com"><img src="{{ site.baseurl }}/img/browserstack-logo-600x315.png"></a>
+Many thanks to <a href="https://www.browserstack.com">BrowserStack</a> for providing open source licenses to test our Flowable UI apps on all the different browsers.
