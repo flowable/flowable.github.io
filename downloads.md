@@ -80,5 +80,5 @@ Many thanks to EJ Technologies for providing open source licenses for the <a hre
 
 ---
 
-<a href="https://www.browserstack.com"><img src="{{ site.baseurl }}/img/browserstack-logo-600x315.png"></a>
+<a href="https://www.browserstack.com"><img src="{{ site.baseurl }}/img/browserstack-logo-600x315.png" width="120"></a><br>
 Many thanks to <a href="https://www.browserstack.com">BrowserStack</a> for providing open source licenses to test our Flowable UI apps on all the different browsers.
