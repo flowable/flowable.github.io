@@ -359,11 +359,11 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	    </div>
 	</div>
 	
-	<a class="team-member" href="#guyModal" rel="modal:open">
+	<a class="team-member" href="#jmpModal" rel="modal:open">
 	 <div class="bio-pic"><img src="img/jmp.jpg"></div>
 	</a>
 
-	<div id="guyModal" class="documentationContent team-member-bio">
+	<div id="jmpModal" class="documentationContent team-member-bio">
 	     <div class="bio-title">
 	        <div class="bio-pic-modal"><img src="img/jmp.jpg"></div>
 	        <h3>Jean Marie Pascal</h3>
@@ -380,6 +380,20 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	            <a href="https://www.linkedin.com/in/jeanmariepascal/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 	    </div>
+	</div>
+	
+	<a class="team-member" href="#pascalModal" rel="modal:open">
+	 <div class="bio-pic"><img src="img/pascal.jpg"></div>
+	</a>
+
+	<div id="pascalModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/pascal.jpg"></div>
+	        <h3>Pascal Schumacher</h3>
+	        <p>Flowable developer</p>
+	     </div>
+
+	    <p>Pascal is software developer who likes to contribute back to open source projects he uses at work.</p>
 	</div>
 
 </div>
