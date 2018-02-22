@@ -93,7 +93,7 @@ li + li {
 
 .nav-main {
 	@include clearfix;
-	background: $darkestColor;
+	background: $navColor;
 	color: $lightTextColor;
 	position: fixed;
 	top: 0;
@@ -135,8 +135,8 @@ li + li {
 
 			&.active {
 				color: $lightTextColor;
-				border-bottom: 3px solid $primary;
-				background: #0c4359;
+				border-bottom: 3px solid $navColor;
+				background: $navCurrent;
 			}
 		}
 	}
@@ -168,7 +168,6 @@ li + li {
 
 .hero {
 	height: 340px;
-	// background: $darkColor url(../img/header.png) no-repeat center;
 	background: $darkColor;
 	padding-top: 50px;
 	color: $lightColor;
@@ -772,12 +771,6 @@ section.black content {
 
 	&:active {
 		box-shadow: none;
-	}
-}
-
-.hero {
-	.button {
-		box-shadow: 1px 3px 3px rgba(0, 0, 0, .3);
 	}
 }
 
