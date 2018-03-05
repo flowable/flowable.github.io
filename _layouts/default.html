@@ -39,7 +39,7 @@
             <li><a href="{{ site.baseurl }}/downloads.html"{% if page.id == 'downloads' %} class="active"{% endif %}>Download</a></li>
             <li><a href="{{ site.baseurl }}/documentation.html"{% if page.id == 'documentation' %} class="active"{% endif %}>Docs</a></li>
             <li><a href="{{ site.baseurl }}/team.html"{% if page.id == 'team' %} class="active"{% endif %}>Team</a></li>
-          	<li><a href="http://blog.flowable.org/"{% if page.sectionid == 'blog' %} class="active"{% endif %}>Blog</a></li>
+          	<li><a href="http://blog.flowable.org/"{% if page.sectionid == 'blog' %} target="_blank" class="active"{% endif %}>Blog</a></li>
         </ul>
         <ul class="nav-site nav-site-external">
           <li><a href="http://www.flowable.com" target="_blank">Enterprise</a></li>
@@ -104,7 +104,7 @@
 <script type="text/javascript" src="{{ site.baseurl }}/js/widgets.js"></script>
 <script type="text/javascript">
     $('#rssFlowableBlogFeed').FeedEk({
-        FeedUrl:'http://blog.flowable.org/feed/',
+        FeedUrl:'http://blog.flowable.org/?feed=rss',
         MaxCount : 5,
         ShowDesc : false,
         ShowPubDate: false,
