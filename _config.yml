@@ -11,17 +11,6 @@ highlighter: rouge
 repository: Flowable/flowable
 defaults:
 - scope:
-    path: ''
-    type: posts
-  values:
-    layout: post
-    sectionid: blog
-- scope:
-    path: blog
-    type: pages
-  values:
-    sectionid: blog
-- scope:
     path: docs
     type: pages
   values:
