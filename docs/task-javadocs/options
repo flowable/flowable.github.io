@@ -1,5 +1,5 @@
 -classpath
-'/Users/tijsrademakers/.m2/repository/org/flowable/flowable-identitylink-service-api/6.2.1/flowable-identitylink-service-api-6.2.1.jar:/Users/tijsrademakers/.m2/repository/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-engine-common-api/6.2.1/flowable-engine-common-api-6.2.1.jar'
+'/Users/tijsrademakers/.m2/repository/org/flowable/flowable-identitylink-service-api/6.3.0/flowable-identitylink-service-api-6.3.0.jar:/Users/tijsrademakers/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-engine-common-api/6.3.0/flowable-engine-common-api-6.3.0.jar'
 -encoding
 'UTF-8'
 -protected
@@ -7,7 +7,7 @@
 '/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-task-service-api/src/main/java'
 -author
 -bottom
-'Copyright &#169; 2017 <a href="http://www.flowable.org">Flowable</a>. All rights reserved.'
+'Copyright &#169; 2018 <a href="http://www.flowable.org">Flowable</a>. All rights reserved.'
 -charset
 'UTF-8'
 -d
@@ -15,10 +15,10 @@
 -docencoding
 'UTF-8'
 -doctitle
-'Flowable - Task Service API 6.2.1 API'
+'Flowable - Task Service API 6.3.0 API'
 -linkoffline
-'http://docs.oracle.com/javase/7/docs/api' '/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-task-service-api/target/javadoc-bundle-options'
+'http://docs.oracle.com/javase/8/docs/api' '/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-task-service-api/target/javadoc-bundle-options'
 -use
 -version
 -windowtitle
-'Flowable - Task Service API 6.2.1 API'
+'Flowable - Task Service API 6.3.0 API'

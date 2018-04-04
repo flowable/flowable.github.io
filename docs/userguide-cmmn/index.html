@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable CMMN DOCS (v 6.2.1)</title>
+<title>Flowable CMMN DOCS (v 6.3.0)</title>
 <style>
 
 /* normalize.css */
@@ -403,7 +403,7 @@ div.sect5  code {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable CMMN DOCS (v 6.2.1)</h1>
+<h1>Flowable CMMN DOCS (v 6.3.0)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -441,7 +441,7 @@ as we want to use this release to gather feedback from the community before maki
 <div class="sect2">
 <h3 id="required.software">1.5. Required software</h3>
 <div class="paragraph">
-<p>Flowable runs on a JDK higher than or equal to version 7.  Go to <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Oracle Java SE downloads</a> and click on button "Download JDK".  There are installation instructions on that page as well. To verify that your installation was successful, run <code>java -version</code> on the command line.  That should print the installed version of your JDK.</p>
+<p>Flowable runs on a JDK higher than or equal to version 8. Go to <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Oracle Java SE downloads</a> and click on button "Download JDK".  There are installation instructions on that page as well. To verify that your installation was successful, run <code>java -version</code> on the command line.  That should print the installed version of your JDK.</p>
 </div>
 </div>
 <div class="sect2">
@@ -643,7 +643,7 @@ defaults (see <a href="#configurationClasses">the different supported classes</a
 </div>
 </div>
 <div class="paragraph">
-<p>Our benchmarks have shown that the MyBatis connection pool is not the most efficient or resilient when dealing with a lot of concurrent requests. As such, it is advised to us a <code>javax.sql.DataSource</code> implementation and inject it into the process engine configuration (For example DBCP, C3P0, Hikari, Tomcat Connection Pool, etc.):</p>
+<p>Our benchmarks have shown that the MyBatis connection pool is not the most efficient or resilient when dealing with a lot of concurrent requests. As such, it is advised to us a <code>javax.sql.DataSource</code> implementation and inject it into the process engine configuration (For example HikariCP, Tomcat JDBC Connection Pool, etc.):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -765,7 +765,7 @@ requires users to either modify the db.properties in the Flowable source and rec
 <div class="ulist">
 <ul>
 <li>
-<p>datasource.jndi.name: the JNDI name of the data source.</p>
+<p>spring.datasource.jndi-name=: the JNDI name of the data source.</p>
 </li>
 <li>
 <p>datasource.jndi.resourceRef: Set whether the lookup occurs in a J2EE container, for example, the prefix "java:comp/env/" needs to be added if the JNDI name doesn&#8217;t already contain it. Default is "true".</p>
@@ -870,10 +870,10 @@ requires users to either modify the db.properties in the Flowable source and rec
 <p><strong>ACT_CMMN_</strong>*: Tables without an additional prefix contain <em>static</em> information such as case definitions and case resources (images, rules, etc.).</p>
 </li>
 <li>
-<p><strong>ACT_RU_</strong>*: <em>RU</em> stands for <code>runtime</code>. These are the runtime tables that contain the runtime data of case instances, plan items, and so on. Flowable only stores the runtime data during case instance execution and removes the records when a case instance ends. This keeps the runtime tables small and fast.</p>
+<p><strong>ACT_CMMN_RU_</strong>*: <em>RU</em> stands for <code>runtime</code>. These are the runtime tables that contain the runtime data of case instances, plan items, and so on. Flowable only stores the runtime data during case instance execution and removes the records when a case instance ends. This keeps the runtime tables small and fast.</p>
 </li>
 <li>
-<p><strong>ACT_HI_</strong>*: <em>HI</em> stands for <code>history</code>. These are the tables that contain historic data, such as past case instances, plan items, and so on.</p>
+<p><strong>ACT_CMMN_HI_</strong>*: <em>HI</em> stands for <code>history</code>. These are the tables that contain historic data, such as past case instances, plan items, and so on.</p>
 </li>
 </ul>
 </div>
@@ -1021,11 +1021,6 @@ requires users to either modify the db.properties in the Flowable source and rec
 <div class="paragraph">
 <p>The engine API is the most common way of interacting with Flowable. The main starting point is the <code>CmmnEngine</code>, which can be created in several ways as described in the  <a href="#configuration">configuration section</a>. From the CmmnEngine, you can obtain the various services that contain the case/CMMN methods. CmmnEngine and the services objects are thread safe, so you can keep a reference to one of those for a whole server.</p>
 </div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/api.services.png" alt="api.services">
-</div>
-</div>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
@@ -1098,7 +1093,7 @@ requires users to either modify the db.properties in the Flowable source and rec
 <p>The <strong>CmmnHistoryService</strong> exposes all historical data gathered by the Flowable CMMN engine. When executing cases, a lot of data can be kept by the engine (this is configurable), such as case instance start times, who did which tasks, how long it took to complete the tasks, which path was followed in each case instance, and so on. This service exposes mainly query  capabilities to access this data.</p>
 </div>
 <div class="paragraph">
-<p>The <strong>CmmnManagementService</strong> is typically not needed when coding custom application using Flowable. It allows the retrieval of information about the database tables and table metadata.</p>
+<p>The <strong>CmmnManagementService</strong> gives access to low-level information about the database tables, allows to query for the different types of jobs and to execute them.</p>
 </div>
 <div class="paragraph">
 <p>For more detailed information on the service operations and the engine API, see <a href="flowable/index.html">the javadocs</a>.</p>
@@ -1171,44 +1166,17 @@ requires users to either modify the db.properties in the Flowable source and rec
 </td></tr></table></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Sometimes you need more powerful queries, for example, queries using an OR operator or restrictions you cannot express using the Query API. For these cases, we have native queries, which allow you to write your own SQL queries. The return type is defined by the Query object you use and the data is mapped into the correct objects (Task, CaseInstance, &#8230;&#8203;). Since the query will be fired at the database you have to use table and column names as they are defined in the database; this requires some knowledge about the internal data structure and it is recommended to use native queries with care. The table names can be retrieved through the API to keep the dependency as small as possible.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</div></td><td class="code"><span></span><span class="tok-n">List</span><span class="tok-o">&lt;</span><span class="tok-n">Task</span><span class="tok-o">&gt;</span> <span class="tok-n">tasks</span> <span class="tok-o">=</span> <span class="tok-n">taskService</span><span class="tok-o">.</span><span class="tok-na">createNativeTaskQuery</span><span class="tok-o">()</span>
-  <span class="tok-o">.</span><span class="tok-na">sql</span><span class="tok-o">(</span><span class="tok-s">&quot;SELECT count(*) FROM &quot;</span> <span class="tok-o">+</span> <span class="tok-n">managementService</span><span class="tok-o">.</span><span class="tok-na">getTableName</span><span class="tok-o">(</span><span class="tok-n">Task</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">)</span> <span class="tok-o">+</span>
-      <span class="tok-s">&quot; T WHERE T.NAME_ = #{taskName}&quot;</span><span class="tok-o">)</span>
-  <span class="tok-o">.</span><span class="tok-na">parameter</span><span class="tok-o">(</span><span class="tok-s">&quot;taskName&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;gonzoTask&quot;</span><span class="tok-o">)</span>
-  <span class="tok-o">.</span><span class="tok-na">list</span><span class="tok-o">();</span>
-
-<span class="tok-kt">long</span> <span class="tok-n">count</span> <span class="tok-o">=</span> <span class="tok-n">taskService</span><span class="tok-o">.</span><span class="tok-na">createNativeTaskQuery</span><span class="tok-o">()</span>
-  <span class="tok-o">.</span><span class="tok-na">sql</span><span class="tok-o">(</span><span class="tok-s">&quot;SELECT count(*) FROM &quot;</span> <span class="tok-o">+</span> <span class="tok-n">managementService</span><span class="tok-o">.</span><span class="tok-na">getTableName</span><span class="tok-o">(</span><span class="tok-n">Task</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">)</span> <span class="tok-o">+</span> <span class="tok-s">&quot; T1, &quot;</span> <span class="tok-o">+</span>
-      <span class="tok-n">managementService</span><span class="tok-o">.</span><span class="tok-na">getTableName</span><span class="tok-o">(</span><span class="tok-n">VariableInstanceEntity</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">)</span> <span class="tok-o">+</span> <span class="tok-s">&quot; V1 WHERE V1.TASK_ID_ = T1.ID_&quot;</span><span class="tok-o">)</span>
-  <span class="tok-o">.</span><span class="tok-na">count</span><span class="tok-o">();</span>
-</td></tr></table></code></pre>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="apiVariables">3.4. Variables</h3>
 <div class="paragraph">
-<p>Every case instance needs and uses data to execute the steps it&#8217;s made up of. In Flowable, this data is called <em>variables</em>, which are stored in the database. Variables can be used in expressions (for example, in a condition of a transition), in Java service tasks when calling external services (for example to provide the input or store the result of the service call), and so on.</p>
+<p>Every case instance needs and uses data to execute the steps it&#8217;s made up of. In Flowable, this data is called <em>variables</em>, which are stored in the database. Variables can be used in expressions (for example, in the condition of a sentry), in Java service tasks when calling external services (for example to provide the input or store the result of the service call), and so on.</p>
 </div>
 <div class="paragraph">
-<p>A case instance can have variables (called <em>case variables</em>), but also <em>plan items</em> (which are enabled plan items) and human tasks can have variables. A case instance can have any number of variables. Each variable is stored in a row in the <em>ACT_RU_VARIABLE</em> database table.</p>
+<p>A case instance can have variables (called <em>case variables</em>), but also <em>plan item instances</em> and human tasks can have variables. A case instance can have any number of variables. Each variable is stored in a row in the <em>ACT_RU_VARIABLE</em> database table.</p>
 </div>
 <div class="paragraph">
-<p>The <em>createCaseInstanceBuilder</em> method has optional methods to provide the variables when the case instance is created and started. For example, from the <em>CmmnRuntimeService</em>:</p>
+<p>The <em>createCaseInstanceBuilder</em> method has optional methods to provide the variables when the case instance is created and started through the <em>CmmnRuntimeService</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1351,10 +1319,11 @@ ${myBean.doSomething(myVar, execution)}</pre>
 <p>Cases are an integral part of software projects and they should be tested in the same way normal application logic is tested: with unit tests. Since Flowable is an embeddable Java engine, writing unit tests for business processes is as simple as writing regular unit tests.</p>
 </div>
 <div class="paragraph">
-<p>Flowable supports JUnit versions 4 styles of unit testing.</p>
+<p>Flowable supports JUnit versions 3/4/5 styles of unit testing.</p>
 </div>
 <div class="paragraph">
-<p>The CmmnTestRunner can be used to initialise the CMMN engine and with the FlowableCmmnTestCase test base class you can easily write unit tests against a running CMMN engine.</p>
+<p>The <em>org.flowable.cmmn.engine.test.FlowableCmmnTestCase</em> is available as parent class. It uses a configuration file <em>flowable.cmmn.cfg.xml</em> by default or uses a standard CmmnEngine using an H2 in-memory database if such file is missing.
+Behind the scenes, a CmmnTestRunner is used to initialise the CMMN engine. Note in the example below how the <em>@CmmnDeployment</em> annotation is used to automatically deploy the case definition (it will look for a .cmmn file in the same folder as the test class and expects the file to be named &lt;Test class name&gt;.&lt;test method name&gt;.cmmn.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1375,11 +1344,11 @@ ${myBean.doSomething(myVar, execution)}</pre>
 15
 16
 17
-18</div></td><td class="code"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyBusinessProcessTest</span> <span class="tok-kd">extends</span> <span class="tok-n">FlowableCmmnTestCase</span> <span class="tok-o">{</span>
+18</div></td><td class="code"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyTest</span> <span class="tok-kd">extends</span> <span class="tok-n">FlowableCmmnTestCase</span> <span class="tok-o">{</span>
 
   <span class="tok-nd">@Test</span>
   <span class="tok-nd">@CmmnDeployment</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">ruleUsageExample</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">testSingleHumanTask</span><span class="tok-o">()</span> <span class="tok-o">{</span>
     <span class="tok-n">CaseInstance</span> <span class="tok-n">caseInstance</span> <span class="tok-o">=</span> <span class="tok-n">cmmnRuntimeService</span><span class="tok-o">.</span><span class="tok-na">createCaseInstanceBuilder</span><span class="tok-o">()</span>
                     <span class="tok-o">.</span><span class="tok-na">caseDefinitionKey</span><span class="tok-o">(</span><span class="tok-s">&quot;myCase&quot;</span><span class="tok-o">)</span>
                     <span class="tok-o">.</span><span class="tok-na">start</span><span class="tok-o">();</span>
@@ -1392,6 +1361,33 @@ ${myBean.doSomething(myVar, execution)}</pre>
     <span class="tok-n">cmmnTaskService</span><span class="tok-o">.</span><span class="tok-na">complete</span><span class="tok-o">(</span><span class="tok-n">task</span><span class="tok-o">.</span><span class="tok-na">getId</span><span class="tok-o">());</span>
     <span class="tok-n">assertEquals</span><span class="tok-o">(</span><span class="tok-mi">0</span><span class="tok-o">,</span> <span class="tok-n">cmmnRuntimeService</span><span class="tok-o">.</span><span class="tok-na">createCaseInstanceQuery</span><span class="tok-o">().</span><span class="tok-na">count</span><span class="tok-o">());</span>
   <span class="tok-o">}</span>
+<span class="tok-o">}</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alernatively, the <em>FlowableCmmnRule</em> is available and allows to set a custom configuration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</div></td><td class="code"><span></span><span class="tok-nd">@Rule</span>
+<span class="tok-kd">public</span> <span class="tok-n">FlowableCmmnRule</span> <span class="tok-n">cmmnRule</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">FlowableCmmnRule</span><span class="tok-o">(</span><span class="tok-s">&quot;org/flowable/custom.cfg.xml&quot;</span><span class="tok-o">)</span>
+
+<span class="tok-nd">@Test</span>
+<span class="tok-nd">@CmmnDeployment</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">testSomething</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// ...</span>
+    <span class="tok-n">assertThat</span><span class="tok-o">((</span><span class="tok-n">String</span><span class="tok-o">)</span> <span class="tok-n">cmmnRule</span><span class="tok-o">.</span><span class="tok-na">getCmmnRuntimeService</span><span class="tok-o">().</span><span class="tok-na">getVariable</span><span class="tok-o">(</span><span class="tok-n">caseInstance</span><span class="tok-o">.</span><span class="tok-na">getId</span><span class="tok-o">(),</span> <span class="tok-s">&quot;test&quot;</span><span class="tok-o">),</span> <span class="tok-n">containsString</span><span class="tok-o">(</span><span class="tok-s">&quot;John&quot;</span><span class="tok-o">));</span>
+    <span class="tok-c1">// ...</span>
 <span class="tok-o">}</span>
 </td></tr></table></code></pre>
 </div>
@@ -1795,19 +1791,13 @@ ${myBean.doSomething(myVar, execution)}</pre>
 <p>During deployment of a case definition however, those classes don&#8217;t have to be present on the classpath. This means that your delegation classes don&#8217;t have to be on the classpath when deploying a new case definition, for example.</p>
 </div>
 <div class="paragraph">
-<p>When you are using the demo setup and you want to add your custom classes, you should add a JAR containing your classes to the flowable-task or flowable-rest webapp lib. Don&#8217;t forget to include the dependencies of your custom classes (if any) as well. Alternatively, you can include your dependencies in the libraries directory of your Tomcat installation, <code>${tomcat.home}/lib</code>.</p>
+<p>When you are using the demo setup and you want to add your custom classes, you should add a JAR containing your classes to the flowable-task or flowable-rest webapp lib. Don&#8217;t forget to include the dependencies of your custom classes (if any) as well. Alternatively, you can include your dependencies in the libraries directory of your Tomcat installation, <code>${tomcat.home}/lib</code> (or similar place for other web containers).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_using_spring_beans_from_a_process">5.1.2. Using Spring beans from a process</h4>
+<h4 id="_using_spring_beans_from_a_case_instance">5.1.2. Using Spring beans from a case instance</h4>
 <div class="paragraph">
-<p>When expressions or scripts use Spring beans, those beans have to be available to the engine when executing the process definition. If you are building your own webapp and you configure your CMMN engine in your context as described in <a href="#springintegration">the spring integration section</a>, that is straightforward. But bear in mind that you also should update the Flowable task and rest webapps with that context if you use it.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_creating_a_single_app">5.1.3. Creating a single app</h4>
-<div class="paragraph">
-<p>Instead of making sure that all CMMN engines have all the delegation classes on their classpath and use the right Spring configuration, you may consider including the Flowable REST webapp inside your own webapp so that there is only a single <code>CmmnEngine</code>.</p>
+<p>When expressions or scripts use Spring beans, those beans have to be available to the engine when executing the case definition. If you are building your own webapp and you configure your CMMN engine in your context as described in <a href="#springintegration">the spring integration section</a>, that is straightforward. But bear in mind that you also should update the Flowable task and rest webapps with that context if you use it.</p>
 </div>
 </div>
 </div>
@@ -2031,7 +2021,7 @@ ${myBean.doSomething(myVar, execution)}</pre>
 <p>The elements of a plan model are called <strong>plan items</strong>. Each <em>plan item</em> has a <strong>plan item definition</strong> that gives its type and possible configuration options at runtime. For example, in the figure above, there are three <strong>human task</strong> plan items and one <strong>milestone</strong>. Other examples of plan items are <em>process tasks, case tasks and stages</em>.</p>
 </div>
 <div class="paragraph">
-<p>After having deployed a case model to the Flowable CMMN engine, it&#8217;s possible to start <strong>case instances</strong> based on this case model. The plan items defined in the case model similarly have <strong>plan item instance</strong> runtime representations that are exposed by, and can be queried using, the Flowable API.</p>
+<p>After having deployed a case model to the Flowable CMMN engine, it&#8217;s possible to start <strong>case instances</strong> based on this case model. The plan items defined in the case model similarly have <strong>plan item instance</strong> runtime representations that are exposed by, and can be queried using, the Flowable API. Plan item instances have a state lifecycle that is defined in the CMMN 1.1 specification and is core to how the engine works. Please check out section 8.4.2 of the CMMN 1.1 specification for all the details.</p>
 </div>
 <div class="paragraph">
 <p>Plan items can have <em>sentries</em>: a plan item is said to have <em>entry criteria</em> when a sentry "guards" its activation. These criteria specify conditions that must be satisfied to <em>trigger the sentry</em>. For example, in the figure above, the "Milestone One" plan item is <em>available</em> after a case instance is started, but it is <em>activated</em> (in CMMN 1.1 specification terminology: it moves from the <em>available</em> state to the <em>active</em> state) when both human task A and B are completed. Note that sentries can have complex expression in their <em>if part</em>, which are not visualized, allowing for much more complex functionality. Also note that there can be multiple sentries, although only one needs to be satisfied to trigger a state transition.</p>
@@ -2824,10 +2814,10 @@ Task completed: Fill in paperwork</pre>
 <p>A human task is used to model work that needs to be done by a human, typically through a form. When the engine arrives at such a human task, a new entry is created in the task list of any users or groups assigned to that task.</p>
 </div>
 <div class="paragraph">
-<p>A human task is a plan item, which means that beyond a human task entry aso a <em>PlanItemInstance</em> is created and it can be queried via the <em>PlanItemInstanceQuery</em>.</p>
+<p>A human task is a plan item, which means that beyond a human task entry also a <em>PlanItemInstance</em> is created and it can be queried via the <em>PlanItemInstanceQuery</em>.</p>
 </div>
 <div class="paragraph">
-<p>Human tasks can be queried through the <em>org.flowable.task.api.TaskQuery</em> API. Historic task data can be queries through the <em>org.flowable.task.api.history.HistoricTaskInstanceQuery</em>.</p>
+<p>Human tasks can be queried through the <em>org.flowable.task.api.TaskQuery</em> API. Historic task data can be queried through the <em>org.flowable.task.api.history.HistoricTaskInstanceQuery</em>.</p>
 </div>
 <div class="paragraph">
 <p>Properties:</p>
@@ -2847,7 +2837,7 @@ Task completed: Fill in paperwork</pre>
 <p><strong>assignee</strong> : an expression (can be a static text value) that is used to determine to who the human task is assigned.</p>
 </li>
 <li>
-<p><strong>owner</strong> : an expression (can be a static text value) that is used to determine to who is the owner of the human task.</p>
+<p><strong>owner</strong> : an expression (can be a static text value) that is used to determine who is the owner of the human task.</p>
 </li>
 <li>
 <p><strong>candidateUsers</strong> : an expression (can be a static text value) that resolves to a comma-separated list of Strings that is used to determine which users are candidate for this human task.</p>
@@ -2979,12 +2969,180 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_milestone">6.4.7. Milestone</h4>
+<h4 id="_script_task">6.4.7. Script Task</h4>
+<div class="paragraph">
+<p>A task of type "script", similar to its homologue in BPMN, the Script Task executes a script when the plan item instance become active.</p>
+</div>
+<div class="paragraph">
+<p>Properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>name</strong>: task attribute to indicate the name of the task.</p>
+</li>
+<li>
+<p><strong>type</strong>: task attribute whose value must be "script" to indicate the type of task.</p>
+</li>
+<li>
+<p><strong>scriptFormat</strong>: extended attribute that indicate the language of the script (i.e. javascript, groovy).</p>
+</li>
+<li>
+<p><strong>script</strong>: the script to execute, defined as a string in a extension field element named "script".</p>
+</li>
+<li>
+<p><strong>autoStoreVariables</strong>: optional task attribute flag (default: false) tha indicates whether or not variables defined in the script will be stored in the Plan Item Instance context (see note below).</p>
+</li>
+<li>
+<p><strong>resultVariableName</strong>: optional task attribute that when present will store a variable with the specified name in the Plan Item instance context with the script evaluation result (see note below).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A script task is visualized as a <em>task</em> with a script icon in the top left corner:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.scripttask.png" alt="cmmn.scripttask">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</div></td><td class="code"><span></span><span class="tok-nt">&lt;planItem</span> <span class="tok-na">id=</span><span class="tok-s">&quot;scriptPlanItem&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Script Plan Item&quot;</span> <span class="tok-na">definitionRef=</span><span class="tok-s">&quot;myScriptTask&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;task</span> <span class="tok-na">name=</span><span class="tok-s">&quot;My Script Task Item&quot;</span> <span class="tok-na">flowable:type=</span><span class="tok-s">&quot;script&quot;</span> <span class="tok-na">flowable:scriptFormat=</span><span class="tok-s">&quot;JavaScript&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;documentation&gt;</span>Optional documentation<span class="tok-nt">&lt;/documentation&gt;</span>
+    <span class="tok-nt">&lt;extensionElements&gt;</span>
+        <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;script&quot;</span><span class="tok-nt">&gt;</span>
+            <span class="tok-nt">&lt;string&gt;</span>
+                sum = 0;
+                for ( i in inputArray ) {
+                    sum += i;
+                }
+            <span class="tok-nt">&lt;/string&gt;</span>
+        <span class="tok-nt">&lt;/flowable:field&gt;</span>
+    <span class="tok-nt">&lt;/extensionElements&gt;</span>
+<span class="tok-nt">&lt;/taks&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: The value of the <strong>scriptFormat</strong> attribute must be a name that is compatible with the <a href="http://jcp.org/en/jsr/detail?id=223">JSR-223</a> (scripting for the Java platform). By default, JavaScript is included in every JDK and as such doesn&#8217;t need any additional JAR files. If you want to use another (JSR-223 compatible) scripting engine, it is sufficient to add the corresponding JAR to the classpath and use the appropriate name. For example, the Flowable unit tests often use Groovy because the syntax is similar to that of Java.</p>
+</div>
+<div class="paragraph">
+<p>Do note that the Groovy scripting engine is bundled with the groovy-all jar. Before Groovy version 2.0, the scripting engine was part of the regular Groovy JAR. As such, one must now add following dependency:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5</div></td><td class="code"><span></span><span class="tok-nt">&lt;dependency&gt;</span>
+    <span class="tok-nt">&lt;groupId&gt;</span>org.codehaus.groovy<span class="tok-nt">&lt;/groupId&gt;</span>
+    <span class="tok-nt">&lt;artifactId&gt;</span>groovy-all<span class="tok-nt">&lt;/artifactId&gt;</span>
+    <span class="tok-nt">&lt;version&gt;</span>2.x.x<span class="tok-nt">&lt;version&gt;</span>
+<span class="tok-nt">&lt;/dependency&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All case variables that are accessible through the PlanItem instance that arrives in the script task can be used within the script. In the example, the script variable <em>'inputArray'</em> is in fact a case variable (an array of integers).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7
+8</div></td><td class="code"><span></span><span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;script&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;string&gt;</span>
+    sum = 0
+    for ( i in inputArray ) {
+      sum += i
+    }
+    <span class="tok-nt">&lt;/string&gt;</span>
+<span class="tok-nt">&lt;/flowable:field&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: It&#8217;s also possible to set process variables in a script, simply by calling <em>planItemInstance.setVariable("variableName", variableValue)</em>. By default, no variables are stored automatically. It&#8217;s possible to automatically store any variable defined in the script (for example, <em>sum</em> in the example above) by setting the property <code>autoStoreVariables</code> on the <code>scriptTask</code> to <code>true</code>. However, <strong>the best practice is not to do this and use an explicit execution.setVariable() call</strong>, as with some recent versions of the JDK, auto storing of variables does not work for some scripting languages. See <a href="http://www.jorambarrez.be/blog/2013/03/25/bug-on-jdk-1-7-0_17-when-using-scripttask-in-activiti/">this link</a> for more details.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-nt">&lt;task</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Script Task&quot;</span> <span class="tok-na">flowable:type=</span><span class="tok-s">&quot;script&quot;</span> <span class="tok-na">flowable:scriptFormat=</span><span class="tok-s">&quot;groovy&quot;</span> <span class="tok-na">flowable:autoStoreVariables=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The default for this parameter is <code>false</code>, meaning that if the parameter is omitted from the script task definition, all the declared variables will only exist during the duration of the script.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of how to set a variable in a script:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6</div></td><td class="code"><span></span><span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;script&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;string&gt;</span>
+    def scriptVar = &quot;test123&quot;
+    planItemInstance.setVariable(&quot;myVar&quot;, scriptVar)
+    <span class="tok-nt">&lt;/string&gt;</span>
+<span class="tok-nt">&lt;/flowable:field&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following names are reserved and <strong>cannot be used</strong> as variable names: <strong>out, out:print, lang:import, context, elcontext</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong> The return value of a script task can be assigned to an already existing, or to a new process variable, by specifying the process variable name as a literal value for the <em>'flowable:resultVariable'</em> attribute of a script task definition. Any existing value for a specific process variable will be overwritten by the result value of the script execution. When a result variable name is not specified, the script result value gets ignored.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5</div></td><td class="code"><span></span><span class="tok-nt">&lt;task</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Script Task&quot;</span> <span class="tok-na">flowable:type=</span><span class="tok-s">&quot;script&quot;</span> <span class="tok-na">flowable:scriptFormat=</span><span class="tok-s">&quot;groovy&quot;</span> <span class="tok-na">lowable:resultVariable=</span><span class="tok-s">&quot;myVar&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;flowable:field</span> <span class="tok-na">name=</span><span class="tok-s">&quot;script&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;string&gt;</span>#{echo}<span class="tok-nt">&lt;/string&gt;</span>
+    <span class="tok-nt">&lt;/flowable:field&gt;</span>
+<span class="tok-nt">&lt;/task&gt;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the above example, the result of the script execution (the value of the resolved expression <em>'#{echo}'</em>) is set to the process variable named <em>'myVar'</em> after the script completes.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_milestone">6.4.8. Milestone</h4>
 <div class="paragraph">
 <p>A milestone is used to mark arriving at a certain point in the case instance. At runtime, they are represented as <strong>MilestoneInstances</strong> and they can be queried through the <strong>MilestoneInstanceQuery</strong> via the <em>CmmnRuntimeService</em>. There is also a historical counterpart via the <em>CmmnHistoryService</em>.</p>
 </div>
 <div class="paragraph">
-<p>A human task is a plan item, which means that beyond a milestone entry aso a <em>PlanItemInstance</em> is created and it can be queried via the <em>PlanItemInstanceQuery</em>.</p>
+<p>A milestone is a plan item, which means that beyond a milestone entry aso a <em>PlanItemInstance</em> is created and it can be queried via the <em>PlanItemInstanceQuery</em>.</p>
 </div>
 <div class="paragraph">
 <p>Properties:</p>
@@ -3006,7 +3164,7 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_case_task">6.4.8. Case task</h4>
+<h4 id="_case_task">6.4.9. Case task</h4>
 <div class="paragraph">
 <p>A case task is used to start a child case within the context of another case. The <em>CaseInstanceQuery</em> has <em>parent</em> options to find these cases.</p>
 </div>
@@ -3042,7 +3200,7 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_process_task">6.4.9. Process task</h4>
+<h4 id="_process_task">6.4.10. Process task</h4>
 <div class="paragraph">
 <p>A process task is used to start a process instance within the context of a case.</p>
 </div>
@@ -3078,7 +3236,7 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_criteria">6.4.10. Criteria</h4>
+<h4 id="_criteria">6.4.11. Criteria</h4>
 <div class="sect4">
 <h5 id="_entry_criterion">Entry criterion</h5>
 <div class="paragraph">
@@ -3141,7 +3299,7 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_event_listeners">6.4.11. Event Listeners</h4>
+<h4 id="_event_listeners">6.4.12. Event Listeners</h4>
 <div class="sect4">
 <h5 id="_timer_event_listener">Timer Event Listener</h5>
 <div class="paragraph">
@@ -3194,13 +3352,31 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_user_event_listener">User Event Listener</h5>
+<div class="paragraph">
+<p>A user event listener can be used when neededing to capture a user interaction that influences the proceeding of a case directly,
+instead of indirectly via impacting variables or information in the case. When the event is captured an Occur transition is triggered on the event listener.
+Like timer event listeners, it has a much simpler lifecycle that a <em>task</em>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.usereventlistener.png" alt="cmmn.usereventlistener">
+</div>
+</div>
+<div class="paragraph">
+<p>User event listeners can be queried using the <em>org.flowable.cmmn.api.runtime.UserEventListenerInstanceQuery</em>. Such a query can be created by calling the <em>cmmnRuntimeService.createUserEventListenerInstanceQuery()</em> method. Note that a user event listener is a plan item instance under the hood, which means it can also be queried through the <em>org.flowable.cmmn.api.runtime.PlanItemInstanceQuery</em> API.</p>
+</div>
+<div class="paragraph">
+<p>A user event listener can be completed by calling the <em>cmmnRuntimeService.completeUserEventListenerInstance(id)</em> method.</p>
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_item_controls">6.4.12. Item controls</h4>
-<div class="sect4">
-<h5 id="_repetition_rule">Repetition Rule</h5>
+<h4 id="_item_control_repetition_rule">6.4.13. Item control: Repetition Rule</h4>
 <div class="paragraph">
-<p>Plan items on the case model can have a <em>repetition rule</em>, an expression that can be used to indicate a certain plan item needs to be repeated.</p>
+<p>Plan items on the case model can have a <em>repetition rule</em>, an expression that can be used to indicate a certain plan item needs to be repeated.
+When no expression is set, but the repetition is enabled (e.g. the checkbox is checked in the Flowable Modeler) or the expression is empty, a <em>true</em> value is assumed by default.</p>
 </div>
 <div class="paragraph">
 <p>An optional <em>repetition counter variable</em> can be set, that holds the index (one-based) of the instance. If not set, the default variable name is <em>repeitionCounter</em>.</p>
@@ -3223,6 +3399,327 @@ Task completed: Fill in paperwork</pre>
 <p>If the timer event listener is repeating (for example <em>R/PT1H</em>), the <em>occur</em> event will be fired every hour. When the repetition rule expression of the human task evaluates to true, a new human task instance will be created each hour.</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_item_control_manual_activation_rule">6.4.14. Item control: Manual Activation Rule</h4>
+<div class="paragraph">
+<p>Plan items on the case model can have a <em>manual activation rule</em>, an expression that can be used to indicate a certain plan item needs to be <em>manually activated by an end-user</em>.
+When no expression is set, but the manual activation is enabled (e.g. the checkbox is checked in the Flowable Modeler) or the expression is empty, a <em>true</em> value is assumed by default.</p>
+</div>
+<div class="paragraph">
+<p>Stages and all task types can be marked for manual activation. Visually, the task or stage will get a <em>play</em> icon (small triangle pointing to the right) to indicate an end-user will have to manually activate it:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.manual-activation.png" alt="cmmn.manual activation">
+</div>
+</div>
+<div class="paragraph">
+<p>Normally, when a sentry for a plan item is satisfied (or the plan item doesn&#8217;t have any sentries) the plan item instance is automatically moved to the <em>ACTIVE</em> state. When a manual activation is set though, and it evaluates to true, the plan item instance now becomes <em>ENABLED</em> instead of <em>ACTIVE</em>. As the name implies, the idea behind this is that end-users manually have to activate the plan item instance. A typical use case is for example showing a list of buttons of potential plan item instances that can currently be started by the end user.</p>
+</div>
+<div class="paragraph">
+<p>To start an enabled plan item instance, the <em>startPlanItemInstance</em> method of the <em>CmmnRuntimeService</em> can be used:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7
+8</div></td><td class="code"><span></span><span class="tok-n">List</span><span class="tok-o">&lt;</span><span class="tok-n">PlanItemInstance</span><span class="tok-o">&gt;</span> <span class="tok-n">enabledPlanItemInstances</span> <span class="tok-o">=</span> <span class="tok-n">cmmnRuntimeService</span><span class="tok-o">.</span><span class="tok-na">createPlanItemInstanceQuery</span><span class="tok-o">()</span>
+    <span class="tok-o">.</span><span class="tok-na">caseInstanceId</span><span class="tok-o">(</span><span class="tok-n">caseInstance</span><span class="tok-o">.</span><span class="tok-na">getId</span><span class="tok-o">())</span>
+    <span class="tok-o">.</span><span class="tok-na">planItemInstanceStateEnabled</span><span class="tok-o">()</span>
+    <span class="tok-o">.</span><span class="tok-na">list</span><span class="tok-o">();</span>
+
+<span class="tok-c1">// ...</span>
+
+<span class="tok-n">cmmnRuntimeService</span><span class="tok-o">.</span><span class="tok-na">startPlanItemInstance</span><span class="tok-o">(</span><span class="tok-n">planItemInstance</span><span class="tok-o">.</span><span class="tok-na">getId</span><span class="tok-o">());</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the behaviour of a task only is executed when the plan item instance moves into the <em>ACTIVE</em> state. For example, for a human task, the user task will only be created after calling the <em>startPlanItemInstance</em> method.</p>
+</div>
+<div class="paragraph">
+<p>Plan item instances that are enabled, can be moved into the <em>DISABLED</em> state:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-n">cmmnRuntimeService</span><span class="tok-o">.</span><span class="tok-na">disablePlanItemInstance</span><span class="tok-o">(</span><span class="tok-n">planItemInstance</span><span class="tok-o">.</span><span class="tok-na">getId</span><span class="tok-o">());</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Disabled plan item instances can be enabled again:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-n">cmmnRuntimeService</span><span class="tok-o">.</span><span class="tok-na">enablePlanItemInstance</span><span class="tok-o">(</span><span class="tok-n">planItemInstance</span><span class="tok-o">.</span><span class="tok-na">getId</span><span class="tok-o">());</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that with regards to determining stage or case instance termination, the <em>DISABLED</em> state is seen as a <em>terminal</em> state. This means that the case instance will terminate when only disabled plan item instances would remain.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_item_control_required_rule">6.4.15. Item control: Required Rule</h4>
+<div class="paragraph">
+<p>Plan items on the case model can have a <em>required rule</em>, an expression that can be used to indicate a certain plan item is <em>required by the enclosing stage (or plan model)</em>. This can be used to indicate which plan items of the case model are required to be executed and which are optional.</p>
+</div>
+<div class="paragraph">
+<p>When no expression is set, but the required rule is enabled (e.g. the checkbox is checked in the Flowable Modeler) or the expression is empty, a <em>true</em> value is assumed by default.</p>
+</div>
+<div class="paragraph">
+<p>The <em>required rule</em> works in conjunction with the <em>autoComplete</em> attribute on the parent stage:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If <em>autoComplete</em> resolves to <em>false</em> for the stage, which is also the default when nothing is set, <strong>all</strong> child plan item instances must be in an end state (completed, terminated, etc.) for the stage plan item instance to completed by the engine.</p>
+</li>
+<li>
+<p>If <em>autoComplete</em> resolves to <em>true</em> for the stage, all child plan item instances for <strong>which the required rule evaluates to true</strong> need to be in an end state. If there are also no other active child plan item instances, the stage completes automatically.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A <em>stage plan item instance</em> has a <strong>completeable</strong> property that can be used to see whether or not the conditions for completion are satisfied.
+Take for example the following simple stage and assume that the sentry for the <em>required task</em> evaluates to true and the other one to false. This means that the left plan item instance will be active while the right one will be in the <em>available</em> state.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.completeable-stage.png" alt="cmmn.completeable stage">
+</div>
+</div>
+<div class="paragraph">
+<p>Calling <em>cmmnRuntimeService.completeStagePlanItemInstance(String stagePlanItemInstanceId)</em> will not be possible for the stage (an exception will be thrown) as it has one active child plan item instance. When this user task on the left is completed, the <em>completeStagePlanItemInstance</em> can now be called, as no child plan item instances are currently active. However, by itself the stage will not automatically complete as the right user task is in the available state.</p>
+</div>
+<div class="paragraph">
+<p>If the previous stage is changed to be <strong>autoCompleteable</strong> (this is visualised by a black rectangle at the bottom of the stage) and the plan item on the left is changed to be required (this is visualised using an exclamation mark), the behavior will be different:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.completeable-stage02.png" alt="cmmn.completeable stage02">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the left plan item instance is active (sentry is true) and the right is not (sentry is false). In this case, when the left user task is completed, the stage instance will auto complete as it has no active child plan item instances and all required plan item instances are in an end state</p>
+</li>
+<li>
+<p>If both the left and right user tasks are active (sentries are true).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>When the left user task is completed, the stage will not autocomplete as there is still a child plan item instance active.</p>
+</li>
+<li>
+<p>When the right user task is completed, the stage will not autocomplete as the required left child plan item instance is not in an end state.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If the left plan item instance is not active and the right is active. In this case, when the right user task is completed the stage will not autocomplete, as the required left user task is not in an end state. It will need to become active and be completed to complete the stage.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that the manual activation rule works independently from the required rule. For example, given the following stage:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.completeable-stage03.png" alt="cmmn.completeable stage03">
+</div>
+</div>
+<div class="paragraph">
+<p>Here, user task D is required, and user task B is manually activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If D is completed, the stage will automatically complete, as B is not required and it is not active.</p>
+</li>
+<li>
+<p>If B would be required too, it would need to be manually started (using <em>cmmnRuntimeService.startPlanItemInstance(String planItemInstanceId)</em>) before the stage would automatically complete, even if D would be completed before the manual start of B.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_item_control_completion_neutral_rule">6.4.16. Item control: Completion Neutral Rule</h4>
+<div class="paragraph">
+<p><em>Completion Neutral Rule</em> is not a CMMN 1.1 Standard. The completion neutral rule impacts the interpretation of the <strong>AVAILABLE</strong> state of plan items that have it, when evaluating whether or not a Stage containing such plan items can complete.</p>
+</div>
+<div class="paragraph">
+<p>Following the specification, a stage with a plan item in state <strong>AVAILABLE</strong> does not complete unless its <em>autoComplete</em> attribute is set <em>true</em>.
+But an <em>autoCompletable</em> stage would <em>ignore</em>, for the purposes of completing, <strong>all</strong> plan items in <em>ENABLE</em> and <em>AVAILABLE</em> state that are <em>not required</em> (<strong>requiredRule</strong> not present or evaluates to <em>false</em>).</p>
+</div>
+<div class="paragraph">
+<p><em>Completion Neutral</em> offers the flexibility to mark only some containing plan items without setting the containing parent stage as <em>autoComplete</em>.</p>
+</div>
+<div class="paragraph">
+<p><em>Required Rule</em> takes precedence when plan items that having both rules, both evaluate to <em>true</em>.</p>
+</div>
+<div class="paragraph">
+<p>As a summary:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a plan item configured to be <em>"completion neutral"</em> will not prevent a stage from completing if its in <strong>AVAILABLE</strong> state (i.e. waiting for a entry criteria sentry),
+meaning that such a plan item is neutral with respect to its parent stage completion evaluation.</p>
+</li>
+<li>
+<p>a stage will remain <strong>ACTIVE</strong> on any of these conditions:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>It has at least one plan item in <strong>ACTIVE</strong> state</p>
+</li>
+<li>
+<p>It has at least one plan item with <em>requiredRule</em> in <strong>AVAILABLE</strong> or <strong>ENABLE</strong> state</p>
+</li>
+<li>
+<p>If it isn&#8217;t <em>autoComplete</em> and has at least one plan item on <strong>ENABLED</strong> state (irrespectively on its <em>requiredRule</em>)</p>
+</li>
+<li>
+<p>If it isn&#8217;t <em>autoComplete</em> and has at least one plan item on <strong>AVAILABLE</strong> state that is <strong>not</strong> <em>completionNeutral</em></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>a stage will <strong>COMPLETE</strong> if:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>It contains <strong>no</strong> plan items or all child plan items are in a <em>Terminal</em> or <em>Semi-terminal</em> state (CLOSED, COMPLETED, DISABLED, FAILED)</p>
+</li>
+<li>
+<p>If it isn&#8217;t <em>autoComplete</em>, all remaining plan items (not <em>Terminal</em> or <em>Semi-terminal</em> state) are in <strong>AVAILABLE</strong> state and are <em>completionNeutral</em> and not <em>required</em></p>
+</li>
+<li>
+<p>If is is <em>autoComplete</em>, all remaining plan items (not <em>Terminal</em> or <em>Semi-terminal) are _not required</em> in <strong>ENABLED</strong> or <strong>AVAILABLE</strong> state (regardless of its completion neutrality)</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture">7. Architecture</h2>
+<div class="sectionbody">
+<div id="architecture" class="paragraph">
+<p>This chapter gives a short introduction to the internals of the CMMN engine from a high-level point of view. Of course, as the CMMN engine code is open source, the actual implementation details can be found by diving into the source code.</p>
+</div>
+<div class="paragraph">
+<p>The CMMN engine, as shown in the diagram below, is one of the engines that is part of the Flowable engines eco-system and is designed in a similar way as the other engines. The CMMN engine builds upon CMMN specific services and the shared services: the task, variable, identity and job services, which are independent from the engines. On a lower level the entity- and datamanager layer takes care of the low-level persistence, equivalent to the other engines.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.architecture.png" alt="cmmn.architecture">
+</div>
+</div>
+<div class="paragraph">
+<p>By using the shared services, this also means that for example tasks from both the BPMN and the CMMN engine will end up together and can be queried and managed through the same API. Similarly for the async executor: timers and async jobs use the same logic and even can be managed by a central executor.</p>
+</div>
+<div class="paragraph">
+<p>The shared services architecture has a second benefit. When the engines are used together, as is often the case, the engines will share resources where possible, database transactions will span calls over multiple engines operations, lookup caches are common and persistency is handled independently from the engines itself.</p>
+</div>
+<div class="paragraph">
+<p>The CMMN engine is designed with the same principles as the other engines of the Flowable project. The diagram below gives a high-level overview of the different components involved when working with the CMMN Engine:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/cmmn.api-call-flow.png" alt="cmmn.api call flow">
+</div>
+</div>
+<div class="paragraph">
+<p>From a high level point of view:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <strong>CmmnEngine</strong> instance is created from a <strong>CmmnEngineConfiguration</strong>. The configuration instance can be created from a configuration file or programmatically.</p>
+</li>
+<li>
+<p>The <em>CmmnEngine</em> gives access the Flowable CMMN API&#8217;s in the form of services: <strong>CmmnRepositoryService</strong>, <strong>CmmnRuntimeService</strong>, <strong>CmmnTaskService</strong>, <strong>CmmnHistoryService</strong>, <strong>CmmnManagementService</strong>. The naming of the services and their responsibilities is similar to the other engines.</p>
+</li>
+<li>
+<p>Every API method is transformed into a <strong>Command</strong> instance. This <em>Command</em> instance is passed into the <strong>CommandExecutor</strong> which, amongst others, makes it pass a stack of <strong>CommandInterceptors</strong>. These interceptors have various responsabilities, including handling transactions.</p>
+</li>
+<li>
+<p>Eventually, the <em>Command</em> typically (unless it&#8217;s a pure data modification <em>Command</em>) plans a <strong>CmmnOperation</strong> on the <strong>CmmnEngineAgenda</strong>.</p>
+</li>
+<li>
+<p>Operations will be taken from the <em>CmmnEngineAgenda</em> until no more operations are left. Typically, an operation will plan new operations as part of its logic.</p>
+</li>
+<li>
+<p>The logic in the operations will call out to lower-level services and/or entity managers.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A big difference between the BPMN and the CMMN engine is that the BPMN engine is generally <em>local</em>: the engine looks at the current state, checks what is ahead in the process and continues (of course this is a simplification, there are plenty of operations where this doesn&#8217;t apply, but for making a distinction conceptually, it is correct). The CMMN engine works differently: in CMMN, data plays an important role and the change of data can trigger many things in various places in the case definition. For this reason, the <strong>EvaluateCriteriaOperation</strong> is planned and executed often whenever changes happen. The engine does optimize these evaluations when it detects duplicates or useless evaluations.</p>
+</div>
+<div class="paragraph">
+<p>Core to the working of the CMMN engine is the concept of a <strong>Plan item instance</strong>, a representation of which <em>plan items</em> currently are <em>live</em> in the case and which state they have. Quite different from BPMN, CMMN defines a strict state lifecyle for the plan items. This is represented in the <em>CmmnRuntimeService</em> methods, the query API&#8217;s and the data fields part of the <strong>PlanItemInstance</strong> object.</p>
+</div>
+<div class="paragraph">
+<p>The working of the agenda, the operations and how plan item instances are handled can be inspected by setting logging to debug for the agenda package. For example, when using log4j:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>log4j.logger.org.flowable.cmmn.engine.impl.agenda=DEBUG</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Which leads to logging like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>Planned [Init Plan Model] initializing plan model for case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122
+Planned [Change PlanItem state] Task A (id: planItemTaskA), new state: [available] with transition [create]
+Planned [Change PlanItem state] PlanItem Milestone One (id: planItemMileStoneOne), new state: [available] with transition [create]
+Planned [Change PlanItem state] Task B (id: planItemTaskB), new state: [available] with transition [create]
+Planned [Change PlanItem state] PlanItem Milestone Two (id: planItemMileStoneTwo), new state: [available] with transition [create]
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'create' having fired for plan item planItemTaskA (Task A)
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'create' having fired for plan item planItemMileStoneOne (PlanItem Milestone One)
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'create' having fired for plan item planItemTaskB (Task B)
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'create' having fired for plan item planItemMileStoneTwo (PlanItem Milestone Two)
+Planned [Activate PlanItem] Task A (planItemTaskA)
+Planned [Change PlanItem state] Task A (id: planItemTaskA), new state: [active] with transition [start]
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'start' having fired for plan item planItemTaskA (Task A)
+Planned [Change PlanItem state] Task A (id: planItemTaskA), new state: [completed] with transition [complete]
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'complete' having fired for plan item planItemTaskA (Task A)
+Planned [Activate PlanItem] PlanItem Milestone One (planItemMileStoneOne)
+Planned [Change PlanItem state] PlanItem Milestone One (id: planItemMileStoneOne), new state: [active] with transition [start]
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'start' having fired for plan item planItemMileStoneOne (PlanItem Milestone One)
+Planned [Change PlanItem state] PlanItem Milestone One (id: planItemMileStoneOne), new state: [completed] with transition [occur]
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'occur' having fired for plan item planItemMileStoneOne (PlanItem Milestone One)
+Planned [Activate PlanItem] Task B (planItemTaskB)
+Planned [Change PlanItem state] Task B (id: planItemTaskB), new state: [active] with transition [start]
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'start' having fired for plan item planItemTaskB (Task B)
+Planned [Change PlanItem state] Task B (id: planItemTaskB), new state: [completed] with transition [complete]
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'complete' having fired for plan item planItemTaskB (Task B)
+Planned [Activate PlanItem] PlanItem Milestone Two (planItemMileStoneTwo)
+Planned [Change PlanItem state] PlanItem Milestone Two (id: planItemMileStoneTwo), new state: [active] with transition [start]
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'start' having fired for plan item planItemMileStoneTwo (PlanItem Milestone Two)
+Planned [Change PlanItem state] PlanItem Milestone Two (id: planItemMileStoneTwo), new state: [completed] with transition [occur]
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122 with transition 'occur' having fired for plan item planItemMileStoneTwo (PlanItem Milestone Two)
+Planned [Evaluate Criteria] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122
+No active plan items found for plan model, completing case instance
+Planned [Complete case instance] case instance bfaf0e64-eaf4-11e7-b9d0-acde48001122</code></pre>
 </div>
 </div>
 </div>
