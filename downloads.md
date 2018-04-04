@@ -38,7 +38,7 @@ docker run -p8080:8080 flowable/flowable-rest
 ```
 
 The API documentation will be available on [http://localhost:8080/flowable-rest/docs/ ](http://localhost:8080/flowable-rest/docs/) .
-(login/password: kermit/kermit)
+(login/password: rest-admin/test)
 
 For the full Flowable experience, download the IDM, Modeler, Task and Admin Docker Images; configure them to all run together on
 PostgreSQL using this [YML configuration file](https://github.com/flowable/flowable-engine/blob/master/docker/config/modeler-task-idm-admin-postgres.yml?raw=true); then run them using something like this [shell script](https://github.com/flowable/flowable-engine/blob/master/docker/modeler-task-idm-admin-postgres.sh?raw=true) (e.g., "./modeler-task-idm-admin-postgres.sh start").
