@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable DMN DOCS (v 6.3.0)</title>
+<title>Flowable DMN DOCS (v 6.3.1)</title>
 <style>
 
 /* normalize.css */
@@ -403,7 +403,7 @@ div.sect5  code {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable DMN DOCS (v 6.3.0)</h1>
+<h1>Flowable DMN DOCS (v 6.3.1)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -1217,7 +1217,7 @@ A <code>deployment</code> is the unit of packaging within the Flowable DMN engin
 <div class="sect2">
 <h3 id="_exception_strategy">3.2. Exception strategy</h3>
 <div class="paragraph">
-<p>The base exception in Flowable is the <code>org.flowable.engine.FlowableException</code>, an unchecked exception. This exception can be thrown at all times by the API, but <em>expected</em> exceptions that happen in specific methods are documented in the <a href="http://www.flowable.org/javadocs/index.html"> the javadocs</a>. For example, an extract from <code>DmnRuleService</code>:</p>
+<p>The base exception in Flowable is the <code>org.flowable.engine.FlowableException</code>, an unchecked exception. This exception can be thrown at all times by the API, but <em>expected</em> exceptions that happen in specific methods are documented in the <a href="http://www.flowable.org/docs/javadocs/index.html"> the javadocs</a>. For example, an extract from <code>DmnRuleService</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2731,7 +2731,7 @@ An example configuration is already in comments in this file. This is also the p
 </tbody>
 </table>
 <div class="paragraph">
-<p>It&#8217;s possible to support additional variable-types with a custom JSON representation (either simple value or complex/nested JSON object). By extending the <code>initializeVariableConverters()</code> method on <code>org.flowable.rest.dmn.service.api.DmnRestResponseFactory</code>, you can add additional <code>org.flowable.rest.variable.RestVariableConverter</code> classes to support converting your POJOs to a format suitable for transferring through REST and converting the REST-value back to your POJO. The actual transformation to JSON is done by Jackson.</p>
+<p>It&#8217;s possible to support additional variable-types with a custom JSON representation (either simple value or complex/nested JSON object). By extending the <code>initializeVariableConverters()</code> method on <code>org.flowable.dmn.rest.service.api.DmnRestResponseFactory</code>, you can add additional <code>org.flowable.rest.variable.RestVariableConverter</code> classes to support converting your POJOs to a format suitable for transferring through REST and converting the REST-value back to your POJO. The actual transformation to JSON is done by Jackson.</p>
 </div>
 </div>
 </div>
@@ -3748,7 +3748,7 @@ The response body is a JSON representation of the <code>org.flowable.dmn.model.D
 5
 6</div></td><td class="code"><span></span><span class="tok-p">{</span>
    <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;default&quot;</span><span class="tok-p">,</span>
-   <span class="tok-nt">&quot;version&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;6.3.0&quot;</span><span class="tok-p">,</span>
+   <span class="tok-nt">&quot;version&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;6.3.1&quot;</span><span class="tok-p">,</span>
    <span class="tok-nt">&quot;resourceUrl&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;file://flowable-dmn/flowable.dmn.cfg.xml&quot;</span><span class="tok-p">,</span>
    <span class="tok-nt">&quot;exception&quot;</span><span class="tok-p">:</span><span class="tok-kc">null</span>
 <span class="tok-p">}</span>

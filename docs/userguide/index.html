@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable DOCS (v 6.3.0)</title>
+<title>Flowable DOCS (v 6.3.1)</title>
 <style>
 
 /* normalize.css */
@@ -403,7 +403,7 @@ div.sect5  code {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable DOCS (v 6.3.0)</h1>
+<h1>Flowable DOCS (v 6.3.1)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -604,7 +604,7 @@ Note that the H2 dependency includes both the database <em>and</em> the driver. 
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>org.flowable<span class="tok-nt">&lt;/groupId&gt;</span>
     <span class="tok-nt">&lt;artifactId&gt;</span>flowable-engine<span class="tok-nt">&lt;/artifactId&gt;</span>
-    <span class="tok-nt">&lt;version&gt;</span>6.3.0<span class="tok-nt">&lt;/version&gt;</span>
+    <span class="tok-nt">&lt;version&gt;</span>6.3.1<span class="tok-nt">&lt;/version&gt;</span>
   <span class="tok-nt">&lt;/dependency&gt;</span>
   <span class="tok-nt">&lt;dependency&gt;</span>
     <span class="tok-nt">&lt;groupId&gt;</span>com.h2database<span class="tok-nt">&lt;/groupId&gt;</span>
@@ -2897,7 +2897,7 @@ Log4j the following sample layout definition causes the logger to show the above
 <div class="sect2">
 <h3 id="_exception_strategy">4.2. Exception strategy</h3>
 <div class="paragraph">
-<p>The base exception in Flowable is the <code>org.flowable.engine.FlowableException</code>, an unchecked exception. This exception can be thrown at all times by the API, but <em>expected</em> exceptions that happen in specific methods are documented in the <a href="http://www.flowable.org/javadocs/index.html"> the javadocs</a>. For example, an extract from <code>TaskService</code>:</p>
+<p>The base exception in Flowable is the <code>org.flowable.engine.FlowableException</code>, an unchecked exception. This exception can be thrown at all times by the API, but <em>expected</em> exceptions that happen in specific methods are documented in the <a href="http://www.flowable.org/docs/javadocs/index.html"> the javadocs</a>. For example, an extract from <code>TaskService</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4154,19 +4154,19 @@ o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter
 uration$$EnhancerBySpringCGLIB$$3d0c70ac : No deployment resources were found for autodeployment
 uration$$EnhancerBySpringCGLIB$$8131eb1a : No deployment resources were found for autodeployment
 o.f.e.i.c.ProcessEngineConfigurationImpl : Found 5 Engine Configurators in total:
-o.f.e.i.c.ProcessEngineConfigurationImpl : class org.flowable.spring.configurator.SpringIdmEngineConfigurator (priority:100000)
+o.f.e.i.c.ProcessEngineConfigurationImpl : class org.flowable.idm.spring.configurator.SpringIdmEngineConfigurator (priority:100000)
 o.f.e.i.c.ProcessEngineConfigurationImpl : class org.flowable.dmn.spring.configurator.SpringDmnEngineConfigurator (priority:200000)
 o.f.e.i.c.ProcessEngineConfigurationImpl : class org.flowable.form.spring.configurator.SpringFormEngineConfigurator (priority:300000)
 o.f.e.i.c.ProcessEngineConfigurationImpl : class org.flowable.content.spring.configurator.SpringContentEngineConfigurator (priority:400000)
 o.f.e.i.c.ProcessEngineConfigurationImpl : class org.flowable.cmmn.spring.configurator.SpringCmmnEngineConfigurator (priority:500000)
-o.f.e.i.c.ProcessEngineConfigurationImpl : Executing beforeInit() of class org.flowable.spring.configurator.SpringIdmEngineConfigurator (priority:100000)
+o.f.e.i.c.ProcessEngineConfigurationImpl : Executing beforeInit() of class org.flowable.idm.spring.configurator.SpringIdmEngineConfigurator (priority:100000)
 o.f.e.i.c.ProcessEngineConfigurationImpl : Executing beforeInit() of class org.flowable.dmn.spring.configurator.SpringDmnEngineConfigurator (priority:200000)
 o.f.e.i.c.ProcessEngineConfigurationImpl : Executing beforeInit() of class org.flowable.form.spring.configurator.SpringFormEngineConfigurator (priority:300000)
 o.f.e.i.c.ProcessEngineConfigurationImpl : Executing beforeInit() of class org.flowable.content.spring.configurator.SpringContentEngineConfigurator (priority:400000)
 o.f.e.i.c.ProcessEngineConfigurationImpl : Executing beforeInit() of class org.flowable.cmmn.spring.configurator.SpringCmmnEngineConfigurator (priority:500000)
 com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-o.f.e.i.c.ProcessEngineConfigurationImpl : Executing configure() of class org.flowable.spring.configurator.SpringIdmEngineConfigurator (priority:100000)
+o.f.e.i.c.ProcessEngineConfigurationImpl : Executing configure() of class org.flowable.idm.spring.configurator.SpringIdmEngineConfigurator (priority:100000)
 .d.AbstractSqlScriptBasedDbSchemaManager : performing create on identity with resource org/flowable/idm/db/create/flowable.h2.create.identity.sql
 o.f.idm.engine.impl.IdmEngineImpl        : IdmEngine default created
 o.f.e.i.c.ProcessEngineConfigurationImpl : Executing configure() of class org.flowable.dmn.spring.configurator.SpringDmnEngineConfigurator (priority:200000)
@@ -4178,9 +4178,9 @@ o.f.c.engine.ContentEngineConfiguration  : Content file system root : ...
 o.f.c.engine.impl.ContentEngineImpl      : ContentEngine default created
 o.f.e.i.c.ProcessEngineConfigurationImpl : Executing configure() of class org.flowable.cmmn.spring.configurator.SpringCmmnEngineConfigurator (priority:500000)
 o.f.cmmn.engine.CmmnEngineConfiguration  : Found 1 Engine Configurators in total:
-o.f.cmmn.engine.CmmnEngineConfiguration  : class org.flowable.cmmn.engine.impl.cfg.IdmEngineConfigurator (priority:100000)
-o.f.cmmn.engine.CmmnEngineConfiguration  : Executing beforeInit() of class org.flowable.cmmn.engine.impl.cfg.IdmEngineConfigurator (priority:100000)
-o.f.cmmn.engine.CmmnEngineConfiguration  : Executing configure() of class org.flowable.cmmn.engine.impl.cfg.IdmEngineConfigurator (priority:100000)
+o.f.cmmn.engine.CmmnEngineConfiguration  : class org.flowable.idm.engine.configurator.IdmEngineConfigurator (priority:100000)
+o.f.cmmn.engine.CmmnEngineConfiguration  : Executing beforeInit() of class org.flowable.idm.engine.configurator.IdmEngineConfigurator (priority:100000)
+o.f.cmmn.engine.CmmnEngineConfiguration  : Executing configure() of class org.flowable.idm.engine.configurator.IdmEngineConfigurator (priority:100000)
 o.f.idm.engine.impl.IdmEngineImpl        : IdmEngine default created
 o.f.cmmn.engine.impl.CmmnEngineImpl      : CmmnEngine default created
 o.f.engine.impl.ProcessEngineImpl        : ProcessEngine default created
@@ -4994,7 +4994,7 @@ Spring Boot by default only exposes the <code>info</code> and <code>health</code
 <div class="content">
 <pre class="pygments highlight"><code data-lang="json"><span class="tok-p">{</span>
   <span class="tok-nt">&quot;flowable&quot;</span><span class="tok-p">:</span> <span class="tok-p">{</span>
-    <span class="tok-nt">&quot;version&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;6.3.0.1&quot;</span>
+    <span class="tok-nt">&quot;version&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;6.3.1.0&quot;</span>
   <span class="tok-p">}</span>
 <span class="tok-p">}</span></code></pre>
 </div>
@@ -15021,7 +15021,7 @@ All form values need to be passed in the variables map and an optional form outc
 <p>In the API, it&#8217;s possible to query all 6 of the History entities. The HistoryService exposes the methods <code>createHistoricProcessInstanceQuery()</code>, <code>createHistoricVariableInstanceQuery()</code>, <code>createHistoricActivityInstanceQuery()</code>, <code>getHistoricIdentityLinksForTask()</code>, <code>getHistoricIdentityLinksForProcessInstance()</code>, <code>createHistoricDetailQuery()</code> and <code>createHistoricTaskInstanceQuery()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Below are a couple of examples that show some of the possibilities of the query API for history. Full description of the possibilities can be found in the <a href="http://www.flowable.org/javadocs/index.html">javadocs</a>, in the <code>org.flowable.engine.history</code> package.</p>
+<p>Below are a couple of examples that show some of the possibilities of the query API for history. Full description of the possibilities can be found in the <a href="http://www.flowable.org/docs/javadocs/index.html">javadocs</a>, in the <code>org.flowable.engine.history</code> package.</p>
 </div>
 <div class="sect3">
 <h4 id="historyQueryProcessInstance">11.1.1. HistoricProcessInstanceQuery</h4>
@@ -15366,7 +15366,7 @@ The <code>asyncHistoryExecutorNumberOfRetries</code> property configures the num
 <div class="sect2">
 <h3 id="_idm_engine_configuration">12.1. IDM engine configuration</h3>
 <div class="paragraph">
-<p>By default the Flowable engine is started with the <code>org.flowable.engine.impl.cfg.IdmEngineConfigurator</code>. This configurator uses the same datasource configuration as the Flowable process engine configuration. No additional configuration is needed to use the identity component as it was configured in Flowable v5.</p>
+<p>By default the Flowable engine is started with the <code>org.flowable.idm.engine.configurator.IdmEngineConfigurator</code>. This configurator uses the same datasource configuration as the Flowable process engine configuration. No additional configuration is needed to use the identity component as it was configured in Flowable v5.</p>
 </div>
 <div class="paragraph">
 <p>When no identity logic is needed in the Flowable engine the IDM engine can be disabled in the process engine configuration.</p>
@@ -17970,14 +17970,14 @@ An example of the BPMN Engine REST properties is shown below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="linenums">flowable.admin.app.server-config.process.app.name=Flowable Process app
+<pre class="pygments highlight"><code data-lang="linenums">flowable.admin.app.server-config.process.name=Flowable Process app
 flowable.admin.app.server-config.process.description=Flowable Process REST config
 flowable.admin.app.server-config.process.server-address=http://localhost
-flowable.admin.app.server-config.process.app.port=8080
+flowable.admin.app.server-config.process.port=8080
 flowable.admin.app.server-config.process.context-root=flowable-task
 flowable.admin.app.server-config.process.rest-root=process-api
-flowable.admin.app.server-config.process.app.user=admin
-flowable.admin.app.server-config.process.app.password=test</code></pre>
+flowable.admin.app.server-config.process.user-name=admin
+flowable.admin.app.server-config.process.password=test</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -18569,7 +18569,7 @@ An example configuration is already in comments in this file. This is also the p
 </tbody>
 </table>
 <div class="paragraph">
-<p>It&#8217;s possible to support additional variable-types with a custom JSON representation (either simple value or complex/nested JSON object). By extending the <code>initializeVariableConverters()</code> method on <code>org.flowable.rest.dmn.service.api.DmnRestResponseFactory</code>, you can add additional <code>org.flowable.rest.variable.RestVariableConverter</code> classes to support converting your POJOs to a format suitable for transferring through REST and converting the REST-value back to your POJO. The actual transformation to JSON is done by Jackson.</p>
+<p>It&#8217;s possible to support additional variable-types with a custom JSON representation (either simple value or complex/nested JSON object). By extending the <code>initializeVariableConverters()</code> method on <code>org.flowable.dmn.rest.service.api.DmnRestResponseFactory</code>, you can add additional <code>org.flowable.rest.variable.RestVariableConverter</code> classes to support converting your POJOs to a format suitable for transferring through REST and converting the REST-value back to your POJO. The actual transformation to JSON is done by Jackson.</p>
 </div>
 </div>
 </div>

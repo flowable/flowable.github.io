@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable CMMN DOCS (v 6.3.0)</title>
+<title>Flowable CMMN DOCS (v 6.3.1)</title>
 <style>
 
 /* normalize.css */
@@ -403,7 +403,7 @@ div.sect5  code {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable CMMN DOCS (v 6.3.0)</h1>
+<h1>Flowable CMMN DOCS (v 6.3.1)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -1102,7 +1102,7 @@ requires users to either modify the db.properties in the Flowable source and rec
 <div class="sect2">
 <h3 id="_exception_strategy">3.2. Exception strategy</h3>
 <div class="paragraph">
-<p>The base exception in Flowable is the <code>org.flowable.engine.common.api.FlowableException</code>, an unchecked exception. This exception can be thrown at all times by the API, but <em>expected</em> exceptions that happen in specific methods are documented in the <a href="http://www.flowable.org/javadocs/index.html"> the javadocs</a>. For example, an extract from <code>CmmnTaskService</code>:</p>
+<p>The base exception in Flowable is the <code>org.flowable.engine.common.api.FlowableException</code>, an unchecked exception. This exception can be thrown at all times by the API, but <em>expected</em> exceptions that happen in specific methods are documented in the <a href="http://www.flowable.org/docs/javadocs/index.html"> the javadocs</a>. For example, an extract from <code>CmmnTaskService</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2160,13 +2160,13 @@ Behind the scenes, a CmmnTestRunner is used to initialise the CMMN engine. Note 
 <div class="sect2">
 <h3 id="_programmatic_example">6.3. Programmatic example</h3>
 <div class="paragraph">
-<p>In this section we&#8217;re going to build a simple case model and execute it programmatically through the Java API&#8217;s of the Flowable CMMN engine in a simple command line example.</p>
+<p>In this section we&#8217;re going to build a simple case model and execute it programmatically through the Java APIs of the Flowable CMMN engine in a simple command line example.</p>
 </div>
 <div class="paragraph">
-<p>The case model we&#8217;ll build is a (simplified) <em>employee onboarding</em> case with two stages: a phase before and phase after the potential employee has started. In the first stage, someone from the HR department will complete the tasks, while in the second stage it is the employee completing them. Also, at any point in time, the potential employee can reject the job and stop the whole case instance.</p>
+<p>The case model we&#8217;ll build is a simplified <em>employee onboarding</em> case with two stages: a phase before and phase after the potential employee has started. In the first stage, someone from the HR department will complete the tasks, while in the second stage it is the employee completing them. Also, at any point in time, the potential employee can reject the job and stop the whole case instance.</p>
 </div>
 <div class="paragraph">
-<p>Note that only stages and human tasks are used. In a real case model, there will most likely other plan item types too, like milestones, nested stages, automated tasks, etc.</p>
+<p>Note that only stages and human tasks are used. In a real case model, there will most likely other plan item types too, such as milestones, nested stages, automated tasks, and so on.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -2174,7 +2174,7 @@ Behind the scenes, a CmmnTestRunner is used to initialise the CMMN engine. Note 
 </div>
 </div>
 <div class="paragraph">
-<p>The XML for this case models is the following:</p>
+<p>The XML for this case model is the following:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2378,7 +2378,7 @@ Behind the scenes, a CmmnTestRunner is used to initialise the CMMN engine. Note 
 </div>
 </div>
 <div class="paragraph">
-<p>The Flowable CMMN API is designed to be consistent with the other Flowable API&#8217;s and concepts. As such, people that know the BPMN or DMN API&#8217;s will have no problem finding their way around. As with the other engines, the first line of code is creating a CmmnEngine. Here, the default in-memory configuration is used, which uses H2 as database:</p>
+<p>The Flowable CMMN API is designed to be consistent with the other Flowable APIs and concepts. As such, people that know the BPMN or DMN APIs will have no problem finding their way around. As with the other engines, the first line of code is creating a CmmnEngine. Here, the default in-memory configuration is used, which uses H2 as the database:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2403,7 +2403,7 @@ Behind the scenes, a CmmnTestRunner is used to initialise the CMMN engine. Note 
 <p>Put the XML from above in a file, for example <em>my-case.cmmn</em> (or .cmmn.xml). For Maven, it should be placed in the <em>src/main/resources</em> folder.</p>
 </div>
 <div class="paragraph">
-<p>To make the engine aware of the case model, it needs to be <em>deployed</em> first. This is done through the <em>CmmnRepositoryService</em>:</p>
+<p>To make the engine aware of the case model, it first needs to be <em>deployed</em>. This is done through the <em>CmmnRepositoryService</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2418,7 +2418,7 @@ Behind the scenes, a CmmnTestRunner is used to initialise the CMMN engine. Note 
 </div>
 </div>
 <div class="paragraph">
-<p>Deploying the XML will return a <strong>CmmnDeployment</strong>. A deployment can contain many case models and artifacts. The specific case model definition of above is stored as a <strong>CaseDefinition</strong>. This can be verified by doing a <em>CaseDefinitionQuery</em>:</p>
+<p>Deploying the XML will return a <strong>CmmnDeployment</strong>. A deployment can contain many case models and artifacts. The specific case model definition above is stored as a <strong>CaseDefinition</strong>. This can be verified by doing a <em>CaseDefinitionQuery</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2507,7 +2507,7 @@ Send joining letter to candidate</pre>
 <p>The stages are <em>also</em> plan items and thus have a representation as <strong>PlanItemInstance</strong>. Note that that child plan item instances will have the stage as parent when calling <em>.getStageInstanceId()</em>.</p>
 </li>
 <li>
-<p>The <em>Send joining letter to candidate</em> is returned in the result. The reason for that is that, in accordance with the CMMN 1.1 specification, this plan item instance is in the <em>available</em> state, but not yet in the <em>active</em> state.</p>
+<p>The <em>Send joining letter to candidate</em> is returned in the result. The reason is that, in accordance with the CMMN 1.1 specification, this plan item instance is in the <em>available</em> state, but not yet in the <em>active</em> state.</p>
 </li>
 </ul>
 </div>
@@ -2572,7 +2572,7 @@ Reject job</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Of course, the <strong>PlanItemInstance</strong> is the low level representation, but each plan item also has a <em>plan item definition</em> that defines what type it is. In this case, we only have <em>human tasks</em>. It is possible to interact with the <em>CaseInstance</em> via its <em>plan item instances</em>, for example by triggering them programmatically (e.g. <em>CmmnRuntimeService.triggerPlanItemInstance(String planItemInstanceId)</em>). However, most likely the interaction will happen through the results of the actual plan item definition, here the human tasks.</p>
+<p>Of course, the <strong>PlanItemInstance</strong> is the low level representation, but each plan item also has a <em>plan item definition</em> that defines what type it is. In this case, we only have <em>human tasks</em>. It is possible to interact with the <em>CaseInstance</em> via its <em>plan item instances</em>, for example by triggering them programmatically (for example, <em>CmmnRuntimeService.triggerPlanItemInstance(String planItemInstanceId)</em>). However, most likely the interaction will happen through the results of the actual plan item definition: here, the human tasks.</p>
 </div>
 <div class="paragraph">
 <p>Querying for tasks is done in the exact same way as for the BPMN engine (in fact, the task service is a shared component and tasks created in BPMN or CMMN can be queried through both engines):</p>
@@ -2669,7 +2669,7 @@ Task for employee: Reject job</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Completing this task will now move the case instance into the second stage, as the sentry for the first stage is satisfied. The <em>Reject job</em> tasks is automatically completed by the system and the two tasks for the employee are now created:</p>
+<p>Completing this task will now move the case instance into the second stage, as the sentry for the first stage is satisfied. The <em>Reject job</em> tasks is automatically completed by the system and the two tasks for the employee are created:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2682,7 +2682,7 @@ Task for employee: Reject job</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Completing all the tasks will now end the case instance:</p>
+<p>Completing all the tasks will end the case instance:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2696,7 +2696,7 @@ while (!tasks.isEmpty()) {
 </div>
 </div>
 <div class="paragraph">
-<p>While executing case instances, the engine also stores historic information, that can be queried via a query API:</p>
+<p>While executing case instances, the engine also stores historic information, which can be queried via a query API:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2750,13 +2750,22 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Of course, this is but a small part of the available API&#8217;s and constructs available in the Flowable CMMN Engine. Please check the other sections for more detailed information</p>
+<p>Historic data related to the case execution is collected for special constructs, such as Tasks (as seen above), milestones, cases, variables and plan items in general.
+This data is persisted at the same time as the runtime data, but it is not deleted when case instances end.
+Access to the historic data is provided as query APIs by the <em>CmmnHistoryService</em></p>
+</div>
+<div class="paragraph">
+<p>Of course, this is but a small part of the available APIs and constructs available in the Flowable CMMN Engine. Please check the other sections for more detailed information</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_cmmn_1_1_constructs">6.4. CMMN 1.1 Constructs</h3>
 <div class="paragraph">
 <p>This chapter covers the CMMN 1.1 constructs supported by Flowable, as well as extensions to the CMMN 1.1 standard.</p>
+</div>
+<div class="paragraph">
+<p>The following constructs, with the exception of sentries and item control, as for the CMMN specification are considered plan items.
+Historic data of their instances execution can be queried through the <em>CmmnHistoryService</em> using <em>org.flowable.cmmn.api.history.HistoricPlanItemInstanceQuery</em>.</p>
 </div>
 <div class="sect3">
 <h4 id="_stage">6.4.1. Stage</h4>
@@ -2786,7 +2795,7 @@ Task completed: Fill in paperwork</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>name</strong>: expression that will be resolved at runtime as the name of the human task</p>
+<p><strong>name</strong>: expression that will be resolved at runtime as the name of the manual task</p>
 </li>
 <li>
 <p><strong>blocking</strong>: a boolean value determining whether the task blocks</p>
@@ -2811,7 +2820,7 @@ Task completed: Fill in paperwork</pre>
 <div class="sect3">
 <h4 id="_human_task">6.4.3. Human task</h4>
 <div class="paragraph">
-<p>A human task is used to model work that needs to be done by a human, typically through a form. When the engine arrives at such a human task, a new entry is created in the task list of any users or groups assigned to that task.</p>
+<p>A human task is used to model work that needs to be done by a human, typically through a form. When the engine arrives at a human task, a new entry is created in the task list of any users or groups assigned to that task.</p>
 </div>
 <div class="paragraph">
 <p>A human task is a plan item, which means that beyond a human task entry also a <em>PlanItemInstance</em> is created and it can be queried via the <em>PlanItemInstanceQuery</em>.</p>
@@ -2825,34 +2834,34 @@ Task completed: Fill in paperwork</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>name</strong>: expression that will be resolved at runtime as the name of the human task.</p>
+<p><strong>name</strong>: expression that will be resolved at runtime as the name of the human task</p>
 </li>
 <li>
-<p><strong>blocking</strong>: a boolean value determining whether the task blocks.</p>
+<p><strong>blocking</strong>: a boolean value determining whether the task blocks</p>
 </li>
 <li>
-<p><strong>blockingExpression</strong>: an expression that evaluates to a boolean indicating whether the tasks blocks.</p>
+<p><strong>blockingExpression</strong>: an expression that evaluates to a boolean indicating whether the tasks blocks</p>
 </li>
 <li>
-<p><strong>assignee</strong> : an expression (can be a static text value) that is used to determine to who the human task is assigned.</p>
+<p><strong>assignee</strong> : an expression (can be a static text value) that is used to determine to whom the human task is assigned</p>
 </li>
 <li>
-<p><strong>owner</strong> : an expression (can be a static text value) that is used to determine who is the owner of the human task.</p>
+<p><strong>owner</strong> : an expression (can be a static text value) that is used to determine who is the owner of the human task</p>
 </li>
 <li>
-<p><strong>candidateUsers</strong> : an expression (can be a static text value) that resolves to a comma-separated list of Strings that is used to determine which users are candidate for this human task.</p>
+<p><strong>candidateUsers</strong> : an expression (can be a static text value) that resolves to a comma-separated list of Strings that is used to determine which users are candidate for this human task</p>
 </li>
 <li>
-<p><strong>candidateGroups</strong> : an expression (can be a static text value) that resolves to a comma-separated list of Strings that is used to determine to which groups the task is assigned.</p>
+<p><strong>candidateGroups</strong> : an expression (can be a static text value) that resolves to a comma-separated list of Strings that is used to determine to which groups the task is assigned</p>
 </li>
 <li>
-<p><strong>form key</strong>: an expression that determines a key when using forms. Can be retrieved via the API afterwards.</p>
+<p><strong>form key</strong>: an expression that determines a key when using forms. Can be retrieved via the API afterwards</p>
 </li>
 <li>
-<p><strong>Due date</strong> an expression that resolves to java.util.Date or a ISO-8601 date string.</p>
+<p><strong>Due date</strong> an expression that resolves to java.util.Date or a ISO-8601 date string</p>
 </li>
 <li>
-<p><strong>Priority</strong>: an expression that resolves to an integer. Can be used in the TaskQuery API to filter tasks.</p>
+<p><strong>Priority</strong>: an expression that resolves to an integer. Can be used in the TaskQuery API to filter tasks</p>
 </li>
 </ul>
 </div>
@@ -2902,16 +2911,16 @@ Task completed: Fill in paperwork</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>name</strong>: name of the service task.</p>
+<p><strong>name</strong>: name of the service task</p>
 </li>
 <li>
-<p><strong>class</strong>: the Java class implementing the custom logic.</p>
+<p><strong>class</strong>: the Java class implementing the custom logic</p>
 </li>
 <li>
-<p><strong>class fields</strong>: allows to add parameters when calling the custom logic.</p>
+<p><strong>class fields</strong>: parameters to pass when calling the custom logic</p>
 </li>
 <li>
-<p><strong>Delegate expression</strong>: an expression that resolves to a class implementing the <em>PlanItemJavaDelegate</em> interface.</p>
+<p><strong>Delegate expression</strong>: an expression that resolves to a class implementing the <em>PlanItemJavaDelegate</em> interface</p>
 </li>
 </ul>
 </div>
@@ -2927,7 +2936,7 @@ Task completed: Fill in paperwork</pre>
 <div class="sect3">
 <h4 id="_decision_task">6.4.5. Decision task</h4>
 <div class="paragraph">
-<p>A <em>Decision task</em> allows to call out to a DMN decision table and store the resulting variable in the case instance.</p>
+<p>A <em>Decision task</em> calls out to a DMN decision table and stores the resulting variable in the case instance.</p>
 </div>
 <div class="paragraph">
 <p>Properties:</p>
@@ -2940,7 +2949,7 @@ Task completed: Fill in paperwork</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>It is also possible to throw an error when no rule is hit during the evaluation of the DMN decision table, by setting the <em><em>Throw error if no rules were hit</em></em> property.</p>
+<p>It is also possible to throw an error when no rule is hit during the evaluation of the DMN decision table by setting the <em><em>Throw error if no rules were hit</em></em> property.</p>
 </div>
 <div class="paragraph">
 <p>A decision task is visualized as a <em>task</em> with a table icon in the top left corner:</p>
@@ -2971,7 +2980,7 @@ Task completed: Fill in paperwork</pre>
 <div class="sect3">
 <h4 id="_script_task">6.4.7. Script Task</h4>
 <div class="paragraph">
-<p>A task of type "script", similar to its homologue in BPMN, the Script Task executes a script when the plan item instance become active.</p>
+<p>A task of type "script", similar to its equivalent in BPMN, the Script Task executes a script when the plan item instance becomes active.</p>
 </div>
 <div class="paragraph">
 <p>Properties:</p>
@@ -2979,22 +2988,22 @@ Task completed: Fill in paperwork</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>name</strong>: task attribute to indicate the name of the task.</p>
+<p><strong>name</strong>: task attribute to indicate the name of the task</p>
 </li>
 <li>
-<p><strong>type</strong>: task attribute whose value must be "script" to indicate the type of task.</p>
+<p><strong>type</strong>: task attribute whose value must be "script" to indicate the type of task</p>
 </li>
 <li>
-<p><strong>scriptFormat</strong>: extended attribute that indicate the language of the script (i.e. javascript, groovy).</p>
+<p><strong>scriptFormat</strong>: extended attribute that indicate the language of the script (for example, javascript, groovy)</p>
 </li>
 <li>
-<p><strong>script</strong>: the script to execute, defined as a string in a extension field element named "script".</p>
+<p><strong>script</strong>: the script to execute, defined as a string in a extension field element named "script"</p>
 </li>
 <li>
-<p><strong>autoStoreVariables</strong>: optional task attribute flag (default: false) tha indicates whether or not variables defined in the script will be stored in the Plan Item Instance context (see note below).</p>
+<p><strong>autoStoreVariables</strong>: optional task attribute flag (default: false) that indicates whether or not variables defined in the script will be stored in the Plan Item Instance context (see note below)</p>
 </li>
 <li>
-<p><strong>resultVariableName</strong>: optional task attribute that when present will store a variable with the specified name in the Plan Item instance context with the script evaluation result (see note below).</p>
+<p><strong>resultVariableName</strong>: optional task attribute that when present will store a variable with the specified name in the Plan Item instance context with the script evaluation result (see note below)</p>
 </li>
 </ul>
 </div>
@@ -3042,7 +3051,7 @@ Task completed: Fill in paperwork</pre>
 <p><strong>Note</strong>: The value of the <strong>scriptFormat</strong> attribute must be a name that is compatible with the <a href="http://jcp.org/en/jsr/detail?id=223">JSR-223</a> (scripting for the Java platform). By default, JavaScript is included in every JDK and as such doesn&#8217;t need any additional JAR files. If you want to use another (JSR-223 compatible) scripting engine, it is sufficient to add the corresponding JAR to the classpath and use the appropriate name. For example, the Flowable unit tests often use Groovy because the syntax is similar to that of Java.</p>
 </div>
 <div class="paragraph">
-<p>Do note that the Groovy scripting engine is bundled with the groovy-all jar. Before Groovy version 2.0, the scripting engine was part of the regular Groovy JAR. As such, one must now add following dependency:</p>
+<p>Do note that the Groovy scripting engine is bundled with the groovy-all JAR. Before Groovy version 2.0, the scripting engine was part of the regular Groovy JAR. As such, one must now add following dependency:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3059,7 +3068,7 @@ Task completed: Fill in paperwork</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>All case variables that are accessible through the PlanItem instance that arrives in the script task can be used within the script. In the example, the script variable <em>'inputArray'</em> is in fact a case variable (an array of integers).</p>
+<p>All case variables that are accessible through the PlanItem instance that arrives in the script task can be used within the script. In the example below, the script variable <em>'inputArray'</em> is in fact a case variable (an array of integers).</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3116,7 +3125,7 @@ Task completed: Fill in paperwork</pre>
 <p>The following names are reserved and <strong>cannot be used</strong> as variable names: <strong>out, out:print, lang:import, context, elcontext</strong>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Note</strong> The return value of a script task can be assigned to an already existing, or to a new process variable, by specifying the process variable name as a literal value for the <em>'flowable:resultVariable'</em> attribute of a script task definition. Any existing value for a specific process variable will be overwritten by the result value of the script execution. When a result variable name is not specified, the script result value gets ignored.</p>
+<p><strong>Note</strong> The return value of a script task can be assigned to an already existing or new process variable by specifying its name as a literal value for the <em>'flowable:resultVariable'</em> attribute of a script task definition. Any existing value for a specific process variable will be overwritten by the result value of the script execution. When a result variable name is not specified, the script result value gets ignored.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3142,7 +3151,7 @@ Task completed: Fill in paperwork</pre>
 <p>A milestone is used to mark arriving at a certain point in the case instance. At runtime, they are represented as <strong>MilestoneInstances</strong> and they can be queried through the <strong>MilestoneInstanceQuery</strong> via the <em>CmmnRuntimeService</em>. There is also a historical counterpart via the <em>CmmnHistoryService</em>.</p>
 </div>
 <div class="paragraph">
-<p>A milestone is a plan item, which means that beyond a milestone entry aso a <em>PlanItemInstance</em> is created and it can be queried via the <em>PlanItemInstanceQuery</em>.</p>
+<p>A milestone is a plan item, which means that as well as a milestone entry, a <em>PlanItemInstance</em> is created also, which can be queried via the <em>PlanItemInstanceQuery</em>.</p>
 </div>
 <div class="paragraph">
 <p>Properties:</p>
@@ -3150,12 +3159,12 @@ Task completed: Fill in paperwork</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>name</strong>: an expression or static text that determines the name of the mile stone.</p>
+<p><strong>name</strong>: an expression or static text that determines the name of the milestone</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A milestone is visualized as a rounded rectangle with, slightly more rounded than a task:</p>
+<p>A milestone is visualized as a rounded rectangle (more rounded than a task):</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -3169,7 +3178,7 @@ Task completed: Fill in paperwork</pre>
 <p>A case task is used to start a child case within the context of another case. The <em>CaseInstanceQuery</em> has <em>parent</em> options to find these cases.</p>
 </div>
 <div class="paragraph">
-<p>When the case task is blocking, the <em>PlanItemInstance</em> will be <em>active</em> until the child case has completely finished. If the case task is non-blocking, the child case is started and the plan item instance automatically completes. When the child case instance is ended, there is no impact on the parent case.</p>
+<p>When the case task is blocking, the <em>PlanItemInstance</em> will be <em>active</em> until the child case has completely finished. If the case task is non-blocking, the child case is started and the plan item instance automatically completes. When the child case instance ends there is no impact on the parent case.</p>
 </div>
 <div class="paragraph">
 <p>Properties:</p>
@@ -3186,7 +3195,7 @@ Task completed: Fill in paperwork</pre>
 <p><strong>blockingExpression</strong>: an expression that evaluates to a boolean indicating whether the tasks blocks</p>
 </li>
 <li>
-<p><strong>Case reference</strong>: the key of the case definition that is used to start the child case instance. Can be an expression.</p>
+<p><strong>Case reference</strong>: the key of the case definition that is used to start the child case instance. Can be an expression</p>
 </li>
 </ul>
 </div>
@@ -3205,7 +3214,7 @@ Task completed: Fill in paperwork</pre>
 <p>A process task is used to start a process instance within the context of a case.</p>
 </div>
 <div class="paragraph">
-<p>When the process task is blocking, the <em>PlanItemInstance</em> will be <em>active</em> until the process instance has completely finished. If the process task is non-blocking, the process instance is started and the plan item instance automatically completes. When the process instance is ended, there is no impact on the parent case.</p>
+<p>When the process task is blocking, the <em>PlanItemInstance</em> will be <em>active</em> until the process instance has completely finished. If the process task is non-blocking, the process instance is started and the plan item instance automatically completes. When the process instance ends there is no impact on the parent case.</p>
 </div>
 <div class="paragraph">
 <p>Properties:</p>
@@ -3222,7 +3231,7 @@ Task completed: Fill in paperwork</pre>
 <p><strong>blockingExpression</strong>: an expression that evaluates to a boolean indicating whether the tasks blocks</p>
 </li>
 <li>
-<p><strong>Process reference</strong>: the key of the process definition that is used to start the process instance. Can be an expression.</p>
+<p><strong>Process reference</strong>: the key of the process definition that is used to start the process instance. Can be an expression</p>
 </li>
 </ul>
 </div>
@@ -3245,21 +3254,21 @@ Task completed: Fill in paperwork</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>One or more parts depending on other plan items: these define dependencies on state transitions of other plan items. For example, one human task can depend on the state transition <em>complete</em> of three other human tasks to become active itself.</p>
+<p>One or more parts that depend on other plan items: these define dependencies on state transitions of other plan items. For example, one human task can depend on the state transition <em>complete</em> of three other human tasks to become active itself</p>
 </li>
 <li>
-<p>One optional <em>if part</em> or <em>condition</em>: this is an expression that allows to define a complex condition.</p>
+<p>One optional <em>if part</em> or <em>condition</em>: this is an expression that allows the definition of a complex condition</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A sentry is satisfied when all of its criteria are resolved to true. When a certain criteria evaluates to true, this is stored and remembered for future evaluations. Note that entry criteria evaluations of all plan item instances in the <em>available</em> state are executed whenever something changes in the case instance.</p>
+<p>A sentry is satisfied when all its criteria are resolved to <em>true</em>. When a criterion evaluates to true, this is stored and remembered for future evaluations. Note that entry criteria of all plan item instances in the <em>available</em> state are evaluated whenever something changes in the case instance.</p>
 </div>
 <div class="paragraph">
 <p>Multiple sentries are possible on a plan item. However, when one is satisfied, the plan item moves from state <em>available</em> to <em>active</em>.</p>
 </div>
 <div class="paragraph">
-<p>An entry criteria is visualized as a diamond shape (white color inside) on the border of a plan item:</p>
+<p>An entry criterion is visualized as a diamond shape (white color inside) on the border of a plan item:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -3275,21 +3284,21 @@ Task completed: Fill in paperwork</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>One or more parts depending on other plan items: these define dependencies on state transitions of other plan items. For example, one human task can depend on reaching a certain milestone to be automatically terminated.</p>
+<p>One or more parts that depend on other plan items: these define dependencies on state transitions of other plan items. For example, one human task can depend on reaching a certain milestone to be automatically terminated</p>
 </li>
 <li>
-<p>One optional <em>if part</em> or <em>condition</em>: this is an expression that allows to define a complex condition.</p>
+<p>One optional <em>if part</em> or <em>condition</em>: this is an expression that allows a complex condition to be defined</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A sentry is satisfied when all of its criteria are resolved to true. When a certain criteria evaluates to true, this is stored and remembered for future evaluations. Note that exit criteria evaluations of all plan item instances in the <em>active</em> state are executed whenever something changes in the case instance.</p>
+<p>A sentry is satisfied when all its criteria are resolved to <em>true</em>. When a criterion evaluates to true, this is stored and remembered for future evaluations. Note that exit criteria of all plan item instances in the <em>active</em> state are evaluated whenever something changes in the case instance.</p>
 </div>
 <div class="paragraph">
 <p>Multiple sentries are possible on a plan item. However, when one is satisfied, the plan item moves from state <em>active</em> to <em>exit</em>.</p>
 </div>
 <div class="paragraph">
-<p>An exit criteria is visualized as a diamond shape (white color inside) on the border of a plan item:</p>
+<p>An exit criterion is visualized as a diamond shape (white color inside) on the border of a plan item:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -3314,20 +3323,20 @@ Task completed: Fill in paperwork</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Timer expression</strong>: an expression that defines when the timer should occur. Following options are possible:</p>
+<p><strong>Timer expression</strong>: an expression that defines when the timer should occur. The following options are possible:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>An expression resolving to a java.util.Date or org.joda.time.DateTime instance (for example _${someBean.calculateNextDate(someCaseInstanceVariable)})</p>
+<p>An expression resolving to a java.util.Date or org.joda.time.DateTime instance (for example, _${someBean.calculateNextDate(someCaseInstanceVariable)})</p>
 </li>
 <li>
 <p>An ISO8601 date</p>
 </li>
 <li>
-<p>An ISO8601 duration String (for example <em>PT5H</em>, indicating the timer should fire in 5 hours from instantiation)</p>
+<p>An ISO8601 duration String (for example, <em>PT5H</em>, indicating the timer should fire in 5 hours from instantiation)</p>
 </li>
 <li>
-<p>AN ISO8601 repetition String (for example R5/PT2H, indicating the timer should fire 5 times, each time waiting 2 hours)</p>
+<p>AN ISO8601 repetition String (for example, R5/PT2H, indicating the timer should fire 5 times, each time waiting 2 hours)</p>
 </li>
 <li>
 <p>A String containing a cron expression</p>
@@ -3336,12 +3345,12 @@ Task completed: Fill in paperwork</pre>
 </div>
 </li>
 <li>
-<p><strong>Start trigger plan item/event</strong>: allows to reference a plan item in the case model that triggers the start of the timer event listener.</p>
+<p><strong>Start trigger plan item/event</strong>: reference to a plan item in the case model that triggers the start of the timer event listener</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Note that setting a <em>start trigger</em> for the timer event listener does not have a visual indication in the case model, as entry/exit criteria on sentries do have.</p>
+<p>Note that setting a <em>start trigger</em> for the timer event listener does not have a visual indicator in the case model, unlike entry/exit criteria on sentries.</p>
 </div>
 <div class="paragraph">
 <p>A timer event listener is visualized as circle with a clock icon inside:</p>
@@ -3355,7 +3364,7 @@ Task completed: Fill in paperwork</pre>
 <div class="sect4">
 <h5 id="_user_event_listener">User Event Listener</h5>
 <div class="paragraph">
-<p>A user event listener can be used when neededing to capture a user interaction that influences the proceeding of a case directly,
+<p>A user event listener can be used when needing to capture a user interaction that directly influences a case state,
 instead of indirectly via impacting variables or information in the case. When the event is captured an Occur transition is triggered on the event listener.
 Like timer event listeners, it has a much simpler lifecycle that a <em>task</em>.</p>
 </div>
@@ -3365,7 +3374,7 @@ Like timer event listeners, it has a much simpler lifecycle that a <em>task</em>
 </div>
 </div>
 <div class="paragraph">
-<p>User event listeners can be queried using the <em>org.flowable.cmmn.api.runtime.UserEventListenerInstanceQuery</em>. Such a query can be created by calling the <em>cmmnRuntimeService.createUserEventListenerInstanceQuery()</em> method. Note that a user event listener is a plan item instance under the hood, which means it can also be queried through the <em>org.flowable.cmmn.api.runtime.PlanItemInstanceQuery</em> API.</p>
+<p>User event listeners can be queried using the <em>org.flowable.cmmn.api.runtime.UserEventListenerInstanceQuery</em>. Such a query can be created by calling the <em>cmmnRuntimeService.createUserEventListenerInstanceQuery()</em> method. Note that a user event listener is also a plan item instance, which means it can also be queried through the <em>org.flowable.cmmn.api.runtime.PlanItemInstanceQuery</em> API.</p>
 </div>
 <div class="paragraph">
 <p>A user event listener can be completed by calling the <em>cmmnRuntimeService.completeUserEventListenerInstance(id)</em> method.</p>
@@ -3375,20 +3384,20 @@ Like timer event listeners, it has a much simpler lifecycle that a <em>task</em>
 <div class="sect3">
 <h4 id="_item_control_repetition_rule">6.4.13. Item control: Repetition Rule</h4>
 <div class="paragraph">
-<p>Plan items on the case model can have a <em>repetition rule</em>, an expression that can be used to indicate a certain plan item needs to be repeated.
-When no expression is set, but the repetition is enabled (e.g. the checkbox is checked in the Flowable Modeler) or the expression is empty, a <em>true</em> value is assumed by default.</p>
+<p>Plan items on the case model can have a <em>repetition rule</em>: an expression that can be used to indicate a certain plan item needs to be repeated.
+When no expression is set, but the repetition is enabled (for example, the checkbox is checked in the Flowable Modeler) or the expression is empty, a <em>true</em> value is assumed by default.</p>
 </div>
 <div class="paragraph">
-<p>An optional <em>repetition counter variable</em> can be set, that holds the index (one-based) of the instance. If not set, the default variable name is <em>repeitionCounter</em>.</p>
+<p>An optional <em>repetition counter variable</em> can be set, which holds the index (one-based) of the instance. If not set, the default variable name is <em>repeitionCounter</em>.</p>
 </div>
 <div class="paragraph">
 <p>If the plan item does not have any entry criteria, the repetition rule expression is evaluated when the plan item is completed or terminated. If the expression resolved to <em>true</em>, a new instance is created. For example, a human task with a repetition rule expression <em>${repetitionCounter &lt; 3}</em>, will create three sequential human tasks.</p>
 </div>
 <div class="paragraph">
-<p>If the plan item does have entry criteria, the behavior is different. The repetition rule is not evaluated on completion or termination, but when a sentry of the plan item is satisfied. If both the sentry is satisfied and the repetition rule evaluates to true, a new instance is created.</p>
+<p>If the plan item has entry criteria, the behavior is different. The repetition rule is not evaluated on completion or termination, but when a sentry of the plan item is satisfied. If both the sentry is satisfied and the repetition rule evaluates to true, a new instance is created.</p>
 </div>
 <div class="paragraph">
-<p>Take for example the following timer event listener followed by a human task. The sentry has one entry criteria for the <em>occur</em> event of the timer event listener. Note that enabling and setting the repetition rule on the task has a visual indication at the bottom of the rectangle.</p>
+<p>Take, for example, the following timer event listener followed by a human task. The sentry has one entry criterion for the <em>occur</em> event of the timer event listener. Note that enabling and setting the repetition rule on the task has a visual indicator at the bottom of the rectangle.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -3396,14 +3405,14 @@ When no expression is set, but the repetition is enabled (e.g. the checkbox is c
 </div>
 </div>
 <div class="paragraph">
-<p>If the timer event listener is repeating (for example <em>R/PT1H</em>), the <em>occur</em> event will be fired every hour. When the repetition rule expression of the human task evaluates to true, a new human task instance will be created each hour.</p>
+<p>If the timer event listener is repeating (for example, <em>R/PT1H</em>), the <em>occur</em> event will be fired every hour. When the repetition rule expression of the human task evaluates to true, a new human task instance will be created each hour.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_item_control_manual_activation_rule">6.4.14. Item control: Manual Activation Rule</h4>
 <div class="paragraph">
-<p>Plan items on the case model can have a <em>manual activation rule</em>, an expression that can be used to indicate a certain plan item needs to be <em>manually activated by an end-user</em>.
-When no expression is set, but the manual activation is enabled (e.g. the checkbox is checked in the Flowable Modeler) or the expression is empty, a <em>true</em> value is assumed by default.</p>
+<p>Plan items on the case model can have a <em>manual activation rule</em>: an expression that can be used to indicate a certain plan item needs to be <em>manually activated by an end-user</em>.
+When no expression is set, but the manual activation is enabled (for example, the checkbox is checked in the Flowable Modeler) or the expression is empty, a <em>true</em> value is assumed by default.</p>
 </div>
 <div class="paragraph">
 <p>Stages and all task types can be marked for manual activation. Visually, the task or stage will get a <em>play</em> icon (small triangle pointing to the right) to indicate an end-user will have to manually activate it:</p>
@@ -3414,7 +3423,7 @@ When no expression is set, but the manual activation is enabled (e.g. the checkb
 </div>
 </div>
 <div class="paragraph">
-<p>Normally, when a sentry for a plan item is satisfied (or the plan item doesn&#8217;t have any sentries) the plan item instance is automatically moved to the <em>ACTIVE</em> state. When a manual activation is set though, and it evaluates to true, the plan item instance now becomes <em>ENABLED</em> instead of <em>ACTIVE</em>. As the name implies, the idea behind this is that end-users manually have to activate the plan item instance. A typical use case is for example showing a list of buttons of potential plan item instances that can currently be started by the end user.</p>
+<p>Normally, when a sentry for a plan item is satisfied (or the plan item doesn&#8217;t have any sentries) the plan item instance is automatically moved to the <em>ACTIVE</em> state. When a manual activation is set though, and it evaluates to true, the plan item instance now becomes <em>ENABLED</em> instead of <em>ACTIVE</em>. As the name implies, the idea behind this is that end-users manually have to activate the plan item instance. A typical use case is showing a list of buttons of potential plan item instances that can currently be started by the end user.</p>
 </div>
 <div class="paragraph">
 <p>To start an enabled plan item instance, the <em>startPlanItemInstance</em> method of the <em>CmmnRuntimeService</em> can be used:</p>
@@ -3440,10 +3449,10 @@ When no expression is set, but the manual activation is enabled (e.g. the checkb
 </div>
 </div>
 <div class="paragraph">
-<p>Note that the behaviour of a task only is executed when the plan item instance moves into the <em>ACTIVE</em> state. For example, for a human task, the user task will only be created after calling the <em>startPlanItemInstance</em> method.</p>
+<p>Note that the behavior of a task is only executed when the plan item instance moves into the <em>ACTIVE</em> state. For example, for a human task, the user task will only be created after calling the <em>startPlanItemInstance</em> method.</p>
 </div>
 <div class="paragraph">
-<p>Plan item instances that are enabled, can be moved into the <em>DISABLED</em> state:</p>
+<p>Plan item instances that are enabled can be moved into the <em>DISABLED</em> state:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3467,10 +3476,10 @@ When no expression is set, but the manual activation is enabled (e.g. the checkb
 <div class="sect3">
 <h4 id="_item_control_required_rule">6.4.15. Item control: Required Rule</h4>
 <div class="paragraph">
-<p>Plan items on the case model can have a <em>required rule</em>, an expression that can be used to indicate a certain plan item is <em>required by the enclosing stage (or plan model)</em>. This can be used to indicate which plan items of the case model are required to be executed and which are optional.</p>
+<p>Plan items on the case model can have a <em>required rule</em>: an expression that can be used to indicate a certain plan item is <em>required by the enclosing stage (or plan model)</em>. This can be used to indicate which plan items of the case model are required to be executed and which are optional.</p>
 </div>
 <div class="paragraph">
-<p>When no expression is set, but the required rule is enabled (e.g. the checkbox is checked in the Flowable Modeler) or the expression is empty, a <em>true</em> value is assumed by default.</p>
+<p>When no expression is set, but the required rule is enabled (for example, the checkbox is checked in the Flowable Modeler) or the expression is empty, a <em>true</em> value is assumed by default.</p>
 </div>
 <div class="paragraph">
 <p>The <em>required rule</em> works in conjunction with the <em>autoComplete</em> attribute on the parent stage:</p>
@@ -3478,16 +3487,16 @@ When no expression is set, but the manual activation is enabled (e.g. the checkb
 <div class="ulist">
 <ul>
 <li>
-<p>If <em>autoComplete</em> resolves to <em>false</em> for the stage, which is also the default when nothing is set, <strong>all</strong> child plan item instances must be in an end state (completed, terminated, etc.) for the stage plan item instance to completed by the engine.</p>
+<p>If <em>autoComplete</em> resolves to <em>false</em> for the stage, which is also the default when nothing is set, <strong>all</strong> child plan item instances must be in an end state (completed, terminated, and so on) for the stage plan item instance to be completed by the engine</p>
 </li>
 <li>
-<p>If <em>autoComplete</em> resolves to <em>true</em> for the stage, all child plan item instances for <strong>which the required rule evaluates to true</strong> need to be in an end state. If there are also no other active child plan item instances, the stage completes automatically.</p>
+<p>If <em>autoComplete</em> resolves to <em>true</em> for the stage, all child plan item instances for <strong>which the required rule evaluates to true</strong> need to be in an end state. If there are also no other active child plan item instances, the stage completes automatically</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>A <em>stage plan item instance</em> has a <strong>completeable</strong> property that can be used to see whether or not the conditions for completion are satisfied.
-Take for example the following simple stage and assume that the sentry for the <em>required task</em> evaluates to true and the other one to false. This means that the left plan item instance will be active while the right one will be in the <em>available</em> state.</p>
+Take, for example, the following simple stage and assume that the sentry for the <em>required task</em> evaluates to true and the other one to false. This means that the left plan item instance will be active while the right one will be in the <em>available</em> state.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -3495,7 +3504,7 @@ Take for example the following simple stage and assume that the sentry for the <
 </div>
 </div>
 <div class="paragraph">
-<p>Calling <em>cmmnRuntimeService.completeStagePlanItemInstance(String stagePlanItemInstanceId)</em> will not be possible for the stage (an exception will be thrown) as it has one active child plan item instance. When this user task on the left is completed, the <em>completeStagePlanItemInstance</em> can now be called, as no child plan item instances are currently active. However, by itself the stage will not automatically complete as the right user task is in the available state.</p>
+<p>Calling <em>cmmnRuntimeService.completeStagePlanItemInstance(String stagePlanItemInstanceId)</em> will not be possible for the stage (an exception will be thrown) as it has one active child plan item instance. When this user task on the left is completed, the <em>completeStagePlanItemInstance</em> can now be called, as no child plan item instances are currently active. However, by itself, the stage will not automatically complete as the right user task is in the available state.</p>
 </div>
 <div class="paragraph">
 <p>If the previous stage is changed to be <strong>autoCompleteable</strong> (this is visualised by a black rectangle at the bottom of the stage) and the plan item on the left is changed to be required (this is visualised using an exclamation mark), the behavior will be different:</p>
@@ -3511,14 +3520,14 @@ Take for example the following simple stage and assume that the sentry for the <
 <p>If the left plan item instance is active (sentry is true) and the right is not (sentry is false). In this case, when the left user task is completed, the stage instance will auto complete as it has no active child plan item instances and all required plan item instances are in an end state</p>
 </li>
 <li>
-<p>If both the left and right user tasks are active (sentries are true).</p>
+<p>If both the left and right user tasks are active (sentries are true)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>When the left user task is completed, the stage will not autocomplete as there is still a child plan item instance active.</p>
+<p>When the left user task is completed, the stage will not autocomplete as there is still a child plan item instance active</p>
 </li>
 <li>
-<p>When the right user task is completed, the stage will not autocomplete as the required left child plan item instance is not in an end state.</p>
+<p>When the right user task is completed, the stage will not autocomplete as the required left child plan item instance is not in an end state</p>
 </li>
 </ul>
 </div>
@@ -3529,7 +3538,7 @@ Take for example the following simple stage and assume that the sentry for the <
 </ul>
 </div>
 <div class="paragraph">
-<p>Note that the manual activation rule works independently from the required rule. For example, given the following stage:</p>
+<p>Note that the manual activation rule works independently of the required rule. For example, given the following stage:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -3537,15 +3546,15 @@ Take for example the following simple stage and assume that the sentry for the <
 </div>
 </div>
 <div class="paragraph">
-<p>Here, user task D is required, and user task B is manually activated.</p>
+<p>Here, user task D is required and user task B is manually activated.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If D is completed, the stage will automatically complete, as B is not required and it is not active.</p>
+<p>If D is completed, the stage will automatically complete, as B is not required and it is not active</p>
 </li>
 <li>
-<p>If B would be required too, it would need to be manually started (using <em>cmmnRuntimeService.startPlanItemInstance(String planItemInstanceId)</em>) before the stage would automatically complete, even if D would be completed before the manual start of B.</p>
+<p>If B would be required too, it would need to be manually started (using <em>cmmnRuntimeService.startPlanItemInstance(String planItemInstanceId)</em>) before the stage would automatically complete, even if D would be completed before the manual start of B</p>
 </li>
 </ul>
 </div>
@@ -3563,7 +3572,7 @@ But an <em>autoCompletable</em> stage would <em>ignore</em>, for the purposes of
 <p><em>Completion Neutral</em> offers the flexibility to mark only some containing plan items without setting the containing parent stage as <em>autoComplete</em>.</p>
 </div>
 <div class="paragraph">
-<p><em>Required Rule</em> takes precedence when plan items that having both rules, both evaluate to <em>true</em>.</p>
+<p><em>Required Rule</em> takes precedence when plan items with both rules both evaluate to <em>true</em>.</p>
 </div>
 <div class="paragraph">
 <p>As a summary:</p>
@@ -3571,7 +3580,7 @@ But an <em>autoCompletable</em> stage would <em>ignore</em>, for the purposes of
 <div class="ulist">
 <ul>
 <li>
-<p>a plan item configured to be <em>"completion neutral"</em> will not prevent a stage from completing if its in <strong>AVAILABLE</strong> state (i.e. waiting for a entry criteria sentry),
+<p>a plan item configured to be <em>"completion neutral"</em> will not prevent a stage from completing if it&#8217;s in <strong>AVAILABLE</strong> state (in other words, waiting for an entry criterion sentry),
 meaning that such a plan item is neutral with respect to its parent stage completion evaluation.</p>
 </li>
 <li>
@@ -3585,10 +3594,10 @@ meaning that such a plan item is neutral with respect to its parent stage comple
 <p>It has at least one plan item with <em>requiredRule</em> in <strong>AVAILABLE</strong> or <strong>ENABLE</strong> state</p>
 </li>
 <li>
-<p>If it isn&#8217;t <em>autoComplete</em> and has at least one plan item on <strong>ENABLED</strong> state (irrespectively on its <em>requiredRule</em>)</p>
+<p>It isn&#8217;t <em>autoComplete</em> and has at least one plan item in <strong>ENABLED</strong> state (irrespective of its <em>requiredRule</em>)</p>
 </li>
 <li>
-<p>If it isn&#8217;t <em>autoComplete</em> and has at least one plan item on <strong>AVAILABLE</strong> state that is <strong>not</strong> <em>completionNeutral</em></p>
+<p>It isn&#8217;t <em>autoComplete</em> and has at least one plan item in <strong>AVAILABLE</strong> state that is <strong>not</strong> <em>completionNeutral</em></p>
 </li>
 </ol>
 </div>
@@ -3601,10 +3610,10 @@ meaning that such a plan item is neutral with respect to its parent stage comple
 <p>It contains <strong>no</strong> plan items or all child plan items are in a <em>Terminal</em> or <em>Semi-terminal</em> state (CLOSED, COMPLETED, DISABLED, FAILED)</p>
 </li>
 <li>
-<p>If it isn&#8217;t <em>autoComplete</em>, all remaining plan items (not <em>Terminal</em> or <em>Semi-terminal</em> state) are in <strong>AVAILABLE</strong> state and are <em>completionNeutral</em> and not <em>required</em></p>
+<p>It isn&#8217;t <em>autoComplete</em> and all remaining plan items (not <em>Terminal</em> or <em>Semi-terminal</em> state) are in <strong>AVAILABLE</strong> state and are <em>completionNeutral</em> and not <em>required</em></p>
 </li>
 <li>
-<p>If is is <em>autoComplete</em>, all remaining plan items (not <em>Terminal</em> or <em>Semi-terminal) are _not required</em> in <strong>ENABLED</strong> or <strong>AVAILABLE</strong> state (regardless of its completion neutrality)</p>
+<p>It is <em>autoComplete</em> and all remaining plan items (not <em>Terminal</em> or <em>Semi-terminal) are _not required</em> in <strong>ENABLED</strong> or <strong>AVAILABLE</strong> state (regardless of its completion neutrality)</p>
 </li>
 </ol>
 </div>

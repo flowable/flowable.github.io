@@ -1,5 +1,5 @@
 -classpath
-'/Users/tijsrademakers/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-engine-common-api/6.3.0/flowable-engine-common-api-6.3.0.jar'
+'/Users/tijsrademakers/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/tijsrademakers/.m2/repository/org/flowable/flowable-engine-common-api/6.3.1/flowable-engine-common-api-6.3.1.jar'
 -encoding
 'UTF-8'
 -protected
@@ -15,10 +15,10 @@
 -docencoding
 'UTF-8'
 -doctitle
-'Flowable - Variable Service API 6.3.0 API'
+'Flowable - Variable Service API 6.3.1 API'
 -linkoffline
 'http://docs.oracle.com/javase/8/docs/api' '/Users/tijsrademakers/Documents/github/flowable-engine/modules/flowable-variable-service-api/target/javadoc-bundle-options'
 -use
 -version
 -windowtitle
-'Flowable - Variable Service API 6.3.0 API'
+'Flowable - Variable Service API 6.3.1 API'
