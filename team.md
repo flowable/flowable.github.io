@@ -64,31 +64,28 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	    </div></p>
 	</div>
 
-	<a class="team-member" href="#yvoModal" rel="modal:open">
-	    <div class="bio-pic"><img src="img/yvo.png"></div>
+	<a class="team-member" href="#filipModal" rel="modal:open">
+	    <div class="bio-pic"><img src="img/filip.jpg"></div>
 	</a>
 
-	<div id="yvoModal" class="documentationContent team-member-bio">
+	<div id="filipModal" class="documentationContent team-member-bio">
 	     <div class="bio-title">
-	        <div class="bio-pic-modal"><img src="img/yvo.png"></div>
-	        <h3>Yvo Swillens</h3>
-	        <p>Core Flowable developer</p>
+	        <div class="bio-pic-modal"><img src="img/filip.jpg"></div>
+	        <h3>Filip Hrisafov</h3>
+	        <p>Flowable developer</p>
 	     </div>
-	    <p>Yvo is a passionate full stack and iOS developer at edorasware.
-	    He was part of the Alfresco Activiti core team. Before that he worked as a consultant and software architect.
-	    For V6 he developed a significant part of the new DMN Rule Engine.
+	    <p>Filip got interested in BPMN while working on his Master Thesis: Automatic Migration of Running Process Instances. Currently, he works at edorasware, where he focuses on solution integration with the edoras platform and Flowable. 
+Being an open source enthusiast, he is a contributor to multiple Open Source projects and a member of the MapStruct team.</p>
+
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
-	            <a href="https://twitter.com/yvoswillens" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	            <a href="https://twitter.com/filiphr" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 	        <div class="contact-info linkedin">
-	            <a href="https://linkedin.com/in/yvoswillens" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	            <a href="https://www.linkedin.com/in/filip-hrisafov/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
-	        <div class="contact-info linkedin">
-	            <a href="http://blog.mark-it-zero.com" target="_blank"><i class="fa fa-rss-square fa-lg" aria-hidden="true"></i></a>
-	        </div>
-	    </div></p>
-	</div>
+	    </div>
+	</div>  
 
 	<a class="team-member" href="#paulModal" rel="modal:open">
 	    <div class="bio-pic"><img src="img/phh.jpg"></div>
@@ -113,6 +110,33 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	        </div>
 	        <div class="contact-info linkedin">
 	            <a href="https://paulhh.wordpress.com" target="_blank"><i class="fa fa-rss-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	    </div></p>
+	</div>
+
+
+	<a class="team-member" href="#yvoModal" rel="modal:open">
+	    <div class="bio-pic"><img src="img/yvo.png"></div>
+	</a>
+
+	<div id="yvoModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/yvo.png"></div>
+	        <h3>Yvo Swillens</h3>
+	        <p>Core Flowable developer</p>
+	     </div>
+	    <p>Yvo is a passionate full stack and iOS developer at edorasware.
+	    He was part of the Alfresco Activiti core team. Before that he worked as a consultant and software architect.
+	    For V6 he developed a significant part of the new DMN Rule Engine.
+	    <div class="bio-contact-info">
+	        <div class="contact-info twitter">
+	            <a href="https://twitter.com/yvoswillens" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	        <div class="contact-info linkedin">
+	            <a href="https://linkedin.com/in/yvoswillens" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	        <div class="contact-info linkedin">
+	            <a href="http://blog.mark-it-zero.com" target="_blank"><i class="fa fa-rss-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 	    </div></p>
 	</div>
@@ -167,32 +191,6 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	        </div>
 	    </div>
 	</div>
-
-
-
-	<a class="team-member" href="#filipModal" rel="modal:open">
-	    <div class="bio-pic"><img src="img/filip.jpg"></div>
-	</a>
-
-	<div id="filipModal" class="documentationContent team-member-bio">
-	     <div class="bio-title">
-	        <div class="bio-pic-modal"><img src="img/filip.jpg"></div>
-	        <h3>Filip Hrisafov</h3>
-	        <p>Flowable developer</p>
-	     </div>
-	    <p>Filip got interested in BPMN while working on his Master Thesis: Automatic Migration of Running Process Instances. Currently, he works at edorasware, where he focuses on solution integration with the edoras platform and Flowable. 
-Being an open source enthusiast, he is a contributor to multiple Open Source projects and a member of the MapStruct team.</p>
-
-	    <div class="bio-contact-info">
-	        <div class="contact-info twitter">
-	            <a href="https://twitter.com/filiphr" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
-	        </div>
-	        <div class="contact-info linkedin">
-	            <a href="https://www.linkedin.com/in/filip-hrisafov/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
-	        </div>
-	    </div>
-	</div>  
-
 
 
 	<a class="team-member" href="#wouterModal" rel="modal:open">
