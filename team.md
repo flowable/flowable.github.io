@@ -394,4 +394,50 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	    <p>Pascal is software developer who likes to contribute back to open source projects he uses at work.</p>
 	</div>
 
+	<a class="team-member" href="#valentinModal" rel="modal:open">
+	 <div class="bio-pic"><img src="img/valentin.jpg"></div>
+	</a>
+
+	<div id="valentinModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/valentin.jpg"></div>
+	        <h3>Valentin Zickner</h3>
+	        <p>Flowable developer</p>
+	     </div>
+
+	    <p>Valentin is a Flowable developer at mimacom. Besides Cloud Foundry, Spring, Angular, Elasticsearch and RabbitMQ, he keeps a focus on the Flowable engines. He recently relocated to the USA and is doing Flowable consulting there.</p>
+
+		<div class="bio-contact-info">
+	        <div class="contact-info twitter">
+	            <a href="https://twitter.com/vzickner" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	        <div class="contact-info linkedin">
+	            <a href="https://www.linkedin.com/in/zickner/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	    </div>
+	</div>
+
+	<a class="team-member" href="#dennisModal" rel="modal:open">
+	 <div class="bio-pic"><img src="img/dennis.jpg"></div>
+	</a>
+
+	<div id="dennisModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/dennis.jpg"></div>
+	        <h3>Dennis Federico</h3>
+	        <p>Flowable developer</p>
+	     </div>
+
+	    <p>Dennis is a software engineer from Venezuela, making a life in Spain. Previously a Big Data principal consultant for Oracle now enjoying his renewed passion for coding and development with Java working for Flowable.</p>
+
+		<div class="bio-contact-info">
+	        <div class="contact-info twitter">
+	            <a href="https://twitter.com/DennisFederico" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	        <div class="contact-info linkedin">
+	            <a href="https://www.linkedin.com/in/dennisfederico" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	    </div>
+	</div>
+
 </div>
