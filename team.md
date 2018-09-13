@@ -21,7 +21,7 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	        <h3>Tijs Rademakers</h3>
 	        <p>Project Lead</p>
 	    </div>
-	    <p>Tijs is the Flowable project lead at edorasware. He&#39;s been involved in Java, BPM and enterprise integration projects for more than 15 years.
+	    <p>Tijs is the project lead at Flowable. He&#39;s been involved in Java, BPM and enterprise integration projects for more than 15 years.
 	    Recently his work focused on building the v6 engine and he’s eager to continue evolving the v6 engine in the Flowable project.
 	    Tijs is passionate about open source BPM and integration. He&#39;s the author of the <a href="http://manning.com/rademakers2" target="_blank">Activiti in Action</a> and <a href="http://manning.com/rademakers" target="_blank">Open source ESBs in Action</a> Manning books.
 	    <div class="bio-contact-info">
@@ -33,6 +33,9 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	        </div>
 	        <div class="contact-info linkedin">
 	            <a href="http://bpmn20inaction.blogspot.nl" target="_blank"><i class="fa fa-rss-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
 	        </div>
 	    </div></p>
 	</div>
@@ -47,7 +50,7 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	        <h3>Joram Barrez</h3>
 	        <p>Core Flowable developer</p>
 	    </div>
-	    <p>Joram is a Flowable core developer at edorasware with many years experience in open-source software and of building scalable process engines. 
+	    <p>Joram is a core developer at Flowable with many years experience in open-source software and of building scalable process engines. 
 	    He co-founded the Activiti project (on which Flowable is based) and was a core developer for over six years. 
 	    When a principal software engineer at Alfresco, he was part of the team that architected and brought the enterprise business process management offerings 
 	    successfully to market. Before that he was employed by JBoss/RedHat as part of the jBPM team and started his career as a Java consultant with a focus on BPM.
@@ -60,6 +63,9 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	        </div>
 	        <div class="contact-info linkedin">
 	            <a href="http://www.jorambarrez.be/blog" target="_blank"><i class="fa fa-rss-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
 	        </div>
 	    </div></p>
 	</div>
@@ -74,8 +80,8 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	        <h3>Filip Hrisafov</h3>
 	        <p>Flowable developer</p>
 	     </div>
-	    <p>Filip got interested in BPMN while working on his Master Thesis: Automatic Migration of Running Process Instances. Currently, he works at edorasware, where he focuses on solution integration with the edoras platform and Flowable. 
-Being an open source enthusiast, he is a contributor to multiple Open Source projects and a member of the MapStruct team.</p>
+	    <p>Filip got interested in BPM while working on his Master Thesis: Automatic Migration of Running Process Instances. Currently, he works at Flowable, where he focuses the backend of the various products using Flowable. 
+Being an open source enthusiast, he is the project lead of MapStruct and a contributor to multiple Open Source projects.</p>
 
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
@@ -83,6 +89,9 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	        </div>
 	        <div class="contact-info linkedin">
 	            <a href="https://www.linkedin.com/in/filip-hrisafov/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
 	        </div>
 	    </div>
 	</div>  
@@ -97,8 +106,10 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	        <h3>Paul Holmes-Higgin</h3>
 			<br/>
 	     </div>
-	    <p>Paul has a long history with technology, currently with edorasware.</p> 
+	    <p>Paul has a long history with technology, currently with Flowable.</p> 
+		<p>
 		Previously, he was a co-founder of Alfresco, holding a number of executive positions there. He was instrumental in bringing the Activiti BPM engine to market (of course, the engineers maintain it was their hard work). Before that, there were a couple of start-ups, plus time with Documentum, Resumix and IBM. All after a spell in academia with an AI group, somehow blagging a PhD in the process.
+		</p>
 		<br/>
 		In his spare time, he enjoys sprint and marathon kayaking.
 	    <div class="bio-contact-info">
@@ -111,7 +122,10 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	        <div class="contact-info linkedin">
 	            <a href="https://paulhh.wordpress.com" target="_blank"><i class="fa fa-rss-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
-	    </div></p>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+	        </div>
+	    </div>
 	</div>
 
 
@@ -125,7 +139,7 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	        <h3>Yvo Swillens</h3>
 	        <p>Core Flowable developer</p>
 	     </div>
-	    <p>Yvo is a passionate full stack and iOS developer at edorasware.
+	    <p>Yvo is a passionate full stack and iOS developer at Flowable.
 	    He was part of the Alfresco Activiti core team. Before that he worked as a consultant and software architect.
 	    For V6 he developed a significant part of the new DMN Rule Engine.
 	    <div class="bio-contact-info">
@@ -137,6 +151,9 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	        </div>
 	        <div class="contact-info linkedin">
 	            <a href="http://blog.mark-it-zero.com" target="_blank"><i class="fa fa-rss-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
 	        </div>
 	    </div></p>
 	</div>
@@ -150,7 +167,7 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	        <div class="bio-pic-modal"><img src="img/martin.png"></div>
 	        <h3>Martin Grofcik</h3>
 	        <p>Flowable developer</p>
-	        <p>Java developer focused on BPM at edorasware ag. Martin is founder of activiti-crystalball (simulation engine for Activiti platform).</p>
+	        <p>Java developer focused on BPM at Flowabe. Martin is founder of flowable-crystalball (simulation engine for Flowable platform).</p>
 	    </div>
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
@@ -160,7 +177,7 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	            <a href="https://linkedin.com/in/martin-grofč%C3%ADk-5156509" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 	        <div class="contact-info company">
-	            <a href="https://www.edorasware.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
 	        </div>
 	    </div>
 	</div>
@@ -368,7 +385,7 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	        <p>Flowable developer</p>
 	     </div>
 
-	    <p>Just another (French) Software engineer at edorasware focused on Mobility and API design. Previously he worked as Mobile Technical Leader in Alfresco and created mobile BPMN clients.</p>
+	    <p>Just another (French) Software engineer at Flowable focused on Mobility and API design. Previously he worked as Mobile Technical Leader in Alfresco and created mobile BPMN clients.</p>
 
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
@@ -376,6 +393,9 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	        </div>
 	        <div class="contact-info linkedin">
 	            <a href="https://www.linkedin.com/in/jeanmariepascal/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
 	        </div>
 	    </div>
 	</div>
@@ -414,6 +434,9 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	        <div class="contact-info linkedin">
 	            <a href="https://www.linkedin.com/in/zickner/" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+	        </div>
 	    </div>
 	</div>
 
@@ -438,6 +461,37 @@ Being an open source enthusiast, he is a contributor to multiple Open Source pro
 	            <a href="https://www.linkedin.com/in/dennisfederico" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 	    </div>
+		<div class="contact-info company">
+	        <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+        </div>
+	</div>
+
+	<a class="team-member" href="#joseModal" rel="modal:open">
+	 <div class="bio-pic"><img src="img/jose.jpg"></div>
+	</a>
+
+	<div id="joseModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/jose.jpg"></div>
+	        <h3>José Antonio Álvarez</h3>
+	        <p>Flowable developer</p>
+	     </div>
+
+	    <p>José is a hands-on software architect and developer with several years of experience in open source. As Head Solutions Architect at Flowable, he likes to solve real-world problems with simple, elegant and performant solutions.</p>
+
+        <p>Previously he worked at edorasware, where he helped develop the edoras one platform (based on Flowable) and successfully deliver projects for customers in the financial, telco, insurance and other sectors.</p>
+
+		<div class="bio-contact-info">
+	        <div class="contact-info twitter">
+	            <a href="https://twitter.com/jaam_eu" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	        <div class="contact-info linkedin">
+	            <a href="https://www.linkedin.com/in/jaameu" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	    </div>
+		<div class="contact-info company">
+	        <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+        </div>
 	</div>
 
 </div>
