@@ -460,10 +460,10 @@ Being an open source enthusiast, he is the project lead of MapStruct and a contr
 	        <div class="contact-info linkedin">
 	            <a href="https://www.linkedin.com/in/dennisfederico" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+            </div>
 	    </div>
-		<div class="contact-info company">
-	        <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
-        </div>
 	</div>
 
 	<a class="team-member" href="#joseModal" rel="modal:open">
@@ -488,10 +488,10 @@ Being an open source enthusiast, he is the project lead of MapStruct and a contr
 	        <div class="contact-info linkedin">
 	            <a href="https://www.linkedin.com/in/jaameu" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
+			<div class="contact-info company">
+	    		<a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+            </div>
 	    </div>
-		<div class="contact-info company">
-	        <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
-        </div>
 	</div>
 
 </div>
