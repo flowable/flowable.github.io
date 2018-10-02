@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.5">
+<title>Flowable Migration Guide : Flowable v5 to Flowable V6</title>
+<style>
+
+/* normalize.css */
+
+button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0} menu,article,aside,details,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{}button,select{text-transform:none}[type=submit], [type=reset],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}/*# sourceMappingURL=normalize.min.css.map */
+
+/* tocbot 2.1.4 */
+
+.toc{overflow-y:auto}.toc>ul{overflow:hidden;position:relative}.toc-list{margin:0;padding-left:10px}a.toc-link{color:currentColor;height:100%}.is-collapsible{max-height:1000px;overflow:hidden;transition:all 300ms ease-in-out}.is-collapsed{max-height:0}.is-position-fixed{position:fixed !important;top:0}.is-active-link{font-weight:700}.toc-link::before{background-color:#f9f9fb;content:' ';display:inline-block;height:inherit;left:8px;margin-top:-1px;position:absolute;width:2px}.is-active-link::before{background-color:#54BC4B}
+
+
+/* Activiti Specific */
+
+body {
+  color: #494d55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #f9f9f9;
+  font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  color: #484848
+}
+
+.page-wrapper {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -50px;
+}
+
+.page-wrapper:after {
+  content: "";
+  display: block;
+  height: 50px;
+}
+
+#header {
+  position:fixed;
+  top:0px;
+  z-index:100000;
+  width:100%;
+}
+
+#header > h1 {
+    background: #a0cc47;
+    color: #f9f9f9;
+    border-bottom: 2px solid #042944;
+    padding: 20px 0 20px 20px;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+}
+
+#header > h1:before {
+  background:url('images/logo.png');
+  background-size: 337px 54px; background-repeat: no-repeat;
+  width: 337px;
+  height: 54px;
+  display:inline-block;
+  content:'';
+  margin-right: 30px;
+}
+
+#author {
+  margin-left: 25%;
+  font-size: 40px;
+}
+
+#content {
+  margin: 129px 0 0 27%;
+  padding: 10px 40px 0 20px;
+  padding-right: 40px;
+  line-height: 1.7;
+  width: 65%;
+  overflow-x: auto;
+}
+
+h2, h3, h4, h5, h6 {
+  color: #00345a;
+}
+
+h2 {
+  font-size: 26px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  padding-bottom: 10px;
+  /*border-bottom: 1px solid #d7d7d7;*/
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+h6, h7 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.sect1, .sect2 {
+  margin-bottom: 20px;
+}
+
+.clear
+{
+  clear: both;
+}
+
+.note, .listingblock, .literalblock{
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+  color: #808080;
+}
+
+table.tableblock {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  table-layout: fixed;
+}
+
+table.tableblock>caption+thead>tr:first-child>td, table.tableblock>caption+thead>tr:first-child>th, table.tableblock>colgroup+thead>tr:first-child>td, table.tableblock>colgroup+thead>tr:first-child>th, table.tableblock>thead:first-child>tr:first-child>td, table.tableblock>thead:first-child>tr:first-child>th {
+    border-top: 0;
+}
+
+table.tableblock > thead > tr > th {
+    border-bottom-color: #8bd6d8;
+}
+
+table.tableblock>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
+
+table.tableblock>tbody>tr>td, table.tableblock>tbody>tr>th, table.tableblock>tfoot>tr>td, table.tableblock>tfoot>tr>th, table.tableblock>thead>tr>td, table.tableblock>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+th {
+    text-align: left;
+}
+
+table.tableblock > tbody > tr:nth-of-type(odd) {
+    background-color: #f5f5f5;
+}
+
+table.tableblock > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+td > p {
+  margin:0;
+}
+
+td.content {
+  white-space: normal;
+}
+
+pre, td, th {
+   white-space: pre-wrap;
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;
+   white-space: -o-pre-wrap;
+   word-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #007387;
+}
+
+a:hover {
+  color: #004c59;
+}
+
+#toc-parent {
+  width: 25%;
+  float: left;
+  height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+#generated-toc {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+.toc-link {
+  text-decoration: none;
+}
+
+.toc-list {
+  margin: 0 20px 0 10px;
+}
+
+.toc-list-item {
+  padding: 4px 0 4px 0;
+}
+
+
+div.sect5  p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.sect5  code {
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+.listingblock .pygments .hll { background-color: #ffffcc }
+.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
+.listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+.listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+.listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+.listingblock .pygments .tok-o { color: #666666 } /* Operator */
+.listingblock .pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+.listingblock .pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+.listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+.listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
+.listingblock .pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+.listingblock .pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.listingblock .pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+.listingblock .pygments .tok-go { color: #888888 } /* Generic.Output */
+.listingblock .pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+.listingblock .pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.listingblock .pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+.listingblock .pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.listingblock .pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.listingblock .pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.listingblock .pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+.listingblock .pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.listingblock .pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+.listingblock .pygments .tok-m { color: #666666 } /* Literal.Number */
+.listingblock .pygments .tok-s { color: #BA2121 } /* Literal.String */
+.listingblock .pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+.listingblock .pygments .tok-nb { color: #008000 } /* Name.Builtin */
+.listingblock .pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.listingblock .pygments .tok-no { color: #880000 } /* Name.Constant */
+.listingblock .pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+.listingblock .pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+.listingblock .pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.listingblock .pygments .tok-nf { color: #0000FF } /* Name.Function */
+.listingblock .pygments .tok-nl { color: #A0A000 } /* Name.Label */
+.listingblock .pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.listingblock .pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+.listingblock .pygments .tok-nv { color: #19177C } /* Name.Variable */
+.listingblock .pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.listingblock .pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+.listingblock .pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
+.listingblock .pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+.listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+.listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+.listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+.listingblock .pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
+.listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+.listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+.listingblock .pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
+.listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+.listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.listingblock .pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+.listingblock .pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.listingblock .pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+.listingblock .pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+.listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+.listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+.listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+.listingblock .pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
+.listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+.listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+.listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+.listingblock .pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
+.listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+</head>
+<body class="book">
+<div id="header">
+<h1>Flowable Migration Guide : Flowable v5 to Flowable V6</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide describes the various things that are needed when migrating from Flowable v5.x to Flowable V6.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_design_goals">2. Design goals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The design goals of version 6 are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Complete backwards compatibility with version 5: database-wise, concept-wise and code-wise.</p>
+</li>
+<li>
+<p>Rewrite of the core engine: direct execution of BPMN 2.0 (vs transformation to intermediate model)</p>
+</li>
+<li>
+<p>Simpler and cleaner runtime execution data structure, where predictability of the structure is crucial</p>
+</li>
+<li>
+<p>Decoupling of persistence layers for future alternative implementations</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_database_migration">3. Database migration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is no database migration needed when moving from v5 to V6: the database schema is the same for v5 and V6, with some additional tables and columns. All data produced by Flowable v5 can simply remain in the database, even including active, in-flight process instances. When the V6 engine is started for the first time, it will do an automatic update to the schema (as with previous v5 versions). Besides some small schema changes, the main update is that the job table has been split up into job, timer job, suspended job and dead letter job tables.
+Any timer jobs that are not yet due will be moved to the new timer table. Jobs with no more retries left will be moved to the dead letter job table, and jobs for suspended process instances will be moved to the suspended job table.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conceptual_changes">4. Conceptual changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main reason for calling this Flowable version <em>6</em> is because the core engine has been completely rewritten. The way core engine operations are executed has changed completely, along with a direct execution of BPMN (in v5 there is an intermediate model). Also, the way runtime executions are represented (the <em>execution tree</em>) changed. In general, both areas have been simplified significantly, making execution simpler and clearer, while also making the writing of custom behavior easier and more accessible.  An embedded v5 engine is available in V6 to ensure complete execution compatibility if desired.</p>
+</div>
+<div class="paragraph">
+<p>In future articles, we&#8217;ll describe the inner workings of the engine in detail.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_breaking_changes">5. Breaking changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following changes are breaking changes (i.e. there will likely be a compile error).</p>
+</div>
+<div class="sect2">
+<h3 id="_package_rename_org_activiti_to_org_flowable">5.1. Package rename: org.activiti to org.flowable</h3>
+<div class="paragraph">
+<p>All org.activiti packages have been renamed to org.flowable.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_activiti_class_name_renaming">5.2. Activiti class name renaming</h3>
+<div class="paragraph">
+<p>All class names that contained "Activiti" have been renamed, with Activiti replaced by Flowable.
+For example, ActivitiEvent has been renamed to FlowableEvent, and ActivitiException has been renamed to FlowableException.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_activiti_cfg_xml_renamed_to_flowable_cfg_xml">5.3. activiti.cfg.xml renamed to flowable.cfg.xml</h3>
+<div class="paragraph">
+<p>The default configuration file that&#8217;s read when starting the Flowable Engine has been renamed from activiti.cfg.xml to flowable.cfg.xml.
+The same is true for the default Spring configuration file activiti-context.xml, which has been renamed to flowable-context.xml.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pvm_classes">5.4. PVM classes</h3>
+<div class="paragraph">
+<p>All classes previously in the org.activiti.engine.impl.pvm package (and sub packages) have been removed. This is because the <em>PVM</em> (Process Virtual Machine) model has been replaced by a simpler and more lightweight model.</p>
+</div>
+<div class="paragraph">
+<p>This means that usages of <em>ActivityImpl</em>, <em>ProcessDefinitionImpl</em>, <em>ExecutionImpl</em>, <em>TransitionImpl</em> are now invalid.</p>
+</div>
+<div class="paragraph">
+<p>Most of the usage of these classes in v5 came down to getting information that was contained in the process definition. In V6, all the process definition information can be found through the <em>BpmnModel</em>, which is a Java representation of the BPMN 2.0 XML of the process definition (enhanced to make certain operations and searches easier).</p>
+</div>
+<div class="paragraph">
+<p>The quickest way to get the <em>BpmnModel</em> for a process definition is to use the org.flowable.engine.RepositoryService service:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>BpmnModel bpmnModel = repositoryService.getBpmnModel(myProcessDefinitionId);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To get the <em>RepositoryService</em> a JavaDelegate or ActivityBehavior implementation class, use the org.flowable.engine.impl.context.Context class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>RepositoryService repositoryService = Context.getProcessEngineConfiguration().getRepositoryService();</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(Note that this only works when a context is active, like in a JavaDelegate or ActivityBehavior)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_activityexecution_is_replaced_by_delegateexecution">5.5. ActivityExecution is replaced by DelegateExecution</h3>
+<div class="paragraph">
+<p>We removed ActivityExecution and replaced it, where used, with the DelegateExecution class.</p>
+</div>
+<div class="paragraph">
+<p>All methods from the ActivityExecution class are copied to the DelegateExecution class.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_engineservices_removed">5.6. EngineServices removed</h3>
+<div class="paragraph">
+<p>We removed the getEngineServices method on DelegateExecution, because it had no real benefit and it made the usage of DelegateExecution in the Flowable 6 and the embedded Flowable 5 engine difficult.</p>
+</div>
+<div class="paragraph">
+<p>Replace all getEngineServices method calls with org.flowable.engine.impl.context.Context.getProcessEngineConfiguration method calls.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_job_timer_suspended_and_dead_letter_jobs">5.7. Job, timer, suspended and dead letter jobs</h3>
+<div class="paragraph">
+<p>Flowable v5 had only 1 job table and this meant that a fairly complex query had to be executed to get the jobs that needed to be executed from the database.</p>
+</div>
+<div class="paragraph">
+<p>With Flowable V6, the jobs have been split up in job (ACT_RU_JOB), timer (ACT_RU_TIMER_JOB), suspended (ACT_RU_SUSPENDED_JOB), and (ACT_RU_DEADLETTER_JOB) dead letter tables.
+Jobs in the job table (such as asynchronous jobs and due timer jobs) can be directly executed. So there&#8217;s no need for a complex query anymore, the only <em>where</em> clause is a lock time column that should be NULL.
+Timer jobs are now persisted in a dedicated timer jobs table and there&#8217;s a thread that checks for timer jobs due to execute. When a timer job is due to be executed, the job will be moved to the job table.
+When the job executor Runnable is ready to execute the job, it will be fetched from the job table and executed.
+When a process definition and process instance is suspended, the corresponding jobs will be moved to a separate suspended job table. This simplifies the job executor query and makes it very clear which jobs are suspended.
+If a job execution fails, the job will be placed in the timer job table with a due date that&#8217;s set to current time + the async failed job wait time configured on the process engine configuration.
+When the job is due to be executed, it will be moved to the job table again and be executed. When the number of retries is down to zero, the job will be moved to the dead letter table and no automatic execution will be performed.
+This also simplifies the default job executor queries and makes it obvious which jobs are stuck and might need manual intervention.</p>
+</div>
+<div class="paragraph">
+<p>The embedded Flowable v5 engine in Flowable V6 works with these 4 job tables as well. But there&#8217;s only one threadpool fetching jobs from the database, shared between the engines. When a job is fetched from the database, the engine version for the job is checked based on the process definition id, and the job is executed by the Flowable V6 or embedded Flowable v5 Engine.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_signaling_an_execution">5.8. Signaling an execution</h3>
+<div class="paragraph">
+<p>In v5, there was always confusion about <em>signaling an execution</em> when using, for example, <em>runtimeService.signal(executionI);</em>. As a <em>signal</em> is a valid BPMN 2.0 concept and feature, it conflicts conceptually.</p>
+</div>
+<div class="paragraph">
+<p>In V6, the <em>signal()</em> methods have been renamed to <em>trigger()</em>.</p>
+</div>
+<div class="paragraph">
+<p>This also means that <em>SignalableActivityBehavior</em>, the interface to be implemented for behaviors that can be <em>triggered</em> from external sources, is now called <em>TriggerableActivityBehavior</em>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_checked_exceptions">5.9. Checked Exceptions</h3>
+<div class="paragraph">
+<p>In v5, the delegate classes, such as <em>JavaDelegate</em> and <em>ActivityBehavior</em>, have <em>throws Exception</em> in their signatures. As with any modern framework, the use of checked Exceptions has been removed in V6.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delegate_classes">5.10. Delegate classes</h3>
+<div class="paragraph">
+<p><em>org.flowable.engine.impl.pvm.delegate.ActivityBehavior</em> has changed package and lives now in <em>org.flowable.engine.impl.delegate</em>.</p>
+</div>
+<div class="paragraph">
+<p>The following methods have been removed from <em>DelegateExecution</em>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>end()</p>
+</li>
+<li>
+<p>createdExecution()</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>They have been replaced by calls to the ExecutionEntityManager, which can be fetched through Context.getCommandContext.getExecutionEntityManager().</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_entitymanagers">5.11. EntityManagers</h3>
+<div class="paragraph">
+<p>In Flowable v5, all EntityManager classes (responsible for persistence but also certain logic) did not have an interface. In V6, all EntityManager classes have been renamed to have <em>Impl</em> as suffix and an interface without the suffix. This effectively means that the v5 EntityManager class name is now the name of the corresponding interface.</p>
+</div>
+<div class="paragraph">
+<p>All EntityManager interfaces extend the generic org.flowable.engine.impl.persistence.entity.EntityManager interface. All implementation classes extend a generic <em>AbstractEntityManager</em> interface.</p>
+</div>
+<div class="paragraph">
+<p>Also, for consistency:
+* The UserIdentityManager interface has been renamed to UserEntityManager
+* The GroupIdentityManager interface has been renamed to GroupEntityManager</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_persistentobject_renamed_to_entity">5.12. PersistentObject renamed to Entity</h3>
+<div class="paragraph">
+<p>The class <em>org.flowable.engine.impl.db.PersistentObject</em> has been renamed to <em>Entity</em> to be consistent with all the other classes (EntityManagers and so on).</p>
+</div>
+<div class="paragraph">
+<p>All related classes that used the term <em>persistent object</em> have been refactored to <em>entity</em> too.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_separation_of_identity_logic_and_tables">5.13. Separation of identity logic and tables</h3>
+<div class="paragraph">
+<p>In v5, the identity logic and tables were an integral part of the process engine. In V6, the logic has been refactored into a separate module called <em>flowable-idm-engine</em> (where IDM stands for 'identity management). The related database tables are managed by this engine. For backwards compatibility, the IDM engine is enabled by default when booting up the process engine. To disable the engine, set the <em>disableIdmEngine</em> to <em>true</em> in the process engine configuration. When disabled, no identity database tables (starting with <em>ACT_ID</em>) will be created, or they can be removed if they already exist.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_camel_endpoint_renamed_to_flowable">5.14. Camel endpoint renamed to flowable</h3>
+<div class="paragraph">
+<p>When using the Flowable Camel module, make sure to use the flowable endpoint, instead of the activiti endpoint. The Route below provides a simple example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7</div></td><td class="code"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">SimpleCamelCallRoute</span> <span class="tok-kd">extends</span> <span class="tok-n">RouteBuilder</span> <span class="tok-o">{</span>
+
+  <span class="tok-nd">@Override</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">configure</span><span class="tok-o">()</span> <span class="tok-kd">throws</span> <span class="tok-n">Exception</span> <span class="tok-o">{</span>
+    <span class="tok-n">from</span><span class="tok-o">(</span><span class="tok-s">&quot;flowable:SimpleCamelCallProcess:simpleCall&quot;</span><span class="tok-o">).</span><span class="tok-na">to</span><span class="tok-o">(</span><span class="tok-s">&quot;log:org.flowable.camel.examples.SimpleCamelCall&quot;</span><span class="tok-o">);</span>
+  <span class="tok-o">}</span>
+<span class="tok-o">}</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_v5_compatibility">6. V5 compatibility</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When migrating to Flowable V6 (typically by replacing the JAR files on the classpath), all current deployments and process definitions are <em>tagged</em> as being <em>version 5</em> artifacts. At various points (completing a task, starting a new process instance, task assignment, &#8230;&#8203; quite a long list) the engine will check whether the associated process definition has the <em>version 5 tag</em>. If so, it will delegate execution to an <em>embedded compact version 5 engine</em>.</p>
+</div>
+<div class="paragraph">
+<p>To eliminate migration, use of the embedded v5 engine allows a phase out approach: let any current process definitions run in <em>'version 5 mode</em> until you have verified and tested the behavior of your processes to be identical on V6.</p>
+</div>
+<div class="paragraph">
+<p>By default the embedded v5 engine is <em>disabled</em>!  To enable it, add the following to the engine config:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;property name="flowable5CompatibilityEnabled" value="true" /&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>and</strong> add the <strong>flowable5-compatibility</strong> JAR to your classpath (manually or through a dependency mechanism, such as Maven).</p>
+</div>
+<div class="paragraph">
+<p>In the rare case of the default implementation <em>org.flowable.compatibility.DefaultFlowable5CompatibilityHandler</em> being insufficient, a custom implementation can be created. To do this, set the <em>flowable5CompatibilityHandlerFactory</em> property of the engine configuration to the fully qualified classname. That Factory class should produce an instance of the handler responsible for bridging from version 6 to 5.</p>
+</div>
+<div class="paragraph">
+<p>To move a v5 process definition to run on the V6 engine, simply redeploy it. New process instances will run in <em>version 6 mode</em>, while existing process instances will run in <em>version 5 mode</em>).</p>
+</div>
+<div class="paragraph">
+<p>If, for some reason, you still want to deploy a new version of a process definition to run in <em>version 5 mode</em>, the following code can be used:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>repositoryService.createDeployment()
+      .addClasspathResource("xyz")
+      .deploymentProperty(DeploymentProperties.DEPLOY_AS_FLOWABLE5_PROCESS_DEFINITION, Boolean.TRUE)
+      .deploy();</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you are using the Flowable Spring module, additional configuration is needed for Flowable v5 compatibility:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;property name="flowable5CompatibilityEnabled" value="true" /&gt;
+&lt;property name="flowable5CompatibilityHandlerFactory" ref="flowable5CompabilityFactory" /&gt;
+
+....
+
+&lt;bean id="flowable5CompabilityFactory" class="org.flowable.compatibility.spring.SpringFlowable5CompatibilityHandlerFactory" /&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>and</strong> add the <strong>flowable5-spring</strong> and <strong>flowable5-spring-compatibility</strong> JARs to your classpath (manually or through a dependency mechanism, such as Maven).</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

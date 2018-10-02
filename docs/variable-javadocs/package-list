@@ -1,0 +1,5 @@
+org.flowable.variable.api.delegate
+org.flowable.variable.api.event
+org.flowable.variable.api.history
+org.flowable.variable.api.persistence.entity
+org.flowable.variable.api.types
