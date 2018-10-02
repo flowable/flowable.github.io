@@ -41,11 +41,18 @@ The API documentation will be available on [http://localhost:8080/flowable-rest/
 (login/password: rest-admin/test)
 
 For a quick start with the full Flowable experience run the 'All-in-One' Docker image. This image contains Flowable IDM, Modeler, Task and Admin UI apps on a Tomcat container with a in memory H2 database. 
-(login/password: admin/test)
 
 ```bash
 docker run -p8080:8080 flowable/all-in-one
 ```
+
+Flowable Modeler; http://localhost:8080/flowable-modeler  
+Flowable Task; http://localhost:8080/flowable-task  
+Flowable Admin; http://localhost:8080/flowable-admin  
+Flowable IDM; http://localhost:8080/flowable-idm  
+
+(login/password: admin/test)
+
 
 Take a look at our [GitHub repo](https://github.com/flowable/flowable-engine/tree/master/docker) for other and more advanced configurations.
 
