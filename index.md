@@ -59,8 +59,6 @@ id: home
 		<div class="social-col">
 			<h4>Latest Flowable Blog Posts</h4>
 			<div id="rssFlowableBlogFeed"></div>
-			<h4>Latest Team Blog Posts</h4>
-			<div id="rssTeamBlogFeed"></div>
 			<h4>Latest Forum Posts</h4>
 			<div id="rssForumFeed"></div>
 		</div>
