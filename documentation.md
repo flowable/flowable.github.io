@@ -39,7 +39,7 @@ The User Guides contain a detailed explanation of the different Flowable engine 
 
 Flowable has rich REST APIs that provides almost full coverage of the Flowable Java APIs.  These are the easiest and most flexible APIs to work with.
 <br>
-In addition we've added Swagger in Flowable v6. Boot up the Flowable REST app to try it out.
+In addition we've added Swagger in Flowable v6. Boot up the Flowable REST app to try it out by accessing http://localhost:8080/flowable-rest/docs
 
 <div class="buttons-unit">
   <a href="{{ site.baseurl }}/docs/userguide/index.html#restApiChapter" class="button" target="_blank">BPMN API</a>
