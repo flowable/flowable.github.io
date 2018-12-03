@@ -13,9 +13,9 @@ If you just want to download Flowable and have a quick play, this is a good arti
 
 Here's some talks we've given:
 
++ BPMNext 2018: [Making Process Personal](https://www.youtube.com/watch?v=fyxRHZaCSSA)
 + Devoxx 2017: [Introducing AI to the Flowable Process Engines](https://www.youtube.com/watch?v=i8dYR0LdpHg)
 + BPMNext 2017: [Making Business Processes Dance to the User's Tune](https://www.youtube.com/watch?v=5qIw3JTw-mI)
-
 
 ## Getting started
 
