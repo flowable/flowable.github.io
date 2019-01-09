@@ -17,6 +17,11 @@ Here's some talks we've given:
 + Devoxx 2017: [Introducing AI to the Flowable Process Engines](https://www.youtube.com/watch?v=i8dYR0LdpHg)
 + bpmNEXT 2017: [Making Business Processes Dance to the User's Tune](https://www.youtube.com/watch?v=5qIw3JTw-mI)
 
+And links to some others:
+
++ Josh Long: [Spring Tips: Business Process Management with Flowable](https://www.youtube.com/watch?v=43_OLrxU3so)
+
+
 ## Getting started
 
 This is the best place to start if you're new to Flowable.  It shows you how to get up and running in minutes, either with the UI Apps or introducing you to the basics of the Engine API.
