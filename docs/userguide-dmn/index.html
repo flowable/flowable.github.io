@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.5">
-<title>Flowable DMN DOCS (v 6.4.0)</title>
+<meta name="generator" content="Asciidoctor 1.5.8">
+<title>Flowable DMN DOCS (v 6.4.1)</title>
 <style>
 
 /* normalize.css */
@@ -255,77 +255,9 @@ div.sect5  code {
     font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-.listingblock .pygments .hll { background-color: #ffffcc }
-.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
-.listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
-.listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
-.listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
-.listingblock .pygments .tok-o { color: #666666 } /* Operator */
-.listingblock .pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
-.listingblock .pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
-.listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
-.listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
-.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
-.listingblock .pygments .tok-gr { color: #FF0000 } /* Generic.Error */
-.listingblock .pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.listingblock .pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
-.listingblock .pygments .tok-go { color: #888888 } /* Generic.Output */
-.listingblock .pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
-.listingblock .pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.listingblock .pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
-.listingblock .pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.listingblock .pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.listingblock .pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.listingblock .pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
-.listingblock .pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.listingblock .pygments .tok-kt { color: #B00040 } /* Keyword.Type */
-.listingblock .pygments .tok-m { color: #666666 } /* Literal.Number */
-.listingblock .pygments .tok-s { color: #BA2121 } /* Literal.String */
-.listingblock .pygments .tok-na { color: #7D9029 } /* Name.Attribute */
-.listingblock .pygments .tok-nb { color: #008000 } /* Name.Builtin */
-.listingblock .pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.listingblock .pygments .tok-no { color: #880000 } /* Name.Constant */
-.listingblock .pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
-.listingblock .pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
-.listingblock .pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.listingblock .pygments .tok-nf { color: #0000FF } /* Name.Function */
-.listingblock .pygments .tok-nl { color: #A0A000 } /* Name.Label */
-.listingblock .pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.listingblock .pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
-.listingblock .pygments .tok-nv { color: #19177C } /* Name.Variable */
-.listingblock .pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.listingblock .pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
-.listingblock .pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
-.listingblock .pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
-.listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
-.listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
-.listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
-.listingblock .pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
-.listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
-.listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
-.listingblock .pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
-.listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
-.listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.listingblock .pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
-.listingblock .pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.listingblock .pygments .tok-sx { color: #008000 } /* Literal.String.Other */
-.listingblock .pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
-.listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
-.listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
-.listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
-.listingblock .pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
-.listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
-.listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
-.listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
-.listingblock .pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
-.listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+/* Pygments CSS disabled. Pygments is not available. */
 </style>
 <script type="text/javascript">
 
@@ -403,7 +335,7 @@ div.sect5  code {
 </head>
 <body class="book">
 <div id="header">
-<h1>Flowable DMN DOCS (v 6.4.0)</h1>
+<h1>Flowable DMN DOCS (v 6.4.1)</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -499,8 +431,7 @@ Further on in this guide, there is a section on <a href="#eclipseDesignerInstall
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-n">DmnEngine</span> <span class="tok-n">dmnEngine</span> <span class="tok-o">=</span> <span class="tok-n">DMNEngines</span><span class="tok-o">.</span><span class="tok-na">getDefaultDmnEngine</span><span class="tok-o">()</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">DmnEngine dmnEngine = DMNEngines.getDefaultDmnEngine()</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -508,42 +439,24 @@ Further on in this guide, there is a section on <a href="#eclipseDesignerInstall
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</div></td><td class="code"><span></span><span class="tok-nt">&lt;beans</span> <span class="tok-na">xmlns=</span><span class="tok-s">&quot;http://www.springframework.org/schema/beans&quot;</span>
-       <span class="tok-na">xmlns:xsi=</span><span class="tok-s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-       <span class="tok-na">xsi:schemaLocation=</span><span class="tok-s">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"&gt;
 
-  <span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
+  &lt;bean id="dmnEngineConfiguration" class="org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration"&gt;
 
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcUrl&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;jdbc:h2:mem:flowable;DB_CLOSE_DELAY=1000&quot;</span> <span class="tok-nt">/&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcDriver&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;org.h2.Driver&quot;</span> <span class="tok-nt">/&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcUsername&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;sa&quot;</span> <span class="tok-nt">/&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcPassword&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;&quot;</span> <span class="tok-nt">/&gt;</span>
+    &lt;property name="jdbcUrl" value="jdbc:h2:mem:flowable;DB_CLOSE_DELAY=1000" /&gt;
+    &lt;property name="jdbcDriver" value="org.h2.Driver" /&gt;
+    &lt;property name="jdbcUsername" value="sa" /&gt;
+    &lt;property name="jdbcPassword" value="" /&gt;
 
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;databaseSchemaUpdate&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
+    &lt;property name="databaseSchemaUpdate" value="true" /&gt;
 
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;strictMode&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">/&gt;</span>
+    &lt;property name="strictMode" value="false"/&gt;
 
-  <span class="tok-nt">&lt;/bean&gt;</span>
+  &lt;/bean&gt;
 
-<span class="tok-nt">&lt;/beans&gt;</span>
-</td></tr></table></code></pre>
+&lt;/beans&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -554,18 +467,12 @@ Further on in this guide, there is a section on <a href="#eclipseDesignerInstall
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6</div></td><td class="code"><span></span><span class="tok-n">DmnEngineConfiguration</span><span class="tok-o">.</span>
-  <span class="tok-nf">createDmnEngineConfigurationFromResourceDefault</span><span class="tok-o">();</span>
-  <span class="tok-n">createDmnEngineConfigurationFromResource</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">resource</span><span class="tok-o">);</span>
-  <span class="tok-n">createDmnEngineConfigurationFromResource</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">resource</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">beanName</span><span class="tok-o">);</span>
-  <span class="tok-n">createDmnEngineConfigurationFromInputStream</span><span class="tok-o">(</span><span class="tok-n">InputStream</span> <span class="tok-n">inputStream</span><span class="tok-o">);</span>
-  <span class="tok-n">createDmnEngineConfigurationFromInputStream</span><span class="tok-o">(</span><span class="tok-n">InputStream</span> <span class="tok-n">inputStream</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">beanName</span><span class="tok-o">);</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">DmnEngineConfiguration.
+  createDmnEngineConfigurationFromResourceDefault();
+  createDmnEngineConfigurationFromResource(String resource);
+  createDmnEngineConfigurationFromResource(String resource, String beanName);
+  createDmnEngineConfigurationFromInputStream(InputStream inputStream);
+  createDmnEngineConfigurationFromInputStream(InputStream inputStream, String beanName);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -574,10 +481,8 @@ defaults (see <a href="#configurationClasses">the different supported classes</a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2</div></td><td class="code"><span></span><span class="tok-n">DmnEngineConfiguration</span><span class="tok-o">.</span><span class="tok-na">createStandaloneDmnEngineConfiguration</span><span class="tok-o">();</span>
-<span class="tok-n">DmnEngineConfiguration</span><span class="tok-o">.</span><span class="tok-na">createStandaloneInMemDmnEngineConfiguration</span><span class="tok-o">();</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">DmnEngineConfiguration.createStandaloneDmnEngineConfiguration();
+DmnEngineConfiguration.createStandaloneInMemDmnEngineConfiguration();</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -585,14 +490,10 @@ defaults (see <a href="#configurationClasses">the different supported classes</a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4</div></td><td class="code"><span></span><span class="tok-n">DmnEngine</span> <span class="tok-n">dmnEngine</span> <span class="tok-o">=</span> <span class="tok-n">DmnEngineConfiguration</span><span class="tok-o">.</span><span class="tok-na">createStandaloneInMemDmnEngineConfiguration</span><span class="tok-o">()</span>
-  <span class="tok-o">.</span><span class="tok-na">setDatabaseSchemaUpdate</span><span class="tok-o">(</span><span class="tok-n">DmnEngineConfiguration</span><span class="tok-o">.</span><span class="tok-na">DB_SCHEMA_UPDATE_FALSE</span><span class="tok-o">)</span>
-  <span class="tok-o">.</span><span class="tok-na">setJdbcUrl</span><span class="tok-o">(</span><span class="tok-s">&quot;jdbc:h2:mem:my-own-db;DB_CLOSE_DELAY=1000&quot;</span><span class="tok-o">)</span>
-  <span class="tok-o">.</span><span class="tok-na">buildDmnEngine</span><span class="tok-o">();</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">DmnEngine dmnEngine = DmnEngineConfiguration.createStandaloneInMemDmnEngineConfiguration()
+  .setDatabaseSchemaUpdate(DmnEngineConfiguration.DB_SCHEMA_UPDATE_FALSE)
+  .setJdbcUrl("jdbc:h2:mem:my-own-db;DB_CLOSE_DELAY=1000")
+  .buildDmnEngine();</code></pre>
 </div>
 </div>
 </div>
@@ -603,8 +504,7 @@ defaults (see <a href="#configurationClasses">the different supported classes</a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span> <span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"> &lt;bean id="dmnEngineConfiguration" class="org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration"&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -634,46 +534,26 @@ defaults (see <a href="#configurationClasses">the different supported classes</a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</div></td><td class="code"><span></span><span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcUrl&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;jdbc:h2:mem:flowable;DB_CLOSE_DELAY=1000&quot;</span> <span class="tok-nt">/&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcDriver&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;org.h2.Driver&quot;</span> <span class="tok-nt">/&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcUsername&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;sa&quot;</span> <span class="tok-nt">/&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcPassword&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;&quot;</span> <span class="tok-nt">/&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;bean id="dmnEngineConfiguration" class="org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration"&gt;
+    &lt;property name="jdbcUrl" value="jdbc:h2:mem:flowable;DB_CLOSE_DELAY=1000" /&gt;
+    &lt;property name="jdbcDriver" value="org.h2.Driver" /&gt;
+    &lt;property name="jdbcUsername" value="sa" /&gt;
+    &lt;property name="jdbcPassword" value="" /&gt;
     ...
-<span class="tok-nt">&lt;/bean&gt;</span>
+&lt;/bean&gt;
 
-<span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfigurator&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.engine.configurator.DmnEngineConfigurator&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/bean&gt;</span>
+&lt;bean id="dmnEngineConfigurator" class="org.flowable.dmn.engine.configurator.DmnEngineConfigurator"&gt;
+    &lt;property name="dmnEngineConfiguration" ref="dmnEngineConfiguration" /&gt;
+&lt;/bean&gt;
 
-<span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;processEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;configurators&quot;</span><span class="tok-nt">&gt;</span>
-      <span class="tok-nt">&lt;list&gt;</span>
-        <span class="tok-nt">&lt;ref</span> <span class="tok-na">bean=</span><span class="tok-s">&quot;dmnEngineConfigurator&quot;</span> <span class="tok-nt">/&gt;</span>
-      <span class="tok-nt">&lt;/list&gt;</span>
-    <span class="tok-nt">&lt;/property&gt;</span>
+&lt;bean id="processEngineConfiguration" class="org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration"&gt;
+    &lt;property name="configurators"&gt;
+      &lt;list&gt;
+        &lt;ref bean="dmnEngineConfigurator" /&gt;
+      &lt;/list&gt;
+    &lt;/property&gt;
     ...
-<span class="tok-nt">&lt;/bean&gt;</span>
-</td></tr></table></code></pre>
+&lt;/bean&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -722,14 +602,10 @@ defaults (see <a href="#configurationClasses">the different supported classes</a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4</div></td><td class="code"><span></span><span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcUrl&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;jdbc:h2:mem:flowable_dmn;DB_CLOSE_DELAY=1000&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcDriver&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;org.h2.Driver&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcUsername&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;sa&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;jdbcPassword&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;&quot;</span> <span class="tok-nt">/&gt;</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;property name="jdbcUrl" value="jdbc:h2:mem:flowable_dmn;DB_CLOSE_DELAY=1000" /&gt;
+&lt;property name="jdbcDriver" value="org.h2.Driver" /&gt;
+&lt;property name="jdbcUsername" value="sa" /&gt;
+&lt;property name="jdbcPassword" value="" /&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -737,30 +613,18 @@ defaults (see <a href="#configurationClasses">the different supported classes</a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</div></td><td class="code"><span></span><span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dataSource&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.apache.commons.dbcp.BasicDataSource&quot;</span> <span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;driverClassName&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;com.mysql.jdbc.Driver&quot;</span> <span class="tok-nt">/&gt;</span>
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;url&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;jdbc:mysql://localhost:3306/flowable_dmn&quot;</span> <span class="tok-nt">/&gt;</span>
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;username&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;flowable&quot;</span> <span class="tok-nt">/&gt;</span>
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;password&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;flowable&quot;</span> <span class="tok-nt">/&gt;</span>
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;defaultAutoCommit&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/bean&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" &gt;
+  &lt;property name="driverClassName" value="com.mysql.jdbc.Driver" /&gt;
+  &lt;property name="url" value="jdbc:mysql://localhost:3306/flowable_dmn" /&gt;
+  &lt;property name="username" value="flowable" /&gt;
+  &lt;property name="password" value="flowable" /&gt;
+  &lt;property name="defaultAutoCommit" value="false" /&gt;
+&lt;/bean&gt;
 
-<span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
+&lt;bean id="dmnEngineConfiguration" class="org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration"&gt;
 
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;dataSource&quot;</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;dataSource&quot;</span> <span class="tok-nt">/&gt;</span>
-    ...
-</td></tr></table></code></pre>
+    &lt;property name="dataSource" ref="dataSource" /&gt;
+    ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -812,38 +676,22 @@ requires users to either modify the db.properties in the Flowable source and rec
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</div></td><td class="code"><span></span><span class="tok-cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-    <span class="tok-nt">&lt;Context</span> <span class="tok-na">antiJARLocking=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-na">path=</span><span class="tok-s">&quot;/flowable-app&quot;</span><span class="tok-nt">&gt;</span>
-        <span class="tok-nt">&lt;Resource</span> <span class="tok-na">auth=</span><span class="tok-s">&quot;Container&quot;</span>
-            <span class="tok-na">name=</span><span class="tok-s">&quot;jdbc/flowableDB&quot;</span>
-            <span class="tok-na">type=</span><span class="tok-s">&quot;javax.sql.DataSource&quot;</span>
-            <span class="tok-na">description=</span><span class="tok-s">&quot;JDBC DataSource&quot;</span>
-            <span class="tok-na">url=</span><span class="tok-s">&quot;jdbc:mysql://localhost:3306/flowable&quot;</span>
-            <span class="tok-na">driverClassName=</span><span class="tok-s">&quot;com.mysql.jdbc.Driver&quot;</span>
-            <span class="tok-na">username=</span><span class="tok-s">&quot;sa&quot;</span>
-            <span class="tok-na">password=</span><span class="tok-s">&quot;&quot;</span>
-            <span class="tok-na">defaultAutoCommit=</span><span class="tok-s">&quot;false&quot;</span>
-            <span class="tok-na">initialSize=</span><span class="tok-s">&quot;5&quot;</span>
-            <span class="tok-na">maxWait=</span><span class="tok-s">&quot;5000&quot;</span>
-            <span class="tok-na">maxActive=</span><span class="tok-s">&quot;120&quot;</span>
-            <span class="tok-na">maxIdle=</span><span class="tok-s">&quot;5&quot;</span><span class="tok-nt">/&gt;</span>
-        <span class="tok-nt">&lt;/Context&gt;</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;Context antiJARLocking="true" path="/flowable-app"&gt;
+        &lt;Resource auth="Container"
+            name="jdbc/flowableDB"
+            type="javax.sql.DataSource"
+            description="JDBC DataSource"
+            url="jdbc:mysql://localhost:3306/flowable"
+            driverClassName="com.mysql.jdbc.Driver"
+            username="sa"
+            password=""
+            defaultAutoCommit="false"
+            initialSize="5"
+            maxWait="5000"
+            maxActive="120"
+            maxIdle="5"/&gt;
+        &lt;/Context&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -869,7 +717,7 @@ requires users to either modify the db.properties in the Flowable source and rec
 <div class="paragraph">
 <p>Listed below are the types (case sensitive!) that Flowable uses to refer to databases.</p>
 </div>
-<table id="databaseTypes" class="tableblock frame-all grid-all spread">
+<table id="databaseTypes" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -979,24 +827,15 @@ requires users to either modify the db.properties in the Flowable source and rec
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7
-8
-9</div></td><td class="code"><span></span><span class="tok-nt">&lt;beans</span> <span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;beans &gt;
 
-  <span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-c">&lt;!-- ... --&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;databaseSchemaUpdate&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
-    <span class="tok-c">&lt;!-- ... --&gt;</span>
-  <span class="tok-nt">&lt;/bean&gt;</span>
+  &lt;bean id="dmnEngineConfiguration" class="org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration"&gt;
+    &lt;!-- ... --&gt;
+    &lt;property name="databaseSchemaUpdate" value="true" /&gt;
+    &lt;!-- ... --&gt;
+  &lt;/bean&gt;
 
-<span class="tok-nt">&lt;/beans&gt;</span>
-</td></tr></table></code></pre>
+&lt;/beans&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1010,8 +849,7 @@ requires users to either modify the db.properties in the Flowable source and rec
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;decisionCacheLimit&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;10&quot;</span> <span class="tok-nt">/&gt;</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;property name="decisionCacheLimit" value="10" /&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1022,12 +860,9 @@ requires users to either modify the db.properties in the Flowable source and rec
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3</div></td><td class="code"><span></span><span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;decisionCache&quot;</span><span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;bean</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.MyCache&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/property&gt;</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;property name="decisionCache"&gt;
+  &lt;bean class="org.flowable.MyCache" /&gt;
+&lt;/property&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1039,28 +874,19 @@ It is however possible to disable strict mode.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7
-8
-9</div></td><td class="code"><span></span><span class="tok-nt">&lt;beans&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;beans&gt;
 
-  <span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-c">&lt;!-- ... --&gt;</span>
-      <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;strictMode&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">/&gt;</span>
-    <span class="tok-c">&lt;!-- ... --&gt;</span>
-  <span class="tok-nt">&lt;/bean&gt;</span>
+  &lt;bean id="dmnEngineConfiguration" class="org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration"&gt;
+    &lt;!-- ... --&gt;
+      &lt;property name="strictMode" value="false"/&gt;
+    &lt;!-- ... --&gt;
+  &lt;/bean&gt;
 
-<span class="tok-nt">&lt;/beans&gt;</span>
-</td></tr></table></code></pre>
+&lt;/beans&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The effect will be that a result will not be invalidated when a hit policy contstraint is violated. A possible violation will be logged in the audit log as a validation message.</p>
+<p>The effect will be that a result will not be invalidated when a hit policy constraint is violated. A possible violation will be logged in the audit log as a validation message.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1070,40 +896,23 @@ It is however possible to disable strict mode.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</div></td><td class="code"><span></span><span class="tok-nt">&lt;beans&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;beans&gt;
 
-  <span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-c">&lt;!-- ... --&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;customFlowableFunctionDelegates&quot;</span><span class="tok-nt">&gt;</span>
-      <span class="tok-nt">&lt;list&gt;</span>
-          <span class="tok-nt">&lt;bean</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;myOwnFunctionDelegateOne&quot;</span> <span class="tok-nt">/&gt;</span>
-          <span class="tok-nt">&lt;bean</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;myOwnFunctionDelegateTwo&quot;</span> <span class="tok-nt">/&gt;</span>
-      <span class="tok-nt">&lt;/list&gt;</span>
-    <span class="tok-nt">&lt;/property&gt;</span>
-    <span class="tok-c">&lt;!-- ... --&gt;</span>
-  <span class="tok-nt">&lt;/bean&gt;</span>
+  &lt;bean id="dmnEngineConfiguration" class="org.flowable.dmn.engine.impl.cfg.StandaloneDmnEngineConfiguration"&gt;
+    &lt;!-- ... --&gt;
+    &lt;property name="customFlowableFunctionDelegates"&gt;
+      &lt;list&gt;
+          &lt;bean ref="myOwnFunctionDelegateOne" /&gt;
+          &lt;bean ref="myOwnFunctionDelegateTwo" /&gt;
+      &lt;/list&gt;
+    &lt;/property&gt;
+    &lt;!-- ... --&gt;
+  &lt;/bean&gt;
 
-  <span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;myOwnFunctionDelegateOne&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.acme.MyOwnFunctionDelegateOne&quot;</span> <span class="tok-nt">/&gt;</span>
-  <span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;myOwnFunctionDelegateTwo&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.acme.MyOwnFunctionDelegateTwo&quot;</span> <span class="tok-nt">/&gt;</span>
+  &lt;bean id="myOwnFunctionDelegateOne" class="org.acme.MyOwnFunctionDelegateOne" /&gt;
+  &lt;bean id="myOwnFunctionDelegateTwo" class="org.acme.MyOwnFunctionDelegateTwo" /&gt;
 
-<span class="tok-nt">&lt;/beans&gt;</span>
-</td></tr></table></code></pre>
+&lt;/beans&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1123,14 +932,10 @@ It is however possible to disable strict mode.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4</div></td><td class="code"><span></span><span class="tok-nt">&lt;dependency&gt;</span>
-  <span class="tok-nt">&lt;groupId&gt;</span>org.slf4j<span class="tok-nt">&lt;/groupId&gt;</span>
-  <span class="tok-nt">&lt;artifactId&gt;</span>slf4j-log4j12<span class="tok-nt">&lt;/artifactId&gt;</span>
-<span class="tok-nt">&lt;/dependency&gt;</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+  &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1144,14 +949,10 @@ It is however possible to disable strict mode.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4</div></td><td class="code"><span></span><span class="tok-nt">&lt;dependency&gt;</span>
-  <span class="tok-nt">&lt;groupId&gt;</span>org.slf4j<span class="tok-nt">&lt;/groupId&gt;</span>
-  <span class="tok-nt">&lt;artifactId&gt;</span>jcl-over-slf4j<span class="tok-nt">&lt;/artifactId&gt;</span>
-<span class="tok-nt">&lt;/dependency&gt;</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+  &lt;artifactId&gt;jcl-over-slf4j&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1168,14 +969,10 @@ DmnEngine and the services objects are thread safe. So you can keep a reference 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4</div></td><td class="code"><span></span><span class="tok-n">DmnEngine</span> <span class="tok-n">dmnEngine</span> <span class="tok-o">=</span> <span class="tok-n">DmnEngines</span><span class="tok-o">.</span><span class="tok-na">getDefaultDmnEngine</span><span class="tok-o">();</span>
-<span class="tok-n">DmnRuleService</span> <span class="tok-n">dmnRuleService</span> <span class="tok-o">=</span> <span class="tok-n">dmnEngine</span><span class="tok-o">.</span><span class="tok-na">getDmnRuleService</span><span class="tok-o">();</span>
-<span class="tok-n">DmnRepositoryService</span> <span class="tok-n">dmnRepositoryService</span> <span class="tok-o">=</span> <span class="tok-n">dmnEngine</span><span class="tok-o">.</span><span class="tok-na">getDmnRepositoryService</span><span class="tok-o">();</span>
-<span class="tok-n">DmnManagementService</span> <span class="tok-n">dmnManagementService</span> <span class="tok-o">=</span> <span class="tok-n">dmnEngine</span><span class="tok-o">.</span><span class="tok-na">getDmnManagementService</span><span class="tok-o">();</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">DmnEngine dmnEngine = DmnEngines.getDefaultDmnEngine();
+DmnRuleService dmnRuleService = dmnEngine.getDmnRuleService();
+DmnRepositoryService dmnRepositoryService = dmnEngine.getDmnRepositoryService();
+DmnManagementService dmnManagementService = dmnEngine.getDmnManagementService();</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1221,30 +1018,18 @@ A <code>deployment</code> is the unit of packaging within the Flowable DMN engin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</div></td><td class="code"><span></span><span class="tok-cm">/**</span>
-<span class="tok-cm">  * Execute a decision identified by it&#39;s key.</span>
-<span class="tok-cm">  *</span>
-<span class="tok-cm">  * @param  decisionKey      the decision key, cannot be null</span>
-<span class="tok-cm">  * @param  inputVariables   map with input variables</span>
-<span class="tok-cm">  * @return                  the {@link RuleEngineExecutionResult} for this execution</span>
-<span class="tok-cm">  * @throws FlowableObjectNotFoundException</span>
-<span class="tok-cm">  *            when the decision with given key does not exist.</span>
-<span class="tok-cm">  * @throws FlowableException</span>
-<span class="tok-cm">  *           when an error occurs while executing the decision.</span>
-<span class="tok-cm">  */</span>
-<span class="tok-n">RuleEngineExecutionResult</span> <span class="tok-nf">executeDecisionByKey</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">decisionKey</span><span class="tok-o">,</span> <span class="tok-n">Map</span><span class="tok-o">&lt;</span><span class="tok-n">String</span><span class="tok-o">,</span> <span class="tok-n">Object</span><span class="tok-o">&gt;</span> <span class="tok-n">inputVariables</span><span class="tok-o">);</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">/**
+  * Execute a decision identified by it's key.
+  *
+  * @param  decisionKey      the decision key, cannot be null
+  * @param  inputVariables   map with input variables
+  * @return                  the {@link RuleEngineExecutionResult} for this execution
+  * @throws FlowableObjectNotFoundException
+  *            when the decision with given key does not exist.
+  * @throws FlowableException
+  *           when an error occurs while executing the decision.
+  */
+RuleEngineExecutionResult executeDecisionByKey(String decisionKey, Map&lt;String, Object&gt; inputVariables);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1277,14 +1062,10 @@ A <code>deployment</code> is the unit of packaging within the Flowable DMN engin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4</div></td><td class="code"><span></span><span class="tok-n">List</span><span class="tok-o">&lt;</span><span class="tok-n">DmnDeployment</span><span class="tok-o">&gt;</span> <span class="tok-n">dmnDeployments</span> <span class="tok-o">=</span> <span class="tok-n">dmnRepositoryService</span><span class="tok-o">.</span><span class="tok-na">createDeploymentQuery</span><span class="tok-o">()</span>
-    <span class="tok-o">.</span><span class="tok-na">deploymentNameLike</span><span class="tok-o">(</span><span class="tok-s">&quot;deployment%&quot;</span><span class="tok-o">)</span>
-    <span class="tok-o">.</span><span class="tok-na">orderByDeployTime</span><span class="tok-o">()</span>
-    <span class="tok-o">.</span><span class="tok-na">list</span><span class="tok-o">();</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">List&lt;DmnDeployment&gt; dmnDeployments = dmnRepositoryService.createDeploymentQuery()
+    .deploymentNameLike("deployment%")
+    .orderByDeployTime()
+    .list();</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1292,20 +1073,13 @@ A <code>deployment</code> is the unit of packaging within the Flowable DMN engin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7</div></td><td class="code"><span></span><span class="tok-kt">long</span> <span class="tok-n">count</span> <span class="tok-o">=</span> <span class="tok-n">dmnRepositoryService</span><span class="tok-o">.</span><span class="tok-na">createNativeDeploymentQuery</span><span class="tok-o">()</span>
-    <span class="tok-o">.</span><span class="tok-na">sql</span><span class="tok-o">(</span><span class="tok-s">&quot;SELECT count(*) FROM &quot;</span> <span class="tok-o">+</span> <span class="tok-n">dmnManagementService</span><span class="tok-o">.</span><span class="tok-na">getTableName</span><span class="tok-o">(</span><span class="tok-n">DmnDeploymentEntity</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">)</span> <span class="tok-o">+</span> <span class="tok-s">&quot; D1, &quot;</span>
-        <span class="tok-o">+</span> <span class="tok-n">dmnManagementService</span><span class="tok-o">.</span><span class="tok-na">getTableName</span><span class="tok-o">(</span><span class="tok-n">DecisionTableEntity</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">)</span> <span class="tok-o">+</span> <span class="tok-s">&quot; D2 &quot;</span>
-        <span class="tok-o">+</span> <span class="tok-s">&quot;WHERE D1.ID_ = D2.DEPLOYMENT_ID_ &quot;</span>
-        <span class="tok-o">+</span> <span class="tok-s">&quot;AND D1.ID_ = #{deploymentId}&quot;</span><span class="tok-o">)</span>
-    <span class="tok-o">.</span><span class="tok-na">parameter</span><span class="tok-o">(</span><span class="tok-s">&quot;deploymentId&quot;</span><span class="tok-o">,</span> <span class="tok-n">deployment</span><span class="tok-o">.</span><span class="tok-na">getId</span><span class="tok-o">())</span>
-    <span class="tok-o">.</span><span class="tok-na">count</span><span class="tok-o">();</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">long count = dmnRepositoryService.createNativeDeploymentQuery()
+    .sql("SELECT count(*) FROM " + dmnManagementService.getTableName(DmnDeploymentEntity.class) + " D1, "
+        + dmnManagementService.getTableName(DecisionTableEntity.class) + " D2 "
+        + "WHERE D1.ID_ = D2.DEPLOYMENT_ID_ "
+        + "AND D1.ID_ = #{deploymentId}")
+    .parameter("deploymentId", deployment.getId())
+    .count();</code></pre>
 </div>
 </div>
 </div>
@@ -1347,40 +1121,23 @@ See the <code>DmnDeployment</code> class for more information.</p>
 <div class="listingblock">
 <div class="title">JUnit 5 test with default resource</div>
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</div></td><td class="code"><span></span><span class="tok-nd">@FlowableDmnTest</span>
-<span class="tok-kd">class</span> <span class="tok-nc">MyDecisionTableTest</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java">@FlowableDmnTest
+class MyDecisionTableTest {
 
-  <span class="tok-nd">@Test</span>
-  <span class="tok-nd">@DmnDeploymentAnnotation</span>
-  <span class="tok-kt">void</span> <span class="tok-nf">simpleDmnTest</span><span class="tok-o">(</span><span class="tok-n">DmnEngine</span> <span class="tok-n">dmnEngine</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-    <span class="tok-n">DmnRuleService</span> <span class="tok-n">dmnRuleService</span> <span class="tok-o">=</span> <span class="tok-n">dmnEngine</span><span class="tok-o">.</span><span class="tok-na">getDmnRuleService</span><span class="tok-o">();</span>
+  @Test
+  @DmnDeploymentAnnotation
+  void simpleDmnTest(DmnEngine dmnEngine) {
+    DmnRuleService dmnRuleService = dmnEngine.getDmnRuleService();
 
-    <span class="tok-n">Map</span><span class="tok-o">&lt;</span><span class="tok-n">String</span><span class="tok-o">,</span> <span class="tok-n">Object</span><span class="tok-o">&gt;</span> <span class="tok-n">executionResult</span> <span class="tok-o">=</span> <span class="tok-n">ruleService</span><span class="tok-o">.</span><span class="tok-na">createExecuteDecisionBuilder</span><span class="tok-o">()</span>
-            <span class="tok-o">.</span><span class="tok-na">decisionKey</span><span class="tok-o">(</span><span class="tok-s">&quot;extensionUsage&quot;</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable1&quot;</span><span class="tok-o">,</span> <span class="tok-mi">2</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable2&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test2&quot;</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">executeWithSingleResult</span><span class="tok-o">();</span>
+    Map&lt;String, Object&gt; executionResult = ruleService.createExecuteDecisionBuilder()
+            .decisionKey("extensionUsage")
+            .variable("inputVariable1", 2)
+            .variable("inputVariable2", "test2")
+            .executeWithSingleResult();
 
-    <span class="tok-n">Assertions</span><span class="tok-o">.</span><span class="tok-na">assertThat</span><span class="tok-o">(</span><span class="tok-n">executionResult</span><span class="tok-o">).</span><span class="tok-na">containsEntry</span><span class="tok-o">(</span><span class="tok-s">&quot;output1&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test1&quot;</span><span class="tok-o">);</span>
-  <span class="tok-o">}</span>
-<span class="tok-o">}</span>
-</td></tr></table></code></pre>
+    Assertions.assertThat(executionResult).containsEntry("output1", "test1");
+  }
+}</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1391,42 +1148,24 @@ See the <code>DmnDeployment</code> class for more information.</p>
 <div class="listingblock">
 <div class="title">JUnit 5 test with custom resource</div>
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</div></td><td class="code"><span></span><span class="tok-nd">@FlowableDmnTest</span>
-<span class="tok-nd">@DmnConfigurationResource</span><span class="tok-o">(</span><span class="tok-s">&quot;flowable.custom.dmn.cfg.xml&quot;</span><span class="tok-o">)</span>
-<span class="tok-kd">class</span> <span class="tok-nc">MyDecisionTableTest</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java">@FlowableDmnTest
+@DmnConfigurationResource("flowable.custom.dmn.cfg.xml")
+class MyDecisionTableTest {
 
-  <span class="tok-nd">@Test</span>
-  <span class="tok-nd">@DmnDeploymentAnnotation</span>
-  <span class="tok-kt">void</span> <span class="tok-nf">simpleDmnTest</span><span class="tok-o">(</span><span class="tok-n">DmnEngine</span> <span class="tok-n">dmnEngine</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-    <span class="tok-n">DmnRuleService</span> <span class="tok-n">dmnRuleService</span> <span class="tok-o">=</span> <span class="tok-n">dmnEngine</span><span class="tok-o">.</span><span class="tok-na">getDmnRuleService</span><span class="tok-o">();</span>
+  @Test
+  @DmnDeploymentAnnotation
+  void simpleDmnTest(DmnEngine dmnEngine) {
+    DmnRuleService dmnRuleService = dmnEngine.getDmnRuleService();
 
-    <span class="tok-n">Map</span><span class="tok-o">&lt;</span><span class="tok-n">String</span><span class="tok-o">,</span> <span class="tok-n">Object</span><span class="tok-o">&gt;</span> <span class="tok-n">executionResult</span> <span class="tok-o">=</span> <span class="tok-n">ruleService</span><span class="tok-o">.</span><span class="tok-na">createExecuteDecisionBuilder</span><span class="tok-o">()</span>
-            <span class="tok-o">.</span><span class="tok-na">decisionKey</span><span class="tok-o">(</span><span class="tok-s">&quot;extensionUsage&quot;</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable1&quot;</span><span class="tok-o">,</span> <span class="tok-mi">2</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable2&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test2&quot;</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">executeWithSingleResult</span><span class="tok-o">();</span>
+    Map&lt;String, Object&gt; executionResult = ruleService.createExecuteDecisionBuilder()
+            .decisionKey("extensionUsage")
+            .variable("inputVariable1", 2)
+            .variable("inputVariable2", "test2")
+            .executeWithSingleResult();
 
-    <span class="tok-n">Assertions</span><span class="tok-o">.</span><span class="tok-na">assertThat</span><span class="tok-o">(</span><span class="tok-n">executionResult</span><span class="tok-o">).</span><span class="tok-na">containsEntry</span><span class="tok-o">(</span><span class="tok-s">&quot;output1&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test1&quot;</span><span class="tok-o">);</span>
-  <span class="tok-o">}</span>
-<span class="tok-o">}</span>
-</td></tr></table></code></pre>
+    Assertions.assertThat(executionResult).containsEntry("output1", "test1");
+  }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1439,46 +1178,26 @@ It&#8217;s also possible to provide a custom engine configuration to the rule.</
 <div class="listingblock">
 <div class="title">JUnit 4 test</div>
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</div></td><td class="code"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyDecisionTableTest</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java">public class MyDecisionTableTest {
 
-  <span class="tok-nd">@Rule</span>
-  <span class="tok-kd">public</span> <span class="tok-n">FlowableDmnRule</span> <span class="tok-n">flowableDmnRule</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">FlowableDmnRule</span><span class="tok-o">(</span><span class="tok-s">&quot;custom1.flowable.dmn.cfg.xml&quot;</span><span class="tok-o">);</span>
+  @Rule
+  public FlowableDmnRule flowableDmnRule = new FlowableDmnRule("custom1.flowable.dmn.cfg.xml");
 
-  <span class="tok-nd">@Test</span>
-  <span class="tok-nd">@DmnDeploymentAnnotation</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">ruleUsageExample</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-    <span class="tok-n">DmnEngine</span> <span class="tok-n">dmnEngine</span> <span class="tok-o">=</span> <span class="tok-n">flowableDmnRule</span><span class="tok-o">.</span><span class="tok-na">getDmnEngine</span><span class="tok-o">();</span>
-    <span class="tok-n">DmnRuleService</span> <span class="tok-n">dmnRuleService</span> <span class="tok-o">=</span> <span class="tok-n">dmnEngine</span><span class="tok-o">.</span><span class="tok-na">getDmnRuleService</span><span class="tok-o">();</span>
+  @Test
+  @DmnDeploymentAnnotation
+  public void ruleUsageExample() {
+    DmnEngine dmnEngine = flowableDmnRule.getDmnEngine();
+    DmnRuleService dmnRuleService = dmnEngine.getDmnRuleService();
 
-    <span class="tok-n">Map</span><span class="tok-o">&lt;</span><span class="tok-n">String</span><span class="tok-o">,</span> <span class="tok-n">Object</span><span class="tok-o">&gt;</span> <span class="tok-n">executionResult</span> <span class="tok-o">=</span> <span class="tok-n">ruleService</span><span class="tok-o">.</span><span class="tok-na">createExecuteDecisionBuilder</span><span class="tok-o">()</span>
-            <span class="tok-o">.</span><span class="tok-na">decisionKey</span><span class="tok-o">(</span><span class="tok-s">&quot;extensionUsage&quot;</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable1&quot;</span><span class="tok-o">,</span> <span class="tok-mi">2</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable2&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test2&quot;</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">executeWithSingleResult</span><span class="tok-o">();</span>
+    Map&lt;String, Object&gt; executionResult = ruleService.createExecuteDecisionBuilder()
+            .decisionKey("extensionUsage")
+            .variable("inputVariable1", 2)
+            .variable("inputVariable2", "test2")
+            .executeWithSingleResult();
 
-    <span class="tok-n">Assertions</span><span class="tok-o">.</span><span class="tok-na">assertThat</span><span class="tok-o">(</span><span class="tok-n">executionResult</span><span class="tok-o">).</span><span class="tok-na">containsEntry</span><span class="tok-o">(</span><span class="tok-s">&quot;output1&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test1&quot;</span><span class="tok-o">);</span>
-  <span class="tok-o">}</span>
-<span class="tok-o">}</span>
-</td></tr></table></code></pre>
+    Assertions.assertThat(executionResult).containsEntry("output1", "test1");
+  }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1492,28 +1211,17 @@ It&#8217;s also possible to provide a custom engine configuration to the rule.</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</div></td><td class="code"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">DmnEnginesServletContextListener</span> <span class="tok-kd">implements</span> <span class="tok-n">ServletContextListener</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java">public class DmnEnginesServletContextListener implements ServletContextListener {
 
-  <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">contextInitialized</span><span class="tok-o">(</span><span class="tok-n">ServletContextEvent</span> <span class="tok-n">servletContextEvent</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-    <span class="tok-n">DmnEngines</span><span class="tok-o">.</span><span class="tok-na">init</span><span class="tok-o">();</span>
-  <span class="tok-o">}</span>
+  public void contextInitialized(ServletContextEvent servletContextEvent) {
+    DmnEngines.init();
+  }
 
-  <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">contextDestroyed</span><span class="tok-o">(</span><span class="tok-n">ServletContextEvent</span> <span class="tok-n">servletContextEvent</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-    <span class="tok-n">DmnEngines</span><span class="tok-o">.</span><span class="tok-na">destroy</span><span class="tok-o">();</span>
-  <span class="tok-o">}</span>
+  public void contextDestroyed(ServletContextEvent servletContextEvent) {
+    DmnEngines.destroy();
+  }
 
-<span class="tok-o">}</span>
-</td></tr></table></code></pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1521,8 +1229,7 @@ It&#8217;s also possible to provide a custom engine configuration to the rule.</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-n">DmnEngines</span><span class="tok-o">.</span><span class="tok-na">getDefaultDmnEngine</span><span class="tok-o">()</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">DmnEngines.getDefaultDmnEngine()</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1530,8 +1237,7 @@ It&#8217;s also possible to provide a custom engine configuration to the rule.</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-n">DmnEngines</span><span class="tok-o">.</span><span class="tok-na">getDmnEngine</span><span class="tok-o">(</span><span class="tok-s">&quot;myName&quot;</span><span class="tok-o">);</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">DmnEngines.getDmnEngine("myName");</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1557,20 +1263,13 @@ as described in the <a href="#configuration">configuration section</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7</div></td><td class="code"><span></span><span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.spring.SpringDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;bean id="dmnEngineConfiguration" class="org.flowable.dmn.spring.SpringDmnEngineConfiguration"&gt;
     ...
-<span class="tok-nt">&lt;/bean&gt;</span>
+&lt;/bean&gt;
 
-<span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngine&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.spring.DmnEngineFactoryBean&quot;</span><span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/bean&gt;</span>
-</td></tr></table></code></pre>
+&lt;bean id="dmnEngine" class="org.flowable.dmn.spring.DmnEngineFactoryBean"&gt;
+  &lt;property name="dmnEngineConfiguration" ref="dmnEngineConfiguration" /&gt;
+&lt;/bean&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1587,24 +1286,15 @@ as described in the <a href="#configuration">configuration section</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7
-8
-9</div></td><td class="code"><span></span><span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.spring.SpringDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;bean id="dmnEngineConfiguration" class="org.flowable.spring.SpringDmnEngineConfiguration"&gt;
   ...
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;deploymentResources&quot;</span>
-    <span class="tok-na">value=</span><span class="tok-s">&quot;classpath*:/org/flowable/spring/test/autodeployment/autodeploy/decision*.dmn&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/bean&gt;</span>
+  &lt;property name="deploymentResources"
+    value="classpath*:/org/flowable/spring/test/autodeployment/autodeploy/decision*.dmn" /&gt;
+&lt;/bean&gt;
 
-<span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngine&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.spring.DmnEngineFactoryBean&quot;</span><span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/bean&gt;</span>
-</td></tr></table></code></pre>
+&lt;bean id="dmnEngine" class="org.flowable.dmn.spring.DmnEngineFactoryBean"&gt;
+  &lt;property name="dmnEngineConfiguration" ref="dmnEngineConfiguration" /&gt;
+&lt;/bean&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1629,18 +1319,12 @@ as described in the <a href="#configuration">configuration section</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6</div></td><td class="code"><span></span><span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;dmnEngineConfiguration&quot;</span>
-    <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.spring.SpringDmnEngineConfiguration&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;bean id="dmnEngineConfiguration"
+    class="org.flowable.dmn.spring.SpringDmnEngineConfiguration"&gt;
   ...
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;deploymentResources&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;classpath*:/flowable/*.dmn&quot;</span> <span class="tok-nt">/&gt;</span>
-  <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;deploymentMode&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;single-resource&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/bean&gt;</span>
-</td></tr></table></code></pre>
+  &lt;property name="deploymentResources" value="classpath*:/flowable/*.dmn" /&gt;
+  &lt;property name="deploymentMode" value="single-resource" /&gt;
+&lt;/bean&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1656,109 +1340,60 @@ The following examples show how a decision is tested in typical Spring-based JUn
 <div class="listingblock">
 <div class="title">JUnit 5 test</div>
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</div></td><td class="code"><span></span><span class="tok-nd">@ExtendWith</span><span class="tok-o">(</span><span class="tok-n">FlowableDmnSpringExtension</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">)</span>
-<span class="tok-nd">@ExtendWith</span><span class="tok-o">(</span><span class="tok-n">SpringExtension</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">)</span>
-<span class="tok-nd">@ContextConfiguration</span><span class="tok-o">(</span><span class="tok-n">classes</span> <span class="tok-o">=</span> <span class="tok-n">DmnSpringJunitJupiterTest</span><span class="tok-o">.</span><span class="tok-na">TestConfiguration</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">)</span>
-<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">SpringJunit4Test</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java">@ExtendWith(FlowableDmnSpringExtension.class)
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = DmnSpringJunitJupiterTest.TestConfiguration.class)
+public class SpringJunit4Test {
 
-    <span class="tok-nd">@Autowired</span>
-    <span class="tok-kd">private</span> <span class="tok-n">DmnEngine</span> <span class="tok-n">dmnEngine</span><span class="tok-o">;</span>
+    @Autowired
+    private DmnEngine dmnEngine;
 
-    <span class="tok-nd">@Autowired</span>
-    <span class="tok-kd">private</span> <span class="tok-n">DmnRuleService</span> <span class="tok-n">ruleService</span><span class="tok-o">;</span>
+    @Autowired
+    private DmnRuleService ruleService;
 
-    <span class="tok-nd">@Test</span>
-    <span class="tok-nd">@DmnDeploymentAnnotation</span>
-    <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">simpleDecisionTest</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-        <span class="tok-n">Map</span><span class="tok-o">&lt;</span><span class="tok-n">String</span><span class="tok-o">,</span> <span class="tok-n">Object</span><span class="tok-o">&gt;</span> <span class="tok-n">executionResult</span> <span class="tok-o">=</span> <span class="tok-n">ruleService</span><span class="tok-o">.</span><span class="tok-na">createExecuteDecisionBuilder</span><span class="tok-o">()</span>
-            <span class="tok-o">.</span><span class="tok-na">decisionKey</span><span class="tok-o">(</span><span class="tok-s">&quot;extensionUsage&quot;</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable1&quot;</span><span class="tok-o">,</span> <span class="tok-mi">2</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable2&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test2&quot;</span><span class="tok-o">)</span>
-            <span class="tok-o">.</span><span class="tok-na">executeWithSingleResult</span><span class="tok-o">();</span>
+    @Test
+    @DmnDeploymentAnnotation
+    public void simpleDecisionTest() {
+        Map&lt;String, Object&gt; executionResult = ruleService.createExecuteDecisionBuilder()
+            .decisionKey("extensionUsage")
+            .variable("inputVariable1", 2)
+            .variable("inputVariable2", "test2")
+            .executeWithSingleResult();
 
-        <span class="tok-n">Assertions</span><span class="tok-o">.</span><span class="tok-na">assertThat</span><span class="tok-o">(</span><span class="tok-n">executionResult</span><span class="tok-o">).</span><span class="tok-na">containsEntry</span><span class="tok-o">(</span><span class="tok-s">&quot;output1&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test1&quot;</span><span class="tok-o">);</span>
-    <span class="tok-o">}</span>
-<span class="tok-o">}</span>
-</td></tr></table></code></pre>
+        Assertions.assertThat(executionResult).containsEntry("output1", "test1");
+    }
+}</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">JUnit 4 test</div>
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26</div></td><td class="code"><span></span><span class="tok-nd">@RunWith</span><span class="tok-o">(</span><span class="tok-n">SpringJUnit4ClassRunner</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">)</span>
-<span class="tok-nd">@ContextConfiguration</span><span class="tok-o">(</span><span class="tok-s">&quot;classpath:org/flowable/spring/test/junit4/springTypicalUsageTest-context.xml&quot;</span><span class="tok-o">)</span>
-<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">SpringJunit4Test</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java">@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:org/flowable/spring/test/junit4/springTypicalUsageTest-context.xml")
+public class SpringJunit4Test {
 
-    <span class="tok-nd">@Autowired</span>
-    <span class="tok-kd">private</span> <span class="tok-n">DmnEngine</span> <span class="tok-n">dmnEngine</span><span class="tok-o">;</span>
+    @Autowired
+    private DmnEngine dmnEngine;
 
-    <span class="tok-nd">@Autowired</span>
-    <span class="tok-kd">private</span> <span class="tok-n">DmnRuleService</span> <span class="tok-n">ruleService</span><span class="tok-o">;</span>
+    @Autowired
+    private DmnRuleService ruleService;
 
-    <span class="tok-nd">@Autowired</span>
-    <span class="tok-nd">@Rule</span>
-    <span class="tok-kd">public</span> <span class="tok-n">FlowableDmnRule</span> <span class="tok-n">flowableSpringRule</span><span class="tok-o">;</span>
+    @Autowired
+    @Rule
+    public FlowableDmnRule flowableSpringRule;
 
-    <span class="tok-nd">@Test</span>
-    <span class="tok-nd">@DmnDeploymentAnnotation</span>
-    <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">simpleDecisionTest</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-        <span class="tok-n">Map</span><span class="tok-o">&lt;</span><span class="tok-n">String</span><span class="tok-o">,</span> <span class="tok-n">Object</span><span class="tok-o">&gt;</span> <span class="tok-n">executionResult</span> <span class="tok-o">=</span> <span class="tok-n">ruleService</span><span class="tok-o">.</span><span class="tok-na">createExecuteDecisionBuilder</span><span class="tok-o">()</span>
-                <span class="tok-o">.</span><span class="tok-na">decisionKey</span><span class="tok-o">(</span><span class="tok-s">&quot;extensionUsage&quot;</span><span class="tok-o">)</span>
-                <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable1&quot;</span><span class="tok-o">,</span> <span class="tok-mi">2</span><span class="tok-o">)</span>
-                <span class="tok-o">.</span><span class="tok-na">variable</span><span class="tok-o">(</span><span class="tok-s">&quot;inputVariable2&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test2&quot;</span><span class="tok-o">)</span>
-                <span class="tok-o">.</span><span class="tok-na">executeWithSingleResult</span><span class="tok-o">();</span>
+    @Test
+    @DmnDeploymentAnnotation
+    public void simpleDecisionTest() {
+        Map&lt;String, Object&gt; executionResult = ruleService.createExecuteDecisionBuilder()
+                .decisionKey("extensionUsage")
+                .variable("inputVariable1", 2)
+                .variable("inputVariable2", "test2")
+                .executeWithSingleResult();
 
-        <span class="tok-n">Assertions</span><span class="tok-o">.</span><span class="tok-na">assertThat</span><span class="tok-o">(</span><span class="tok-n">executionResult</span><span class="tok-o">).</span><span class="tok-na">containsEntry</span><span class="tok-o">(</span><span class="tok-s">&quot;output1&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;test1&quot;</span><span class="tok-o">);</span>
-    <span class="tok-o">}</span>
-<span class="tok-o">}</span>
-</td></tr></table></code></pre>
+        Assertions.assertThat(executionResult).containsEntry("output1", "test1");
+    }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1766,12 +1401,9 @@ The following examples show how a decision is tested in typical Spring-based JUn
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3</div></td><td class="code"><span></span><span class="tok-nt">&lt;bean</span> <span class="tok-na">id=</span><span class="tok-s">&quot;flowableDmnRule&quot;</span> <span class="tok-na">class=</span><span class="tok-s">&quot;org.flowable.dmn.engine.test.FlowableDmnRule&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;property</span> <span class="tok-na">name=</span><span class="tok-s">&quot;dmnEngine&quot;</span> <span class="tok-na">ref=</span><span class="tok-s">&quot;dmnEngine&quot;</span><span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/bean&gt;</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;bean id="flowableDmnRule" class="org.flowable.dmn.engine.test.FlowableDmnRule"&gt;
+    &lt;property name="dmnEngine" ref="dmnEngine"/&gt;
+&lt;/bean&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1816,20 +1448,13 @@ When deploying a DMN definition, every decision, which can contain one <strong>d
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7</div></td><td class="code"><span></span><span class="tok-n">String</span> <span class="tok-n">dmnDefinition</span> <span class="tok-o">=</span> <span class="tok-s">&quot;path/to/definition-one.dmn&quot;</span><span class="tok-o">;</span>
-<span class="tok-n">ZipInputStream</span> <span class="tok-n">inputStream</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">ZipInputStream</span><span class="tok-o">(</span><span class="tok-k">new</span> <span class="tok-n">FileInputStream</span><span class="tok-o">(</span><span class="tok-n">barFileName</span><span class="tok-o">));</span>
+<pre class="pygments highlight"><code data-lang="java">String dmnDefinition = "path/to/definition-one.dmn";
+ZipInputStream inputStream = new ZipInputStream(new FileInputStream(barFileName));
 
-<span class="tok-n">repositoryService</span><span class="tok-o">.</span><span class="tok-na">createDeployment</span><span class="tok-o">()</span>
-    <span class="tok-o">.</span><span class="tok-na">name</span><span class="tok-o">(</span><span class="tok-s">&quot;definition-one&quot;</span><span class="tok-o">)</span>
-    <span class="tok-o">.</span><span class="tok-na">addClasspathResource</span><span class="tok-o">(</span><span class="tok-n">dmnDefinition</span><span class="tok-o">)</span>
-    <span class="tok-o">.</span><span class="tok-na">deploy</span><span class="tok-o">();</span>
-</td></tr></table></code></pre>
+repositoryService.createDeployment()
+    .name("definition-one")
+    .addClasspathResource(dmnDefinition)
+    .deploy();</code></pre>
 </div>
 </div>
 </div>
@@ -1881,20 +1506,16 @@ When deploying a DMN definition, every decision, which can contain one <strong>d
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4</div></td><td class="code"><span></span><span class="tok-nt">&lt;definitions</span> <span class="tok-na">id=</span><span class="tok-s">&quot;myDefinitions&quot;</span> <span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;decision</span> <span class="tok-na">id=</span><span class="tok-s">&quot;myDecision&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;My important decision&quot;</span> <span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;decisionTable</span> <span class="tok-na">id=</span><span class="tok-s">&quot;decisionTable1&quot;</span> <span class="tok-na">hitPolicy=</span><span class="tok-s">&quot;FIRST&quot;</span> <span class="tok-nt">&gt;</span>
-    ...
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;definitions id="myDefinitions" &gt;
+  &lt;decision id="myDecision" name="My important decision" &gt;
+    &lt;decisionTable id="decisionTable1" hitPolicy="FIRST" &gt;
+    ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>When deploying this decision, the decision table in the database will look like this:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1921,7 +1542,7 @@ When deploying a DMN definition, every decision, which can contain one <strong>d
 <div class="paragraph">
 <p>Suppose we now deploy an updated version of the same process (for example, changing some user tasks), but the <code>id</code> of the process definition remains the same. The process definition table will now contain the following entries:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1959,20 +1580,16 @@ When deploying a DMN definition, every decision, which can contain one <strong>d
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4</div></td><td class="code"><span></span><span class="tok-nt">&lt;definitions</span> <span class="tok-na">id=</span><span class="tok-s">&quot;myNewDefinitions&quot;</span> <span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;decision</span> <span class="tok-na">id=</span><span class="tok-s">&quot;myNewDecision&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;My important decision&quot;</span> <span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;decisionTable</span> <span class="tok-na">id=</span><span class="tok-s">&quot;decisionTable1&quot;</span> <span class="tok-na">hitPolicy=</span><span class="tok-s">&quot;FIRST&quot;</span> <span class="tok-nt">&gt;</span>
-      ...
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;definitions id="myNewDefinitions" &gt;
+  &lt;decision id="myNewDecision" name="My important decision" &gt;
+    &lt;decisionTable id="decisionTable1" hitPolicy="FIRST" &gt;
+      ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>The table will look like this:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -2020,16 +1637,11 @@ The deployment category can be specified in the API like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5</div></td><td class="code"><span></span><span class="tok-n">dmnRepository</span>
-    <span class="tok-o">.</span><span class="tok-na">createDeployment</span><span class="tok-o">()</span>
-    <span class="tok-o">.</span><span class="tok-na">category</span><span class="tok-o">(</span><span class="tok-s">&quot;yourCategory&quot;</span><span class="tok-o">)</span>
-    <span class="tok-o">...</span>
-    <span class="tok-o">.</span><span class="tok-na">deploy</span><span class="tok-o">();</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">dmnRepository
+    .createDeployment()
+    .category("yourCategory")
+    ...
+    .deploy();</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2037,8 +1649,7 @@ The deployment category can be specified in the API like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span></span><span class="tok-n">dmnRepository</span><span class="tok-o">.</span><span class="tok-na">setDecisionTableCategory</span><span class="tok-o">(</span><span class="tok-s">&quot;e9c2a6c0-c085-11e6-9096-6ab56fad108a&quot;</span><span class="tok-o">,</span> <span class="tok-s">&quot;yourCategory&quot;</span><span class="tok-o">);</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="java">dmnRepository.setDecisionTableCategory("e9c2a6c0-c085-11e6-9096-6ab56fad108a", "yourCategory");</code></pre>
 </div>
 </div>
 </div>
@@ -2061,32 +1672,19 @@ have only one process definition in each file, as this simplifies maintenance la
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</div></td><td class="code"><span></span><span class="tok-nt">&lt;definitions</span> <span class="tok-na">xmlns=</span><span class="tok-s">&quot;http://www.omg.org/spec/DMN/20151101&quot;</span>
-  <span class="tok-na">namespace=</span><span class="tok-s">&quot;http://www.flowable.org/dmn&quot;</span>
-  <span class="tok-na">name=</span><span class="tok-s">&quot;DetermineDiscount&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml">&lt;definitions xmlns="http://www.omg.org/spec/DMN/20151101"
+  namespace="http://www.flowable.org/dmn"
+  name="DetermineDiscount"&gt;
 
-  <span class="tok-nt">&lt;decision</span> <span class="tok-na">id=</span><span class="tok-s">&quot;DET_DISC_1&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;DetermineDiscount&quot;</span><span class="tok-nt">&gt;</span>
+  &lt;decision id="DET_DISC_1" name="DetermineDiscount"&gt;
 
-    <span class="tok-nt">&lt;decisionTable</span> <span class="tok-na">id=</span><span class="tok-s">&quot;determineDiscountTable1&quot;</span> <span class="tok-na">hitPolicy=</span><span class="tok-s">&quot;FIRST&quot;</span><span class="tok-nt">&gt;</span>
+    &lt;decisionTable id="determineDiscountTable1" hitPolicy="FIRST"&gt;
       ..
-    <span class="tok-nt">&lt;/decisionTable&gt;</span>
+    &lt;/decisionTable&gt;
 
-  <span class="tok-nt">&lt;/decision&gt;</span>
+  &lt;/decision&gt;
 
-<span class="tok-nt">&lt;/definitions&gt;</span>
-</td></tr></table></code></pre>
+&lt;/definitions&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -2101,7 +1699,7 @@ have only one process definition in each file, as this simplifies maintenance la
 <div class="paragraph">
 <p>Start by opening the decision tables section within the Flowable modeler.</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_1.png" alt="decision tables 1">
 </div>
@@ -2109,7 +1707,7 @@ have only one process definition in each file, as this simplifies maintenance la
 <div class="paragraph">
 <p>And select <strong>Create Decision Table</strong>.</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_2.png" alt="decision tables 2">
 </div>
@@ -2117,7 +1715,7 @@ have only one process definition in each file, as this simplifies maintenance la
 <div class="paragraph">
 <p>Provide a decision table name and a unique decision table key and select <strong>Create new decision table</strong>.</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_3.png" alt="decision tables 3">
 </div>
@@ -2191,7 +1789,7 @@ When <a href="#strictMode">strict mode</a> is disabled and there are no output v
 <div class="paragraph">
 <p>The header of the decision table itself is divided in two sections; blue and green. In the blue section are the <strong>input expressions</strong>; the green the <strong>output expressions</strong>.</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_4.png" alt="decision tables 4">
 </div>
@@ -2199,7 +1797,7 @@ When <a href="#strictMode">strict mode</a> is disabled and there are no output v
 <div class="paragraph">
 <p>Within an input expression, you can define the variable that will be used in the expression of the rule input entries (explained below). It&#8217;s possible to define multiple input expressions by selecting <strong>Add Input</strong> (right click option menu or by clicking the plus icon).</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_5.png" alt="decision tables 5">
 </div>
@@ -2228,7 +1826,7 @@ A input entry is an expression that will be evaluated against the input variable
 </tr>
 </table>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_6.png" alt="decision tables 6">
 </div>
@@ -2237,7 +1835,7 @@ A input entry is an expression that will be evaluated against the input variable
 <p>To enter an expression, double-click on the corresponding cell.
 In this example, the expression <em>== BRONZE</em> is entered. Combined with the variable defined in the corresponding input expression (column header), this will result at runtime in the full expression <em>customerCat == "BRONZE"</em>.</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_7.png" alt="decision tables 7">
 </div>
@@ -2249,7 +1847,7 @@ In this example the expression <em>5</em> is entered. This is actually more like
 <div class="paragraph">
 <p>We can then continue completing the decision table by adding more rules (by selecting Add Rule).</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_8.png" alt="decision tables 8">
 </div>
@@ -2257,7 +1855,7 @@ In this example the expression <em>5</em> is entered. This is actually more like
 <div class="paragraph">
 <p>In our example, rule 4 has an empty input entry. Empty input entries will be evaluated by the engine as true. This means that if none of the other rules are valid, the outcome of rule 4 will be the output of this decision table. In this case, variable <strong>discountPerc</strong> will have value <strong>0</strong>.</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_9.png" alt="decision tables 9">
 </div>
@@ -2272,7 +1870,7 @@ In this example the expression <em>5</em> is entered. This is actually more like
 <div class="paragraph">
 <p>The newly created decision table can be used in a BPMN2.0 process by including a <strong>Decision task</strong> and selecting the <strong>Decision table reference</strong>.</p>
 </div>
-<div class="imageblock" style="text-align: center">
+<div class="imageblock text-center">
 <div class="content">
 <img src="images/decision_tables_10.png" alt="decision tables 10">
 </div>
@@ -2289,108 +1887,57 @@ The <strong>Display Discount</strong> user task displays the result of the decis
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51</div></td><td class="code"><span></span><span class="tok-nt">&lt;definitions</span> <span class="tok-na">xmlns=</span><span class="tok-s">&quot;http://www.omg.org/spec/DMN/20151101&quot;</span> <span class="tok-na">id=</span><span class="tok-s">&quot;definition_78d09dd7-374c-11e8-b5d8-0242ac120005&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Determine Discount&quot;</span> <span class="tok-na">namespace=</span><span class="tok-s">&quot;http://www.flowable.org/dmn&quot;</span><span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;decision</span> <span class="tok-na">id=</span><span class="tok-s">&quot;DET_DISC_1&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Determine Discount&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;decisionTable</span> <span class="tok-na">id=</span><span class="tok-s">&quot;decisionTable_78d09dd7-374c-11e8-b5d8-0242ac120005&quot;</span> <span class="tok-na">hitPolicy=</span><span class="tok-s">&quot;UNIQUE&quot;</span><span class="tok-nt">&gt;</span>
-      <span class="tok-nt">&lt;input</span> <span class="tok-na">label=</span><span class="tok-s">&quot;Customer Category&quot;</span><span class="tok-nt">&gt;</span>
-        <span class="tok-nt">&lt;inputExpression</span> <span class="tok-na">id=</span><span class="tok-s">&quot;inputExpression_1&quot;</span> <span class="tok-na">typeRef=</span><span class="tok-s">&quot;string&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span>customerCat<span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/inputExpression&gt;</span>
-        <span class="tok-nt">&lt;inputValues&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span>&quot;BRONZE&quot;,&quot;SILVER&quot;,&quot;GOLD&quot;<span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/inputValues&gt;</span>
-      <span class="tok-nt">&lt;/input&gt;</span>
-      <span class="tok-nt">&lt;output</span> <span class="tok-na">id=</span><span class="tok-s">&quot;outputExpression_2&quot;</span> <span class="tok-na">label=</span><span class="tok-s">&quot;Discount Percentage&quot;</span> <span class="tok-na">name=</span><span class="tok-s">&quot;discountPerc&quot;</span> <span class="tok-na">typeRef=</span><span class="tok-s">&quot;number&quot;</span><span class="tok-nt">&gt;</span>
-        <span class="tok-nt">&lt;outputValues&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span>&quot;0&quot;,&quot;5&quot;,&quot;10&quot;,&quot;20&quot;<span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/outputValues&gt;</span>
-      <span class="tok-nt">&lt;/output&gt;</span>
-      <span class="tok-nt">&lt;rule&gt;</span>
-        <span class="tok-nt">&lt;inputEntry</span> <span class="tok-na">id=</span><span class="tok-s">&quot;inputEntry_1_1&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span><span class="tok-cp">&lt;![CDATA[== &quot;BRONZE&quot;]]&gt;</span><span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/inputEntry&gt;</span>
-        <span class="tok-nt">&lt;outputEntry</span> <span class="tok-na">id=</span><span class="tok-s">&quot;outputEntry_2_1&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span><span class="tok-cp">&lt;![CDATA[5]]&gt;</span><span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/outputEntry&gt;</span>
-      <span class="tok-nt">&lt;/rule&gt;</span>
-      <span class="tok-nt">&lt;rule&gt;</span>
-        <span class="tok-nt">&lt;inputEntry</span> <span class="tok-na">id=</span><span class="tok-s">&quot;inputEntry_1_2&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span><span class="tok-cp">&lt;![CDATA[== &quot;SILVER&quot;]]&gt;</span><span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/inputEntry&gt;</span>
-        <span class="tok-nt">&lt;outputEntry</span> <span class="tok-na">id=</span><span class="tok-s">&quot;outputEntry_2_2&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span><span class="tok-cp">&lt;![CDATA[10]]&gt;</span><span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/outputEntry&gt;</span>
-      <span class="tok-nt">&lt;/rule&gt;</span>
-      <span class="tok-nt">&lt;rule&gt;</span>
-        <span class="tok-nt">&lt;inputEntry</span> <span class="tok-na">id=</span><span class="tok-s">&quot;inputEntry_1_3&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span><span class="tok-cp">&lt;![CDATA[== &quot;GOLD&quot;]]&gt;</span><span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/inputEntry&gt;</span>
-        <span class="tok-nt">&lt;outputEntry</span> <span class="tok-na">id=</span><span class="tok-s">&quot;outputEntry_2_3&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span><span class="tok-cp">&lt;![CDATA[20]]&gt;</span><span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/outputEntry&gt;</span>
-      <span class="tok-nt">&lt;/rule&gt;</span>
-      <span class="tok-nt">&lt;rule&gt;</span>
-        <span class="tok-nt">&lt;inputEntry</span> <span class="tok-na">id=</span><span class="tok-s">&quot;inputEntry_1_4&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span><span class="tok-cp">&lt;![CDATA[-]]&gt;</span><span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/inputEntry&gt;</span>
-        <span class="tok-nt">&lt;outputEntry</span> <span class="tok-na">id=</span><span class="tok-s">&quot;outputEntry_2_4&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;text&gt;</span><span class="tok-cp">&lt;![CDATA[0]]&gt;</span><span class="tok-nt">&lt;/text&gt;</span>
-        <span class="tok-nt">&lt;/outputEntry&gt;</span>
-      <span class="tok-nt">&lt;/rule&gt;</span>
-    <span class="tok-nt">&lt;/decisionTable&gt;</span>
-  <span class="tok-nt">&lt;/decision&gt;</span>
-<span class="tok-nt">&lt;/definitions&gt;</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="xml">&lt;definitions xmlns="http://www.omg.org/spec/DMN/20151101" id="definition_78d09dd7-374c-11e8-b5d8-0242ac120005" name="Determine Discount" namespace="http://www.flowable.org/dmn"&gt;
+  &lt;decision id="DET_DISC_1" name="Determine Discount"&gt;
+    &lt;decisionTable id="decisionTable_78d09dd7-374c-11e8-b5d8-0242ac120005" hitPolicy="UNIQUE"&gt;
+      &lt;input label="Customer Category"&gt;
+        &lt;inputExpression id="inputExpression_1" typeRef="string"&gt;
+          &lt;text&gt;customerCat&lt;/text&gt;
+        &lt;/inputExpression&gt;
+        &lt;inputValues&gt;
+          &lt;text&gt;"BRONZE","SILVER","GOLD"&lt;/text&gt;
+        &lt;/inputValues&gt;
+      &lt;/input&gt;
+      &lt;output id="outputExpression_2" label="Discount Percentage" name="discountPerc" typeRef="number"&gt;
+        &lt;outputValues&gt;
+          &lt;text&gt;"0","5","10","20"&lt;/text&gt;
+        &lt;/outputValues&gt;
+      &lt;/output&gt;
+      &lt;rule&gt;
+        &lt;inputEntry id="inputEntry_1_1"&gt;
+          &lt;text&gt;&lt;![CDATA[== "BRONZE"]]&gt;&lt;/text&gt;
+        &lt;/inputEntry&gt;
+        &lt;outputEntry id="outputEntry_2_1"&gt;
+          &lt;text&gt;&lt;![CDATA[5]]&gt;&lt;/text&gt;
+        &lt;/outputEntry&gt;
+      &lt;/rule&gt;
+      &lt;rule&gt;
+        &lt;inputEntry id="inputEntry_1_2"&gt;
+          &lt;text&gt;&lt;![CDATA[== "SILVER"]]&gt;&lt;/text&gt;
+        &lt;/inputEntry&gt;
+        &lt;outputEntry id="outputEntry_2_2"&gt;
+          &lt;text&gt;&lt;![CDATA[10]]&gt;&lt;/text&gt;
+        &lt;/outputEntry&gt;
+      &lt;/rule&gt;
+      &lt;rule&gt;
+        &lt;inputEntry id="inputEntry_1_3"&gt;
+          &lt;text&gt;&lt;![CDATA[== "GOLD"]]&gt;&lt;/text&gt;
+        &lt;/inputEntry&gt;
+        &lt;outputEntry id="outputEntry_2_3"&gt;
+          &lt;text&gt;&lt;![CDATA[20]]&gt;&lt;/text&gt;
+        &lt;/outputEntry&gt;
+      &lt;/rule&gt;
+      &lt;rule&gt;
+        &lt;inputEntry id="inputEntry_1_4"&gt;
+          &lt;text&gt;&lt;![CDATA[-]]&gt;&lt;/text&gt;
+        &lt;/inputEntry&gt;
+        &lt;outputEntry id="outputEntry_2_4"&gt;
+          &lt;text&gt;&lt;![CDATA[0]]&gt;&lt;/text&gt;
+        &lt;/outputEntry&gt;
+      &lt;/rule&gt;
+    &lt;/decisionTable&gt;
+  &lt;/decision&gt;
+&lt;/definitions&gt;</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -2466,7 +2013,7 @@ An example configuration is already in comments in this file. This is also the p
 </div>
 <div class="sect3">
 <h4 id="_methods_and_return_codes">7.1.4. Methods and return-codes</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. HTTP-methods and corresponding operations</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -2497,7 +2044,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. HTTP-methods response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -2563,14 +2110,10 @@ An example configuration is already in comments in this file. This is also the p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;statusCode&quot;</span> <span class="tok-p">:</span> <span class="tok-mi">404</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;errorMessage&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;Could not find a task with id &#39;444&#39;.&quot;</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "statusCode" : 404,
+  "errorMessage" : "Could not find a task with id '444'."
+}</code></pre>
 </div>
 </div>
 </div>
@@ -2588,7 +2131,7 @@ An example configuration is already in comments in this file. This is also the p
 <div class="paragraph">
 <p>Parameters added as query-string in the URL (for example, the name parameter used in <code><a href="http://host/flowable-rest/form-api/form-repository/deployments?name=Deployment" class="bare">http://host/flowable-rest/form-api/form-repository/deployments?name=Deployment</a></code>) can have the following types and are mentioned in the corresponding REST-API documentation:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 3. URL query parameter types</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -2626,7 +2169,7 @@ An example configuration is already in comments in this file. This is also the p
 </div>
 <div class="sect4">
 <h5 id="restJsonBody">JSON body parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 4. JSON parameter types</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -2663,7 +2206,7 @@ An example configuration is already in comments in this file. This is also the p
 <div class="paragraph">
 <p>Paging and order parameters can be added as query-string in the URL (for example, the name parameter used in <code><a href="http://host/flowable-rest/form-api/form-repository/deployments?sort=name" class="bare">http://host/flowable-rest/form-api/form-repository/deployments?sort=name</a></code>).</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 5. Variable query JSON parameters</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -2705,21 +2248,15 @@ An example configuration is already in comments in this file. This is also the p
 <h5 id="restQueryVariable">JSON query variable format</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;name&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;variableName&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;value&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;variableValue&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;operation&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;equals&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;type&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;string&quot;</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "name" : "variableName",
+  "value" : "variableValue",
+  "operation" : "equals",
+  "type" : "string"
+}</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 6. Variable query JSON parameters</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -2756,7 +2293,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 7. Default query JSON types</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -2807,21 +2344,15 @@ An example configuration is already in comments in this file. This is also the p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;name&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;variableName&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;value&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;variableValue&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;valueUrl&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;http://...&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;type&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;string&quot;</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "name" : "variableName",
+  "value" : "variableValue",
+  "valueUrl" : "http://...",
+  "type" : "string"
+}</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 8. Variable JSON attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -2858,7 +2389,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 9. Variable Types</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -2919,7 +2450,7 @@ An example configuration is already in comments in this file. This is also the p
 <pre>GET dmn-repository/deployments</pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 10. URL query parameters</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -2986,7 +2517,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 11. REST Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3010,42 +2541,24 @@ An example configuration is already in comments in this file. This is also the p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;data&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
-    <span class="tok-p">{</span>
-      <span class="tok-nt">&quot;id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;03ab310d-c1de-11e6-a4f4-62ce84ef239e&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-kc">null</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;deploymentTime&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;2016-12-14T10:16:37.000+01:00&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;category&quot;</span><span class="tok-p">:</span> <span class="tok-kc">null</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;url&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;http://localhost:8080/flowable-rest/dmn-api/dmn-repository/deployments/03ab310d-c1de-11e6-a4f4-62ce84ef239e&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;parentDeploymentId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;17510&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;tenantId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;&quot;</span>
-    <span class="tok-p">}</span>
-  <span class="tok-p">],</span>
-  <span class="tok-nt">&quot;total&quot;</span><span class="tok-p">:</span> <span class="tok-mi">1</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;start&quot;</span><span class="tok-p">:</span> <span class="tok-mi">0</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;sort&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;id&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;order&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;asc&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;size&quot;</span><span class="tok-p">:</span> <span class="tok-mi">1</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "data": [
+    {
+      "id": "03ab310d-c1de-11e6-a4f4-62ce84ef239e",
+      "name": null,
+      "deploymentTime": "2016-12-14T10:16:37.000+01:00",
+      "category": null,
+      "url": "http://localhost:8080/flowable-rest/dmn-api/dmn-repository/deployments/03ab310d-c1de-11e6-a4f4-62ce84ef239e",
+      "parentDeploymentId": "17510",
+      "tenantId": ""
+    }
+  ],
+  "total": 1,
+  "start": 0,
+  "sort": "id",
+  "order": "asc",
+  "size": 1
+}</code></pre>
 </div>
 </div>
 </div>
@@ -3056,7 +2569,7 @@ An example configuration is already in comments in this file. This is also the p
 <pre>GET dmn-repository/deployments/{deploymentId}</pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 12. Get a deployment - URL parameters</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -3081,7 +2594,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 13. Get a deployment - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3109,24 +2622,15 @@ An example configuration is already in comments in this file. This is also the p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7
-8
-9</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;03ab310d-c1de-11e6-a4f4-62ce84ef239e&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-kc">null</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;deploymentTime&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;2016-12-14T10:16:37.000+01:00&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;category&quot;</span><span class="tok-p">:</span> <span class="tok-kc">null</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;url&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;http://localhost:8080/flowable-rest/dmn-api/dmn-repository/deployments/03ab310d-c1de-11e6-a4f4-62ce84ef239e&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;parentDeploymentId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;17510&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;tenantId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;&quot;</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "id": "03ab310d-c1de-11e6-a4f4-62ce84ef239e",
+  "name": null,
+  "deploymentTime": "2016-12-14T10:16:37.000+01:00",
+  "category": null,
+  "url": "http://localhost:8080/flowable-rest/dmn-api/dmn-repository/deployments/03ab310d-c1de-11e6-a4f4-62ce84ef239e",
+  "parentDeploymentId": "17510",
+  "tenantId": ""
+}</code></pre>
 </div>
 </div>
 </div>
@@ -3146,7 +2650,7 @@ An example configuration is already in comments in this file. This is also the p
 <div class="paragraph">
 <p>An additional parameter (form-field) can be passed in the request body with name <code>tenantId</code>. The value of this field will be used as the identifier of the tenant in which this deployment is done.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 14. Create a new DMN deployment - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3174,22 +2678,14 @@ An example configuration is already in comments in this file. This is also the p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7
-8</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;03ab310d-c1de-11e6-a4f4-62ce84ef239e&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;newDeployment1&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;deploymentTime&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;2016-12-14T10:16:37.000+01:00&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;category&quot;</span><span class="tok-p">:</span> <span class="tok-kc">null</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;url&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;http://localhost:8080/flowable-rest/dmn-api/dmn-repository/deployments/03ab310d-c1de-11e6-a4f4-62ce84ef239e&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;tenantId&quot;</span> <span class="tok-p">:</span> <span class="tok-s2">&quot;myTenant&quot;</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "id": "03ab310d-c1de-11e6-a4f4-62ce84ef239e",
+  "name": "newDeployment1",
+  "deploymentTime": "2016-12-14T10:16:37.000+01:00",
+  "category": null,
+  "url": "http://localhost:8080/flowable-rest/dmn-api/dmn-repository/deployments/03ab310d-c1de-11e6-a4f4-62ce84ef239e",
+  "tenantId" : "myTenant"
+}</code></pre>
 </div>
 </div>
 </div>
@@ -3200,7 +2696,7 @@ An example configuration is already in comments in this file. This is also the p
 <pre>DELETE dmn-repository/deployments/{deploymentId}</pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 15. Delete a DMN deployment - URL parameters</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -3225,7 +2721,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 16. Delete a DMN deployment - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3256,7 +2752,7 @@ An example configuration is already in comments in this file. This is also the p
 <pre>GET dmn-repository/deployments/{deploymentId}/resourcedata/{resourceId}</pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 17. Get a deployment resource content - URL parameters</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -3287,7 +2783,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 18. Get a deployment resource content - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3327,7 +2823,7 @@ An example configuration is already in comments in this file. This is also the p
 <pre>GET dmn-repository/decision-tables</pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 19. List of process definitions - URL parameters</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -3424,7 +2920,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 20. List of process definitions - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3452,50 +2948,28 @@ An example configuration is already in comments in this file. This is also the p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;data&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
-        <span class="tok-p">{</span>
-      <span class="tok-nt">&quot;id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;46b0379c-c0a1-11e6-bc93-6ab56fad108a&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;url&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;http://localhost:8080/flowable-rest/dmn-api/dmn-repository/decision-tables/46b0379c-c0a1-11e6-bc93-6ab56fad108a&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;category&quot;</span><span class="tok-p">:</span> <span class="tok-kc">null</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Decision Table One&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;key&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;DecisionTableOne&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span> <span class="tok-kc">null</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;version&quot;</span><span class="tok-p">:</span> <span class="tok-mi">3</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;resourceName&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;dmn-DecisionTableOne.dmn&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;deploymentId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;46aa6b3a-c0a1-11e6-bc93-6ab56fad108a&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;parentDeploymentId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;5001&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;tenantId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;&quot;</span>
-    <span class="tok-p">}</span>
-  <span class="tok-p">],</span>
-  <span class="tok-nt">&quot;total&quot;</span><span class="tok-p">:</span> <span class="tok-mi">1</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;start&quot;</span><span class="tok-p">:</span> <span class="tok-mi">0</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;sort&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;name&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;order&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;asc&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;size&quot;</span><span class="tok-p">:</span> <span class="tok-mi">1</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "data": [
+        {
+      "id": "46b0379c-c0a1-11e6-bc93-6ab56fad108a",
+      "url": "http://localhost:8080/flowable-rest/dmn-api/dmn-repository/decision-tables/46b0379c-c0a1-11e6-bc93-6ab56fad108a",
+      "category": null,
+      "name": "Decision Table One",
+      "key": "DecisionTableOne",
+      "description": null,
+      "version": 3,
+      "resourceName": "dmn-DecisionTableOne.dmn",
+      "deploymentId": "46aa6b3a-c0a1-11e6-bc93-6ab56fad108a",
+      "parentDeploymentId": "5001",
+      "tenantId": ""
+    }
+  ],
+  "total": 1,
+  "start": 0,
+  "sort": "name",
+  "order": "asc",
+  "size": 1
+}</code></pre>
 </div>
 </div>
 </div>
@@ -3506,7 +2980,7 @@ An example configuration is already in comments in this file. This is also the p
 <pre>GET dmn-repository/decision-tables/{decisionTableId}</pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 21. Get a decision table - URL parameters</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -3531,7 +3005,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 22. Get a decision table - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3559,32 +3033,19 @@ An example configuration is already in comments in this file. This is also the p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;id&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;46b0379c-c0a1-11e6-bc93-6ab56fad108a&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;url&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;http://localhost:8080/flowable-rest/dmn-api/dmn-repository/decision-tables/46b0379c-c0a1-11e6-bc93-6ab56fad108a&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;category&quot;</span><span class="tok-p">:</span> <span class="tok-kc">null</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;Decision Table One&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;key&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;DecisionTableOne&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;description&quot;</span><span class="tok-p">:</span> <span class="tok-kc">null</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;version&quot;</span><span class="tok-p">:</span> <span class="tok-mi">3</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;resourceName&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;dmn-DecisionTableOne.dmn&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;deploymentId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;46aa6b3a-c0a1-11e6-bc93-6ab56fad108a&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;parentDeploymentId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;5001&quot;</span><span class="tok-p">,</span>
-  <span class="tok-nt">&quot;tenantId&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;&quot;</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "id": "46b0379c-c0a1-11e6-bc93-6ab56fad108a",
+  "url": "http://localhost:8080/flowable-rest/dmn-api/dmn-repository/decision-tables/46b0379c-c0a1-11e6-bc93-6ab56fad108a",
+  "category": null,
+  "name": "Decision Table One",
+  "key": "DecisionTableOne",
+  "description": null,
+  "version": 3,
+  "resourceName": "dmn-DecisionTableOne.dmn",
+  "deploymentId": "46aa6b3a-c0a1-11e6-bc93-6ab56fad108a",
+  "parentDeploymentId": "5001",
+  "tenantId": ""
+}</code></pre>
 </div>
 </div>
 </div>
@@ -3595,7 +3056,7 @@ An example configuration is already in comments in this file. This is also the p
 <pre>GET dmn-repository/decision-tables/{decisionTableId}/resourcedata</pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 23. Get a decision table resource content - URL parameters</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -3634,7 +3095,7 @@ An example configuration is already in comments in this file. This is also the p
 <pre>GET dmn-repository/decision-tables/{decisionTableId}/model</pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 24. Get a decision table DMN model - URL parameters</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -3659,7 +3120,7 @@ An example configuration is already in comments in this file. This is also the p
 </tr>
 </tbody>
 </table>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 25. Get a decision table DMN model - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3688,36 +3149,21 @@ The response body is a JSON representation of the <code>org.flowable.dmn.model.D
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</div></td><td class="code"><span></span><span class="tok-p">{</span>
-   <span class="tok-nt">&quot;processes&quot;</span><span class="tok-p">:[</span>
-      <span class="tok-p">{</span>
-         <span class="tok-nt">&quot;id&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;oneTaskProcess&quot;</span><span class="tok-p">,</span>
-         <span class="tok-nt">&quot;xmlRowNumber&quot;</span><span class="tok-p">:</span><span class="tok-mi">7</span><span class="tok-p">,</span>
-         <span class="tok-nt">&quot;xmlColumnNumber&quot;</span><span class="tok-p">:</span><span class="tok-mi">60</span><span class="tok-p">,</span>
-         <span class="tok-nt">&quot;extensionElements&quot;</span><span class="tok-p">:{</span>
+<pre class="pygments highlight"><code data-lang="json">{
+   "processes":[
+      {
+         "id":"oneTaskProcess",
+         "xmlRowNumber":7,
+         "xmlColumnNumber":60,
+         "extensionElements":{
 
-         <span class="tok-p">},</span>
-         <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;The One Task Process&quot;</span><span class="tok-p">,</span>
-         <span class="tok-nt">&quot;executable&quot;</span><span class="tok-p">:</span><span class="tok-kc">true</span><span class="tok-p">,</span>
-         <span class="tok-nt">&quot;documentation&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;One task process description&quot;</span><span class="tok-p">,</span>
+         },
+         "name":"The One Task Process",
+         "executable":true,
+         "documentation":"One task process description",
 
-    <span class="tok-err">]</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+    ]
+}</code></pre>
 </div>
 </div>
 </div>
@@ -3742,61 +3188,35 @@ The response body is a JSON representation of the <code>org.flowable.dmn.model.D
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;resultVariables&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
-    <span class="tok-p">[</span>
-      <span class="tok-p">{</span>
-        <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;output1&quot;</span><span class="tok-p">,</span>
-        <span class="tok-nt">&quot;type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;string&quot;</span><span class="tok-p">,</span>
-        <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;result 1&quot;</span>
-      <span class="tok-p">}</span>
-    <span class="tok-p">],</span>
-    <span class="tok-p">[</span>
-      <span class="tok-p">{</span>
-        <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;output1&quot;</span><span class="tok-p">,</span>
-        <span class="tok-nt">&quot;type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;string&quot;</span><span class="tok-p">,</span>
-        <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;result 2&quot;</span>
-      <span class="tok-p">}</span>
-    <span class="tok-p">],</span>
-    <span class="tok-p">[</span>
-      <span class="tok-p">{</span>
-        <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;output1&quot;</span><span class="tok-p">,</span>
-        <span class="tok-nt">&quot;type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;string&quot;</span><span class="tok-p">,</span>
-        <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;result 3&quot;</span>
-      <span class="tok-p">}</span>
-    <span class="tok-p">]</span>
-  <span class="tok-p">],</span>
-  <span class="tok-nt">&quot;url&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;http://localhost:8080/flowable-rest/dmn-api/dmn-rule/execute&quot;</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "resultVariables": [
+    [
+      {
+        "name": "output1",
+        "type": "string",
+        "value": "result 1"
+      }
+    ],
+    [
+      {
+        "name": "output1",
+        "type": "string",
+        "value": "result 2"
+      }
+    ],
+    [
+      {
+        "name": "output1",
+        "type": "string",
+        "value": "result 3"
+      }
+    ]
+  ],
+  "url": "http://localhost:8080/flowable-rest/dmn-api/dmn-rule/execute"
+}</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 26. Execute a decision - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3838,39 +3258,24 @@ The response body is a JSON representation of the <code>org.flowable.dmn.model.D
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</div></td><td class="code"><span></span><span class="tok-p">{</span>
-  <span class="tok-nt">&quot;resultVariables&quot;</span><span class="tok-p">:</span> <span class="tok-p">[</span>
-    <span class="tok-p">{</span>
-      <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;output1&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;string&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;compound 1&quot;</span>
-    <span class="tok-p">},</span>
-    <span class="tok-p">{</span>
-      <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;output2&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;type&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;string&quot;</span><span class="tok-p">,</span>
-      <span class="tok-nt">&quot;value&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;compound 2&quot;</span>
-    <span class="tok-p">}</span>
-  <span class="tok-p">],</span>
-  <span class="tok-nt">&quot;url&quot;</span><span class="tok-p">:</span> <span class="tok-s2">&quot;http://localhost:8080/flowable-rest/dmn-api/dmn-rule/execute/single-result&quot;</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+  "resultVariables": [
+    {
+      "name": "output1",
+      "type": "string",
+      "value": "compound 1"
+    },
+    {
+      "name": "output2",
+      "type": "string",
+      "value": "compound 2"
+    }
+  ],
+  "url": "http://localhost:8080/flowable-rest/dmn-api/dmn-rule/execute/single-result"
+}</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 27. Execute a single resultdecision - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3912,21 +3317,15 @@ The response body is a JSON representation of the <code>org.flowable.dmn.model.D
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="json"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6</div></td><td class="code"><span></span><span class="tok-p">{</span>
-   <span class="tok-nt">&quot;name&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;default&quot;</span><span class="tok-p">,</span>
-   <span class="tok-nt">&quot;version&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;6.4.0&quot;</span><span class="tok-p">,</span>
-   <span class="tok-nt">&quot;resourceUrl&quot;</span><span class="tok-p">:</span><span class="tok-s2">&quot;file://flowable-dmn/flowable.dmn.cfg.xml&quot;</span><span class="tok-p">,</span>
-   <span class="tok-nt">&quot;exception&quot;</span><span class="tok-p">:</span><span class="tok-kc">null</span>
-<span class="tok-p">}</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code data-lang="json">{
+   "name":"default",
+   "version":"6.4.1",
+   "resourceUrl":"file://flowable-dmn/flowable.dmn.cfg.xml",
+   "exception":null
+}</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 28. Get engine information - Response codes</caption>
 <colgroup>
 <col style="width: 50%;">

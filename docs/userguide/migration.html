@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.5">
+<meta name="generator" content="Asciidoctor 1.5.8">
 <title>Flowable Migration Guide : Flowable v5 to Flowable V6</title>
 <style>
 
@@ -255,77 +255,9 @@ div.sect5  code {
     font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-.listingblock .pygments .hll { background-color: #ffffcc }
-.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
-.listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
-.listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
-.listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
-.listingblock .pygments .tok-o { color: #666666 } /* Operator */
-.listingblock .pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
-.listingblock .pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
-.listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
-.listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
-.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
-.listingblock .pygments .tok-gr { color: #FF0000 } /* Generic.Error */
-.listingblock .pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.listingblock .pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
-.listingblock .pygments .tok-go { color: #888888 } /* Generic.Output */
-.listingblock .pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
-.listingblock .pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.listingblock .pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
-.listingblock .pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.listingblock .pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.listingblock .pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.listingblock .pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
-.listingblock .pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.listingblock .pygments .tok-kt { color: #B00040 } /* Keyword.Type */
-.listingblock .pygments .tok-m { color: #666666 } /* Literal.Number */
-.listingblock .pygments .tok-s { color: #BA2121 } /* Literal.String */
-.listingblock .pygments .tok-na { color: #7D9029 } /* Name.Attribute */
-.listingblock .pygments .tok-nb { color: #008000 } /* Name.Builtin */
-.listingblock .pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.listingblock .pygments .tok-no { color: #880000 } /* Name.Constant */
-.listingblock .pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
-.listingblock .pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
-.listingblock .pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.listingblock .pygments .tok-nf { color: #0000FF } /* Name.Function */
-.listingblock .pygments .tok-nl { color: #A0A000 } /* Name.Label */
-.listingblock .pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.listingblock .pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
-.listingblock .pygments .tok-nv { color: #19177C } /* Name.Variable */
-.listingblock .pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.listingblock .pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
-.listingblock .pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
-.listingblock .pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
-.listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
-.listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
-.listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
-.listingblock .pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
-.listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
-.listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
-.listingblock .pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
-.listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
-.listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.listingblock .pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
-.listingblock .pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.listingblock .pygments .tok-sx { color: #008000 } /* Literal.String.Other */
-.listingblock .pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
-.listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
-.listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
-.listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
-.listingblock .pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
-.listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
-.listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
-.listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
-.listingblock .pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
-.listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+/* Pygments CSS disabled. Pygments is not available. */
 </style>
 </head>
 <body class="book">
@@ -555,20 +487,13 @@ This also simplifies the default job executor queries and makes it obvious which
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7</div></td><td class="code"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">SimpleCamelCallRoute</span> <span class="tok-kd">extends</span> <span class="tok-n">RouteBuilder</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java">public class SimpleCamelCallRoute extends RouteBuilder {
 
-  <span class="tok-nd">@Override</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">configure</span><span class="tok-o">()</span> <span class="tok-kd">throws</span> <span class="tok-n">Exception</span> <span class="tok-o">{</span>
-    <span class="tok-n">from</span><span class="tok-o">(</span><span class="tok-s">&quot;flowable:SimpleCamelCallProcess:simpleCall&quot;</span><span class="tok-o">).</span><span class="tok-na">to</span><span class="tok-o">(</span><span class="tok-s">&quot;log:org.flowable.camel.examples.SimpleCamelCall&quot;</span><span class="tok-o">);</span>
-  <span class="tok-o">}</span>
-<span class="tok-o">}</span>
-</td></tr></table></code></pre>
+  @Override
+  public void configure() throws Exception {
+    from("flowable:SimpleCamelCallProcess:simpleCall").to("log:org.flowable.camel.examples.SimpleCamelCall");
+  }
+}</code></pre>
 </div>
 </div>
 </div>
