@@ -3733,7 +3733,7 @@ flowable.Application                     : Started Application in 18.235 seconds
     &lt;process id="oneTaskProcess" name="The One Task Process"&gt;
         &lt;startEvent id="theStart" /&gt;
         &lt;sequenceFlow id="flow1" sourceRef="theStart" targetRef="theTask" /&gt;
-        &lt;userTask id="theTask" name="my task" assignee="kermit" /&gt;
+        &lt;userTask id="theTask" name="my task" flowable:assignee="kermit" /&gt;
         &lt;sequenceFlow id="flow2" sourceRef="theTask" targetRef="theEnd" /&gt;
         &lt;endEvent id="theEnd" /&gt;
     &lt;/process&gt;
