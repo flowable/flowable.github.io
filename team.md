@@ -339,7 +339,7 @@ Being an open source enthusiast, he is the project lead of MapStruct and a contr
 	        <p>Flowable developer</p>
 	     </div>
 
-	    <p>Senior Software Development Manager at SAS Institute Inc. with many years of software development experience who has been involved with workflow related technologies since 2009.</p>
+	    <p>David is a software developer working at Flowable with many years of software development and management experience who has been involved with workflow related technologies since 2009 (previously for a very large privately held software company).</p>
 
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
