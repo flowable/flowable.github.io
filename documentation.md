@@ -14,6 +14,7 @@ If you just want to download Flowable and have a quick play, this is a good arti
 Here's some talks we've given:
 
 + bpmNEXT 2018: [Making Process Personal](https://www.youtube.com/watch?v=fyxRHZaCSSA)
++ Jax London 2018: [Using transactional BPM for service orchestration on NoSQL](https://www.youtube.com/watch?v=vzgU1lZ1h3U)
 + Devoxx 2017: [Introducing AI to the Flowable Process Engines](https://www.youtube.com/watch?v=i8dYR0LdpHg)
 + bpmNEXT 2017: [Making Business Processes Dance to the User's Tune](https://www.youtube.com/watch?v=5qIw3JTw-mI)
 
