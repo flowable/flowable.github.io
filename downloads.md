@@ -4,7 +4,7 @@ title: Downloads
 layout: single
 permalink: downloads.html
 ---
-Flowable is a compact and highly efficient workflow and Business Process Management (BPM) platform written in Java. At its core is a lightning fast, tried and tested BPMN 2 process engine.
+Flowable is a compact and highly efficient workflow and Business Process Management (BPM) platform written in Java. At its core is a lightning fast, tried and tested BPMN 2 process engine, coupled with native Case Management (CMMN) and DMN engines.
 
 Just unzip your selected download to a directory of choice and then follow the instructions in the readme.html.  This has links to the docs and the release notes. The User Guide has a quick start section to get you running in minutes.
 
@@ -12,7 +12,7 @@ Just unzip your selected download to a directory of choice and then follow the i
 
 <img class="logo" src="{{ site.baseurl }}/img/v6_character.png" srcset="{{ site.baseurl }}/img/v6_character.png 1x, {{ site.baseurl }}/img/v6_character@2x.png 2x">
 
-Version 6 is the next generation of the process engine, whose code was first made available as a beta release over a year ago. This is going to be the focus of new features, scalability and performance.  It is a fork from the Activiti project.
+Version 6 is the next generation of the process engine that was released in early 2017 after many years of development and testing. This is the focus of new features, scalability and performance.  It is a fork from the Activiti project by its original developers.
 
 <div class="buttons-unit">
   <a href="https://github.com/flowable/flowable-engine/releases/download/flowable-{{site.flowable_version}}/flowable-{{site.flowable_version}}.zip" class="button">Download Flowable v{{site.flowable_version}}</a>
@@ -61,7 +61,7 @@ Take a look at our [GitHub repo](https://github.com/flowable/flowable-engine/tre
 
 <img class="logo" src="{{ site.baseurl }}/img/v5_character.png" srcset="{{ site.baseurl }}/img/v5_character.png 1x, {{ site.baseurl }}/img/v5_character@2x.png 2x">
 
-Version 5 is the previous release that has been under development by the core Flowable engineers for over six years.  It is a fork from the Activiti project and keeps all the same package names and interfaces.
+Version 5 is the previous release that has been under development by the core Flowable engineers since 2010.  It is a fork from the Activiti project and keeps all the same package names and interfaces.
 <div class="buttons-unit">
   <a href="https://github.com/flowable/flowable-engine/releases/download/flowable-{{site.flowable_5_version}}/flowable-{{site.flowable_5_version}}.zip" class="button">Download Flowable v{{site.flowable_5_version}}</a>
 </div>

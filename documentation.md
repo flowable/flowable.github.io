@@ -14,8 +14,10 @@ If you just want to download Flowable and have a quick play, this is a good arti
 Here's some talks we've given:
 
 + bpmNEXT 2018: [Making Process Personal](https://www.youtube.com/watch?v=fyxRHZaCSSA)
++ Jax London 2018: [Using transactional BPM for service orchestration on NoSQL](https://www.youtube.com/watch?v=vzgU1lZ1h3U)
 + Devoxx 2017: [Introducing AI to the Flowable Process Engines](https://www.youtube.com/watch?v=i8dYR0LdpHg)
 + bpmNEXT 2017: [Making Business Processes Dance to the User's Tune](https://www.youtube.com/watch?v=5qIw3JTw-mI)
++ Codemotion 2017: [Introducing AI to the Flowable Process Engines](https://www.youtube.com/watch?v=HaZQTrfNAgo)
 
 And links to some others:
 
@@ -26,7 +28,7 @@ And links to some others:
 
 This is the best place to start if you're new to Flowable.  It shows you how to get up and running in minutes, either with the UI Apps or introducing you to the basics of the Engine API.
 <div class="buttons-unit">
-  <a href="{{ site.baseurl }}/docs/userguide/index.html#flowableUIApps" class="button" target="_blank">Getting Started with Apps</a>
+  <a href="{{ site.baseurl }}/docs/userguide/index.html#flowableApps" class="button" target="_blank">Getting Started with Apps</a>
   <a href="{{ site.baseurl }}/docs/userguide/index.html#_getting_started" class="button" target="_blank">Getting Started with Code</a>
 </div>
 
