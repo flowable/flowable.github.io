@@ -54,5 +54,5 @@ gems:
 - jekyll-paginate
 - jekyll-sitemap
 - jekyll-feed
-flowable_version: 6.4.1
+flowable_version: 6.4.2
 flowable_5_version: 5.23.0
