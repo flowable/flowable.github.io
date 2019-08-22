@@ -19,10 +19,14 @@ Here's some talks we've given:
 + bpmNEXT 2017: [Making Business Processes Dance to the User's Tune](https://www.youtube.com/watch?v=5qIw3JTw-mI)
 + Codemotion 2017: [Introducing AI to the Flowable Process Engines](https://www.youtube.com/watch?v=HaZQTrfNAgo)
 
+FlowFest Community Event tasks:
+
++ FlowFest 2018: [All talks](https://flowable.com/flowfest2018)
+
+
 And links to some others:
 
 + Josh Long: [Spring Tips: Business Process Management with Flowable](https://www.youtube.com/watch?v=43_OLrxU3so)
-
 
 ## Getting started
 
