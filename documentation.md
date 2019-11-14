@@ -12,6 +12,7 @@ If you just want to download Flowable and have a quick play, this is a good arti
 + [Instant Gratification with Flowable 6](https://paulhh.wordpress.com/2017/01/31/flowable-6-instant-gratification/)
 
 Here's some talks we've given:
++ Devoxx 2019: [Flowable business processing from Kafka events](https://www.youtube.com/watch?v=nX0dRiPqOmk)
 + bpmNEXT 2019: [The Case of the Intentional Process](https://www.youtube.com/watch?v=uSQVtm8O7SA)
 + bpmNEXT 2018: [Making Process Personal](https://www.youtube.com/watch?v=fyxRHZaCSSA)
 + Jax London 2018: [Using transactional BPM for service orchestration on NoSQL](https://www.youtube.com/watch?v=vzgU1lZ1h3U)
