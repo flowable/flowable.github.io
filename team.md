@@ -22,7 +22,6 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	        <p>Project Lead</p>
 	    </div>
 	    <p>Tijs is the project lead at Flowable. He&#39;s been involved in Java, BPM and enterprise integration projects for more than 15 years.
-	    Recently his work focused on building the v6 engine and he’s eager to continue evolving the v6 engine in the Flowable project.
 	    Tijs is passionate about open source BPM and integration. He&#39;s the author of the <a href="http://manning.com/rademakers2" target="_blank">Activiti in Action</a> and <a href="http://manning.com/rademakers" target="_blank">Open source ESBs in Action</a> Manning books.
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
@@ -80,7 +79,7 @@ The Flowable Project comprises people who are committed to creating the best Jav
 	        <h3>Filip Hrisafov</h3>
 	        <p>Flowable developer</p>
 	     </div>
-	    <p>Filip got interested in BPM while working on his Master Thesis: Automatic Migration of Running Process Instances. Currently, he works at Flowable, where he focuses the backend of the various products using Flowable. 
+	    <p>Filip got interested in BPM while working on his Master Thesis: "Automatic Migration of Running Process Instances". Currently, he works at Flowable, where he focuses on the backend of the various products using Flowable. 
 Being an open source enthusiast, he is the project lead of MapStruct and a contributor to multiple Open Source projects.</p>
 
 	    <div class="bio-contact-info">
@@ -141,7 +140,7 @@ Being an open source enthusiast, he is the project lead of MapStruct and a contr
 	     </div>
 	    <p>Yvo is a passionate full stack and iOS developer at Flowable.
 	    He was part of the Alfresco Activiti core team. Before that he worked as a consultant and software architect.
-	    For V6 he developed a significant part of the new DMN Rule Engine.
+	    For V6 he developed a significant part of the DMN Rule Engine.
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
 	            <a href="https://twitter.com/yvoswillens" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
@@ -151,6 +150,31 @@ Being an open source enthusiast, he is the project lead of MapStruct and a contr
 	        </div>
 	        <div class="contact-info linkedin">
 	            <a href="http://blog.mark-it-zero.com" target="_blank"><i class="fa fa-rss-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+	        </div>
+	    </div></p>
+	</div>
+
+	<a class="team-member" href="#michaModal" rel="modal:open">
+	    <div class="bio-pic"><img src="img/micha.jpg"></div>
+	</a>
+
+	<div id="michaModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/micha.jpg"></div>
+	        <h3>Micha Kiener</h3>
+	        <p>Flowable developer</p>
+	     </div>
+	    <p>
+		Micha, CTO at Flowable, is responsible for the company's product strategy and vision. Prior to his position at Flowable, he was in charge of research and innovation at mimacom, an international services company focusing on Java and Open Source technologies. He has many years of practical experience in mid- to large-sized case- and process-applications in various domains.
+	    <div class="bio-contact-info">
+	        <div class="contact-info twitter">
+	            <a href="https://twitter.com/michakiener" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	        <div class="contact-info linkedin">
+	            <a href="https://ch.linkedin.com/in/mkiener" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 	        </div>
 			<div class="contact-info company">
 	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
@@ -339,7 +363,7 @@ Being an open source enthusiast, he is the project lead of MapStruct and a contr
 	        <p>Flowable developer</p>
 	     </div>
 
-	    <p>David is a software developer working at Flowable with many years of software development and management experience who has been involved with workflow related technologies since 2009 (previously for a very large privately held software company).</p>
+	    <p>David is a software developer with many years of software development and management experience who has been involved with workflow related technologies since 2009 (previously for a very large privately held software company).</p>
 
 	    <div class="bio-contact-info">
 	        <div class="contact-info twitter">
@@ -440,32 +464,6 @@ Being an open source enthusiast, he is the project lead of MapStruct and a contr
 	    </div>
 	</div>
 
-	<a class="team-member" href="#dennisModal" rel="modal:open">
-	 <div class="bio-pic"><img src="img/dennis.jpg"></div>
-	</a>
-
-	<div id="dennisModal" class="documentationContent team-member-bio">
-	     <div class="bio-title">
-	        <div class="bio-pic-modal"><img src="img/dennis.jpg"></div>
-	        <h3>Dennis Federico</h3>
-	        <p>Flowable developer</p>
-	     </div>
-
-	    <p>Dennis is a software engineer from Venezuela, making a life in Spain. Previously a Big Data principal consultant for Oracle now enjoying his renewed passion for coding and development with Java working for Flowable.</p>
-
-		<div class="bio-contact-info">
-	        <div class="contact-info twitter">
-	            <a href="https://twitter.com/DennisFederico" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
-	        </div>
-	        <div class="contact-info linkedin">
-	            <a href="https://www.linkedin.com/in/dennisfederico" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
-	        </div>
-			<div class="contact-info company">
-	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
-            </div>
-	    </div>
-	</div>
-
 	<a class="team-member" href="#joseModal" rel="modal:open">
 	 <div class="bio-pic"><img src="img/jose.jpg"></div>
 	</a>
@@ -492,6 +490,75 @@ Being an open source enthusiast, he is the project lead of MapStruct and a contr
 	    		<a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
             </div>
 	    </div>
+	</div>
+
+	<a class="team-member" href="#williamModal" rel="modal:open">
+	    <div class="bio-pic"><img src="img/william.jpg"></div>
+	</a>
+
+	<div id="williamModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/william.jpg"></div>
+	        <h3>William Witt</h3>
+	        <p>Flowable developer</p>
+	     </div>
+	    <p>
+		William is a full stack engineer with a passion for open source software. He has developed applications for education, logistics, and healthcare both in the public and private sectors. He is currently employed as a principle software engineer at Flowable.
+	    <div class="bio-contact-info">
+	        <div class="contact-info linkedin">
+	            <a href="https://www.linkedin.com/in/william-witt-017326b6" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+	        </div>
+	    </div></p>
+	</div>
+
+	<a class="team-member" href="#javiModal" rel="modal:open">
+	    <div class="bio-pic"><img src="img/javi.jpg"></div>
+	</a>
+
+	<div id="javiModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/javi.jpg"></div>
+	        <h3>Javier Casal</h3>
+	        <p>Flowable developer</p>
+	     </div>
+	    <p>
+		Javi is a spanish software engineer at Flowable. Full stack, but recently more focused on the frontend side of things.
+	    <div class="bio-contact-info">
+	        <div class="contact-info twitter">
+	            <a href="https://twitter.com/jcasalruiz" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+	        <div class="contact-info linkedin">
+	            <a href="https://es.linkedin.com/in/jacarui" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+	        </div>
+	    </div></p>
+	</div>
+
+	<a class="team-member" href="#simonModal" rel="modal:open">
+	    <div class="bio-pic"><img src="img/simon.jpg"></div>
+	</a>
+
+	<div id="simonModal" class="documentationContent team-member-bio">
+	     <div class="bio-title">
+	        <div class="bio-pic-modal"><img src="img/simon.jpg"></div>
+	        <h3>Simon Amport</h3>
+	        <p>Flowable developer</p>
+	     </div>
+	    <p>
+		Simon is a software developer with several years of experience in Java. As a solution consultant at Flowable he is always in contact with customers who are working with the Flowable engines in their daily business. In the past years he successfully integrated Flowable for many customers and more will follow.
+	    <div class="bio-contact-info">
+	        <div class="contact-info twitter">
+	            <a href="https://twitter.com/amporsim" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+	        </div>
+			<div class="contact-info company">
+	            <a href="https://www.flowable.com" target="_blank"><i class="fa fa-building" aria-hidden="true"></i></a>
+	        </div>
+	    </div></p>
 	</div>
 
 </div>
