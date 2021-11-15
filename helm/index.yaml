@@ -1,14 +1,53 @@
 apiVersion: v1
 entries:
   flowable:
-  - apiVersion: v1
-    appVersion: 6.5.0-SNAPSHOT
-    created: "2019-11-14T15:30:01.231685+01:00"
+  - apiVersion: v2
+    appVersion: 6.7.1
+    created: "2021-11-15T15:38:04.759544+01:00"
     description: A Flowable Helm chart for Kubernetes
-    digest: 2e05aee9fd6812610dd3ba73a5b586f57091be76a0073411352fc6d5cc102b4a
-    icon: https://flowable.org/img/logo@2x.png
+    digest: dfb56898bafd8ae89cf209024230de18b8a3a3e964ad053c257fd5bd533b6c40
+    home: https://flowable.org
+    icon: https://flowable.org/docs/img/logo.png
     name: flowable
     urls:
-    - https://flowable.org/helm/flowable-0.1.0.tgz
-    version: 0.1.0
-generated: "2019-11-14T15:30:01.229172+01:00"
+    - https://flowable.github.io/helm/flowable-6.7.1.tgz
+    version: 6.7.1
+  - apiVersion: v2
+    appVersion: 6.7.0
+    created: "2021-08-31T10:21:05.77581+02:00"
+    description: A Flowable Helm chart for Kubernetes
+    digest: 625ffc2c80e9cffa00feaffcdd00c17414e756a7a22a30fffb5c14443beb8ac9
+    home: https://flowable.org
+    icon: https://flowable.org/docs/img/logo.png
+    name: flowable
+    urls:
+    - https://flowable.org/helm/flowable-6.7.0.tgz
+    version: 6.7.0
+  - apiVersion: v1
+    appVersion: 6.6.0
+    created: "2020-10-16T10:37:48.959222+02:00"
+    dependencies:
+    - condition: nginx-ingress.enabled
+      name: nginx-ingress
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 1.3.1
+    description: A Flowable Helm chart for Kubernetes
+    digest: 80be137a64d743cc1e0948009f51ed4861ef3dfd2f39d8baecc5ad0cebe89354
+    home: https://flowable.org
+    icon: https://flowable.org/docs/img/logo.png
+    name: flowable
+    urls:
+    - https://flowable.org/helm/flowable-6.6.0.tgz
+    version: 6.6.0
+  - apiVersion: v1
+    appVersion: 6.5.0
+    created: "2020-01-23T14:41:46.335086+01:00"
+    description: A Flowable Helm chart for Kubernetes
+    digest: d231d0b5ba78c6f0952ba2ab5ed0b17566f54a46af3ad840107690715a782f61
+    home: https://flowable.org
+    icon: https://flowable.org/docs/img/logo.png
+    name: flowable
+    urls:
+    - https://flowable.org/helm/flowable-6.5.0.tgz
+    version: 6.5.0
+generated: "2021-11-15T15:38:04.758684+01:00"
