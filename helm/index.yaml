@@ -1,6 +1,26 @@
 apiVersion: v1
 entries:
   flowable:
+  - annotations:
+      artifacthub.io/prerelease: "true"
+    apiVersion: v2
+    appVersion: 6.7.2
+    created: "2022-01-06T09:43:44.144433+01:00"
+    description: A Flowable Helm chart for Kubernetes
+    digest: 41193790394c561cde80cdf620a4b827372effc4099d4d982d359848060433b4
+    home: https://flowable.org
+    icon: https://flowable.org/docs/img/logo.png
+    keywords:
+    - flowable
+    - BPMN
+    - CMMN
+    - DMN
+    name: flowable
+    sources:
+    - https://github.com/flowable/flowable-engine/
+    urls:
+    - https://flowable.github.io/helm/flowable-6.7.3-snapshot.1.tgz
+    version: 6.7.3-snapshot.1
   - apiVersion: v2
     appVersion: 6.7.2
     created: "2021-12-28T16:23:36.018661+01:00"
@@ -66,4 +86,4 @@ entries:
     urls:
     - https://flowable.github.io/helm/flowable-6.5.0.tgz
     version: 6.5.0
-generated: "2021-12-28T16:23:36.01528+01:00"
+generated: "2022-01-06T09:43:44.142494+01:00"
